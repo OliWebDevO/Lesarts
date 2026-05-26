@@ -1,0 +1,33 @@
+- generic [ref=e3]:
+  - region "top of page"
+  - generic [ref=e10]:
+    - banner [ref=e11]:
+      - navigation "Site" [ref=e20]:
+        - list [ref=e21]:
+          - listitem [ref=e22] [cursor=pointer]:
+            - link "ACCUEIL" [ref=e23]:
+              - /url: https://www.atelier-cadrart.com
+              - paragraph [ref=e26]: ACCUEIL
+          - listitem [ref=e27] [cursor=pointer]:
+            - link "REALISATIONS" [ref=e28]:
+              - /url: https://www.atelier-cadrart.com/realisations
+              - paragraph [ref=e31]: REALISATIONS
+          - listitem [ref=e32] [cursor=pointer]:
+            - link "CONTACT" [ref=e33]:
+              - /url: https://www.atelier-cadrart.com/contact
+              - paragraph [ref=e36]: CONTACT
+    - main [ref=e37]:
+      - generic [ref=e43]:
+        - generic:
+          - generic:
+            - generic:
+              - paragraph [ref=e48]: Cadr'art
+              - paragraph [ref=e49]: ENCADREMENTS SUR MESURE
+              - paragraph [ref=e50]: PROFILS PERSONNALISÉS DE MOULURE BOIS OU METAL
+              - paragraph [ref=e51]: MAROUFLAGE DE PAPIER ET DE TOILE
+              - paragraph [ref=e52]: ENCADREMENTS STANDARDS A LA DEMANDE
+              - paragraph [ref=e53]: CIMAISES
+              - paragraph [ref=e54]: CHASSIS ET TOILES A PEINDRE
+            - img "Capture d’écran 2022-06-27 à 10.58.05.jpg" [ref=e59]
+    - contentinfo [ref=e61]
+  - region "bottom of page"

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lesarts — Encadrement de conservation pour le musée, la galerie et la maison. Atelier d'encadrement sur mesure à Bruxelles, sur rendez-vous." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="[Lesarts] — Encadrement de conservation, Bruxelles" />
+  <meta property="og:description" content="L'encadrement de conservation, pour le musée, la galerie et la maison." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_BE" />
+
+  <title>[Lesarts] — Encadrement de conservation, Bruxelles</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="v3-preloader" class="v3-preloader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Chargement en cours">
+    <div class="v3-preloader__inner">
+      <span class="v3-preloader__wordmark">[Lesarts]</span>
+      <div class="v3-preloader__track">
+        <div class="v3-preloader__fill" id="v3-fill"></div>
+      </div>
+      <span class="v3-preloader__pct" id="v3-pct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================== -->
+  <header class="site-header" id="site-header" data-animate="nav" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="nav__logo" href="/" aria-label="Lesarts — Retour à l'accueil">
+        [Lesarts]
+      </a>
+
+      <!-- Desktop menu -->
+      <ul class="nav__menu" role="list">
+        <li class="nav__item"><a class="nav__link" href="#galerie">Galerie</a></li>
+        <li class="nav__item"><a class="nav__link" href="#encadrements">Encadrements</a></li>
+        <li class="nav__item"><a class="nav__link" href="#a-propos">À Propos</a></li>
+        <li class="nav__item"><a class="nav__link" href="#ressources">Ressources</a></li>
+        <li class="nav__item"><a class="nav__link" href="#boutique">Boutique</a></li>
+      </ul>
+
+      <!-- Right side: cart + hamburger -->
+      <div class="nav__actions">
+        <!-- Cart icon -->
+        <button class="nav__cart" aria-label="Panier (0 articles)" type="button">
+          <svg class="nav__cart-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </button>
+
+        <!-- Hamburger button (mobile) -->
+        <button
+          class="nav__hamburger"
+          id="nav-hamburger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
+          <span class="nav__hamburger-bar"></span>
+          <span class="nav__hamburger-bar"></span>
+          <span class="nav__hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile overlay menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation" hidden>
+      <nav class="mobile-menu__nav" aria-label="Menu mobile">
+        <ul class="mobile-menu__list" role="list">
+          <li><a class="mobile-menu__link" href="#galerie">Galerie</a></li>
+          <li><a class="mobile-menu__link" href="#encadrements">Encadrements</a></li>
+          <li><a class="mobile-menu__link" href="#a-propos">À Propos</a></li>
+          <li><a class="mobile-menu__link" href="#ressources">Ressources</a></li>
+          <li><a class="mobile-menu__link" href="#boutique">Boutique</a></li>
+        </ul>
+        <div class="mobile-menu__footer">
+          <p class="mobile-menu__address">Rue de la Régence 12, 1000 Bruxelles</p>
+          <p class="mobile-menu__hours">Sur rendez-vous · Mar–Sam 10h–18h</p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============================================
+       MAIN CONTENT
+  ============================================== -->
+  <main id="main-content">
+
+    <!-- ==========================================
+         SECTION 1 — HERO
+    =========================================== -->
+    <section class="hero" aria-label="En-tête principal">
+      <div class="hero__media">
+        <img
+          class="hero__image"
+          src="../Images/encadrement/Cover1.webp"
+          alt="Artisan encadreur travaillant avec précision dans l'atelier Lesarts"
+          fetchpriority="high"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__content" data-animate="hero-text">
+        <h1 class="hero__title-sr">[Lesarts] — Encadrement de conservation, Bruxelles</h1>
+        <p class="hero__quote">
+          <span class="hero__quote-line">L'art de cadrer</span>
+          <span class="hero__quote-line">ce qui compte.</span>
+        </p>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-arrow">↓</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2 — TESTIMONIAL SLIDER
+    =========================================== -->
+    <section class="testimonials" id="testimonials" aria-label="Témoignages">
+      <div class="testimonials__inner">
+
+        <button
+          class="testimonials__arrow testimonials__arrow--prev"
+          id="testimonial-prev"
+          aria-label="Témoignage précédent"
+          type="button"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <div class="testimonials__track" role="region" aria-live="polite" aria-label="Témoignage en cours">
+          <!-- Testimonial 1 -->
+          <blockquote class="testimonials__slide testimonials__slide--active" data-animate="testimonial-quote">
+            <p class="testimonials__quote">
+              "Le meilleur encadreur de Bruxelles, sans aucun doute.
+              Lesarts offre constamment des résultats exceptionnels."
+            </p>
+            <footer class="testimonials__attribution">
+              <span class="testimonials__attribution-line" aria-hidden="true"></span>
+              <cite class="testimonials__cite">— Marie Dubois, Responsable des collections, Musée des Beaux-Arts</cite>
+            </footer>
+          </blockquote>
+
+          <!-- Testimonial 2 -->
+          <blockquote class="testimonials__slide" data-animate="testimonial-quote" aria-hidden="true">
+            <p class="testimonials__quote">
+              "Un savoir-faire unique, une attention portée aux détails qui
+              distingue Lesarts de tout autre atelier que nous ayons consulté."
+            </p>
+            <footer class="testimonials__attribution">
+              <span class="testimonials__attribution-line" aria-hidden="true"></span>
+              <cite class="testimonials__cite">— Philippe Laurent, Directeur artistique, Galerie Bozar</cite>
+            </footer>
+          </blockquote>
+
+          <!-- Testimonial 3 -->
+          <blockquote class="testimonials__slide" data-animate="testimonial-quote" aria-hidden="true">
+            <p class="testimonials__quote">
+              "Chaque œuvre confiée à Lesarts revient transformée.
+              La précision, la qualité des matériaux et le respect des normes de conservation sont irréprochables."
+            </p>
+            <footer class="testimonials__attribution">
+              <span class="testimonials__attribution-line" aria-hidden="true"></span>
+              <cite class="testimonials__cite">— Isabelle Moreau, Conservatrice, Fondation Boghossian</cite>
+            </footer>
+          </blockquote>
+        </div>
+
+        <button
+          class="testimonials__arrow testimonials__arrow--next"
+          id="testimonial-next"
+          aria-label="Témoignage suivant"
+          type="button"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Dots indicator -->
+      <div class="testimonials__dots" role="tablist" aria-label="Navigation témoignages">
+        <button class="testimonials__dot testimonials__dot--active" role="tab" aria-selected="true" aria-label="Témoignage 1" data-index="0" type="button"></button>
+        <button class="testimonials__dot" role="tab" aria-selected="false" aria-label="Témoignage 2" data-index="1" type="button"></button>
+        <button class="testimonials__dot" role="tab" aria-selected="false" aria-label="Témoignage 3" data-index="2" type="button"></button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2B — NOTRE PROCESSUS
+    =========================================== -->
+    <section class="process" id="process" aria-label="Notre processus en trois étapes">
+      <div class="process__inner">
+
+        <header class="process__header">
+          <p class="process__label">Notre Processus</p>
+          <h2 class="process__heading">Comment ça se passe</h2>
+        </header>
+
+        <div class="process__steps">
+
+          <!-- Étape 1 : Consultation -->
+          <article class="process__step" aria-labelledby="process-step-1-title">
+            <span class="process__step-number" aria-hidden="true">01</span>
+            <div class="process__step-svg" data-step-svg aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.4 132">
+                <defs><style>.p1c1,.p1c2{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.p1c1{stroke-width:1.5px}.p1c2{stroke-width:1.25px}</style></defs>
+                <path d="M49 27.84a1.24 1.24 0 1 1 1.24-1.24A1.24 1.24 0 0 1 49 27.84M52.87 27.84a1.24 1.24 0 1 1 1.24-1.24 1.24 1.24 0 0 1-1.24 1.24M56.84 27.84a1.24 1.24 0 1 1 1.24-1.24 1.24 1.24 0 0 1-1.24 1.24"/>
+                <path class="p1c1" d="M44.4 30.46h113.24m0-8.1H44.4V84.5h113.24zm71.22 47.24a15.86 15.86 0 0 0-2.25 7.65m22.26-18.19l-11.05-11.11M246 64.12l-3.41-3.46m41.73-26l-9.47-9.37m4.08 13.35l-5.59-5.53m-.15 11.5L267.62 39m.67 12.21L263 46m.84 12.66l-5.32-5.27m1.16 12.55l-5.32-5.27m1 12.55L250 67.94m-.12 12l-5.26-5.34m-1.61 10l-5.26-5.34m-4.38 7.39l-5.26-5.34m10.43-9.2l-3.41-3.46M234 74.84l-9.49-9.64m-8.4 8.92s9 9.49 11 10.95c2.4 1.73 10.47 3.72 18.51-1.56s10.55-10.64 20.5-27.87 21.5-23.14 21.5-23.14l-9.38-9.5c-15.3 8.28-25.73 29.82-26.86 32s-7.82 16.63-18.48 20.72-15.75-.68-16.77-1.59-9.52-10.55 2-22.57c3-3.16 6.74-5.67 11.19-6.14 3.35-.35 7.23.45 9.18 3.47a9.79 9.79 0 0 1 1.5 5.44 11.49 11.49 0 0 1-.55 3.36 12.63 12.63 0 0 1-4.65 6.23c-4.85 3.58-8.66 2.84-10.71.89a5.12 5.12 0 0 1-1.65-3.6A9.53 9.53 0 0 1 225.2 55l9.15 9.11m-212.24 47h157.83M18.58 117h164.51m-60.15 14l-2-6.44a1.54 1.54 0 0 0-1.38-1.12H82.12c-.69 0-1.1.46-1.41 1.12l-2.33 6.21M172.46 9.52H28.29A4.29 4.29 0 0 0 24 13.81v78.36a4.29 4.29 0 0 0 4.29 4.29h144.17a4.29 4.29 0 0 0 4.29-4.29V13.81a4.29 4.29 0 0 0-4.29-4.29zM7.13 131.25h186.63c5 0 8.14-2.35 5.85-5.85l-14.87-20.17H16L1.29 125.4c-1.89 2.86 1.47 5.85 5.84 5.85zM178.89.75h-157A5.85 5.85 0 0 0 16 6.6v98.64h168.74V6.6a5.85 5.85 0 0 0-5.85-5.85z"/>
+                <path class="p1c2" d="M84.82 46.39l-6.31-5.75m6.31 28.15l-6.31 5.75M116 46.39l6.31-5.75M116 68.79l6.31 5.75m0-33.9h-43.8v33.9h43.77zM116 46.39H84.82v22.4H116z"/>
+              </svg>
+            </div>
+            <h3 class="process__step-title" id="process-step-1-title">Consultation</h3>
+            <p class="process__step-desc">Venez à l'atelier avec votre œuvre. Ensemble nous définissons le cadre idéal — profil, matériau, finition et niveau de conservation souhaité.</p>
+          </article>
+
+          <!-- Étape 2 : Fabrication -->
+          <article class="process__step" aria-labelledby="process-step-2-title">
+            <span class="process__step-number" aria-hidden="true">02</span>
+            <div class="process__step-svg" data-step-svg aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.4 132">
+                <defs><style>.p3c1,.p3c2{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.p3c1{stroke-width:1.5px}.p3c2{stroke-width:1.25px}</style></defs>
+                <path class="p3c1" d="M18 14h204v104H18z"/>
+                <path class="p3c1" d="M36 30h168v72H36z"/>
+                <path class="p3c2" d="M54 44h132v44H54z"/>
+                <path class="p3c2" d="M18 14L36 30M222 14L204 30M18 118L36 102M222 118L204 102"/>
+                <path class="p3c2" d="M18 5L222 5M18 1L18 9M222 1L222 9"/>
+                <path class="p3c2" d="M233 14L233 118M229 14L237 14M229 118L237 118"/>
+                <path class="p3c1" d="M252 28L272 28L272 104L252 104"/>
+                <path class="p3c2" d="M252 42L272 42M252 90L272 90"/>
+                <path class="p3c2" d="M252 42C244 58 244 74 252 90"/>
+              </svg>
+            </div>
+            <h3 class="process__step-title" id="process-step-2-title">Fabrication</h3>
+            <p class="process__step-desc">Nos artisans fabriquent votre cadre à la main dans notre atelier bruxellois, avec des matériaux de conservation sélectionnés aux normes muséales.</p>
+          </article>
+
+          <!-- Étape 3 : Livraison -->
+          <article class="process__step" aria-labelledby="process-step-3-title">
+            <span class="process__step-number" aria-hidden="true">03</span>
+            <div class="process__step-svg" data-step-svg aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285.47 149.22">
+                <defs><style>.p2c1,.p2c2,.p2c3{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.p2c1{stroke-width:1.5px}.p2c2{stroke-width:1.75px}.p2c3{stroke-width:2px}</style></defs>
+                <path class="p2c1" d="M65 132.76h76.13"/>
+                <path d="M74.65 70.36V68.2h-17.8v24.56h2.34V81.83h13.59v-2.16H59.19v-6.34l2.97-2.97h12.49z"/>
+                <path class="p2c2" d="M60.68 133.62A14.71 14.71 0 1 1 46 118.91a14.72 14.72 0 0 1 14.68 14.71zm-7.53 0a7.18 7.18 0 1 1-7.15-7.18 7.18 7.18 0 0 1 7.15 7.18zm117.31 0a14.71 14.71 0 1 1-14.71-14.72 14.72 14.72 0 0 1 14.71 14.72zm-7.53 0a7.18 7.18 0 1 1-7.18-7.19 7.18 7.18 0 0 1 7.18 7.19zm2.3-68H148s-6.94-.58-4.69 5.86c2.49 7.1 4.34 15.11 8.16 15.11H179m-43.89 16.5H147m38.74 2.63s-13.22.41-13.22 15m13.48-.12v-15.48c-1.26-15.18-23.08-42.5-23.08-42.5-5-6.36-10.1-7-12-7h-25.2c-1 0-1.86 1.25-1.86 2.79v62.33h.14m-.16-.15V42.31a3.51 3.51 0 0 0-3.51-3.51H10a3.51 3.51 0 0 0-3.51 3.51v78.41h.3"/>
+                <path class="p2c3" d="M65.06 103.37a23.6 23.6 0 1 0-23.6-23.6 23.6 23.6 0 0 0 23.6 23.6"/>
+                <path class="p2c2" d="M31 132.79H3.9a3 3 0 0 1-3-3.06v-6a3 3 0 0 1 3-3.06h34.71m102.49 12.12H60.82m102.08-12.17h27.82a3 3 0 0 1 3 3.06v6a3 3 0 0 1-3 3.06h-20.28M53.31 120.62h95.33"/>
+                <path class="p2c1" d="M197.48 61.63l-11.1 10.09m11.1-60.37L186.34 1.09m67.47 10.37L265 1.08m-11.19 20.14v-9.87h-56.33v50.28h9.31m58.55-39.91V.75H186v71.49h20.69m6.71-43L207 22m6.39 64.31L207 93.53m71.37-7.17l6.39 7.17m-6.67-64l6.39-7.17m-15.34 16.89h-46.6v37.08h46.61zm9.19-10h-65v57.11h65zm6.39-7.25H207v71.53h77.75z"/>
+              </svg>
+            </div>
+            <h3 class="process__step-title" id="process-step-3-title">Livraison</h3>
+            <p class="process__step-desc">Une fois votre encadrement achevé, il vous est livré soigneusement emballé — ou récupéré sur rendez-vous dans notre atelier bruxellois.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3 — SPLIT: NOTRE GAMME
+    =========================================== -->
+    <section class="split-gamme" id="encadrements" aria-label="Notre gamme d'encadrements">
+      <div class="split-gamme__image-col">
+        <img
+          class="split-gamme__image"
+          src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-04-54-59-utc.webp"
+          alt="Atelier d'encadrement — fabrication artisanale de baguettes en bois"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="split-gamme__text-col" data-animate="split-text">
+        <div class="split-gamme__content">
+          <p class="split-gamme__label">Notre Gamme</p>
+          <h2 class="split-gamme__heading">Explorez notre gamme</h2>
+          <p class="split-gamme__subtitle">Qualité, fait main, sur mesure.</p>
+          <p class="split-gamme__body">
+            Du profil bois aux boîtes métal soudées et encadrements acrylique — nos cadres sont créés pour votre art. Chaque pièce est conçue avec une attention méticuleuse aux matériaux et aux normes de conservation muséale.
+          </p>
+          <a class="btn" href="#encadrements-details">Encadrements</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4 — SPLIT: NOS RÉALISATIONS (reversed)
+    =========================================== -->
+    <section class="split-realisations" id="galerie" aria-label="Nos réalisations">
+      <div class="split-realisations__text-col" data-animate="split-text">
+        <div class="split-realisations__content">
+          <p class="split-realisations__label">Nos Réalisations</p>
+          <h2 class="split-realisations__heading">Notre travail exposé</h2>
+          <p class="split-realisations__body">
+            Musée, galerie et maison. Découvrez nos encadrements dans les grandes galeries et chez nos clients. Chaque réalisation témoigne d'un dialogue entre l'œuvre et son cadre.
+          </p>
+          <a class="btn" href="#realisations-details">Voir les réalisations</a>
+        </div>
+      </div>
+
+      <div class="split-realisations__image-col">
+        <img
+          class="split-realisations__image"
+          src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-21-35-00-utc.webp"
+          alt="Collection de cadres en bois exposée en boutique"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5 — CLIENTS NAV
+    =========================================== -->
+    <section class="clients-nav" aria-label="Nos clients et univers">
+      <div class="clients-nav__inner">
+
+        <div class="clients-nav__col">
+          <p class="clients-nav__col-title">Nos Clients</p>
+          <ul class="clients-nav__list" role="list">
+            <li><a class="clients-nav__link" href="#">Musées</a></li>
+            <li><a class="clients-nav__link" href="#">Galeries</a></li>
+            <li><a class="clients-nav__link" href="#">Particuliers</a></li>
+            <li><a class="clients-nav__link" href="#">Institutions</a></li>
+          </ul>
+        </div>
+
+        <div class="clients-nav__col">
+          <p class="clients-nav__col-title">Éditions</p>
+          <ul class="clients-nav__list" role="list">
+            <li><a class="clients-nav__link" href="#">Tirages d'art</a></li>
+            <li><a class="clients-nav__link" href="#">Éditions limitées</a></li>
+            <li><a class="clients-nav__link" href="#">Collaborations</a></li>
+          </ul>
+        </div>
+
+        <div class="clients-nav__col">
+          <p class="clients-nav__col-title">Actualités</p>
+          <ul class="clients-nav__list" role="list">
+            <li><a class="clients-nav__link" href="#">Expositions</a></li>
+            <li><a class="clients-nav__link" href="#">Nouveautés</a></li>
+            <li><a class="clients-nav__link" href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="clients-nav__col">
+          <p class="clients-nav__col-title">Durabilité</p>
+          <ul class="clients-nav__list" role="list">
+            <li><a class="clients-nav__link" href="#">Matériaux</a></li>
+            <li><a class="clients-nav__link" href="#">Engagement</a></li>
+            <li><a class="clients-nav__link" href="#">Certifications</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6 — FULL-WIDTH BANNER
+    =========================================== -->
+    <section class="banner" aria-label="Matériaux et conservation">
+      <div class="banner__media">
+        <img
+          class="banner__image"
+          src="../Images/encadrement/wooden-background-with-vintage-style-picture-frame-2026-03-16-01-22-24-utc.webp"
+          alt="Cadre vintage sur fond en bois — matériaux d'encadrement artisanaux"
+          loading="lazy"
+        />
+        <div class="banner__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="banner__content" data-animate="banner-content">
+        <h2 class="banner__heading">Matériaux &amp; Conservation</h2>
+        <p class="banner__subtitle">Ce que nous faisons et comment nous le faisons</p>
+        <a class="btn btn--inverted" href="#a-propos">En savoir plus</a>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7 — SERVICES
+    =========================================== -->
+    <section class="services" id="ressources" aria-label="Nos services">
+      <div class="services__inner">
+        <h2 class="services__heading">Nos services</h2>
+
+        <div class="services__grid">
+
+          <div class="services__item" data-animate="service-item">
+            <div class="services__icon" aria-hidden="true" data-service-svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.4 132">
+                <defs><style>.s1c1,.s1c2{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.s1c1{stroke-width:1.5px}.s1c2{stroke-width:1.25px}</style></defs>
+                <path class="s1c1" d="M14 12h208v108H14z"/>
+                <path class="s1c1" d="M32 26h172v80H32z"/>
+                <path class="s1c2" d="M50 40h136v52H50z"/>
+                <path class="s1c2" d="M14 12L32 26M222 12L204 26M14 120L32 106M222 120L204 106"/>
+                <path class="s1c2" d="M14 4L222 4M14 0L14 8M222 0L222 8"/>
+                <path class="s1c1" d="M244 22L264 22L264 110L244 110"/>
+                <path class="s1c2" d="M244 38L264 38M244 94L264 94"/>
+                <path class="s1c2" d="M244 38C236 54 236 78 244 94"/>
+                <path class="s1c2" d="M276 22L276 110M272 22L280 22M272 110L280 110"/>
+              </svg>
+            </div>
+            <h3 class="services__item-title">Encadrement sur mesure</h3>
+            <p class="services__item-desc">
+              Chaque cadre est conçu et fabriqué à la main dans notre atelier bruxellois. Bois, métal, acrylique — choisissez votre matériau, votre profil, votre finition.
+            </p>
+          </div>
+
+          <div class="services__item" data-animate="service-item">
+            <div class="services__icon" aria-hidden="true" data-service-svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.4 132">
+                <defs><style>.s2c1,.s2c2{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.s2c1{stroke-width:1.5px}.s2c2{stroke-width:1.25px}</style></defs>
+                <path class="s2c1" d="M4 122L284 122"/>
+                <path class="s2c2" d="M4 10L284 10"/>
+                <path class="s2c1" d="M16 22h72v80H16z"/>
+                <path class="s2c2" d="M24 30h56v64H24z"/>
+                <path class="s2c2" d="M34 22L52 12L70 22"/>
+                <path class="s2c2" d="M52 10L52 12"/>
+                <path class="s2c1" d="M108 38h84v50H108z"/>
+                <path class="s2c2" d="M116 46h68v34H116z"/>
+                <path class="s2c2" d="M124 38L150 24L176 38"/>
+                <path class="s2c2" d="M150 10L150 24"/>
+                <path class="s2c1" d="M208 26h62v66H208z"/>
+                <path class="s2c2" d="M216 34h46v50H216z"/>
+                <path class="s2c2" d="M222 26L239 14L256 26"/>
+                <path class="s2c2" d="M239 10L239 14"/>
+              </svg>
+            </div>
+            <h3 class="services__item-title">Galerie d'art</h3>
+            <p class="services__item-desc">
+              Notre galerie expose une sélection d'œuvres originales et de tirages d'art. Découvrez de nouveaux artistes ou trouvez la pièce qui complète votre intérieur.
+            </p>
+          </div>
+
+          <div class="services__item" data-animate="service-item">
+            <div class="services__icon" aria-hidden="true" data-service-svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.4 132">
+                <defs><style>.s3c1,.s3c2{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.s3c1{stroke-width:1.5px}.s3c2{stroke-width:1.25px}</style></defs>
+                <!-- Shield outer border -->
+                <path class="s3c1" d="M144 6L212 28L212 76C212 102 178 118 144 126C110 118 76 102 76 76L76 28Z"/>
+                <!-- Shield inner rim -->
+                <path class="s3c2" d="M144 14L204 32L204 76C204 98 174 112 144 120C114 112 84 98 84 76L84 32Z"/>
+                <!-- Framed artwork inside shield: outer frame -->
+                <path class="s3c1" d="M110 38h68v50H110z"/>
+                <!-- Passepartout / mat board -->
+                <path class="s3c2" d="M118 46h52v34H118z"/>
+                <!-- Artwork opening -->
+                <path class="s3c2" d="M126 54h36v18H126z"/>
+                <!-- Mitre corner cuts on frame -->
+                <path class="s3c2" d="M110 38L118 46M178 38L170 46M110 88L118 80M178 88L170 80"/>
+              </svg>
+            </div>
+            <h3 class="services__item-title">Conservation</h3>
+            <p class="services__item-desc">
+              Nos matériaux répondent aux normes de conservation muséale : verre anti-UV, passepartout sans acide, adhésifs réversibles. Votre œuvre protégée pour les générations futures.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8 — NEWSLETTER
+    =========================================== -->
+    <section class="newsletter" aria-label="Inscription à la newsletter">
+      <div class="newsletter__inner">
+        <h2 class="newsletter__heading">Restez informé</h2>
+        <p class="newsletter__subtitle">Recevez nos actualités, nouvelles collections et événements</p>
+
+        <form class="newsletter__form" id="newsletter-form" novalidate aria-label="Formulaire d'inscription à la newsletter">
+          <div class="newsletter__fields">
+            <div class="newsletter__field">
+              <label class="newsletter__label" for="newsletter-prenom">Prénom</label>
+              <input
+                class="newsletter__input"
+                type="text"
+                id="newsletter-prenom"
+                name="prenom"
+                autocomplete="given-name"
+                aria-required="true"
+                placeholder=" "
+              />
+              <span class="newsletter__error" id="newsletter-prenom-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="newsletter__field">
+              <label class="newsletter__label" for="newsletter-nom">Nom</label>
+              <input
+                class="newsletter__input"
+                type="text"
+                id="newsletter-nom"
+                name="nom"
+                autocomplete="family-name"
+                aria-required="true"
+                placeholder=" "
+              />
+              <span class="newsletter__error" id="newsletter-nom-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="newsletter__field newsletter__field--email">
+              <label class="newsletter__label" for="newsletter-email">Adresse email</label>
+              <input
+                class="newsletter__input"
+                type="email"
+                id="newsletter-email"
+                name="email"
+                autocomplete="email"
+                aria-required="true"
+                placeholder=" "
+              />
+              <span class="newsletter__error" id="newsletter-email-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <button class="btn newsletter__btn" type="submit">S'inscrire à la newsletter</button>
+        </form>
+
+        <p class="newsletter__privacy">
+          En vous inscrivant, vous acceptez notre <a class="newsletter__privacy-link" href="#">politique de confidentialité</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 9 — INSTAGRAM
+    =========================================== -->
+    <section class="instagram" id="boutique" aria-label="Galerie Instagram Lesarts">
+      <div class="instagram__header">
+        <a
+          class="instagram__handle"
+          href="https://instagram.com/lesarts_bruxelles"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Suivre Lesarts sur Instagram @lesarts_bruxelles"
+        >
+          @lesarts_bruxelles
+        </a>
+      </div>
+
+      <div class="instagram__grid" role="list">
+
+        <a class="instagram__item" href="https://instagram.com/lesarts_bruxelles" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Photo Instagram 1">
+          <img
+            class="instagram__image"
+            src="../Images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp"
+            alt="Échantillons colorés d'angles de cadres — atelier Lesarts"
+            loading="lazy"
+          />
+        </a>
+
+        <a class="instagram__item" href="https://instagram.com/lesarts_bruxelles" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Photo Instagram 2">
+          <img
+            class="instagram__image"
+            src="../Images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp"
+            alt="Variété d'échantillons de cadres décoratifs"
+            loading="lazy"
+          />
+        </a>
+
+        <a class="instagram__item" href="https://instagram.com/lesarts_bruxelles" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Photo Instagram 3">
+          <img
+            class="instagram__image"
+            src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-01-58-39-utc.webp"
+            alt="Atelier d'encadrement — fabrication artisanale"
+            loading="lazy"
+          />
+        </a>
+
+        <a class="instagram__item" href="https://instagram.com/lesarts_bruxelles" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Photo Instagram 4">
+          <img
+            class="instagram__image"
+            src="../Images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp"
+            alt="Collection de cadres modernes sur surface en bois"
+            loading="lazy"
+          />
+        </a>
+
+        <a class="instagram__item" href="https://instagram.com/lesarts_bruxelles" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Photo Instagram 5">
+          <img
+            class="instagram__image"
+            src="../Images/encadrement/colorful-wooden-picture-frame-corners-variety-2026-03-10-04-49-00-utc.webp"
+            alt="Variété de coins de cadres en bois colorés"
+            loading="lazy"
+          />
+        </a>
+
+        <a class="instagram__item" href="https://instagram.com/lesarts_bruxelles" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Photo Instagram 6">
+          <img
+            class="instagram__image"
+            src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-25-00-25-26-utc.webp"
+            alt="Cadres en bois exposés sur le mur de la boutique Lesarts"
+            loading="lazy"
+          />
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+  ============================================== -->
+  <footer class="site-footer" role="contentinfo">
+
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="site-footer__logo" href="/" aria-label="Lesarts — Retour à l'accueil">[Lesarts]</a>
+        <p class="site-footer__tagline">L'encadrement de conservation,<br>pour le musée, la galerie et la maison.</p>
+      </div>
+
+      <address class="site-footer__info">
+        <p class="site-footer__appointment">Sur rendez-vous uniquement · Mar–Sam 10h–18h</p>
+        <p class="site-footer__address-line">Rue de la Régence 12, 1000 Bruxelles</p>
+        <p class="site-footer__contacts">
+          <a class="site-footer__contact-link" href="mailto:estimates@lesarts.be">estimates@lesarts.be</a>
+          <span class="site-footer__contact-sep" aria-hidden="true"> · </span>
+          <a class="site-footer__contact-link" href="tel:+3225005155">+32 2 500 5155</a>
+        </p>
+      </address>
+    </div>
+
+    <div class="site-footer__bottom">
+      <nav class="site-footer__legal-nav" aria-label="Liens légaux">
+        <a class="site-footer__legal-link" href="#">CGV</a>
+        <span class="site-footer__legal-sep" aria-hidden="true">·</span>
+        <a class="site-footer__legal-link" href="#">Politique de confidentialité</a>
+        <span class="site-footer__legal-sep" aria-hidden="true">·</span>
+        <a class="site-footer__legal-link" href="#">Mentions légales</a>
+      </nav>
+
+      <a class="site-footer__directions" href="https://maps.google.com/?q=Rue+de+la+Régence+12+Bruxelles" target="_blank" rel="noopener noreferrer">
+        Nous trouver →
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

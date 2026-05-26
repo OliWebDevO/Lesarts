@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesarts | Encadreur sur mesure & Galerie d'art – Ixelles, Bruxelles</title>
+  <meta name="description" content="Lesarts, votre encadreur sur mesure à Ixelles. Vaste choix de baguettes, passe-partout, exposition d'artistes et conseil personnalisé. Rue du Bailli 43, Bruxelles." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================
+       PAGE LOADER
+       ============================================ -->
+  <div id="page-loader" class="loader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="loader-inner">
+      <span class="loader-text">LESARTS</span>
+      <div class="loader-progress">
+        <div class="loader-progress-fill" id="loader-fill"></div>
+      </div>
+      <span class="loader-pct" id="loader-pct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       CUSTOM CURSOR
+       ============================================ -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="header">
+    <a href="/" class="logo" aria-label="Retour à l'accueil – Lesarts">
+      <div class="logo-inner">
+        <span class="logo-text">LESARTS</span>
+        <span class="logo-sub">Prod.</span>
+      </div>
+    </a>
+
+    <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span class="burger-label">Menu</span>
+    </button>
+
+    <!-- Full-screen navigation overlay -->
+    <nav class="nav-overlay" id="nav-overlay" aria-hidden="true">
+      <div class="nav-content">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#realisations" class="nav-link" data-close-menu>
+              <span class="nav-dot" style="background-color: var(--terra)"></span>
+              <span class="nav-label">Réalisations</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link" data-close-menu>
+              <span class="nav-dot" style="background-color: var(--green)"></span>
+              <span class="nav-label">Services</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#atelier" class="nav-link" data-close-menu>
+              <span class="nav-dot" style="background-color: var(--pink)"></span>
+              <span class="nav-label">Atelier</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" data-close-menu>
+              <span class="nav-dot" style="background-color: var(--blue)"></span>
+              <span class="nav-label">Contact</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-info">
+          <div class="nav-address">
+            <p>Lesarts</p>
+            <p>Rue du Bailli 43</p>
+            <p>1050 Ixelles</p>
+            <p>Bruxelles, Belgique</p>
+          </div>
+          <div class="nav-contact">
+            <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer">lesartsprod.be</a>
+          </div>
+          <div class="nav-phone">
+            <p>Mer – Sam</p>
+            <p>10h30 – 18h30</p>
+          </div>
+          <div class="nav-social">
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================
+         HERO SECTION — horizontal scroll
+         ============================================ -->
+    <section id="hero-outer" class="hero-outer">
+      <div class="hero-sticky">
+        <div class="hero-overflow">
+          <div id="hero-step1" class="hero-step1">
+
+            <!-- Hero Left Panel -->
+            <div class="hero-left">
+              <nav class="hero-nav" id="hero-nav">
+                <ul class="hero-nav-list">
+                  <li class="hero-nav-item">
+                    <a href="#realisations" class="hero-nav-link">
+                      <span class="hero-nav-dot" style="background-color: var(--terra)"></span>
+                      <span>Réalisations</span>
+                    </a>
+                  </li>
+                  <li class="hero-nav-item">
+                    <a href="#services" class="hero-nav-link">
+                      <span class="hero-nav-dot" style="background-color: var(--green)"></span>
+                      <span>Services</span>
+                    </a>
+                  </li>
+                  <li class="hero-nav-item">
+                    <a href="#atelier" class="hero-nav-link">
+                      <span class="hero-nav-dot" style="background-color: var(--pink)"></span>
+                      <span>Atelier</span>
+                    </a>
+                  </li>
+                  <li class="hero-nav-item">
+                    <a href="#contact" class="hero-nav-link">
+                      <span class="hero-nav-dot" style="background-color: var(--blue)"></span>
+                      <span>Contact</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="hero-content">
+                <h1 class="hero-title" id="hero-title">
+                  <span class="hero-title-visual" aria-hidden="true">LESARTS</span>
+                  <span class="visually-hidden">Lesarts – Encadreur sur mesure et galerie d'art à Ixelles, Bruxelles</span>
+                </h1>
+                <p class="hero-desc" id="hero-desc">
+                  Maison spécialisée dans l'encadrement sur mesure à Ixelles.
+                  Nous sublimez vos œuvres, photos et affiches avec précision
+                  et passion, depuis notre atelier de la rue du Bailli.
+                </p>
+              </div>
+
+              <div class="hero-bottom">
+                <ul class="hero-social" id="hero-social">
+                  <li><a href="#" target="_blank" rel="noopener noreferrer" class="hero-social-link">Instagram</a></li>
+                  <li><a href="#" target="_blank" rel="noopener noreferrer" class="hero-social-link">Facebook</a></li>
+                  <li><a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="hero-social-link">lesartsprod.be</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Project Card 01 -->
+            <div class="project-card" id="hero-card-1" style="--card-bg: var(--terra)">
+              <a href="#" class="project-image-link">
+                <img
+                  src="../Images/encadrement/Cover2-mirrored.webp"
+                  alt="Encadrement sur mesure – Lesarts"
+                  class="project-image"
+                />
+              </a>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-year">2026</span>
+                  <div class="project-tags">
+                    <span class="project-category">Encadrement sur mesure</span>
+                    <span class="project-desc-text">Baguettes, passe-partout & protection UV</span>
+                  </div>
+                </div>
+                <div class="project-name-row">
+                  <span class="project-name">Encadrement</span>
+                  <span class="project-arrow">&#8599;</span>
+                  <span class="project-num">01</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 02 -->
+            <div class="project-card" id="hero-card-2" style="--card-bg: var(--green)">
+              <a href="#" class="project-image-link">
+                <img
+                  src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-01-58-39-utc.webp"
+                  alt="Galerie d'art – Lesarts"
+                  class="project-image"
+                />
+              </a>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-year">2025</span>
+                  <div class="project-tags">
+                    <span class="project-category">Galerie d'art</span>
+                    <span class="project-desc-text">Œuvres originales & artistes reconnus</span>
+                  </div>
+                </div>
+                <div class="project-name-row">
+                  <span class="project-name">Galerie</span>
+                  <span class="project-arrow">&#8599;</span>
+                  <span class="project-num">02</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 03 -->
+            <div class="project-card" id="hero-card-3" style="--card-bg: var(--blue)">
+              <a href="#" class="project-image-link">
+                <img
+                  src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-25-00-25-26-utc.webp"
+                  alt="Expositions temporaires – Lesarts"
+                  class="project-image"
+                />
+              </a>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-year">2024</span>
+                  <div class="project-tags">
+                    <span class="project-category">Exposition</span>
+                    <span class="project-desc-text">Artistes invités & vernissages</span>
+                  </div>
+                </div>
+                <div class="project-name-row">
+                  <span class="project-name">Exposition</span>
+                  <span class="project-arrow">&#8599;</span>
+                  <span class="project-num">03</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- .hero-step1 -->
+        </div><!-- .hero-overflow -->
+      </div><!-- .hero-sticky -->
+    </section>
+
+    <!-- ============================================
+         PROJECTS GALLERY — vertical image strip
+         ============================================ -->
+    <section id="gallery-outer" class="gallery-outer" aria-label="Réalisations">
+      <div class="gallery-sticky">
+
+        <!-- Left: vertical image strip -->
+        <div class="gallery-left">
+          <div id="gallery-strip" class="gallery-strip">
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/Cover2.webp" alt="Encadrement sur mesure d'une architecture" class="gallery-img" />
+              </div>
+            </a>
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-01-58-39-utc.webp" alt="Galerie d'art Lesarts" class="gallery-img" />
+              </div>
+            </a>
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp" alt="Exposition d'artistes" class="gallery-img" />
+              </div>
+            </a>
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="Conseil en encadrement" class="gallery-img" />
+              </div>
+            </a>
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="Réalisation encadrement" class="gallery-img" />
+              </div>
+            </a>
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-25-00-25-26-utc.webp" alt="Oeuvre encadrée sur mesure" class="gallery-img" />
+              </div>
+            </a>
+            <a href="#" class="gallery-card">
+              <div class="gallery-image-wrap">
+                <img src="../Images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="Affiche encadrée" class="gallery-img" />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Réalisations content -->
+        <div id="gallery-right" class="gallery-right">
+          <div class="gallery-right-inner">
+            <h2 class="gallery-heading" id="gallery-heading">
+              <span class="gallery-char-wrap"><span class="gallery-char">R</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">é</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">a</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">l</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">i</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">s</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">a</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">t</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">i</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">o</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">n</span></span>
+              <span class="gallery-char-wrap"><span class="gallery-char">s</span></span>
+            </h2>
+
+            <ul class="gallery-list">
+              <li class="gallery-list-item">
+                <a href="#" class="gallery-list-link">
+                  <span class="gallery-list-num-wrap"><span class="gallery-list-num">00</span></span>
+                  <span class="gallery-list-label-wrap"><span class="gallery-list-label">Encadrement de photos & affiches</span></span>
+                </a>
+                <div class="gallery-list-line"></div>
+              </li>
+              <li class="gallery-list-item">
+                <a href="#" class="gallery-list-link">
+                  <span class="gallery-list-num-wrap"><span class="gallery-list-num">01</span></span>
+                  <span class="gallery-list-label-wrap"><span class="gallery-list-label">Encadrement d'œuvres d'art</span></span>
+                </a>
+                <div class="gallery-list-line"></div>
+              </li>
+              <li class="gallery-list-item">
+                <a href="#" class="gallery-list-link">
+                  <span class="gallery-list-num-wrap"><span class="gallery-list-num">02</span></span>
+                  <span class="gallery-list-label-wrap"><span class="gallery-list-label">Galerie & expositions d'artistes</span></span>
+                </a>
+                <div class="gallery-list-line"></div>
+              </li>
+              <li class="gallery-list-item">
+                <a href="#" class="gallery-list-link">
+                  <span class="gallery-list-num-wrap"><span class="gallery-list-num">03</span></span>
+                  <span class="gallery-list-label-wrap"><span class="gallery-list-label">Conseil personnalisé & devis sur mesure</span></span>
+                </a>
+                <div class="gallery-list-line"></div>
+              </li>
+            </ul>
+
+            <div class="gallery-desc-wrap">
+              <p class="gallery-desc">
+                Chaque œuvre mérite un encadrement à sa mesure. Nous travaillons
+                avec vous pour choisir la baguette, le passe-partout et la
+                protection idéale — toujours sur mesure, jamais au hasard.
+              </p>
+            </div>
+
+            <div class="gallery-btn-wrap">
+              <a href="#" class="gallery-btn">
+                <span class="gallery-btn-label">Voir les réalisations</span>
+                <span class="gallery-btn-dot">
+                  <span class="gallery-btn-dot-inner"></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         EXPERTISES / SERVICES SECTION — swipe cards
+         ============================================ -->
+    <section id="services" class="expertises-section" aria-label="Nos services">
+      <div class="expertises-sticky">
+        <h2 class="expertises-heading" id="expertises-heading">Services</h2>
+
+        <div class="expertises-cards-container" id="expertises-cards">
+
+          <!-- Card 01 — Encadrement sur mesure (blue) -->
+          <div class="expertise-card" id="exp-card-0" style="--card-color: var(--blue); z-index: 4">
+            <div class="expertise-card-inner" id="exp-inner-0">
+              <div class="expertise-card-body">
+                <div class="expertise-card-text-col">
+                  <span class="expertise-card-num">01</span>
+                  <h3 class="expertise-card-title">Encadrement sur mesure</h3>
+                  <div class="expertise-card-tags">
+                    <span class="expertise-card-tag">/ Baguettes sur mesure</span>
+                    <span class="expertise-card-tag">/ Passe-partout</span>
+                    <span class="expertise-card-tag">/ Verre anti-reflet</span>
+                    <span class="expertise-card-tag">/ Montage soigné</span>
+                    <span class="expertise-card-tag">/ Protection UV</span>
+                    <span class="expertise-card-tag">/ Cadres standards</span>
+                  </div>
+                  <a href="#" class="expertise-card-btn">
+                    <span>Découvrir</span>
+                    <span class="expertise-card-btn-dot">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="3" fill="var(--white)" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+                <div class="expertise-card-image-col">
+                  <div class="expertise-card-image-wrap">
+                    <div class="expertise-card-image-bg"></div>
+                    <img src="../Images/encadrement/Cover2.webp" alt="Encadrement sur mesure Lesarts" class="expertise-card-img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 02 — Galerie d'art (pink) -->
+          <div class="expertise-card" id="exp-card-1" style="--card-color: var(--pink); z-index: 3">
+            <div class="expertise-card-inner" id="exp-inner-1">
+              <div class="expertise-card-body">
+                <div class="expertise-card-text-col">
+                  <span class="expertise-card-num">02</span>
+                  <h3 class="expertise-card-title">Galerie d'art</h3>
+                  <div class="expertise-card-tags">
+                    <span class="expertise-card-tag">/ Expositions permanentes</span>
+                    <span class="expertise-card-tag">/ Artistes reconnus</span>
+                    <span class="expertise-card-tag">/ Œuvres originales</span>
+                    <span class="expertise-card-tag">/ Tirages limités</span>
+                    <span class="expertise-card-tag">/ Lithographies</span>
+                    <span class="expertise-card-tag">/ Sculptures</span>
+                  </div>
+                  <a href="#" class="expertise-card-btn">
+                    <span>Découvrir</span>
+                    <span class="expertise-card-btn-dot">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="3" fill="var(--white)" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+                <div class="expertise-card-image-col">
+                  <div class="expertise-card-image-wrap">
+                    <div class="expertise-card-image-bg"></div>
+                    <img src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-01-58-39-utc.webp" alt="Galerie d'art Lesarts" class="expertise-card-img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 03 — Expositions temporaires (green) -->
+          <div class="expertise-card" id="exp-card-2" style="--card-color: var(--green); z-index: 2">
+            <div class="expertise-card-inner" id="exp-inner-2">
+              <div class="expertise-card-body">
+                <div class="expertise-card-text-col">
+                  <span class="expertise-card-num">03</span>
+                  <h3 class="expertise-card-title">Expositions temporaires</h3>
+                  <div class="expertise-card-tags">
+                    <span class="expertise-card-tag">/ Artistes invités</span>
+                    <span class="expertise-card-tag">/ Vernissages</span>
+                    <span class="expertise-card-tag">/ Commissariat artistique</span>
+                    <span class="expertise-card-tag">/ Scénographie</span>
+                    <span class="expertise-card-tag">/ Médiation culturelle</span>
+                    <span class="expertise-card-tag">/ Catalogue d'exposition</span>
+                  </div>
+                  <a href="#" class="expertise-card-btn">
+                    <span>Découvrir</span>
+                    <span class="expertise-card-btn-dot">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="3" fill="var(--white)" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+                <div class="expertise-card-image-col">
+                  <div class="expertise-card-image-wrap">
+                    <div class="expertise-card-image-bg"></div>
+                    <img src="../Images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp" alt="Expositions temporaires Lesarts" class="expertise-card-img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 04 — Conseil & devis (beige) -->
+          <div class="expertise-card" id="exp-card-3" style="--card-color: var(--beige); z-index: 1">
+            <div class="expertise-card-inner" id="exp-inner-3">
+              <div class="expertise-card-body">
+                <div class="expertise-card-text-col">
+                  <span class="expertise-card-num">04</span>
+                  <h3 class="expertise-card-title">Conseil & devis</h3>
+                  <div class="expertise-card-tags">
+                    <span class="expertise-card-tag">/ Consultation gratuite</span>
+                    <span class="expertise-card-tag">/ Devis sur mesure</span>
+                    <span class="expertise-card-tag">/ Conseil en décoration</span>
+                    <span class="expertise-card-tag">/ Suivi de commande</span>
+                    <span class="expertise-card-tag">/ Livraison possible</span>
+                    <span class="expertise-card-tag">/ Pose & installation</span>
+                  </div>
+                  <a href="#" class="expertise-card-btn">
+                    <span>Découvrir</span>
+                    <span class="expertise-card-btn-dot">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="3" fill="var(--white)" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+                <div class="expertise-card-image-col">
+                  <div class="expertise-card-image-wrap">
+                    <div class="expertise-card-image-bg"></div>
+                    <img src="../Images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="Conseil & devis Lesarts" class="expertise-card-img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- .expertises-cards-container -->
+
+        <!-- Bottom navigation bar -->
+        <nav class="expertises-nav" aria-label="Navigation services">
+          <div class="expertises-nav-list" id="expertises-nav-list">
+            <button class="expertises-nav-item is-active" data-exp-index="0" aria-label="Encadrement sur mesure">
+              <span class="expertises-nav-num">01</span>
+              <span class="expertises-nav-label">Encadrement sur mesure</span>
+            </button>
+            <button class="expertises-nav-item" data-exp-index="1" aria-label="Galerie d'art">
+              <span class="expertises-nav-num">02</span>
+              <span class="expertises-nav-label">Galerie d'art</span>
+            </button>
+            <button class="expertises-nav-item" data-exp-index="2" aria-label="Expositions temporaires">
+              <span class="expertises-nav-num">03</span>
+              <span class="expertises-nav-label">Expositions temporaires</span>
+            </button>
+            <button class="expertises-nav-item" data-exp-index="3" aria-label="Conseil & devis">
+              <span class="expertises-nav-num">04</span>
+              <span class="expertises-nav-label">Conseil & devis</span>
+            </button>
+          </div>
+          <div class="expertises-progress-bar">
+            <div class="expertises-progress-fill" id="expertises-progress"></div>
+          </div>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         HORIZONTAL GALLERY — scroll-driven
+         ============================================ -->
+    <section id="horiz-gallery" class="horiz-gallery" aria-label="Portfolio">
+      <div class="horiz-gallery-sticky">
+        <div id="horiz-gallery-track" class="horiz-gallery-track">
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-01-58-39-utc.webp" alt="Encadrement galerie" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Encadrement</span>
+                <span class="horiz-gallery-year">2025</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Collection Bleue</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp" alt="Exposition Entre Autre" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Exposition</span>
+                <span class="horiz-gallery-year">2025</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Entre Autre</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-25-00-25-26-utc.webp" alt="Galerie Moon Studio" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Galerie</span>
+                <span class="horiz-gallery-year">2024</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Moon Studio</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="Encadrement Maison Yokō" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Encadrement</span>
+                <span class="horiz-gallery-year">2024</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Maison Yokō</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="Exposition Avoriaz" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Exposition</span>
+                <span class="horiz-gallery-year">2023</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Paysages Alpins</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="Encadrement affiche" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Encadrement</span>
+                <span class="horiz-gallery-year">2023</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Grande Format</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-card">
+            <div class="horiz-gallery-image-wrap">
+              <img src="../Images/encadrement/colorful-angular-wooden-frame-edges-2026-03-10-03-08-28-utc.webp" alt="Réalisation sur mesure" class="horiz-gallery-img" />
+            </div>
+            <div class="horiz-gallery-info">
+              <div class="horiz-gallery-meta">
+                <span class="horiz-gallery-category">Sur mesure</span>
+                <span class="horiz-gallery-year">2022</span>
+              </div>
+              <div class="horiz-gallery-name-row">
+                <span class="horiz-gallery-name">Série Limitée</span>
+                <span class="horiz-gallery-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="horiz-gallery-cta">
+            <span class="horiz-gallery-cta-text">Voir toutes les réalisations</span>
+            <span class="horiz-gallery-cta-arrow">&#8599;</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ATELIER / AGENCY SECTION
+         ============================================ -->
+    <section id="atelier" class="agency-section" aria-labelledby="agency-heading">
+      <div class="agency-header">
+        <div class="agency-header-left">
+          <h2 class="agency-heading" id="agency-heading">Atelier</h2>
+        </div>
+        <div class="agency-intro-right">
+          <span class="agency-label">Ixelles, Bruxelles</span>
+          <p class="agency-intro-desc">
+            Nous chérissons chaque œuvre confiée. Votre vision, notre expertise :
+            ensemble, nous lui donnons le cadre qu'elle mérite. Depuis notre atelier
+            de la rue du Bailli, chaque réalisation est une histoire.
+          </p>
+          <a href="#" class="agency-btn">
+            <span class="agency-btn-label">Notre atelier</span>
+            <span class="agency-btn-dot">
+              <span class="agency-btn-dot-inner"></span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="agency-gallery">
+        <div class="agency-photo-wrap agency-photo-large">
+          <img
+            src="../Images/encadrement/wooden-background-with-vintage-style-picture-frame-2026-03-16-01-22-24-utc.webp"
+            alt="L'atelier Lesarts à Ixelles"
+            class="agency-photo agency-main-photo"
+          />
+        </div>
+
+        <div class="agency-gallery-right">
+          <div class="agency-photo-wrap">
+            <img src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-04-54-59-utc.webp" alt="Détail de l'atelier Lesarts" class="agency-photo" />
+          </div>
+          <div class="agency-photo-wrap">
+            <img src="../Images/encadrement/colorful-wooden-picture-frame-corners-variety-2026-03-10-04-49-00-utc.webp" alt="Atelier encadrement sur mesure" class="agency-photo" />
+          </div>
+          <div class="agency-photo-wrap">
+            <img src="../Images/encadrement/framing-workshop-many-different-samples-baguette-2026-03-13-04-23-51-utc.webp" alt="Baguettes et matériaux d'encadrement" class="agency-photo" />
+          </div>
+        </div>
+
+        <div class="agency-values-in-gallery">
+          <ul class="agency-values">
+            <li class="agency-value-item">
+              <span class="agency-value-title">Le détail fait la différence.</span>
+              <p class="agency-value-desc">
+                Chaque millimètre compte. Nous travaillons avec des matériaux d'exception
+                pour garantir un encadrement qui préserve et met en valeur votre œuvre dans le temps.
+              </p>
+            </li>
+            <li class="agency-value-item">
+              <span class="agency-value-title">L'art de mettre en valeur.</span>
+              <p class="agency-value-desc">
+                Encadrer, c'est créer un dialogue entre l'œuvre et son environnement.
+                Nous guidons ce choix avec sensibilité et expertise, pour que chaque cadre raconte une histoire.
+              </p>
+            </li>
+            <li class="agency-value-item">
+              <span class="agency-value-title">L'humain au cœur du métier.</span>
+              <p class="agency-value-desc">
+                Derrière chaque encadrement, il y a une histoire. Nous prenons le temps
+                de comprendre la vôtre avant de donner le premier coup de cutter.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
+    <section id="cta-section" class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-container">
+        <h2 class="cta-title" id="cta-title">
+          Donnez un cadre à ce qui vous est précieux.
+        </h2>
+        <a href="#contact" class="cta-btn">
+          <span class="cta-btn-label">Demander un devis</span>
+          <span class="cta-btn-dot">
+            <span class="cta-btn-dot-inner"></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer id="contact" class="footer">
+    <div class="footer-top">
+      <div class="footer-info-grid">
+        <div class="footer-info-col">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-address-link"
+          >
+            <p>Lesarts</p>
+            <p>Rue du Bailli 43</p>
+            <p>1050 Ixelles</p>
+            <p>Bruxelles, Belgique</p>
+          </a>
+        </div>
+
+        <div class="footer-info-col">
+          <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="footer-info-link">lesartsprod.be</a>
+          <span class="footer-info-link" style="opacity: 0.5; cursor: default;">Mer – Sam : 10h30 – 18h30</span>
+        </div>
+
+        <div class="footer-info-col">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Instagram</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Facebook</a>
+        </div>
+
+        <div class="footer-info-col">
+          <a href="#" class="footer-info-link">Mentions légales</a>
+          <span class="footer-copyright">Lesarts &copy; 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-big-letters" aria-hidden="true">LESARTS</div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS — CDN then local
+       ============================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

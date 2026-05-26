@@ -1,0 +1,184 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - generic [ref=e5]:
+        - link "O l i v e r V a n D r o o g e n b r o e c k" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: O
+          - generic [ref=e8]: l
+          - generic [ref=e9]: i
+          - generic [ref=e10]: v
+          - generic [ref=e11]: e
+          - generic [ref=e12]: r
+          - generic [ref=e14]: V
+          - generic [ref=e15]: a
+          - generic [ref=e16]: "n"
+          - generic [ref=e18]: D
+          - generic [ref=e19]: r
+          - generic [ref=e20]: o
+          - generic [ref=e21]: o
+          - generic [ref=e22]: g
+          - generic [ref=e23]: e
+          - generic [ref=e24]: "n"
+          - generic [ref=e25]: b
+          - generic [ref=e26]: r
+          - generic [ref=e27]: o
+          - generic [ref=e28]: e
+          - generic [ref=e29]: c
+          - generic [ref=e30]: k
+        - navigation [ref=e31]:
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - link "Work" [ref=e34] [cursor=pointer]:
+                - /url: "#work"
+                - text: Work
+            - listitem [ref=e35]:
+              - link "Services" [ref=e36] [cursor=pointer]:
+                - /url: "#services"
+                - text: Services
+            - listitem [ref=e37]:
+              - link "Products" [ref=e38] [cursor=pointer]:
+                - /url: "#products"
+                - text: Products
+            - listitem [ref=e39]:
+              - link "Steps" [ref=e40] [cursor=pointer]:
+                - /url: "#process"
+                - text: Steps
+            - listitem [ref=e41]:
+              - link "FAQ" [ref=e42] [cursor=pointer]:
+                - /url: "#faq"
+                - text: FAQ
+        - generic [ref=e43]:
+          - button "Switch to dark mode" [ref=e45] [cursor=pointer]:
+            - img [ref=e46]
+            - img [ref=e56]
+          - generic [ref=e59]:
+            - button "EN" [ref=e60] [cursor=pointer]
+            - button "FR" [ref=e61] [cursor=pointer]
+          - button "Contact" [ref=e62] [cursor=pointer]:
+            - generic [ref=e64]: Contact
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - heading "W o r k" [level=2]:
+                - generic: W
+                - generic: o
+                - generic: r
+                - generic: k
+              - generic:
+                - link "Annick":
+                  - /url: /projects/annick
+                  - img "Annick"
+                - link "Fanal":
+                  - /url: /projects/fanal
+                  - img "Fanal"
+                - link "Le Noyer":
+                  - /url: /projects/lenoyer
+                  - img "Le Noyer"
+                - link "OVNI":
+                  - /url: /projects/ovni-compta
+                  - img "OVNI"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - textbox
+                  - generic:
+                    - generic: Name
+                    - textbox "Name"
+                  - generic:
+                    - generic: Subject
+                    - combobox "Subject":
+                      - option "Select a subject" [selected]
+                      - option "First contact"
+                      - option "Quote request"
+                      - option "Collaboration proposal"
+                      - option "Job offer"
+                      - option "Technical question"
+                      - option "Other"
+                  - generic:
+                    - generic: Message
+                    - textbox "Message"
+                  - button "Send arrow":
+                    - generic:
+                      - paragraph: Send
+                      - generic:
+                        - img "arrow"
+              - heading "C o n t a c t" [level=2]:
+                - generic: C
+                - generic: o
+                - generic: "n"
+                - generic: t
+                - generic: a
+                - generic: c
+                - generic: t
+      - generic [ref=e65]:
+        - img "background" [ref=e67]
+        - generic [ref=e70]:
+          - generic:
+            - heading "Shapping Ideas Ideas Concepts Concepts Designs Designs Projects Projects Creations Creations" [level=1]:
+              - text: Shapping
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Ideas"
+                    - generic: Ideas
+                  - generic:
+                    - img "Concepts"
+                    - generic: Concepts
+                  - generic:
+                    - img "Designs"
+                    - generic: Designs
+                  - generic:
+                    - img "Projects"
+                    - generic: Projects
+                  - generic:
+                    - img "Creations"
+                    - generic: Creations
+            - heading "into concrete solutions" [level=1]
+            - heading [level=1]
+          - paragraph: Based in Brussels, I turn your ideas into striking showcase websites, interactive web platforms or full-featured management apps, designed to simplify your day-to-day.
+          - link "See My Work arrow" [ref=e71] [cursor=pointer]:
+            - /url: "#work"
+            - generic [ref=e72]:
+              - paragraph [ref=e74]: See My Work
+              - img "arrow" [ref=e76]
+      - generic [ref=e79]:
+        - generic [ref=e81]: Explore the details of each project
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - 'link "Annick Van Endert : Where Art Meets the Web Annick Van Endert : Where Art Meets the Web A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist." [ref=e84] [cursor=pointer]':
+              - /url: /projects/annick
+              - 'img "Annick Van Endert : Where Art Meets the Web" [ref=e86]'
+              - generic [ref=e87]:
+                - 'heading "Annick Van Endert : Where Art Meets the Web" [level=2] [ref=e88]'
+                - paragraph [ref=e89]: A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist.
+            - 'link "OVNI Compta : Custom accounting app for a Belgian NGO OVNI Compta : Custom accounting app for a Belgian NGO A tailor-made web app to manage finances, members, and projects" [ref=e90] [cursor=pointer]':
+              - /url: /projects/ovni-compta
+              - 'img "OVNI Compta : Custom accounting app for a Belgian NGO" [ref=e92]'
+              - generic [ref=e93]:
+                - 'heading "OVNI Compta : Custom accounting app for a Belgian NGO" [level=2] [ref=e94]'
+                - paragraph [ref=e95]: A tailor-made web app to manage finances, members, and projects
+          - generic [ref=e96]:
+            - 'link "Le Fanal des Chats : Custom platform for an animal shelter Le Fanal des Chats : Custom platform for an animal shelter A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations" [ref=e97] [cursor=pointer]':
+              - /url: /projects/fanal
+              - 'img "Le Fanal des Chats : Custom platform for an animal shelter" [ref=e99]'
+              - generic [ref=e100]:
+                - 'heading "Le Fanal des Chats : Custom platform for an animal shelter" [level=2] [ref=e101]'
+                - paragraph [ref=e102]: A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations
+            - 'link "Le Noyer : Professional website for a medical center Le Noyer : Professional website for a medical center A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously" [ref=e103] [cursor=pointer]':
+              - /url: /projects/lenoyer
+              - 'img "Le Noyer : Professional website for a medical center" [ref=e105]'
+              - generic [ref=e106]:
+                - 'heading "Le Noyer : Professional website for a medical center" [level=2] [ref=e107]'
+                - paragraph [ref=e108]: A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously
+            - link "Portfolio Website Portfolio Website An animated portfolio website showcasing my work." [ref=e109] [cursor=pointer]:
+              - /url: /projects/portfolio
+              - img "Portfolio Website" [ref=e111]
+              - generic [ref=e112]:
+                - heading "Portfolio Website" [level=2] [ref=e113]
+                - paragraph [ref=e114]: An animated portfolio website showcasing my work.
+    - button "Scroll to top":
+      - img "Scroll to top"
+  - alert [ref=e122]

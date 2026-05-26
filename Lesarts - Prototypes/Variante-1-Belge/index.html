@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lesarts — Galerie d'art et atelier d'encadrement sur mesure à Bruxelles. Artisanat belge depuis 1998." />
+  <meta name="theme-color" content="#FAFAFA" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lesarts — Galerie & Atelier d'encadrement · Bruxelles" />
+  <meta property="og:description" content="Encadrements sur mesure, artisanat belge depuis 1998. Chaque œuvre mérite un écrin parfait." />
+  <meta property="og:type" content="website" />
+
+  <title>Lesarts — Galerie & Atelier d'encadrement · Bruxelles</title>
+
+  <!-- Cormorant Garamond — editorial display serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- GSAP core + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="v1-preloader" class="v1-preloader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Chargement en cours">
+    <div class="v1-preloader__inner">
+      <span class="v1-preloader__wordmark">Lesarts</span>
+      <div class="v1-preloader__track">
+        <div class="v1-preloader__fill" id="v1-fill"></div>
+      </div>
+      <span class="v1-preloader__pct" id="v1-pct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- ============================================================
+       NAVIGATION — transparent overlay
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="site-nav" aria-label="Navigation principale">
+
+      <!-- Logo -->
+      <a href="/" class="site-nav__logo" aria-label="Lesarts — Accueil">Lesarts</a>
+
+      <!-- Desktop centre links -->
+      <ul class="site-nav__links" role="list">
+        <li><a href="#galerie" class="site-nav__link"><span class="u-underline">Galerie</span></a></li>
+        <li><a href="#services" class="site-nav__link"><span class="u-underline">Services</span></a></li>
+        <li><a href="#apropos" class="site-nav__link"><span class="u-underline">À propos</span></a></li>
+      </ul>
+
+      <!-- Right actions -->
+      <div class="site-nav__actions">
+        <div class="site-nav__lang" role="group" aria-label="Choix de langue">
+          <button class="site-nav__lang-btn site-nav__lang-btn--active" aria-pressed="true" lang="fr">FR</button>
+          <span class="site-nav__lang-sep" aria-hidden="true">/</span>
+          <button class="site-nav__lang-btn" aria-pressed="false" lang="nl">NL</button>
+        </div>
+        <a href="#contact" class="site-nav__rdv"><span class="u-underline">Prendre RDV →</span></a>
+        <button class="site-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="sidebar-nav">
+          <span class="site-nav__burger-label" aria-hidden="true">Menu</span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       SIDEBAR MENU
+  ============================================================ -->
+  <div class="sidebar-nav" id="sidebar-nav" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+    <div class="sidebar-nav__backdrop"></div>
+    <div class="sidebar-nav__panel">
+      <button class="sidebar-nav__close" aria-label="Fermer le menu">×</button>
+      <nav aria-label="Navigation principale mobile">
+        <ul class="sidebar-nav__links" role="list">
+          <li><a href="#galerie" class="sidebar-nav__link">Galerie</a></li>
+          <li><a href="#services" class="sidebar-nav__link">Services</a></li>
+          <li><a href="#boutique" class="sidebar-nav__link">Boutique</a></li>
+          <li><a href="#apropos" class="sidebar-nav__link">À propos</a></li>
+          <li><a href="#contact" class="sidebar-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-nav__footer">
+        <p class="sidebar-nav__address">Rue du Bailli 47 · Ixelles · Bruxelles</p>
+        <div class="sidebar-nav__lang" role="group" aria-label="Choix de langue">
+          <button class="site-nav__lang-btn site-nav__lang-btn--active" lang="fr">FR</button>
+          <span aria-hidden="true">/</span>
+          <button class="site-nav__lang-btn" lang="nl">NL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. HERO — full-bleed, text bottom-left
+    ============================================================ -->
+    <section class="hero" aria-label="Bienvenue chez Lesarts">
+
+      <div class="hero__media">
+        <img
+          src="../Images/encadrement/cover3-extended.webp"
+          alt="Atelier d'encadrement artisanal — Lesarts Bruxelles"
+          class="hero__img"
+          fetchpriority="high"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Galerie &amp; Atelier · Bruxelles</span>
+        <h1 class="hero__title">L'art de cadrer<br />ce qui compte.</h1>
+        <a href="#galerie" class="text-link text-link--white">Découvrir nos réalisations →</a>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         2. CRAFT — split: image left, text right
+    ============================================================ -->
+    <section class="craft" aria-labelledby="craft-title">
+
+      <div class="craft__media">
+        <img
+          src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-01-58-39-utc.webp"
+          alt="Artisan encadreur au travail — atelier Lesarts"
+          class="craft__img"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="craft__content">
+        <span class="eyebrow">Artisanat belge depuis 1998</span>
+        <h2 class="craft__title" id="craft-title">Chaque œuvre mérite un écrin à sa mesure.</h2>
+        <p class="craft__text">
+          Fondé au cœur d'Ixelles, Lesarts accompagne collectionneurs, galeries et particuliers dans la mise en valeur de leurs œuvres depuis plus de vingt-cinq ans. Notre atelier allie techniques traditionnelles et matériaux d'exception.
+        </p>
+        <a href="#apropos" class="text-link">Découvrir l'atelier →</a>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         3. STATEMENT — centred editorial paragraph
+    ============================================================ -->
+    <section class="statement" aria-label="Notre engagement">
+      <div class="statement__inner">
+        <p class="statement__text">
+          Lesarts croit au pouvoir de la présentation. Chaque encadrement est une décision, chaque choix une affirmation de ce que l'on chérit — et de la manière dont on choisit de s'en souvenir.
+        </p>
+        <a href="#services" class="text-link">Nos services →</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. GALLERY — horizontal card slider
+    ============================================================ -->
+    <section class="gallery" id="galerie" aria-labelledby="gallery-title">
+
+      <div class="gallery__header">
+        <h2 class="section-label" id="gallery-title">Nos réalisations</h2>
+        <div class="gallery__controls" aria-label="Contrôles de la galerie">
+          <button class="gallery__arrow gallery__arrow--prev" aria-label="Précédent">←</button>
+          <span class="gallery__pagination" aria-live="polite" aria-atomic="true">1 / 2</span>
+          <button class="gallery__arrow gallery__arrow--next" aria-label="Suivant">→</button>
+        </div>
+      </div>
+
+      <div class="gallery__viewport">
+        <ul class="gallery__track" role="list">
+
+          <li class="gallery__card" role="listitem">
+            <div class="gallery__card-img-wrap">
+              <img src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-25-00-25-26-utc.webp" alt="Cadres en bois exposés en boutique" class="gallery__card-img" loading="lazy" />
+            </div>
+            <div class="gallery__card-info">
+              <span class="gallery__card-cat">Peinture</span>
+              <h3 class="gallery__card-title">Huile sur toile</h3>
+              <p class="gallery__card-detail">Cadre chêne naturel · Passe-partout blanc</p>
+              <a href="#" class="text-link">Explorer →</a>
+            </div>
+          </li>
+
+          <li class="gallery__card" role="listitem">
+            <div class="gallery__card-img-wrap">
+              <img src="../Images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="Échantillons colorés d'angles de cadres" class="gallery__card-img" loading="lazy" />
+            </div>
+            <div class="gallery__card-info">
+              <span class="gallery__card-cat">Aquarelle</span>
+              <h3 class="gallery__card-title">Aquarelle sur papier</h3>
+              <p class="gallery__card-detail">Cadre noir mat · Verre museum anti-reflet</p>
+              <a href="#" class="text-link">Explorer →</a>
+            </div>
+          </li>
+
+          <li class="gallery__card" role="listitem">
+            <div class="gallery__card-img-wrap">
+              <img src="../Images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp" alt="Variété d'échantillons de cadres décoratifs" class="gallery__card-img" loading="lazy" />
+            </div>
+            <div class="gallery__card-info">
+              <span class="gallery__card-cat">Photographie</span>
+              <h3 class="gallery__card-title">Tirage argentique</h3>
+              <p class="gallery__card-detail">Cadre aluminium brossé · Conservation archivale</p>
+              <a href="#" class="text-link">Explorer →</a>
+            </div>
+          </li>
+
+          <li class="gallery__card" role="listitem">
+            <div class="gallery__card-img-wrap">
+              <img src="../Images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-04-54-59-utc.webp" alt="Atelier d'encadrement artisanal — fabrication de baguettes" class="gallery__card-img" loading="lazy" />
+            </div>
+            <div class="gallery__card-info">
+              <span class="gallery__card-cat">Gravure</span>
+              <h3 class="gallery__card-title">Gravure ancienne</h3>
+              <p class="gallery__card-detail">Cadre doré à la feuille · XIXe siècle</p>
+              <a href="#" class="text-link">Explorer →</a>
+            </div>
+          </li>
+
+          <li class="gallery__card" role="listitem">
+            <div class="gallery__card-img-wrap">
+              <img src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-21-35-00-utc.webp" alt="Cadres en bois sur mur de boutique" class="gallery__card-img" loading="lazy" />
+            </div>
+            <div class="gallery__card-info">
+              <span class="gallery__card-cat">Art contemporain</span>
+              <h3 class="gallery__card-title">Acrylique sur toile</h3>
+              <p class="gallery__card-detail">Caisse américaine · Chêne fumé</p>
+              <a href="#" class="text-link">Explorer →</a>
+            </div>
+          </li>
+
+          <li class="gallery__card" role="listitem">
+            <div class="gallery__card-img-wrap">
+              <img src="../Images/encadrement/colorful-wooden-picture-frame-corners-variety-2026-03-10-04-49-00-utc.webp" alt="Variété de coins de cadres en bois colorés" class="gallery__card-img" loading="lazy" />
+            </div>
+            <div class="gallery__card-info">
+              <span class="gallery__card-cat">Dessin</span>
+              <h3 class="gallery__card-title">Dessin au fusain</h3>
+              <p class="gallery__card-detail">Baguette noyer · Passe-partout chanvre</p>
+              <a href="#" class="text-link">Explorer →</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         5. SERVICES — numbered editorial list
+    ============================================================ -->
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="services__inner">
+
+        <div class="services__header">
+          <h2 class="section-label" id="services-title">Ce que nous faisons</h2>
+        </div>
+
+        <div class="services__list">
+
+          <article class="service-row">
+            <div class="service-row__meta">
+              <span class="service-row__num">01</span>
+              <h3 class="service-row__title">Encadrement<br />sur mesure</h3>
+            </div>
+            <div class="service-row__body">
+              <p class="service-row__text">
+                Chaque encadrement est réalisé à la main dans notre atelier bruxellois. Baguettes en bois massif, passe-partout sur mesure, verres museum — pour une finition irréprochable.
+              </p>
+              <a href="#contact" class="text-link">En savoir plus →</a>
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-row__meta">
+              <span class="service-row__num">02</span>
+              <h3 class="service-row__title">Galerie<br />d'art</h3>
+            </div>
+            <div class="service-row__body">
+              <p class="service-row__text">
+                Découvrez notre sélection d'œuvres originales : peintures, gravures, photographies d'art. Nous travaillons avec des artistes belges émergents et établis.
+              </p>
+              <a href="#galerie" class="text-link">Voir les œuvres →</a>
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-row__meta">
+              <span class="service-row__num">03</span>
+              <h3 class="service-row__title">Conservation<br />&amp; restauration</h3>
+            </div>
+            <div class="service-row__body">
+              <p class="service-row__text">
+                Préservez vos œuvres pour les générations futures. Nettoyage, consolidation, rentoilage — nos techniciens traitent toiles, papiers et photographies avec le plus grand soin.
+              </p>
+              <a href="#contact" class="text-link">Nous contacter →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. ABOUT — full-bleed image + editorial text
+    ============================================================ -->
+    <section class="about" id="apropos" aria-labelledby="about-title">
+
+      <div class="about__image-block">
+        <img
+          src="../Images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-23-03-35-utc.webp"
+          alt="L'atelier Lesarts — collection de cadres, Bruxelles"
+          class="about__img"
+          loading="lazy"
+        />
+        <span class="about__img-caption" aria-hidden="true">Atelier · Rue du Bailli · Ixelles · Bruxelles</span>
+      </div>
+
+      <div class="about__content">
+
+        <div class="about__text-col">
+          <span class="eyebrow">Depuis 1998</span>
+          <h2 class="about__title" id="about-title">Notre histoire</h2>
+          <p class="about__text">
+            Fondé en 1998 au cœur d'Ixelles, Lesarts est né de la passion d'un artisan belge pour le beau travail. Depuis plus de vingt-cinq ans, nous accompagnons collectionneurs, galeries et particuliers dans la mise en valeur de leurs œuvres. Notre atelier allie techniques traditionnelles et matériaux d'exception.
+          </p>
+        </div>
+
+        <div class="about__data-col">
+          <dl class="about__stats">
+            <div class="about__stat">
+              <dd class="about__stat-val">25</dd>
+              <dt class="about__stat-label">Ans d'expérience</dt>
+            </div>
+            <div class="about__stat">
+              <dd class="about__stat-val">5 000+</dd>
+              <dt class="about__stat-label">Encadrements réalisés</dt>
+            </div>
+            <div class="about__stat">
+              <dd class="about__stat-val">3</dd>
+              <dt class="about__stat-label">Artisans experts</dt>
+            </div>
+          </dl>
+          <a href="#contact" class="text-link">Prendre rendez-vous →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. CONTACT — newsletter + info
+    ============================================================ -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-section__grid">
+
+        <div class="contact-newsletter">
+          <span class="eyebrow">Restez inspiré</span>
+          <h2 class="contact-newsletter__title" id="contact-title">Notre lettre<br />d'information</h2>
+          <p class="contact-newsletter__text">
+            Conseils d'encadrement, nouvelles acquisitions et offres exclusives.
+          </p>
+          <form class="nl-form" action="#" method="post" novalidate aria-label="Inscription à la newsletter">
+            <label for="nl-email" class="nl-form__label">Votre adresse e-mail</label>
+            <div class="nl-form__row">
+              <input
+                type="email"
+                id="nl-email"
+                name="email"
+                class="nl-form__input"
+                placeholder="votre@email.com"
+                required
+                autocomplete="email"
+                aria-required="true"
+              />
+              <button type="submit" class="nl-form__submit">S'inscrire →</button>
+            </div>
+            <p class="nl-form__hint">Pas de spam. Désinscription en un clic.</p>
+            <div class="nl-form__feedback" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3 class="contact-info__title">Nous rendre visite</h3>
+          <address class="contact-info__address">
+            <p>Rue du Bailli 47<br />1050 Ixelles, Bruxelles</p>
+            <p><a href="mailto:info@lesarts.be" class="text-link">info@lesarts.be →</a></p>
+            <p><a href="tel:+3225001234" class="text-link">+32 2 500 12 34 →</a></p>
+          </address>
+          <dl class="contact-info__hours">
+            <div class="contact-info__hours-row">
+              <dt>Lun – Ven</dt>
+              <dd>9h – 18h</dd>
+            </div>
+            <div class="contact-info__hours-row">
+              <dt>Samedi</dt>
+              <dd>10h – 16h</dd>
+            </div>
+            <div class="contact-info__hours-row">
+              <dt>Dimanche</dt>
+              <dd>Fermé</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__top">
+
+        <div class="site-footer__brand">
+          <a href="/" class="site-footer__logo">Lesarts</a>
+          <p class="site-footer__tagline">Galerie &amp; Atelier d'encadrement<br />Bruxelles, depuis 1998</p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Navigation secondaire">
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">Services</h3>
+            <ul role="list">
+              <li><a href="#services">Encadrement sur mesure</a></li>
+              <li><a href="#galerie">Galerie d'art</a></li>
+              <li><a href="#services">Conservation</a></li>
+              <li><a href="#">Boutique en ligne</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">À propos</h3>
+            <ul role="list">
+              <li><a href="#apropos">Notre histoire</a></li>
+              <li><a href="#">Avis clients</a></li>
+              <li><a href="#contact">Contact &amp; horaires</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__nav-col">
+            <h3 class="site-footer__nav-title">Légal</h3>
+            <ul role="list">
+              <li><a href="#">Mentions légales</a></li>
+              <li><a href="#">Confidentialité</a></li>
+              <li><a href="#">CGV</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="site-footer__social-block">
+          <h3 class="site-footer__nav-title">Suivez-nous</h3>
+          <ul class="site-footer__social-list" role="list">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">&copy; 2026 Lesarts SPRL · TVA BE 0123.456.789 · Tous droits réservés</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

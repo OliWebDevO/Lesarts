@@ -1,0 +1,15 @@
+[    3611ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/frame-detail-1/400/300:0
+[    3611ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/artwork-frame-3/400/300:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/atelier-interior/400/300:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/atelier-interior/800/600:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/gallery-art-1/600/450:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/frame-product-1/400/300:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/frame-detail-1/600/450:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/gallery-art-1/400/300:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/gallery-art-2/400/300:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/gallery-wall-3/400/300:0
+[    3612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/gallery-wall-3/600/450:0
+[    3613ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/artwork-frame-2/400/300:0
+[    3613ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/gallery-art-2/600/450:0
+[    3613ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/artwork-frame-2/600/450:0
+[    3613ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://picsum.photos/seed/artwork-frame-3/600/450:0

@@ -1,0 +1,447 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation "Navigation principale" [ref=e4]:
+      - generic [ref=e5]:
+        - link "Les Arts — Accueil" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e11]: Les Arts
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link "Galerie" [ref=e14] [cursor=pointer]:
+              - /url: "#galerie"
+          - listitem [ref=e15]:
+            - link "Services" [ref=e16] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e17]:
+            - link "Boutique" [ref=e18] [cursor=pointer]:
+              - /url: "#boutique"
+          - listitem [ref=e19]:
+            - link "À propos" [ref=e20] [cursor=pointer]:
+              - /url: "#apropos"
+          - listitem [ref=e21]:
+            - link "Contact" [ref=e22] [cursor=pointer]:
+              - /url: "#contact"
+        - generic [ref=e23]:
+          - group "Choix de langue" [ref=e24]:
+            - button "FR" [pressed] [ref=e25] [cursor=pointer]
+            - generic [ref=e26]: /
+            - button "NL" [ref=e27] [cursor=pointer]
+          - link "Prendre RDV" [ref=e28] [cursor=pointer]:
+            - /url: "#contact"
+  - main [ref=e29]:
+    - region "Bienvenue chez Les Arts" [ref=e30]:
+      - img [ref=e32]
+      - generic [ref=e34]:
+        - paragraph [ref=e35]: Galerie & Atelier d'encadrement · Bruxelles
+        - heading "L'art de cadrer ce qui compte." [level=1] [ref=e36]:
+          - text: L'art de cadrer
+          - text: ce qui compte.
+        - paragraph [ref=e37]: Encadrements sur mesure, artisanat belge depuis 1998. Chaque œuvre mérite un écrin parfait.
+        - list "Nos engagements" [ref=e38]:
+          - listitem [ref=e39]:
+            - generic [ref=e40]: ✦
+            - text: Artisanat belge
+          - listitem [ref=e41]:
+            - generic [ref=e42]: ✦
+            - text: Sur mesure
+          - listitem [ref=e43]:
+            - generic [ref=e44]: ✦
+            - text: Livraison gratuite dès 75€
+        - generic [ref=e45]:
+          - link "Configurer mon cadre" [ref=e46] [cursor=pointer]:
+            - /url: "#boutique"
+            - text: Configurer mon cadre
+            - img [ref=e47]
+          - link "Voir les réalisations" [ref=e49] [cursor=pointer]:
+            - /url: "#galerie"
+    - region "Nos chiffres clés" [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - img [ref=e53]
+          - generic [ref=e55]:
+            - strong [ref=e56]: 4.9/5
+            - generic [ref=e57]: 230+ avis Google
+        - generic [ref=e59]:
+          - img [ref=e60]
+          - generic [ref=e62]:
+            - strong [ref=e63]: 25 ans
+            - generic [ref=e64]: d'expertise
+        - generic [ref=e66]:
+          - img [ref=e67]
+          - generic [ref=e71]:
+            - strong [ref=e72]: Artisanat
+            - generic [ref=e73]: belge 🇧🇪
+        - generic [ref=e75]:
+          - img [ref=e76]
+          - generic [ref=e79]:
+            - strong [ref=e80]: Livraison offerte
+            - generic [ref=e81]: dès 75€
+    - region "Nos services" [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - paragraph [ref=e85]: Ce que nous faisons
+          - heading "Nos services" [level=2] [ref=e86]
+          - paragraph [ref=e88]: Un savoir-faire complet pour mettre votre art en valeur
+        - generic [ref=e89]:
+          - article [ref=e90]:
+            - img [ref=e92]
+            - heading "Encadrement sur mesure" [level=3] [ref=e97]
+            - paragraph [ref=e98]: Chaque encadrement est réalisé à la main dans notre atelier bruxellois. Baguettes en bois massif, passe-partout sur mesure, verres museum — pour une finition irréprochable.
+            - link "En savoir plus sur l'encadrement sur mesure" [ref=e99] [cursor=pointer]:
+              - /url: "#boutique"
+              - text: En savoir plus
+              - img [ref=e100]
+          - article [ref=e102]:
+            - img [ref=e104]
+            - heading "Galerie d'art" [level=3] [ref=e109]
+            - paragraph [ref=e110]: "Découvrez notre sélection d'œuvres originales : peintures, gravures, photographies d'art. Nous travaillons avec des artistes belges émergents et établis."
+            - link "En savoir plus sur la galerie d'art" [ref=e111] [cursor=pointer]:
+              - /url: "#galerie"
+              - text: En savoir plus
+              - img [ref=e112]
+          - article [ref=e114]:
+            - img [ref=e116]
+            - heading "Conservation & restauration" [level=3] [ref=e120]
+            - paragraph [ref=e121]: Préservez vos œuvres pour les générations futures. Nettoyage, consolidation, rentoilage — nos techniciens traitent toiles, papiers et photographies avec le plus grand soin.
+            - link "En savoir plus sur la conservation et restauration" [ref=e122] [cursor=pointer]:
+              - /url: "#contact"
+              - text: En savoir plus
+              - img [ref=e123]
+    - region "Nos réalisations" [ref=e125]:
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - paragraph [ref=e128]: Portfolio
+          - heading "Nos réalisations" [level=2] [ref=e129]
+          - paragraph [ref=e130]: Quelques encadrements réalisés avec soin
+        - list "Galerie de réalisations" [ref=e131]:
+          - listitem [ref=e132]:
+            - generic [ref=e133]:
+              - img "Encadrement d'une huile sur toile dans un cadre en chêne" [ref=e134]
+              - paragraph [ref=e136]: Huile sur toile · Cadre chêne
+          - listitem [ref=e137]:
+            - generic [ref=e138]:
+              - img "Encadrement d'une œuvre abstraite dans un cadre noir mat" [ref=e139]
+              - paragraph [ref=e141]: Acrylique · Cadre noir mat
+          - listitem [ref=e142]:
+            - generic [ref=e143]:
+              - img "Photographie encadrée avec passe-partout blanc" [ref=e144]
+              - paragraph [ref=e146]: Photographie argentique · Passe-partout blanc
+          - listitem [ref=e147]:
+            - generic [ref=e148]:
+              - img "Gravure ancienne encadrée dans un cadre doré" [ref=e149]
+              - paragraph [ref=e151]: Gravure ancienne · Cadre doré
+          - listitem [ref=e152]:
+            - generic [ref=e153]:
+              - img "Aquarelle encadrée avec verre museum anti-reflet" [ref=e154]
+              - paragraph [ref=e156]: Aquarelle · Verre museum anti-reflet
+          - listitem [ref=e157]:
+            - generic [ref=e158]:
+              - img "Œuvre contemporaine encadrée avec baguette en noyer" [ref=e159]
+              - paragraph [ref=e161]: Œuvre contemporaine · Baguette noyer
+        - link "Voir toutes nos réalisations" [ref=e163] [cursor=pointer]:
+          - /url: "#"
+          - text: Voir toutes nos réalisations
+          - img [ref=e164]
+    - region "Comment ça marche ?" [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - paragraph [ref=e169]: Simple & rapide
+          - heading "Comment ça marche ?" [level=2] [ref=e170]
+        - list "Étapes du processus de commande" [ref=e172]:
+          - listitem [ref=e173]:
+            - generic [ref=e174]: "01"
+            - img [ref=e176]
+            - heading "Choisissez" [level=3] [ref=e179]
+            - paragraph [ref=e180]: Sélectionnez votre baguette, passe-partout et finition parmi notre catalogue de 500+ options.
+          - listitem [ref=e182]:
+            - generic [ref=e183]: "02"
+            - img [ref=e185]
+            - heading "Mesurez" [level=3] [ref=e189]
+            - paragraph [ref=e190]: Indiquez les dimensions exactes de votre œuvre. Nous vous guidons étape par étape.
+          - listitem [ref=e192]:
+            - generic [ref=e193]: "03"
+            - img [ref=e195]
+            - heading "Commandez" [level=3] [ref=e201]
+            - paragraph [ref=e202]: Validez votre commande en ligne ou venez en atelier. Paiement sécurisé, facture immédiate.
+          - listitem [ref=e204]:
+            - generic [ref=e205]: "04"
+            - img [ref=e207]
+            - heading "Recevez" [level=3] [ref=e211]
+            - paragraph [ref=e212]: Votre cadre est livré chez vous sous 5 à 7 jours ouvrables, soigneusement emballé.
+    - region "Nos cadres populaires" [ref=e213]:
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - paragraph [ref=e216]: Boutique
+          - heading "Nos cadres populaires" [level=2] [ref=e217]
+          - paragraph [ref=e219]: Qualité artisanale, prix transparents
+        - generic [ref=e220]:
+          - article [ref=e221]:
+            - generic [ref=e222]:
+              - img "Cadre en chêne naturel — finition mat" [ref=e223]
+              - generic [ref=e224]: Bestseller
+            - generic [ref=e225]:
+              - heading "Cadre Chêne Naturel" [level=3] [ref=e226]
+              - paragraph [ref=e227]:
+                - text: À partir de
+                - strong [ref=e228]: 45 €
+              - link "Configurer le Cadre Chêne Naturel" [ref=e229] [cursor=pointer]:
+                - /url: "#"
+                - text: Configurer
+                - img [ref=e230]
+          - article [ref=e232]:
+            - img "Cadre noir mat — design contemporain" [ref=e234]
+            - generic [ref=e235]:
+              - heading "Cadre Noir Mat" [level=3] [ref=e236]
+              - paragraph [ref=e237]:
+                - text: À partir de
+                - strong [ref=e238]: 38 €
+              - link "Configurer le Cadre Noir Mat" [ref=e239] [cursor=pointer]:
+                - /url: "#"
+                - text: Configurer
+                - img [ref=e240]
+          - article [ref=e242]:
+            - generic [ref=e243]:
+              - img "Cadre doré classique — finition or brossé" [ref=e244]
+              - generic [ref=e245]: Nouveau
+            - generic [ref=e246]:
+              - heading "Cadre Doré Classique" [level=3] [ref=e247]
+              - paragraph [ref=e248]:
+                - text: À partir de
+                - strong [ref=e249]: 62 €
+              - link "Configurer le Cadre Doré Classique" [ref=e250] [cursor=pointer]:
+                - /url: "#"
+                - text: Configurer
+                - img [ref=e251]
+          - article [ref=e253]:
+            - img "Cadre noyer foncé — bois massif" [ref=e255]
+            - generic [ref=e256]:
+              - heading "Cadre Noyer Foncé" [level=3] [ref=e257]
+              - paragraph [ref=e258]:
+                - text: À partir de
+                - strong [ref=e259]: 55 €
+              - link "Configurer le Cadre Noyer Foncé" [ref=e260] [cursor=pointer]:
+                - /url: "#"
+                - text: Configurer
+                - img [ref=e261]
+    - region "Ce que disent nos clients" [ref=e263]:
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - paragraph [ref=e266]: Ils nous font confiance
+          - heading "Ce que disent nos clients" [level=2] [ref=e267]
+        - generic [ref=e269]:
+          - blockquote [ref=e270]:
+            - 'generic "Note : 5 étoiles sur 5" [ref=e271]':
+              - img [ref=e272]
+            - paragraph [ref=e278]: “ "Un travail absolument remarquable. Mon triptyque est maintenant magnifiquement encadré, les baguettes en chêne s'accordent parfaitement avec les teintes des toiles. L'équipe est attentive et passionnée."
+            - generic [ref=e279]:
+              - generic [ref=e280]: M
+              - generic [ref=e281]:
+                - strong [ref=e282]: Marie-Claire D.
+                - generic [ref=e283]: Ixelles, Bruxelles
+          - blockquote [ref=e284]:
+            - 'generic "Note : 5 étoiles sur 5" [ref=e285]':
+              - img [ref=e286]
+            - paragraph [ref=e292]: “ "Je confie tous mes tirages photo à Les Arts depuis 3 ans. La qualité est constante, les délais sont tenus et le rapport qualité-prix est imbattable à Bruxelles. Je recommande vivement."
+            - generic [ref=e293]:
+              - generic [ref=e294]: T
+              - generic [ref=e295]:
+                - strong [ref=e296]: Thomas V.
+                - generic [ref=e297]: Etterbeek, Bruxelles
+          - blockquote [ref=e298]:
+            - 'generic "Note : 5 étoiles sur 5" [ref=e299]':
+              - img [ref=e300]
+            - paragraph [ref=e306]: “ "J'ai fait restaurer un tableau de famille du XIXe siècle. Résultat époustouflant — les couleurs ont retrouvé leur éclat d'origine. Un vrai travail d'expert, réalisé avec passion et respect de l'œuvre."
+            - generic [ref=e307]:
+              - generic [ref=e308]: A
+              - generic [ref=e309]:
+                - strong [ref=e310]: Annick B.
+                - generic [ref=e311]: Uccle, Bruxelles
+    - region "Notre histoire" [ref=e312]:
+      - generic [ref=e313]:
+        - generic [ref=e314]:
+          - paragraph [ref=e315]: Depuis 1998
+          - heading "Notre histoire" [level=2] [ref=e316]
+          - paragraph [ref=e317]: Fondé en 1998 au cœur d'Ixelles, Les Arts est né de la passion d'un artisan belge pour le beau travail. Depuis plus de 25 ans, nous accompagnons collectionneurs, galeries et particuliers dans la mise en valeur de leurs œuvres. Notre atelier allie techniques traditionnelles et matériaux d'exception.
+          - paragraph [ref=e318]: "Chaque encadrement est pensé comme une œuvre en soi : choix des essences, assemblage des angles, pose du verre — tout est fait à la main, avec soin, dans le respect de votre création."
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - definition [ref=e321]: "25"
+              - term [ref=e322]: Ans d'expérience
+            - generic [ref=e323]:
+              - definition [ref=e324]: 5 000+
+              - term [ref=e325]: Encadrements réalisés
+            - generic [ref=e326]:
+              - definition [ref=e327]: "3"
+              - term [ref=e328]: Artisans experts
+          - link "Découvrir l'atelier" [ref=e329] [cursor=pointer]:
+            - /url: "#contact"
+            - text: Découvrir l'atelier
+            - img [ref=e330]
+        - generic [ref=e332]:
+          - img "Artisan au travail dans l'atelier Les Arts — Bruxelles" [ref=e333]
+          - generic [ref=e334]:
+            - generic [ref=e335]: "1998"
+            - generic [ref=e336]: Depuis
+    - region "Suivez-nous sur Instagram Voir notre profil Instagram @lesarts_bruxelles" [ref=e337]:
+      - generic [ref=e338]:
+        - heading "Suivez-nous sur Instagram Voir notre profil Instagram @lesarts_bruxelles" [level=2] [ref=e340]:
+          - text: Suivez-nous sur Instagram
+          - link "Voir notre profil Instagram @lesarts_bruxelles" [ref=e341] [cursor=pointer]:
+            - /url: https://instagram.com
+            - text: "@lesarts_bruxelles"
+        - list "Photos Instagram" [ref=e342]:
+          - listitem [ref=e343]:
+            - link "Voir cette photo sur Instagram" [ref=e344] [cursor=pointer]:
+              - /url: https://instagram.com
+              - img "Encadrement en chêne — atelier Les Arts" [ref=e345]
+              - img [ref=e347]
+          - listitem [ref=e349]:
+            - link "Voir cette photo sur Instagram" [ref=e350] [cursor=pointer]:
+              - /url: https://instagram.com
+              - img "Œuvre abstraite encadrée" [ref=e351]
+              - img [ref=e353]
+          - listitem [ref=e355]:
+            - link "Voir cette photo sur Instagram" [ref=e356] [cursor=pointer]:
+              - /url: https://instagram.com
+              - img "Aquarelle dans son cadre museum" [ref=e357]
+              - img [ref=e359]
+          - listitem [ref=e361]:
+            - link "Voir cette photo sur Instagram" [ref=e362] [cursor=pointer]:
+              - /url: https://instagram.com
+              - img "Gravure encadrée dans l'atelier" [ref=e363]
+              - img [ref=e365]
+          - listitem [ref=e367]:
+            - link "Voir cette photo sur Instagram" [ref=e368] [cursor=pointer]:
+              - /url: https://instagram.com
+              - img "Œuvre contemporaine dans la galerie" [ref=e369]
+              - img [ref=e371]
+          - listitem [ref=e373]:
+            - link "Voir cette photo sur Instagram" [ref=e374] [cursor=pointer]:
+              - /url: https://instagram.com
+              - img "Artisan au travail — Les Arts Bruxelles" [ref=e375]
+              - img [ref=e377]
+        - link "Voir notre feed" [ref=e380] [cursor=pointer]:
+          - /url: https://instagram.com
+          - text: Voir notre feed
+          - img [ref=e381]
+    - region "Restez inspiré" [ref=e383]:
+      - generic [ref=e384]:
+        - generic [ref=e385]:
+          - heading "Restez inspiré" [level=2] [ref=e386]
+          - paragraph [ref=e387]: Recevez nos conseils d'encadrement, nos nouvelles acquisitions et nos offres exclusives.
+          - form "Formulaire d'inscription à la newsletter" [ref=e388]:
+            - generic [ref=e389]:
+              - generic [ref=e390]: Votre adresse e-mail
+              - generic [ref=e391]:
+                - textbox "Votre adresse e-mail" [ref=e392]:
+                  - /placeholder: votre@email.com
+                - button "S'inscrire" [ref=e393] [cursor=pointer]
+              - paragraph [ref=e394]: Pas de spam. Désinscription en un clic.
+              - status [ref=e395]
+        - generic [ref=e396]:
+          - heading "Venez nous voir" [level=3] [ref=e397]
+          - generic [ref=e398]:
+            - paragraph [ref=e399]:
+              - img [ref=e400]
+              - text: Rue du Bailli 47, 1050 Ixelles, Bruxelles
+            - paragraph [ref=e403]:
+              - img [ref=e404]
+              - link "info@lesarts.be" [ref=e406] [cursor=pointer]:
+                - /url: mailto:info@lesarts.be
+            - paragraph [ref=e407]:
+              - img [ref=e408]
+              - link "+32 2 500 12 34" [ref=e410] [cursor=pointer]:
+                - /url: tel:+3225001234
+          - generic [ref=e411]:
+            - heading "Horaires d'ouverture" [level=4] [ref=e412]
+            - generic [ref=e413]:
+              - generic [ref=e414]:
+                - term [ref=e415]: Lun – Ven
+                - definition [ref=e416]: 9h00 – 18h00
+              - generic [ref=e417]:
+                - term [ref=e418]: Samedi
+                - definition [ref=e419]: 10h00 – 16h00
+              - generic [ref=e420]:
+                - term [ref=e421]: Dimanche
+                - definition [ref=e422]: Fermé
+  - contentinfo [ref=e423]:
+    - generic [ref=e424]:
+      - generic [ref=e425]:
+        - generic [ref=e426]:
+          - link "Les Arts — Accueil" [ref=e427] [cursor=pointer]:
+            - /url: /
+            - img [ref=e428]
+            - generic [ref=e432]: Les Arts
+          - paragraph [ref=e433]:
+            - text: Galerie & Atelier d'encadrement
+            - text: Bruxelles depuis 1998
+        - navigation "Navigation secondaire" [ref=e434]:
+          - generic [ref=e435]:
+            - heading "Services" [level=3] [ref=e436]
+            - list [ref=e437]:
+              - listitem [ref=e438]:
+                - link "Encadrement sur mesure" [ref=e439] [cursor=pointer]:
+                  - /url: "#services"
+              - listitem [ref=e440]:
+                - link "Galerie d'art" [ref=e441] [cursor=pointer]:
+                  - /url: "#galerie"
+              - listitem [ref=e442]:
+                - link "Conservation & restauration" [ref=e443] [cursor=pointer]:
+                  - /url: "#services"
+              - listitem [ref=e444]:
+                - link "Boutique en ligne" [ref=e445] [cursor=pointer]:
+                  - /url: "#boutique"
+          - generic [ref=e446]:
+            - heading "À propos" [level=3] [ref=e447]
+            - list [ref=e448]:
+              - listitem [ref=e449]:
+                - link "Notre histoire" [ref=e450] [cursor=pointer]:
+                  - /url: "#apropos"
+              - listitem [ref=e451]:
+                - link "Avis clients" [ref=e452] [cursor=pointer]:
+                  - /url: "#avis"
+              - listitem [ref=e453]:
+                - link "Contact & horaires" [ref=e454] [cursor=pointer]:
+                  - /url: "#contact"
+              - listitem [ref=e455]:
+                - link "Blog" [ref=e456] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e457]:
+            - heading "Légal" [level=3] [ref=e458]
+            - list [ref=e459]:
+              - listitem [ref=e460]:
+                - link "Mentions légales" [ref=e461] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e462]:
+                - link "Politique de confidentialité" [ref=e463] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e464]:
+                - link "CGV" [ref=e465] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e466]:
+                - link "Cookies" [ref=e467] [cursor=pointer]:
+                  - /url: "#"
+      - generic [ref=e468]:
+        - paragraph [ref=e469]: © 2026 Les Arts SPRL · TVA BE 0123.456.789 · Tous droits réservés
+        - generic "Moyens de paiement acceptés" [ref=e470]:
+          - generic "Bancontact" [ref=e471]:
+            - img [ref=e472]:
+              - generic [ref=e476]: BC
+          - generic "Mastercard" [ref=e477]:
+            - img [ref=e478]
+          - generic "Visa" [ref=e483]:
+            - img [ref=e484]:
+              - generic [ref=e486]: VISA
+        - generic "Réseaux sociaux" [ref=e487]:
+          - link "Instagram" [ref=e488] [cursor=pointer]:
+            - /url: https://instagram.com
+            - img [ref=e489]
+          - link "Facebook" [ref=e491] [cursor=pointer]:
+            - /url: https://facebook.com
+            - img [ref=e492]
+          - link "Pinterest" [ref=e494] [cursor=pointer]:
+            - /url: https://pinterest.com
+            - img [ref=e495]

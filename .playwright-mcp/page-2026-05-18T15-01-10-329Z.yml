@@ -1,0 +1,450 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - text: "Next delivery date: 22/05"
+            - strong:
+              - strong:
+                - strong:
+                  - emphasis:
+                    - strong:
+                      - emphasis:
+                        - strong:
+                          - emphasis:
+                            - strong:
+                              - emphasis:
+                                - strong:
+                                  - emphasis
+          - generic [ref=e8]: Free delivery from €250
+          - generic [ref=e9]:
+            - strong
+            - text: Handmade in Belgium
+          - generic [ref=e12] [cursor=pointer]:
+            - generic [ref=e13]: "9.1"
+            - generic [ref=e14]:
+              - img [ref=e15]
+              - img [ref=e17]
+              - img [ref=e19]
+              - img [ref=e21]
+              - img [ref=e23]
+            - generic [ref=e26]: 802 reviews
+            - img [ref=e28]
+        - generic [ref=e34]:
+          - link "Logo" [ref=e35] [cursor=pointer]:
+            - /url: https://www.justframeit.be/en/
+            - img "Logo" [ref=e36]
+          - generic [ref=e37]:
+            - navigation "Language" [ref=e38]:
+              - button "en" [ref=e39] [cursor=pointer]:
+                - text: en
+                - img [ref=e40]
+            - link "Search" [ref=e42] [cursor=pointer]:
+              - /url: https://www.justframeit.be/en/search-results
+              - img "Search" [ref=e43]
+            - link [ref=e45] [cursor=pointer]:
+              - /url: https://www.justframeit.be/en/account
+              - img [ref=e46]
+            - link [ref=e50] [cursor=pointer]:
+              - /url: https://www.justframeit.be/en/webshop/wishlist
+              - img [ref=e51]
+            - button [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+            - button [ref=e61] [cursor=pointer]
+      - banner [ref=e64]:
+        - generic [ref=e65]:
+          - heading "Framing has never been so easy!" [level=1] [ref=e66]
+          - generic [ref=e67]:
+            - paragraph [ref=e68]: At Justframeit we believe every piece of art deserves the perfect frame. That's why we offer Belgium's finest handmade frames and an excellent service.
+            - paragraph [ref=e69]:
+              - text: Register and gain access to the largest wholesale platform
+              - strong [ref=e70]: for frames in Belgium.
+          - generic [ref=e71]:
+            - link "Start framing" [ref=e72] [cursor=pointer]:
+              - /url: https://www.justframeit.be/en/op-maat
+              - generic [ref=e73]: Start framing
+              - img [ref=e74]
+            - link "Customer Satisfaction 9.1/10!" [ref=e76] [cursor=pointer]:
+              - /url: https://www.feedbackcompany.com/nl-nl/reviews/theframeshop-be/
+              - generic [ref=e77]: Customer Satisfaction 9.1/10!
+        - figure [ref=e79]:
+          - img "Fotos voorbeelden printposter 1" [ref=e81]
+      - main [ref=e82]:
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - heading "Most popular frames" [level=2] [ref=e86]
+            - link "Discover all frames" [ref=e87] [cursor=pointer]:
+              - /url: https://www.justframeit.be/en/webshop/lijsten
+              - generic [ref=e88]: Discover all frames
+          - generic [ref=e91]:
+            - group "1 / 5" [ref=e92]:
+              - link "Hanoi - Goud Met Groen 2 cm" [ref=e93] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/0075p-1053-d24
+                - figure [ref=e95]:
+                  - img "Hanoi Goud Met Groen 2 cm 0075 P1053 D24 1 4601" [ref=e97]
+                - generic [ref=e98]:
+                  - heading "Hanoi - Goud Met Groen 2 cm" [level=3] [ref=e99]
+                  - img [ref=e100]
+            - group "2 / 5" [ref=e102]:
+              - link "Giza - Ornament Goud 1,5 cm" [ref=e103] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/80580-c37
+                - figure [ref=e105]:
+                  - img "Giza Ornament Goud 15 cm 80580 C37 1 4633" [ref=e107]
+                - generic [ref=e108]:
+                  - heading "Giza - Ornament Goud 1,5 cm" [level=3] [ref=e109]
+                  - img [ref=e110]
+            - group "3 / 5" [ref=e112]:
+              - link "Rome - Explosion Goud" [ref=e113] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/82580-c36
+                - figure [ref=e115]:
+                  - img "Rome Explosion Goud 82580 C36 1 4609" [ref=e117]
+                - generic [ref=e118]:
+                  - heading "Rome - Explosion Goud" [level=3] [ref=e119]
+                  - img [ref=e120]
+            - group "4 / 5" [ref=e122]:
+              - link "Tokio Breed - Antigua Vlak Zwart 40X14" [ref=e123] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/51810-x
+                - figure [ref=e125]:
+                  - img "Tokio Breed Antigua Vlak Zwart 40 X14 51810 X 1 4621" [ref=e127]
+                - generic [ref=e128]:
+                  - heading "Tokio Breed - Antigua Vlak Zwart 40X14" [level=3] [ref=e129]
+                  - img [ref=e130]
+            - group "5 / 5" [ref=e132]:
+              - link "New York - Matrix Kaslijst Chroom" [ref=e133] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/98745-d19
+                - figure [ref=e135]
+                - generic [ref=e137]:
+                  - heading "New York - Matrix Kaslijst Chroom" [level=3] [ref=e138]
+                  - img [ref=e139]
+        - generic [ref=e143]:
+          - generic [ref=e145]:
+            - 'heading "\"Two words: top-notch experience!\"" [level=2] [ref=e146]':
+              - text: "\"Two words: top-notch experience!\""
+              - emphasis
+            - paragraph [ref=e147]:
+              - text: Good and easy-to-use online shop. You are sure you are ordering the right things, which is very important with frames. The items were packaged well upon delivery. Decent hanging systems and nice passe-partouts!
+              - text: "- Freddy Van B. - 14/01/2020"
+            - paragraph
+          - figure [ref=e149]
+          - figure [ref=e152]
+          - blockquote
+        - generic [ref=e155]:
+          - heading "Order online or stop by the shop. You choose!" [level=2] [ref=e156]
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - figure [ref=e160]
+              - heading "Online configurator" [level=3] [ref=e162]
+              - paragraph [ref=e164]: Order a customised frame via the online configurator. You choose the size, material and colour of the frame yourself. You will then receive the frame at home and can do the final framing step yourself.
+              - link "Use online configurator" [ref=e165] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/op-maat
+                - generic [ref=e166]: Use online configurator
+            - generic [ref=e167]:
+              - figure [ref=e169]
+              - heading "Shop visits" [level=3] [ref=e171]
+              - paragraph [ref=e173]: Stop by our shop and let us frame your work. We have a wide choice of frames and types of glass. 1 week later you will get your work delivered back to your home free of charge.
+              - link "Book an appointment" [ref=e174] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/about-us/contact-2
+                - generic [ref=e175]: Book an appointment
+            - generic [ref=e176]:
+              - figure [ref=e178]
+              - heading "Pickup service" [level=3] [ref=e180]
+              - paragraph [ref=e182]: Compose your frame online and book a pick-up service. We will collect your artwork from your home. We will then deliver it framed back to your home. Handy!
+              - link "Compose frame and book pickup" [ref=e183] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/op-maat
+                - generic [ref=e184]: Compose frame and book pickup
+        - generic [ref=e185]:
+          - generic [ref=e186]:
+            - heading "Visit our Atelier" [level=2] [ref=e187]
+            - paragraph [ref=e189]: "Do you have questions or want advice on a frame? Does your work have just too much value to send? We are happy to welcome you to our studio. We are open every day continuously between 9h and 17h. Saturday by appointment only. Feel free to call in advance: 09 253 43 18"
+          - figure [ref=e191]
+        - generic [ref=e194]:
+          - heading "More than +3000 satisfied customers" [level=2] [ref=e196]
+          - generic [ref=e199]:
+            - group "22 / 24" [ref=e200]:
+              - link [ref=e201] [cursor=pointer]:
+                - /url: https://merckxrouwcentrum.be
+                - figure [ref=e202]
+            - group "23 / 24" [ref=e204]:
+              - link [ref=e205] [cursor=pointer]:
+                - /url: https://dehuisdierfotograaf.be
+                - figure [ref=e206]
+            - group "24 / 24" [ref=e208]:
+              - link [ref=e209] [cursor=pointer]:
+                - /url: https://studioketels.be
+                - figure [ref=e210]
+            - group "1 / 24" [ref=e212]:
+              - link [ref=e213] [cursor=pointer]:
+                - /url: https://www.locatellis.be/p-r-i-n-t-s
+                - figure [ref=e214]
+            - group "2 / 24" [ref=e216]:
+              - link [ref=e217] [cursor=pointer]:
+                - /url: https://www.daviddebussere.be/
+                - figure [ref=e218]
+            - group "3 / 24" [ref=e220]:
+              - link [ref=e221] [cursor=pointer]:
+                - /url: https://www.bozar.be/nl
+                - figure [ref=e222]
+            - group "4 / 24" [ref=e224]:
+              - link [ref=e225] [cursor=pointer]:
+                - /url: https://www.arnequinze.com/
+                - figure [ref=e226]
+            - group "5 / 24" [ref=e228]:
+              - link [ref=e229] [cursor=pointer]:
+                - /url: http://corneilleguillaume.com/gb/
+                - figure [ref=e230]
+            - group "6 / 24" [ref=e232]:
+              - figure [ref=e233]
+            - group "7 / 24" [ref=e235]:
+              - figure [ref=e236]
+            - group "8 / 24" [ref=e238]:
+              - figure [ref=e239]
+            - group "9 / 24" [ref=e241]:
+              - figure [ref=e242]
+            - group "10 / 24" [ref=e244]:
+              - figure [ref=e245]
+            - group "11 / 24" [ref=e247]:
+              - figure [ref=e248]
+            - group "12 / 24" [ref=e250]:
+              - figure [ref=e251]
+            - group "13 / 24" [ref=e253]:
+              - figure [ref=e254]
+            - group "14 / 24" [ref=e256]:
+              - link [ref=e257] [cursor=pointer]:
+                - /url: https://www.greenhousetalent.com/benl/
+                - figure [ref=e258]
+            - group "15 / 24" [ref=e260]:
+              - link [ref=e261] [cursor=pointer]:
+                - /url: https://www.catawiki.com/en/
+                - figure [ref=e262]
+            - group "16 / 24" [ref=e264]:
+              - link [ref=e265] [cursor=pointer]:
+                - /url: https://www.abconcerts.be/nl/
+                - figure [ref=e266]
+            - group "17 / 24" [ref=e268]:
+              - figure [ref=e269]
+            - group "18 / 24" [ref=e271]:
+              - link [ref=e272] [cursor=pointer]:
+                - /url: https://schoolofartsgent.be/nl/
+                - figure [ref=e273]
+            - group "19 / 24" [ref=e275]:
+              - link [ref=e276] [cursor=pointer]:
+                - /url: https://www.luca-arts.be/nl
+                - figure [ref=e277]
+            - group "20 / 24" [ref=e279]:
+              - link [ref=e280] [cursor=pointer]:
+                - /url: https://www.the-craft.Be
+                - figure [ref=e281]
+            - group "21 / 24" [ref=e283]:
+              - figure [ref=e284]
+            - group "22 / 24" [ref=e286]:
+              - link [ref=e287] [cursor=pointer]:
+                - /url: https://merckxrouwcentrum.be
+                - figure [ref=e288]
+            - group "23 / 24" [ref=e290]:
+              - link [ref=e291] [cursor=pointer]:
+                - /url: https://dehuisdierfotograaf.be
+                - figure [ref=e292]
+            - group "24 / 24" [ref=e294]:
+              - link [ref=e295] [cursor=pointer]:
+                - /url: https://studioketels.be
+                - figure [ref=e296]
+            - group "1 / 24" [ref=e298]:
+              - link [ref=e299] [cursor=pointer]:
+                - /url: https://www.locatellis.be/p-r-i-n-t-s
+                - figure [ref=e300]
+            - group "2 / 24" [ref=e302]:
+              - link [ref=e303] [cursor=pointer]:
+                - /url: https://www.daviddebussere.be/
+                - figure [ref=e304]
+            - group "3 / 24" [ref=e306]:
+              - link [ref=e307] [cursor=pointer]:
+                - /url: https://www.bozar.be/nl
+                - figure [ref=e308]
+          - generic [ref=e310]:
+            - button "Vorige slide" [ref=e311] [cursor=pointer]:
+              - img [ref=e312]
+            - button "Volgende slide" [ref=e315] [cursor=pointer]:
+              - img [ref=e316]
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - heading "Ready to get started?" [level=2] [ref=e320]
+            - paragraph [ref=e322]: Choose which type of frame you want. We'll help you out.
+          - generic [ref=e325]:
+            - group "1 / 3" [ref=e326]:
+              - link "Print + Kader" [ref=e327] [cursor=pointer]:
+                - /url: https://www.justframeit.be/op-maat?types=photo
+                - figure [ref=e329]
+                - generic [ref=e331]:
+                  - heading "Print + Kader" [level=3] [ref=e332]
+                  - img [ref=e333]
+            - group "2 / 3" [ref=e335]:
+              - link "Cadre sur mesure" [ref=e336] [cursor=pointer]:
+                - /url: https://www.justframeit.be/op-maat?types=document
+                - figure [ref=e338]
+                - generic [ref=e340]:
+                  - heading "Cadre sur mesure" [level=3] [ref=e341]
+                  - img [ref=e342]
+            - group "3 / 3" [ref=e344]:
+              - link "Cadre pour toile ou peinture" [ref=e345] [cursor=pointer]:
+                - /url: https://www.justframeit.be/op-maat?types=painting
+                - figure [ref=e347]
+                - generic [ref=e349]:
+                  - heading "Cadre pour toile ou peinture" [level=3] [ref=e350]
+                  - img [ref=e351]
+        - generic [ref=e354]:
+          - generic [ref=e355]:
+            - heading "Need inspiration? Explore these beautiful photos from customers!" [level=2] [ref=e356]
+            - link "See all inspiration" [ref=e357] [cursor=pointer]:
+              - /url: https://www.justframeit.be/en/inlijstservice/inspiration
+              - generic [ref=e358]: See all inspiration
+          - generic [ref=e361]:
+            - group "1 / 10" [ref=e362]:
+              - link "Maple kader" [ref=e363] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/81447-x
+                - figure [ref=e365]
+                - generic [ref=e367]:
+                  - heading "Maple kader" [level=3] [ref=e368]
+                  - img [ref=e369]
+            - group "2 / 10" [ref=e371]:
+              - link "Witte aluminium kaders" [ref=e372] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/273-027-o28
+                - figure [ref=e374]
+                - generic [ref=e376]:
+                  - heading "Witte aluminium kaders" [level=3] [ref=e377]
+                  - img [ref=e378]
+            - group "3 / 10" [ref=e380]:
+              - link "Zilveren kader" [ref=e381] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/98745-d19
+                - figure [ref=e383]
+                - generic [ref=e385]:
+                  - heading "Zilveren kader" [level=3] [ref=e386]
+                  - img [ref=e387]
+            - group "4 / 10" [ref=e389]:
+              - link "Gouden kader" [ref=e390] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/3014-c35
+                - figure [ref=e392]
+                - generic [ref=e394]:
+                  - heading "Gouden kader" [level=3] [ref=e395]
+                  - img [ref=e396]
+            - group "5 / 10" [ref=e398]:
+              - link "Vintage kader (groen + goud)" [ref=e399] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/0075p-1053-d24
+                - figure [ref=e401]
+                - generic [ref=e403]:
+                  - heading "Vintage kader (groen + goud)" [level=3] [ref=e404]
+                  - img [ref=e405]
+            - group "6 / 10" [ref=e407]:
+              - link "Gouden kader" [ref=e408] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/82580-c36
+                - figure [ref=e410]
+                - generic [ref=e412]:
+                  - heading "Gouden kader" [level=3] [ref=e413]
+                  - img [ref=e414]
+            - group "7 / 10" [ref=e416]:
+              - link "Eiken kader" [ref=e417] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/12003-j34
+                - figure [ref=e419]
+                - generic [ref=e421]:
+                  - heading "Eiken kader" [level=3] [ref=e422]
+                  - img [ref=e423]
+            - group "8 / 10" [ref=e425]:
+              - link "Witte kader" [ref=e426] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/4123-k03
+                - figure [ref=e428]
+                - generic [ref=e430]:
+                  - heading "Witte kader" [level=3] [ref=e431]
+                  - img [ref=e432]
+            - group "9 / 10" [ref=e434]:
+              - link "Barokken kaders" [ref=e435] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/3433-x
+                - figure [ref=e437]
+                - generic [ref=e439]:
+                  - heading "Barokken kaders" [level=3] [ref=e440]
+                  - img [ref=e441]
+            - group "10 / 10" [ref=e443]:
+              - link "Witte kaders" [ref=e444] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/webshop/lists/4123-k03
+                - figure [ref=e446]
+                - generic [ref=e448]:
+                  - heading "Witte kaders" [level=3] [ref=e449]
+                  - img [ref=e450]
+    - contentinfo [ref=e454]:
+      - generic [ref=e456]:
+        - generic [ref=e457]:
+          - heading "Custom framing" [level=4] [ref=e458]
+          - list [ref=e459]:
+            - listitem [ref=e460]:
+              - link "Printing + framing" [ref=e461] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/op-maat
+            - listitem [ref=e462]:
+              - link "Tailormade frame" [ref=e463] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/op-maat
+            - listitem [ref=e464]:
+              - link "Canvas frames" [ref=e465] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/op-maat
+        - generic [ref=e466]:
+          - heading "About Justframeit" [level=4] [ref=e467]
+          - list [ref=e468]:
+            - listitem [ref=e469]:
+              - link "Behind the scenes" [ref=e470] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/about-us/behind-the-scenes
+            - listitem [ref=e471]:
+              - link "Premium materials" [ref=e472] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/about-us/premium-materials
+            - listitem [ref=e473]:
+              - link "Blogs" [ref=e474] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/about-us/blogs
+            - listitem [ref=e475]:
+              - link "Inlijster in uw buurt" [ref=e476] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/framing-company
+            - listitem [ref=e477]:
+              - link "Algemene voorwaarden" [ref=e478] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/general-terms-conditons
+            - listitem [ref=e479]:
+              - link "Privacy policy" [ref=e480] [cursor=pointer]:
+                - /url: https://www.justframeit.be/en/privacy-policy
+        - generic [ref=e481]:
+          - heading "Contact" [level=4] [ref=e482]
+          - list [ref=e483]:
+            - listitem [ref=e484]:
+              - link "hello@justframeit.be" [ref=e485] [cursor=pointer]:
+                - /url: mailto:hello@justframeit.be
+            - listitem [ref=e486]:
+              - link "09 253 43 18" [ref=e487] [cursor=pointer]:
+                - /url: tel:092534318
+            - listitem [ref=e488]:
+              - link "Whatsapp" [ref=e489] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=3292534318
+            - listitem [ref=e490]:
+              - link "Industrieweg 114F, 9032 Gent" [ref=e491] [cursor=pointer]:
+                - /url: https://goo.gl/maps/uF71pBkue3dnQFtD6
+            - listitem [ref=e492]:
+              - 'link "(Vanaf 22/03) Winkel Antwerpen: Leopoldstraat 75, 2000 Antwerpen" [ref=e493] [cursor=pointer]':
+                - /url: https://maps.app.goo.gl/2eR9gqt1uRMMDh4J6
+      - generic [ref=e494]:
+        - link "Logo" [ref=e496] [cursor=pointer]:
+          - /url: https://www.justframeit.be/en/
+          - img "Logo" [ref=e497]
+        - generic [ref=e498]:
+          - text: ©2026 Just Frame It
+          - link "Website by The Frame Company" [ref=e499] [cursor=pointer]:
+            - /url: https://www.the-craft.be
+  - link "9.1" [ref=e501] [cursor=pointer]:
+    - /url: https://www.feedbackcompany.com/nl-nl/reviews/justframeit
+    - generic [ref=e502]:
+      - img [ref=e503]
+      - text: "9.1"
+    - img [ref=e506]
+  - dialog "Cookie banner":
+    - generic [ref=e514]:
+      - generic [ref=e515]:
+        - heading "We use cookies" [level=2] [ref=e517]
+        - paragraph [ref=e520]: We may place these for analysis of our visitor data, to improve our website, show personalised content and to give you a great website experience. For more information about the cookies we use open the settings.
+      - generic [ref=e522]:
+        - button "Accept all cookies" [ref=e524] [cursor=pointer]:
+          - generic [ref=e525]: Accept all
+        - button "Deny all cookies" [ref=e527] [cursor=pointer]:
+          - generic [ref=e528]: Deny
+        - button "Adjust cookie preferences" [ref=e530] [cursor=pointer]:
+          - generic [ref=e531]: No, adjust
