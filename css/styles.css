@@ -332,7 +332,8 @@ button {
 .nav-list {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .nav-item {
@@ -348,6 +349,7 @@ button {
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  white-space: nowrap;
   transition: opacity 0.3s ease;
 }
 
@@ -1796,8 +1798,7 @@ button {
   .footer-big-letters { font-size: clamp(5.6rem, 20vw, 9.6rem); line-height: 0.85; }
 
   .nav-overlay { padding: 8rem 1.6rem 2.4rem; }
-  .nav-list { gap: 0.8rem; }
-  .nav-link { font-size: clamp(3.6rem, 11vw, 5.2rem); gap: 1.2rem; }
+  .nav-link { font-size: clamp(2rem, 8vw, 5.2rem); gap: 1.2rem; }
   .nav-info { grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 3rem; }
   .nav-info a, .nav-info p { font-size: 1.3rem; }
 
