@@ -37,17 +37,17 @@
 }
 
 :root {
-  --terra: #e49366;
-  --green: #798e7b;
-  --pink: #b692a1;
-  --blue: #bfccd8;
-  --black: #0e0e0e;
-  --beige: #f1efeb;
-  --grey: #666d73;
+  --terra: #BB6E44;
+  --green: #697A6C;
+  --pink: #9E7589;
+  --blue: #93AEBB;
+  --black: #16120E;
+  --beige: #F0EAE1;
+  --grey: #6B6560;
   --white: #ffffff;
 
-  --font-neue: 'Alliance Neue', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-platt: 'Alliance Platt', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-neue: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-platt: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
   --ease-in-out-sine: cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -743,6 +743,9 @@ button {
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 3.2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.08em;
 }
 
 .gallery-char-wrap {

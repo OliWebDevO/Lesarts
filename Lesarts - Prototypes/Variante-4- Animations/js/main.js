@@ -1,7 +1,6 @@
 /* ============================================
-   LES ARTS PROD — Main JS
-   Ports all GSAP animations from the React/Next.js
-   akaru-clone to plain vanilla JS.
+   LESARTS — Main JS
+   Animations & interactions — vanilla JS + GSAP
    ============================================ */
 
 'use strict';
