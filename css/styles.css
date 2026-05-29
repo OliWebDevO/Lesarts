@@ -1936,11 +1936,13 @@ button {
 .nav-item:nth-child(2) .nav-dot { background-color: var(--green); }
 .nav-item:nth-child(3) .nav-dot { background-color: var(--pink); }
 .nav-item:nth-child(4) .nav-dot { background-color: var(--blue); }
+.nav-item:nth-child(5) .nav-dot { background-color: var(--grey); }
 
 .hero-nav-item:nth-child(1) .hero-nav-dot { background-color: var(--terra); }
 .hero-nav-item:nth-child(2) .hero-nav-dot { background-color: var(--green); }
 .hero-nav-item:nth-child(3) .hero-nav-dot { background-color: var(--pink); }
 .hero-nav-item:nth-child(4) .hero-nav-dot { background-color: var(--blue); }
+.hero-nav-item:nth-child(5) .hero-nav-dot { background-color: var(--grey); }
 
 /* ── Project cards — background colors ──────── */
 #hero-card-1 { --card-bg: var(--terra); }
