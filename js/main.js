@@ -730,10 +730,10 @@ function initHorizontalGallery() {
    9. AGENCY / ATELIER SECTION
    ============================================ */
 function initAgency() {
-  const section = document.querySelector('.agency-section');
+  const section = document.querySelector('.agency-section, .about-workshop');
   if (!section || prefersReduced) return;
 
-  gsap.from('.agency-heading', {
+  gsap.from('.masonry-grid__heading', {
     y: 80,
     opacity: 0,
     duration: 1.2,
@@ -744,7 +744,7 @@ function initAgency() {
     },
   });
 
-  gsap.from('.agency-intro-right', {
+  gsap.from('.masonry-grid__header-right', {
     y: 40,
     opacity: 0,
     duration: 1,
@@ -756,41 +756,45 @@ function initAgency() {
     },
   });
 
-  gsap.from('.agency-photo-wrap', {
+  gsap.from('.masonry-grid__photo-wrap', {
     y: 60,
     opacity: 0,
     duration: 1,
     ease: 'power3.out',
     stagger: 0.15,
     scrollTrigger: {
-      trigger: '.agency-gallery',
+      trigger: '.masonry-grid',
       start: 'top 80%',
     },
   });
 
-  gsap.from('.agency-value-item', {
+  gsap.from('.masonry-grid__value-item', {
     y: 40,
     opacity: 0,
     duration: 0.8,
     ease: 'power3.out',
     stagger: 0.15,
     scrollTrigger: {
-      trigger: '.agency-values-in-gallery',
+      trigger: '.masonry-grid__values',
       start: 'top 80%',
     },
   });
 
-  // Parallax on main photo
-  gsap.to('.agency-main-photo', {
-    yPercent: -10,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.agency-gallery',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 1,
-    },
-  });
+  // Parallax on all gallery photos
+  gsap.set('.masonry-grid__photo-main, .masonry-grid__photo-small-1, .masonry-grid__photo-small-2, .masonry-grid__photo-small-3', { scaleY: 1.2 });
+  gsap.fromTo('.masonry-grid__photo-main, .masonry-grid__photo-small-1, .masonry-grid__photo-small-2, .masonry-grid__photo-small-3',
+    { yPercent: -5 },
+    {
+      yPercent: 5,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.masonry-grid',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    }
+  );
 }
 
 /* ============================================
@@ -879,8 +883,230 @@ document.addEventListener('DOMContentLoaded', () => {
     initAgency();
     initCta();
     initFooter();
+    initAboutPage();
 
     // Final refresh so all ScrollTrigger positions are correct
     ScrollTrigger.refresh();
   }, 50);
 });
+
+/* ============================================
+   PAGE: À PROPOS — Animations
+   ============================================ */
+function initAboutPage() {
+  if (!document.querySelector('.about-hero')) return;
+  if (prefersReduced) return;
+
+  /* ---- 1. Hero entrance animations (page load) — timeline séquentielle ---- */
+  const heroTitle   = document.querySelector('.about-hero__title');
+  const heroOverline = document.querySelector('.about-hero__overline');
+  const heroDesc    = document.querySelector('.about-hero__desc');
+  const heroScroll  = document.querySelector('.about-hero__scroll');
+  const heroRight   = document.querySelector('.about-hero__right');
+
+  // Placer l'image hors champ dès maintenant pour éviter un flash
+  if (heroRight) gsap.set(heroRight, { xPercent: 80 });
+
+  const heroTl = gsap.timeline();
+
+  // Textes — positions absolues dans la timeline (se chevauchent intentionnellement)
+  if (heroOverline) heroTl.from(heroOverline, { y: 30, opacity: 0, duration: 0.9, ease: 'power3.out' }, 0.25);
+  if (heroTitle)    heroTl.from(heroTitle,    { y: 100, opacity: 0, duration: 1.4, ease: 'power4.out' }, 0.35);
+  if (heroDesc)     heroTl.from(heroDesc,     { y: 50,  opacity: 0, duration: 1.1, ease: 'power3.out' }, 0.6);
+  if (heroScroll)   heroTl.from(heroScroll,   { y: 20,  opacity: 0, duration: 0.8, ease: 'power3.out' }, 0.9);
+
+  // Image slide — démarre 0.2s après la fin du dernier élément de texte
+  if (heroRight) {
+    heroTl.to(heroRight,
+      { xPercent: 0, duration: 2.8, ease: 'power2.out' },
+      '+=0.2'
+    );
+  }
+
+  /* ---- Parallax on hero image (scroll) ---- */
+  gsap.to('.about-hero__img', {
+    yPercent: -8,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.about-hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 1,
+    },
+  });
+
+  /* ---- 2. Scroll indicator bounce loop ---- */
+  if (heroScroll) {
+    gsap.to(heroScroll.querySelector('.about-hero__scroll-arrow'), {
+      y: 6,
+      duration: 1.1,
+      ease: 'power1.inOut',
+      repeat: -1,
+      yoyo: true,
+      delay: 1.5,
+    });
+  }
+
+  /* ---- 3. Intro section — staggered editorial reveal ---- */
+  const introLabel = document.querySelector('.about-intro .about-section-label');
+  const introEntries = document.querySelectorAll('.about-intro__entry');
+
+  if (introLabel) {
+    gsap.from(introLabel, {
+      y: 20,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.about-intro', start: 'top 80%' },
+    });
+  }
+
+  introEntries.forEach((entry) => {
+    const num  = entry.querySelector('.about-intro__num');
+    const text = entry.querySelector('.about-intro__text');
+
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: entry, start: 'top 85%' },
+    });
+
+    tl.from(entry, { opacity: 0, duration: 0.3, ease: 'none' })
+      .from(num, { y: 20, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1)
+      .from(text, { y: 50, opacity: 0, duration: 1, ease: 'power4.out' }, 0.2);
+  });
+
+  /* ---- 4. Values — stagger reveal ---- */
+  const valueCols = document.querySelectorAll('.about-values__col');
+  const valuesLabel = document.querySelector('.about-values .about-section-label');
+  const valuesRule = document.querySelector('.about-values__rule');
+
+  if (valuesRule) {
+    gsap.from(valuesRule, {
+      scaleX: 0,
+      transformOrigin: 'left center',
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about-values',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  if (valuesLabel) {
+    gsap.from(valuesLabel, {
+      y: 20,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about-values',
+        start: 'top 75%',
+      },
+    });
+  }
+
+  if (valueCols.length) {
+    gsap.from(valueCols, {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      stagger: 0.18,
+      scrollTrigger: {
+        trigger: '.about-values__grid',
+        start: 'top 75%',
+      },
+    });
+  }
+
+  /* ---- 5. Workshop section ---- */
+  const workshopImage = document.querySelector('.about-workshop__image-wrap');
+  const workshopText = document.querySelector('.about-workshop__text');
+  const workshopLabel = document.querySelector('.about-workshop .about-section-label');
+
+  if (workshopLabel) {
+    gsap.from(workshopLabel, {
+      y: 20,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about-workshop',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  if (workshopImage) {
+    gsap.from(workshopImage, {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about-workshop__grid',
+        start: 'top 75%',
+      },
+    });
+  }
+
+  if (workshopText) {
+    gsap.from(workshopText.children, {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: '.about-workshop__grid',
+        start: 'top 70%',
+      },
+    });
+  }
+
+  /* ---- 6. Team section ---- */
+  const teamQuote = document.querySelector('.about-team__quote p');
+  const teamAttribution = document.querySelector('.about-team__attribution');
+  const teamLabel = document.querySelector('.about-team .about-section-label');
+
+  if (teamLabel) {
+    gsap.from(teamLabel, {
+      y: 20,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about-team',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  if (teamQuote) {
+    gsap.from(teamQuote, {
+      y: 60,
+      opacity: 0,
+      duration: 1.3,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '.about-team',
+        start: 'top 75%',
+      },
+    });
+  }
+
+  if (teamAttribution) {
+    gsap.from(teamAttribution, {
+      y: 20,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out',
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: '.about-team',
+        start: 'top 72%',
+      },
+    });
+  }
+
+}

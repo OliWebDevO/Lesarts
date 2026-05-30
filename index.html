@@ -35,7 +35,7 @@
        HEADER
        ============================================ -->
   <header class="header">
-    <a href="/" class="logo" aria-label="Retour à l'accueil – Lesarts">
+    <a href="index.html" class="logo" aria-label="Retour à l'accueil – Lesarts">
       <div class="logo-inner">
         <span class="logo-text">LESARTS</span>
         <span class="logo-sub">Prod.</span>
@@ -51,31 +51,37 @@
       <div class="nav-content">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="#a-propos" class="nav-link" data-close-menu>
+            <a href="index.html" class="nav-link" data-close-menu aria-current="page">
+              <span class="nav-dot"></span>
+              <span class="nav-label">Accueil</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="a-propos.html" class="nav-link" data-close-menu>
               <span class="nav-dot"></span>
               <span class="nav-label">À propos</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#encadrement" class="nav-link" data-close-menu>
+            <a href="encadrement.html" class="nav-link" data-close-menu>
               <span class="nav-dot"></span>
               <span class="nav-label">Encadrement</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#galerie" class="nav-link" data-close-menu>
+            <a href="galerie.html" class="nav-link" data-close-menu>
               <span class="nav-dot"></span>
               <span class="nav-label">Galerie</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#faq" class="nav-link" data-close-menu>
+            <a href="faq.html" class="nav-link" data-close-menu>
               <span class="nav-dot"></span>
               <span class="nav-label">FAQ</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="nav-link" data-close-menu>
+            <a href="contact.html" class="nav-link" data-close-menu>
               <span class="nav-dot"></span>
               <span class="nav-label">Contact</span>
             </a>
@@ -85,12 +91,12 @@
         <div class="nav-info">
           <div class="nav-address">
             <p>Lesarts</p>
+            <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer">lesartsprod.be</a>
+          </div>
+          <div class="nav-contact">
             <p>Rue du Bailli 43</p>
             <p>1050 Ixelles</p>
             <p>Bruxelles, Belgique</p>
-          </div>
-          <div class="nav-contact">
-            <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer">lesartsprod.be</a>
           </div>
           <div class="nav-phone">
             <p>Mer – Sam</p>
@@ -120,31 +126,31 @@
               <nav class="hero-nav" id="hero-nav">
                 <ul class="hero-nav-list">
                   <li class="hero-nav-item">
-                    <a href="#a-propos" class="hero-nav-link">
+                    <a href="a-propos.html" class="hero-nav-link">
                       <span class="hero-nav-dot"></span>
                       <span>À propos</span>
                     </a>
                   </li>
                   <li class="hero-nav-item">
-                    <a href="#encadrement" class="hero-nav-link">
+                    <a href="encadrement.html" class="hero-nav-link">
                       <span class="hero-nav-dot"></span>
                       <span>Encadrement</span>
                     </a>
                   </li>
                   <li class="hero-nav-item">
-                    <a href="#galerie" class="hero-nav-link">
+                    <a href="galerie.html" class="hero-nav-link">
                       <span class="hero-nav-dot"></span>
                       <span>Galerie</span>
                     </a>
                   </li>
                   <li class="hero-nav-item">
-                    <a href="#faq" class="hero-nav-link">
+                    <a href="faq.html" class="hero-nav-link">
                       <span class="hero-nav-dot"></span>
                       <span>FAQ</span>
                     </a>
                   </li>
                   <li class="hero-nav-item">
-                    <a href="#contact" class="hero-nav-link">
+                    <a href="contact.html" class="hero-nav-link">
                       <span class="hero-nav-dot"></span>
                       <span>Contact</span>
                     </a>
@@ -705,74 +711,85 @@
     <!-- ============================================
          ATELIER / AGENCY SECTION
          ============================================ -->
-    <section id="atelier" class="agency-section" aria-labelledby="agency-heading">
-      <div class="agency-header">
-        <div class="agency-header-left">
-          <h2 class="agency-heading" id="agency-heading">Atelier</h2>
+    <section id="atelier" class="agency-section" aria-labelledby="atelier-heading">
+     <div class="masonry-grid masonry-grid--home">
+      <div class="masonry-grid__header">
+        <div class="masonry-grid__header-side">
+          <h2 class="masonry-grid__heading" id="atelier-heading">Atelier</h2>
         </div>
-        <div class="agency-intro-right">
-          <span class="agency-label">Ixelles, Bruxelles</span>
-          <p class="agency-intro-desc">
+        <div class="masonry-grid__header-right">
+          <span class="masonry-grid__label">Ixelles, Bruxelles</span>
+          <p class="masonry-grid__intro-desc">
             Nous chérissons chaque œuvre confiée. Votre vision, notre expertise :
             ensemble, nous lui donnons le cadre qu'elle mérite. Depuis notre atelier
             de la rue du Bailli, chaque réalisation est une histoire.
           </p>
-          <a href="#" class="agency-btn">
-            <span class="agency-btn-label">Notre atelier</span>
-            <span class="agency-btn-dot">
-              <span class="agency-btn-dot-inner"></span>
+          <a href="#" class="masonry-grid__btn">
+            <span class="masonry-grid__btn-label">Notre atelier</span>
+            <span class="masonry-grid__btn-dot">
+              <span class="masonry-grid__btn-dot-inner"></span>
             </span>
           </a>
         </div>
       </div>
+  <div class="masonry-grid__photo-wrap masonry-grid__photo-large">
+    <img
+      src="images/encadrement/wooden-background-with-vintage-style-picture-frame-2026-03-16-01-22-24-utc.webp"
+      alt="L'atelier Lesarts à Ixelles"
+      class="masonry-grid__photo masonry-grid__photo-main"
+    />
+  </div>
 
-      <div class="agency-gallery">
-        <div class="agency-photo-wrap agency-photo-large">
-          <img
-            src="images/encadrement/wooden-background-with-vintage-style-picture-frame-2026-03-16-01-22-24-utc.webp"
-            alt="L'atelier Lesarts à Ixelles"
-            class="agency-photo agency-main-photo"
-          />
-        </div>
+  <div class="masonry-grid__photo-wrap masonry-grid__photo-side-1">
+    <img
+      src="images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-04-54-59-utc.webp"
+      alt="Détail de l'atelier Lesarts"
+      class="masonry-grid__photo masonry-grid__photo-small-1"
+    />
+  </div>
 
-        <div class="agency-gallery-right">
-          <div class="agency-photo-wrap">
-            <img src="images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-04-54-59-utc.webp" alt="Détail de l'atelier Lesarts" class="agency-photo" />
-          </div>
-          <div class="agency-photo-wrap">
-            <img src="images/encadrement/colorful-wooden-picture-frame-corners-variety-2026-03-10-04-49-00-utc.webp" alt="Atelier encadrement sur mesure" class="agency-photo" />
-          </div>
-          <div class="agency-photo-wrap">
-            <img src="images/encadrement/framing-workshop-many-different-samples-baguette-2026-03-13-04-23-51-utc.webp" alt="Baguettes et matériaux d'encadrement" class="agency-photo" />
-          </div>
-        </div>
+  <div class="masonry-grid__photo-wrap masonry-grid__photo-side-2">
+    <img
+      src="images/encadrement/colorful-wooden-picture-frame-corners-variety-2026-03-10-04-49-00-utc.webp"
+      alt="Atelier encadrement sur mesure"
+      class="masonry-grid__photo masonry-grid__photo-small-2"
+    />
+  </div>
 
-        <div class="agency-values-in-gallery">
-          <ul class="agency-values">
-            <li class="agency-value-item">
-              <span class="agency-value-title">Le détail fait la différence.</span>
-              <p class="agency-value-desc">
-                Chaque millimètre compte. Nous travaillons avec des matériaux d'exception
-                pour garantir un encadrement qui préserve et met en valeur votre œuvre dans le temps.
-              </p>
-            </li>
-            <li class="agency-value-item">
-              <span class="agency-value-title">L'art de mettre en valeur.</span>
-              <p class="agency-value-desc">
-                Encadrer, c'est créer un dialogue entre l'œuvre et son environnement.
-                Nous guidons ce choix avec sensibilité et expertise, pour que chaque cadre raconte une histoire.
-              </p>
-            </li>
-            <li class="agency-value-item">
-              <span class="agency-value-title">L'humain au cœur du métier.</span>
-              <p class="agency-value-desc">
-                Derrière chaque encadrement, il y a une histoire. Nous prenons le temps
-                de comprendre la vôtre avant de donner le premier coup de cutter.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <div class="masonry-grid__photo-wrap masonry-grid__photo-side-3">
+    <img
+      src="images/encadrement/framing-workshop-many-different-samples-baguette-2026-03-13-04-23-51-utc.webp"
+      alt="Baguettes et matériaux d'encadrement"
+      class="masonry-grid__photo masonry-grid__photo-small-3"
+    />
+  </div>
+
+  <div class="masonry-grid__values">
+    <ul class="masonry-grid__values-list">
+      <li class="masonry-grid__value-item">
+        <span class="masonry-grid__value-title">Le détail fait la différence.</span>
+        <p class="masonry-grid__value-desc">
+          Chaque millimètre compte. Nous travaillons avec des matériaux d'exception
+          pour garantir un encadrement qui préserve et met en valeur votre œuvre dans le temps.
+        </p>
+      </li>
+      <li class="masonry-grid__value-item">
+        <span class="masonry-grid__value-title">L'art de mettre en valeur.</span>
+        <p class="masonry-grid__value-desc">
+          Encadrer, c'est créer un dialogue entre l'œuvre et son environnement.
+          Nous guidons ce choix avec sensibilité et expertise, pour que chaque cadre raconte une histoire.
+        </p>
+      </li>
+      <li class="masonry-grid__value-item">
+        <span class="masonry-grid__value-title">L'humain au cœur du métier.</span>
+        <p class="masonry-grid__value-desc">
+          Derrière chaque encadrement, il y a une histoire. Nous prenons le temps
+          de comprendre la vôtre avant de donner le premier coup de cutter.
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
     </section>
 
     <!-- ============================================
@@ -816,7 +833,9 @@
 
         <div class="footer-info-col">
           <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="footer-info-link">lesartsprod.be</a>
+          <a href="tel:+3226465469" class="footer-info-link">+32 2 646 54 69</a>
           <span class="footer-info-link footer-info-static">Mer – Sam : 10h30 – 18h30</span>
+          <span class="footer-info-link footer-info-static">Mar : sur rendez-vous</span>
         </div>
 
         <div class="footer-info-col">
@@ -832,7 +851,20 @@
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-big-letters" aria-hidden="true">LESARTS</div>
+      <div class="footer-photos">
+        <div class="footer-photo-wrap">
+          <img src="images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="" class="footer-photo" />
+        </div>
+        <div class="footer-photo-wrap">
+          <img src="images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-21-35-00-utc.webp" alt="" class="footer-photo" />
+        </div>
+        <div class="footer-photo-wrap">
+          <img src="images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="" class="footer-photo" />
+        </div>
+        <div class="footer-photo-wrap">
+          <img src="images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="" class="footer-photo" />
+        </div>
+      </div>
     </div>
   </footer>
 
