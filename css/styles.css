@@ -1980,20 +1980,25 @@ button {
   outline-offset: 2px;
 }
 
-/* ── Nav dots — identity colors ─────────────── */
-.nav-item:nth-child(1) .nav-dot { background-color: var(--terra); }
-.nav-item:nth-child(2) .nav-dot { background-color: var(--green); }
-.nav-item:nth-child(3) .nav-dot { background-color: var(--pink); }
-.nav-item:nth-child(4) .nav-dot { background-color: var(--blue); }
-.nav-item:nth-child(5) .nav-dot { background-color: var(--grey); }
-.nav-item:nth-child(6) .nav-dot { background-color: var(--beige); }
-
-.hero-nav-item:nth-child(1) .hero-nav-dot { background-color: var(--terra); }
-.hero-nav-item:nth-child(2) .hero-nav-dot { background-color: var(--green); }
-.hero-nav-item:nth-child(3) .hero-nav-dot { background-color: var(--pink); }
-.hero-nav-item:nth-child(4) .hero-nav-dot { background-color: var(--blue); }
-.hero-nav-item:nth-child(5) .hero-nav-dot { background-color: var(--grey); }
-.hero-nav-item:nth-child(6) .hero-nav-dot { background-color: var(--beige); }
+/* ── Nav dots — identity colors, mapped by destination (overlay + hero nav) ── */
+/* Accueil — white (the overlay it sits in is dark) */
+a[href="index.html"] .nav-dot,
+a[href="index.html"] .hero-nav-dot      { background-color: var(--white); }
+/* À propos — green */
+a[href="a-propos.html"] .nav-dot,
+a[href="a-propos.html"] .hero-nav-dot   { background-color: var(--green); }
+/* Encadrement — orange (terracotta) */
+a[href="encadrement.html"] .nav-dot,
+a[href="encadrement.html"] .hero-nav-dot { background-color: var(--terra); }
+/* Galerie — mauve */
+a[href="galerie.html"] .nav-dot,
+a[href="galerie.html"] .hero-nav-dot    { background-color: var(--pink); }
+/* FAQ — grey */
+a[href="faq.html"] .nav-dot,
+a[href="faq.html"] .hero-nav-dot        { background-color: var(--grey); }
+/* Contact — blue */
+a[href="contact.html"] .nav-dot,
+a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
 
 /* ── Project cards — background colors ──────── */
 #hero-card-1 { --card-bg: var(--terra); }
