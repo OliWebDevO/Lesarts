@@ -50,6 +50,112 @@ function smoothScrollTo(target) {
 }
 
 /* ============================================
+   SHARED LAYOUT — single source of truth
+   ============================================
+   Header (secondary pages only — the home has its own) and footer (all pages)
+   are injected into placeholders so the markup is never duplicated:
+     <div data-include="header"></div>   <div data-include="footer"></div>
+*/
+const SECONDARY_HEADER_HTML = `
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Retour à l'accueil – Lesarts">
+      <div class="logo-inner">
+        <span class="logo-text">LESARTS</span>
+        <span class="logo-sub">Prod.</span>
+      </div>
+    </a>
+
+    <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span class="burger-label">Menu</span>
+    </button>
+
+    <nav class="nav-overlay" id="nav-overlay" aria-label="Navigation principale" aria-hidden="true">
+      <div class="nav-content">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Accueil</span></a></li>
+          <li class="nav-item"><a href="a-propos.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">À propos</span></a></li>
+          <li class="nav-item"><a href="encadrement.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Encadrement</span></a></li>
+          <li class="nav-item"><a href="galerie.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Galerie</span></a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">FAQ</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Contact</span></a></li>
+        </ul>
+
+        <div class="nav-info">
+          <div class="nav-address">
+            <p>Lesarts</p>
+            <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer">lesartsprod.be</a>
+          </div>
+          <div class="nav-contact">
+            <p>Rue du Bailli 43</p>
+            <p>1050 Ixelles</p>
+            <p>Bruxelles, Belgique</p>
+          </div>
+          <div class="nav-phone">
+            <p>Mer – Sam</p>
+            <p>10h30 – 18h30</p>
+          </div>
+          <div class="nav-social">
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>`;
+
+const SITE_FOOTER_HTML = `
+  <footer id="contact" class="footer" data-nav-dark>
+    <div class="footer-top">
+      <div class="footer-info-grid">
+        <div class="footer-info-col">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles" target="_blank" rel="noopener noreferrer" class="footer-address-link">
+            <p>Lesarts</p>
+            <p>Rue du Bailli 43</p>
+            <p>1050 Ixelles</p>
+            <p>Bruxelles, Belgique</p>
+          </a>
+        </div>
+        <div class="footer-info-col">
+          <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="footer-info-link">lesartsprod.be</a>
+          <a href="tel:+3226465469" class="footer-info-link">+32 2 646 54 69</a>
+          <span class="footer-info-link footer-info-static">Mer – Sam : 10h30 – 18h30</span>
+          <span class="footer-info-link footer-info-static">Mar : sur rendez-vous</span>
+        </div>
+        <div class="footer-info-col">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Instagram</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Facebook</a>
+        </div>
+        <div class="footer-info-col">
+          <a href="#" class="footer-info-link">Mentions légales</a>
+          <span class="footer-copyright">Lesarts &copy; 2025</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-photos">
+        <div class="footer-photo-wrap"><img src="images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="" class="footer-photo" /></div>
+        <div class="footer-photo-wrap"><img src="images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-21-35-00-utc.webp" alt="" class="footer-photo" /></div>
+        <div class="footer-photo-wrap"><img src="images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="" class="footer-photo" /></div>
+        <div class="footer-photo-wrap"><img src="images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="" class="footer-photo" /></div>
+      </div>
+    </div>
+  </footer>`;
+
+function injectLayout() {
+  const headerSlot = document.querySelector('[data-include="header"]');
+  if (headerSlot) headerSlot.outerHTML = SECONDARY_HEADER_HTML;
+
+  const footerSlot = document.querySelector('[data-include="footer"]');
+  if (footerSlot) footerSlot.outerHTML = SITE_FOOTER_HTML;
+
+  // Mark the current page in the (injected) nav
+  const file = location.pathname.split('/').pop() || 'index.html';
+  const current = file === '' ? 'index.html' : file;
+  const link = document.querySelector(`.nav-overlay .nav-link[href="${current}"]`);
+  if (link) link.setAttribute('aria-current', 'page');
+}
+
+/* ============================================
    2. PAGE LOADER
    ============================================ */
 function initPageLoader() {
@@ -942,6 +1048,9 @@ function initLogoTheme() {
    INIT — Run everything
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  // Inject shared header/footer BEFORE anything queries them
+  injectLayout();
+
   // Smooth scroll first so Lenis is ready
   try {
     initSmoothScroll();
@@ -982,7 +1091,11 @@ function initAboutPage() {
      Works regardless of reduced-motion. */
   const scrollBtn = document.getElementById('about-scroll-btn');
   if (scrollBtn) {
-    scrollBtn.addEventListener('click', () => smoothScrollTo('.about-welcome'));
+    scrollBtn.addEventListener('click', () => {
+      const hero = document.querySelector('.about-hero');
+      const target = document.querySelector('.about-welcome') || (hero && hero.nextElementSibling);
+      smoothScrollTo(target);
+    });
   }
 
   if (prefersReduced) return;

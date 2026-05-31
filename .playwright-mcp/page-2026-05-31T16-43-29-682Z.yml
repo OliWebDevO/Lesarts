@@ -1,0 +1,417 @@
+- generic [active] [ref=e1]:
+  - progressbar [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: LESARTS
+      - generic [ref=e6]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e7] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e8]:
+        - generic [ref=e9]: LESARTS
+        - generic [ref=e10]: Prod.
+    - button "Ouvrir le menu" [ref=e11] [cursor=pointer]:
+      - generic [ref=e12]: Menu
+    - navigation:
+      - generic:
+        - list:
+          - listitem:
+            - link:
+              - /url: index.html
+              - generic: Accueil
+          - listitem:
+            - link:
+              - /url: a-propos.html
+              - generic: À propos
+          - listitem:
+            - link:
+              - /url: encadrement.html
+              - generic: Encadrement
+          - listitem:
+            - link:
+              - /url: galerie.html
+              - generic: Galerie
+          - listitem:
+            - link:
+              - /url: faq.html
+              - generic: FAQ
+          - listitem:
+            - link:
+              - /url: contact.html
+              - generic: Contact
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e13]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - navigation [ref=e19]:
+          - list [ref=e20]:
+            - listitem [ref=e21]:
+              - link "À propos" [ref=e22] [cursor=pointer]:
+                - /url: a-propos.html
+                - generic [ref=e24]: À propos
+            - listitem [ref=e25]:
+              - link "Encadrement" [ref=e26] [cursor=pointer]:
+                - /url: encadrement.html
+                - generic [ref=e28]: Encadrement
+            - listitem [ref=e29]:
+              - link "Galerie" [ref=e30] [cursor=pointer]:
+                - /url: galerie.html
+                - generic [ref=e32]: Galerie
+            - listitem [ref=e33]:
+              - link "FAQ" [ref=e34] [cursor=pointer]:
+                - /url: faq.html
+                - generic [ref=e36]: FAQ
+            - listitem [ref=e37]:
+              - link "Contact" [ref=e38] [cursor=pointer]:
+                - /url: contact.html
+                - generic [ref=e40]: Contact
+        - generic [ref=e41]:
+          - heading "Lesarts – Encadreur sur mesure et galerie d'art à Ixelles, Bruxelles" [level=1] [ref=e42]:
+            - generic [ref=e43]: LESARTS
+            - generic [ref=e44]: Lesarts – Encadreur sur mesure et galerie d'art à Ixelles, Bruxelles
+          - paragraph [ref=e45]: Maison spécialisée dans l'encadrement sur mesure à Ixelles. Nous sublimons vos œuvres, photos et affiches avec précision et passion, depuis notre atelier de la rue du Bailli.
+        - list [ref=e47]:
+          - listitem [ref=e48]:
+            - link "Instagram" [ref=e49] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e50]:
+            - link "Facebook" [ref=e51] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e52]:
+            - link "lesartsprod.be" [ref=e53] [cursor=pointer]:
+              - /url: https://www.lesartsprod.be
+      - generic [ref=e54]:
+        - link "Encadrement sur mesure – Lesarts" [ref=e55] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement sur mesure – Lesarts" [ref=e56]
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]: "2026"
+            - generic [ref=e60]:
+              - generic [ref=e61]: Encadrement sur mesure
+              - generic [ref=e62]: Baguettes, passe-partout & protection UV
+          - generic [ref=e63]:
+            - generic [ref=e64]: Encadrement
+            - generic [ref=e65]: ↗
+            - generic [ref=e66]: "01"
+      - generic [ref=e67]:
+        - link "Galerie d'art – Lesarts" [ref=e68] [cursor=pointer]:
+          - /url: "#"
+          - img "Galerie d'art – Lesarts" [ref=e69]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: "2025"
+            - generic [ref=e73]:
+              - generic [ref=e74]: Galerie d'art
+              - generic [ref=e75]: Œuvres originales & artistes reconnus
+          - generic [ref=e76]:
+            - generic [ref=e77]: Galerie
+            - generic [ref=e78]: ↗
+            - generic [ref=e79]: "02"
+      - generic [ref=e80]:
+        - link "Expositions temporaires – Lesarts" [ref=e81] [cursor=pointer]:
+          - /url: "#"
+          - img "Expositions temporaires – Lesarts" [ref=e82]
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - generic [ref=e85]: "2024"
+            - generic [ref=e86]:
+              - generic [ref=e87]: Exposition
+              - generic [ref=e88]: Artistes invités & vernissages
+          - generic [ref=e89]:
+            - generic [ref=e90]: Exposition
+            - generic [ref=e91]: ↗
+            - generic [ref=e92]: "03"
+    - region "Réalisations" [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e96]:
+          - link "Encadrement sur mesure d'une architecture" [ref=e97] [cursor=pointer]:
+            - /url: "#"
+            - img "Encadrement sur mesure d'une architecture" [ref=e99]
+          - link "Galerie d'art Lesarts" [ref=e100] [cursor=pointer]:
+            - /url: "#"
+            - img "Galerie d'art Lesarts" [ref=e102]
+          - link "Exposition d'artistes" [ref=e103] [cursor=pointer]:
+            - /url: "#"
+            - img "Exposition d'artistes" [ref=e105]
+          - link "Conseil en encadrement" [ref=e106] [cursor=pointer]:
+            - /url: "#"
+            - img "Conseil en encadrement" [ref=e108]
+          - link "Réalisation encadrement" [ref=e109] [cursor=pointer]:
+            - /url: "#"
+            - img "Réalisation encadrement" [ref=e111]
+          - link "Oeuvre encadrée sur mesure" [ref=e112] [cursor=pointer]:
+            - /url: "#"
+            - img "Oeuvre encadrée sur mesure" [ref=e114]
+          - link "Affiche encadrée" [ref=e115] [cursor=pointer]:
+            - /url: "#"
+            - img "Affiche encadrée" [ref=e117]
+        - generic [ref=e119]:
+          - heading "R é a l i s a t i o n s" [level=2] [ref=e120]:
+            - generic [ref=e122]: R
+            - generic [ref=e124]: é
+            - generic [ref=e126]: a
+            - generic [ref=e128]: l
+            - generic [ref=e130]: i
+            - generic [ref=e132]: s
+            - generic [ref=e134]: a
+            - generic [ref=e136]: t
+            - generic [ref=e138]: i
+            - generic [ref=e140]: o
+            - generic [ref=e142]: "n"
+            - generic [ref=e144]: s
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - link "00 Encadrement de photos & affiches" [ref=e147] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e149]: "00"
+                - generic [ref=e151]: Encadrement de photos & affiches
+            - listitem [ref=e153]:
+              - link "01 Encadrement d'œuvres d'art" [ref=e154] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e156]: "01"
+                - generic [ref=e158]: Encadrement d'œuvres d'art
+            - listitem [ref=e160]:
+              - link "02 Galerie & expositions d'artistes" [ref=e161] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e163]: "02"
+                - generic [ref=e165]: Galerie & expositions d'artistes
+            - listitem [ref=e167]:
+              - link "03 Conseil personnalisé & devis sur mesure" [ref=e168] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e170]: "03"
+                - generic [ref=e172]: Conseil personnalisé & devis sur mesure
+          - paragraph [ref=e175]: Chaque œuvre mérite un encadrement à sa mesure. Nous travaillons avec vous pour choisir la baguette, le passe-partout et la protection idéale — toujours sur mesure, jamais au hasard.
+          - link "Voir les réalisations" [ref=e177] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e178]: Voir les réalisations
+    - region "Nos services" [ref=e181]:
+      - generic [ref=e182]:
+        - heading "Services" [level=2]
+        - generic [ref=e183]:
+          - generic [ref=e186]:
+            - generic [ref=e187]:
+              - generic [ref=e188]: "01"
+              - heading "Encadrement sur mesure" [level=3] [ref=e189]
+              - generic [ref=e190]:
+                - generic [ref=e191]: / Baguettes sur mesure
+                - generic [ref=e192]: / Passe-partout
+                - generic [ref=e193]: / Verre anti-reflet
+                - generic [ref=e194]: / Montage soigné
+                - generic [ref=e195]: / Protection UV
+                - generic [ref=e196]: / Cadres standards
+              - link "Découvrir" [ref=e197] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e198]: Découvrir
+                - img [ref=e200]
+            - img "Encadrement sur mesure Lesarts" [ref=e205]
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]: "02"
+              - heading "Galerie d'art" [level=3] [ref=e211]
+              - generic [ref=e212]:
+                - generic [ref=e213]: / Expositions permanentes
+                - generic [ref=e214]: / Artistes reconnus
+                - generic [ref=e215]: / Œuvres originales
+                - generic [ref=e216]: / Tirages limités
+                - generic [ref=e217]: / Lithographies
+                - generic [ref=e218]: / Sculptures
+              - link "Découvrir" [ref=e219] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e220]: Découvrir
+                - img [ref=e222]
+            - img "Galerie d'art Lesarts" [ref=e227]
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e232]: "03"
+              - heading "Expositions temporaires" [level=3] [ref=e233]
+              - generic [ref=e234]:
+                - generic [ref=e235]: / Artistes invités
+                - generic [ref=e236]: / Vernissages
+                - generic [ref=e237]: / Commissariat artistique
+                - generic [ref=e238]: / Scénographie
+                - generic [ref=e239]: / Médiation culturelle
+                - generic [ref=e240]: / Catalogue d'exposition
+              - link "Découvrir" [ref=e241] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e242]: Découvrir
+                - img [ref=e244]
+            - img "Expositions temporaires Lesarts" [ref=e249]
+          - generic [ref=e252]:
+            - generic [ref=e253]:
+              - generic [ref=e254]: "04"
+              - heading "Conseil & devis" [level=3] [ref=e255]
+              - generic [ref=e256]:
+                - generic [ref=e257]: / Consultation gratuite
+                - generic [ref=e258]: / Devis sur mesure
+                - generic [ref=e259]: / Conseil en décoration
+                - generic [ref=e260]: / Suivi de commande
+                - generic [ref=e261]: / Livraison possible
+                - generic [ref=e262]: / Pose & installation
+              - link "Découvrir" [ref=e263] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e264]: Découvrir
+                - img [ref=e266]
+            - img "Conseil & devis Lesarts" [ref=e271]
+        - navigation "Navigation services" [ref=e272]:
+          - generic [ref=e273]:
+            - button "Encadrement sur mesure" [ref=e274] [cursor=pointer]:
+              - generic [ref=e275]: "01"
+              - generic [ref=e276]: Encadrement sur mesure
+            - button "Galerie d'art" [ref=e277] [cursor=pointer]:
+              - generic [ref=e278]: "02"
+              - generic [ref=e279]: Galerie d'art
+            - button "Expositions temporaires" [ref=e280] [cursor=pointer]:
+              - generic [ref=e281]: "03"
+              - generic [ref=e282]: Expositions temporaires
+            - button "Conseil & devis" [ref=e283] [cursor=pointer]:
+              - generic [ref=e284]: "04"
+              - generic [ref=e285]: Conseil & devis
+    - region "Portfolio" [ref=e287]:
+      - generic [ref=e289]:
+        - link "Encadrement galerie Encadrement 2025 Collection Bleue" [ref=e290] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement galerie" [ref=e292]
+          - generic [ref=e293]:
+            - generic [ref=e294]:
+              - generic [ref=e295]: Encadrement
+              - generic [ref=e296]: "2025"
+            - generic [ref=e297]:
+              - generic [ref=e298]: Collection Bleue
+              - img [ref=e300]
+        - link "Exposition Entre Autre Exposition 2025 Entre Autre" [ref=e302] [cursor=pointer]:
+          - /url: "#"
+          - img "Exposition Entre Autre" [ref=e304]
+          - generic [ref=e305]:
+            - generic [ref=e306]:
+              - generic [ref=e307]: Exposition
+              - generic [ref=e308]: "2025"
+            - generic [ref=e309]:
+              - generic [ref=e310]: Entre Autre
+              - img [ref=e312]
+        - link "Galerie Moon Studio Galerie 2024 Moon Studio" [ref=e314] [cursor=pointer]:
+          - /url: "#"
+          - img "Galerie Moon Studio" [ref=e316]
+          - generic [ref=e317]:
+            - generic [ref=e318]:
+              - generic [ref=e319]: Galerie
+              - generic [ref=e320]: "2024"
+            - generic [ref=e321]:
+              - generic [ref=e322]: Moon Studio
+              - img [ref=e324]
+        - link "Encadrement Maison Yokō Encadrement 2024 Maison Yokō" [ref=e326] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement Maison Yokō" [ref=e328]
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - generic [ref=e331]: Encadrement
+              - generic [ref=e332]: "2024"
+            - generic [ref=e333]:
+              - generic [ref=e334]: Maison Yokō
+              - img [ref=e336]
+        - link "Exposition Avoriaz Exposition 2023 Paysages Alpins" [ref=e338] [cursor=pointer]:
+          - /url: "#"
+          - img "Exposition Avoriaz" [ref=e340]
+          - generic [ref=e341]:
+            - generic [ref=e342]:
+              - generic [ref=e343]: Exposition
+              - generic [ref=e344]: "2023"
+            - generic [ref=e345]:
+              - generic [ref=e346]: Paysages Alpins
+              - img [ref=e348]
+        - link "Encadrement affiche Encadrement 2023 Grande Format" [ref=e350] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement affiche" [ref=e352]
+          - generic [ref=e353]:
+            - generic [ref=e354]:
+              - generic [ref=e355]: Encadrement
+              - generic [ref=e356]: "2023"
+            - generic [ref=e357]:
+              - generic [ref=e358]: Grande Format
+              - img [ref=e360]
+        - link "Réalisation sur mesure Sur mesure 2022 Série Limitée" [ref=e362] [cursor=pointer]:
+          - /url: "#"
+          - img "Réalisation sur mesure" [ref=e364]
+          - generic [ref=e365]:
+            - generic [ref=e366]:
+              - generic [ref=e367]: Sur mesure
+              - generic [ref=e368]: "2022"
+            - generic [ref=e369]:
+              - generic [ref=e370]: Série Limitée
+              - img [ref=e372]
+        - link "Voir toutes les réalisations ↗" [ref=e374] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e375]: Voir toutes les réalisations
+          - generic [ref=e376]: ↗
+    - region "Atelier" [ref=e377]:
+      - generic [ref=e378]:
+        - generic [ref=e379]:
+          - heading "Atelier" [level=2] [ref=e381]
+          - generic [ref=e382]:
+            - generic [ref=e383]: Ixelles, Bruxelles
+            - paragraph [ref=e384]: "Nous chérissons chaque œuvre confiée. Votre vision, notre expertise : ensemble, nous lui donnons le cadre qu'elle mérite. Depuis notre atelier de la rue du Bailli, chaque réalisation est une histoire."
+            - link "Notre atelier" [ref=e385] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e386]: Notre atelier
+        - img "L'atelier Lesarts à Ixelles" [ref=e390]
+        - img "Détail de l'atelier Lesarts" [ref=e392]
+        - img "Atelier encadrement sur mesure" [ref=e394]
+        - img "Baguettes et matériaux d'encadrement" [ref=e396]
+        - list [ref=e398]:
+          - listitem [ref=e399]:
+            - generic [ref=e400]: Le détail fait la différence.
+            - paragraph [ref=e401]: Chaque millimètre compte. Nous travaillons avec des matériaux d'exception pour garantir un encadrement qui préserve et met en valeur votre œuvre dans le temps.
+          - listitem [ref=e402]:
+            - generic [ref=e403]: L'art de mettre en valeur.
+            - paragraph [ref=e404]: Encadrer, c'est créer un dialogue entre l'œuvre et son environnement. Nous guidons ce choix avec sensibilité et expertise, pour que chaque cadre raconte une histoire.
+          - listitem [ref=e405]:
+            - generic [ref=e406]: L'humain au cœur du métier.
+            - paragraph [ref=e407]: Derrière chaque encadrement, il y a une histoire. Nous prenons le temps de comprendre la vôtre avant de donner le premier coup de cutter.
+    - region "Donnez un cadre à ce qui vous est précieux." [ref=e408]:
+      - generic [ref=e409]:
+        - heading "Donnez un cadre à ce qui vous est précieux." [level=2] [ref=e410]
+        - link "Demander un devis" [ref=e411] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e412]: Demander un devis
+  - contentinfo [ref=e415]:
+    - generic [ref=e417]:
+      - link "Lesarts Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e419] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e420]: Lesarts
+        - paragraph [ref=e421]: Rue du Bailli 43
+        - paragraph [ref=e422]: 1050 Ixelles
+        - paragraph [ref=e423]: Bruxelles, Belgique
+      - generic [ref=e424]:
+        - link "lesartsprod.be" [ref=e425] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "+32 2 646 54 69" [ref=e426] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e427]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e428]: "Mar : sur rendez-vous"
+      - generic [ref=e429]:
+        - link "Instagram" [ref=e430] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e431] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e432]:
+        - link "Mentions légales" [ref=e433] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e434]: Lesarts © 2025

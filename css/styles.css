@@ -44,6 +44,7 @@
   --black: #16120E;
   --beige: #F0EAE1;
   --grey: #6B6560;
+  --ochre: #C6A95E;
   --white: #ffffff;
 
   --font-neue: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1993,9 +1994,9 @@ a[href="encadrement.html"] .hero-nav-dot { background-color: var(--terra); }
 /* Galerie — mauve */
 a[href="galerie.html"] .nav-dot,
 a[href="galerie.html"] .hero-nav-dot    { background-color: var(--pink); }
-/* FAQ — grey */
+/* FAQ — ochre */
 a[href="faq.html"] .nav-dot,
-a[href="faq.html"] .hero-nav-dot        { background-color: var(--grey); }
+a[href="faq.html"] .hero-nav-dot        { background-color: var(--ochre); }
 /* Contact — blue */
 a[href="contact.html"] .nav-dot,
 a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
@@ -2100,6 +2101,12 @@ a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
   margin-bottom: 3.2rem;
 }
 
+/* Smaller variant for long single-word titles (e.g. "Encadrement") so they
+   don't overflow onto the hero image. */
+.about-hero__title--compact {
+  font-size: clamp(5.6rem, 8vw, 11rem);
+}
+
 .about-hero__desc {
   font-family: var(--font-neue);
   font-weight: 300;
@@ -2178,6 +2185,18 @@ a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
   gap: 0.8rem;
   background-color: var(--green);
   flex-shrink: 0;
+}
+
+/* Band colour follows the page's nav-dot identity colour */
+.about-hero__band--terra { background-color: var(--terra); }
+.about-hero__band--pink  { background-color: var(--pink); }
+.about-hero__band--ochre { background-color: var(--ochre); }
+.about-hero__band--blue  { background-color: var(--blue); }
+
+/* Placeholder white section for the secondary pages (between header & footer) */
+.page-blank {
+  min-height: 100vh;
+  background-color: var(--white);
 }
 
 .about-hero__band-meta {

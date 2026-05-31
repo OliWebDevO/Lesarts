@@ -36,85 +36,8 @@
   <div id="cursor" class="cursor"></div>
   <div id="cursor-follower" class="cursor-follower"></div>
 
-  <!-- ============================================
-       HEADER
-       ============================================ -->
-  <header class="header">
-    <a href="index.html" class="logo" aria-label="Retour à l'accueil – Lesarts">
-      <div class="logo-inner">
-        <span class="logo-text">LESARTS</span>
-        <span class="logo-sub">Prod.</span>
-      </div>
-    </a>
-
-    <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span class="burger-label">Menu</span>
-    </button>
-
-    <!-- Full-screen navigation overlay -->
-    <nav class="nav-overlay" id="nav-overlay" aria-label="Navigation principale" aria-hidden="true">
-      <div class="nav-content">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link" data-close-menu>
-              <span class="nav-dot"></span>
-              <span class="nav-label">Accueil</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="a-propos.html" class="nav-link" data-close-menu aria-current="page">
-              <span class="nav-dot"></span>
-              <span class="nav-label">À propos</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="encadrement.html" class="nav-link" data-close-menu>
-              <span class="nav-dot"></span>
-              <span class="nav-label">Encadrement</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="galerie.html" class="nav-link" data-close-menu>
-              <span class="nav-dot"></span>
-              <span class="nav-label">Galerie</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="faq.html" class="nav-link" data-close-menu>
-              <span class="nav-dot"></span>
-              <span class="nav-label">FAQ</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link" data-close-menu>
-              <span class="nav-dot"></span>
-              <span class="nav-label">Contact</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="nav-info">
-          <div class="nav-address">
-            <p>Lesarts</p>
-            <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer">lesartsprod.be</a>
-          </div>
-          <div class="nav-contact">
-            <p>Rue du Bailli 43</p>
-            <p>1050 Ixelles</p>
-            <p>Bruxelles, Belgique</p>
-          </div>
-          <div class="nav-phone">
-            <p>Mer – Sam</p>
-            <p>10h30 – 18h30</p>
-          </div>
-          <div class="nav-social">
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <!-- HEADER (shared — injected from js/main.js) -->
+  <div data-include="header"></div>
 
   <!-- ============================================
        MAIN CONTENT
@@ -369,62 +292,8 @@
 
   </main>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
-  <footer class="footer" data-nav-dark>
-    <div class="footer-top">
-      <div class="footer-info-grid">
-        <div class="footer-info-col">
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer-address-link"
-          >
-            <p>Lesarts</p>
-            <p>Rue du Bailli 43</p>
-            <p>1050 Ixelles</p>
-            <p>Bruxelles, Belgique</p>
-          </a>
-        </div>
-
-        <div class="footer-info-col">
-          <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="footer-info-link">lesartsprod.be</a>
-          <a href="tel:+3226465469" class="footer-info-link">+32 2 646 54 69</a>
-          <span class="footer-info-link footer-info-static">Mer – Sam : 10h30 – 18h30</span>
-          <span class="footer-info-link footer-info-static">Mar : sur rendez-vous</span>
-        </div>
-
-        <div class="footer-info-col">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Instagram</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Facebook</a>
-        </div>
-
-        <div class="footer-info-col">
-          <a href="#" class="footer-info-link">Mentions légales</a>
-          <span class="footer-copyright">Lesarts &copy; 2025</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-photos">
-        <div class="footer-photo-wrap">
-          <img src="images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="" class="footer-photo" />
-        </div>
-        <div class="footer-photo-wrap">
-          <img src="images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-21-35-00-utc.webp" alt="" class="footer-photo" />
-        </div>
-        <div class="footer-photo-wrap">
-          <img src="images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="" class="footer-photo" />
-        </div>
-        <div class="footer-photo-wrap">
-          <img src="images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="" class="footer-photo" />
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- FOOTER (shared — injected from js/main.js) -->
+  <div data-include="footer"></div>
 
   <!-- ============================================
        SCRIPTS — CDN then local

@@ -1,0 +1,105 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: LESARTS
+      - generic [ref=e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e10]:
+        - generic [ref=e11]: LESARTS
+        - generic [ref=e12]: Prod.
+    - button "Ouvrir le menu" [ref=e13] [cursor=pointer]:
+      - generic [ref=e14]: Menu
+    - navigation:
+      - generic:
+        - list:
+          - listitem:
+            - link:
+              - /url: index.html
+              - generic: Accueil
+          - listitem:
+            - link:
+              - /url: a-propos.html
+              - generic: À propos
+          - listitem:
+            - link:
+              - /url: encadrement.html
+              - generic: Encadrement
+          - listitem:
+            - link:
+              - /url: galerie.html
+              - generic: Galerie
+          - listitem:
+            - link:
+              - /url: faq.html
+              - generic: FAQ
+          - listitem:
+            - link:
+              - /url: contact.html
+              - generic: Contact
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e15]:
+    - region "FAQ" [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: 04 — FAQ
+        - heading "FAQ" [level=1] [ref=e19]
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Délais, tarifs, types de cadres, conservation… Vous vous posez des questions sur l'encadrement ? Nous y répondons ici.
+          - paragraph [ref=e22]: "Et si vous ne trouvez pas votre réponse, passez nous voir à l'atelier ou contactez-nous : on se fera un plaisir de vous guider."
+        - button "Défiler vers la section suivante" [ref=e23] [cursor=pointer]:
+          - img [ref=e25]
+          - generic [ref=e27]: Défiler
+      - generic [ref=e28]:
+        - img "Mur de cadres en bois dans la boutique Lesarts" [ref=e30]
+        - generic [ref=e31]:
+          - generic [ref=e33]: FAQ
+          - generic [ref=e34]:
+            - generic [ref=e35]: Questions
+            - generic [ref=e36]: "04"
+    - region "Contenu FAQ" [ref=e37]
+  - contentinfo [ref=e38]:
+    - generic [ref=e40]:
+      - link "Lesarts Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e42] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e43]: Lesarts
+        - paragraph [ref=e44]: Rue du Bailli 43
+        - paragraph [ref=e45]: 1050 Ixelles
+        - paragraph [ref=e46]: Bruxelles, Belgique
+      - generic [ref=e47]:
+        - link "lesartsprod.be" [ref=e48] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "+32 2 646 54 69" [ref=e49] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e50]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e51]: "Mar : sur rendez-vous"
+      - generic [ref=e52]:
+        - link "Instagram" [ref=e53] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e54] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e55]:
+        - link "Mentions légales" [ref=e56] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e57]: Lesarts © 2025

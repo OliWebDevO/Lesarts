@@ -1,0 +1,129 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: LESARTS
+      - generic [ref=e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e10]:
+        - generic [ref=e11]: LESARTS
+        - generic [ref=e12]: Prod.
+    - button "Ouvrir le menu" [ref=e13] [cursor=pointer]:
+      - generic [ref=e14]: Menu
+    - navigation:
+      - generic:
+        - list:
+          - listitem:
+            - link:
+              - /url: index.html
+              - generic: Accueil
+          - listitem:
+            - link:
+              - /url: a-propos.html
+              - generic: À propos
+          - listitem:
+            - link:
+              - /url: encadrement.html
+              - generic: Encadrement
+          - listitem:
+            - link:
+              - /url: galerie.html
+              - generic: Galerie
+          - listitem:
+            - link:
+              - /url: faq.html
+              - generic: FAQ
+          - listitem:
+            - link:
+              - /url: contact.html
+              - generic: Contact
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e15]:
+    - region "Encadrement" [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: 02 — Encadrement
+        - heading "Encadrement" [level=1] [ref=e19]
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: "L'encadrement sur mesure, c'est notre cœur de métier. Baguettes, passe-partout, verre anti-reflet et protection UV : chaque détail est pensé pour préserver et sublimer votre œuvre."
+          - paragraph [ref=e22]: Du conseil à la pose, nous vous accompagnons pour trouver l'encadrement juste — celui qui dialogue avec l'objet et son environnement.
+        - button "Défiler vers la section suivante" [ref=e23] [cursor=pointer]:
+          - img [ref=e25]
+          - generic [ref=e27]: Défiler
+      - generic [ref=e28]:
+        - img "Artisan travaillant une baguette d'encadrement dans l'atelier Lesarts" [ref=e30]
+        - generic [ref=e31]:
+          - generic [ref=e34]:
+            - generic [ref=e36]: E
+            - generic [ref=e38]: "n"
+            - generic [ref=e40]: c
+            - generic [ref=e42]: a
+            - generic [ref=e44]: d
+            - generic [ref=e46]: r
+            - generic [ref=e48]: e
+            - generic [ref=e50]: m
+            - generic [ref=e52]: e
+            - generic [ref=e54]: "n"
+            - generic [ref=e56]: t
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - generic [ref=e61]: S
+                - generic [ref=e63]: u
+                - generic [ref=e65]: r
+              - generic [ref=e66]:
+                - generic [ref=e68]: m
+                - generic [ref=e70]: e
+                - generic [ref=e72]: s
+                - generic [ref=e74]: u
+                - generic [ref=e76]: r
+                - generic [ref=e78]: e
+            - generic [ref=e80]:
+              - generic [ref=e82]: "0"
+              - generic [ref=e84]: "2"
+    - region "Contenu encadrement" [ref=e85]
+  - contentinfo [ref=e86]:
+    - generic [ref=e88]:
+      - link "Lesarts Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e90] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e91]: Lesarts
+        - paragraph [ref=e92]: Rue du Bailli 43
+        - paragraph [ref=e93]: 1050 Ixelles
+        - paragraph [ref=e94]: Bruxelles, Belgique
+      - generic [ref=e95]:
+        - link "lesartsprod.be" [ref=e96] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "+32 2 646 54 69" [ref=e97] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e98]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e99]: "Mar : sur rendez-vous"
+      - generic [ref=e100]:
+        - link "Instagram" [ref=e101] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e102] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e103]:
+        - link "Mentions légales" [ref=e104] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e105]: Lesarts © 2025

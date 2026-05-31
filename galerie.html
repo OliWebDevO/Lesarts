@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie – Lesarts | Expositions d'artistes – Ixelles, Bruxelles</title>
+  <meta name="description" content="Galerie Lesarts : expositions permanentes et temporaires d'artistes d'horizons variés, à Ixelles, Rue du Bailli 43, Bruxelles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="about-skip-link">Aller au contenu principal</a>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="loader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="loader-inner">
+      <span class="loader-text">LESARTS</span>
+      <div class="loader-progress">
+        <div class="loader-progress-fill" id="loader-fill"></div>
+      </div>
+      <span class="loader-pct" id="loader-pct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- HEADER (shared — injected from js/main.js) -->
+  <div data-include="header"></div>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content">
+
+    <!-- HERO — GALERIE -->
+    <section class="about-hero" aria-labelledby="page-hero-title" data-nav-dark>
+      <div class="about-hero__left">
+        <p class="about-hero__overline">03 — Galerie</p>
+        <h1 class="about-hero__title" id="page-hero-title">Galerie</h1>
+        <div class="about-hero__desc">
+          <p>Au-delà de l'encadrement, Lesarts est aussi un lieu d'exposition. Nous accueillons tout au long de l'année des artistes d'horizons et de techniques fort différents.</p>
+          <p>Venez découvrir notre exposition permanente et nos accrochages temporaires, au cœur d'Ixelles.</p>
+        </div>
+        <button class="about-hero__scroll" type="button" id="about-scroll-btn" aria-label="Défiler vers la section suivante">
+          <span class="about-hero__scroll-arrow" aria-hidden="true">
+            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="8" y1="0" x2="8" y2="20" stroke="currentColor" stroke-width="1"/>
+              <polyline points="2,14 8,22 14,14" fill="none" stroke="currentColor" stroke-width="1"/>
+            </svg>
+          </span>
+          <span class="about-hero__scroll-label">Défiler</span>
+        </button>
+      </div>
+
+      <div class="about-hero__right">
+        <div class="about-hero__img-wrap">
+          <img
+            src="images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp"
+            alt="Échantillons de cadres décoratifs exposés chez Lesarts"
+            class="about-hero__img"
+            loading="eager"
+          />
+        </div>
+        <div class="about-hero__band about-hero__band--pink">
+          <div class="about-hero__band-meta">
+            <span class="about-hero__band-category">Galerie</span>
+          </div>
+          <div class="about-hero__band-name-row">
+            <span class="about-hero__band-name">Expositions</span>
+            <span class="about-hero__band-num">03</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENU (placeholder) -->
+    <section class="page-blank" aria-label="Contenu galerie"></section>
+
+  </main>
+
+  <!-- FOOTER (shared — injected from js/main.js) -->
+  <div data-include="footer"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
