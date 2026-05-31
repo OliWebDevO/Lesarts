@@ -1,0 +1,252 @@
+- generic [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e10]:
+        - generic [ref=e11]: LESARTS
+        - generic [ref=e12]: Prod.
+    - button "Ouvrir le menu" [ref=e13] [cursor=pointer]:
+      - generic [ref=e14]: Menu
+    - navigation:
+      - generic:
+        - list:
+          - listitem:
+            - link:
+              - /url: index.html
+              - generic: Accueil
+          - listitem:
+            - link:
+              - /url: a-propos.html
+              - generic: À propos
+          - listitem:
+            - link:
+              - /url: encadrement.html
+              - generic: Encadrement
+          - listitem:
+            - link:
+              - /url: galerie.html
+              - generic: Galerie
+          - listitem:
+            - link:
+              - /url: faq.html
+              - generic: FAQ
+          - listitem:
+            - link:
+              - /url: contact.html
+              - generic: Contact
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e15]:
+    - region "L'atelier" [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: 01 — À propos
+        - heading "L'atelier" [level=1] [ref=e19]
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Depuis plus de 15 ans, Lesarts Production est spécialisé dans l'encadrement sur mesure. Forts de cette expérience, nous conseillons chacun de nos clients avec une attention toujours renouvelée et cela pour tout type de photos, de posters, de lithographies et d'œuvres d'art.
+          - paragraph [ref=e22]: Notre métier, ce n'est pas seulement encadrer, c'est aussi exposer de nombreux artistes. Nous proposons donc une exposition permanente riche d'artistes d'horizons et de techniques fort différents.
+        - button "Défiler vers la section suivante" [active] [ref=e23] [cursor=pointer]:
+          - img [ref=e25]
+          - generic [ref=e27]: Défiler
+      - generic [ref=e28]:
+        - img "Mains d'un artisan en train de travailler une baguette dans l'atelier Lesarts" [ref=e30]
+        - generic [ref=e31]:
+          - generic [ref=e33]:
+            - generic [ref=e136]: À
+            - generic [ref=e137]:
+              - generic [ref=e139]: p
+              - generic [ref=e141]: r
+              - generic [ref=e143]: o
+              - generic [ref=e145]: p
+              - generic [ref=e147]: o
+              - generic [ref=e149]: s
+          - generic [ref=e34]:
+            - generic [ref=e150]:
+              - generic [ref=e152]: L
+              - generic [ref=e154]: "'"
+              - generic [ref=e156]: a
+              - generic [ref=e158]: t
+              - generic [ref=e160]: e
+              - generic [ref=e162]: l
+              - generic [ref=e164]: i
+              - generic [ref=e166]: e
+              - generic [ref=e168]: r
+            - generic [ref=e169]:
+              - generic [ref=e171]: "0"
+              - generic [ref=e173]: "1"
+    - region "Bienvenue chez Lesarts" [ref=e37]:
+      - generic [ref=e38]:
+        - img "Portrait dans l'atelier Lesarts, encadré sur mesure" [ref=e39]
+        - heading "Bienvenue chez Lesarts" [level=2]:
+          - generic:
+            - generic: Bienvenue
+          - generic:
+            - generic: chez
+          - generic:
+            - generic: Lesarts
+    - region "Notre histoire" [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]: 02 — Notre histoire
+        - heading "Notre histoire" [level=2] [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - generic [ref=e46]: "01"
+            - paragraph [ref=e47]: Lesarts Production est une maison spécialisée dans l'encadrement sur mesure qui vous propose, tout au long de l'année, des expositions d'artistes de renoms.
+          - generic [ref=e48]:
+            - generic [ref=e49]: "02"
+            - paragraph [ref=e50]: Chez Lesarts, nous vous proposons un vaste choix de cadres pour vos photos, posters et œuvres à de très bons prix. Venez découvrir notre offre en magasin et choisissez l'assemblage de vos désirs. À cette occasion, vous pourrez également voir notre exposition permanente.
+          - generic [ref=e51]:
+            - generic [ref=e52]: "03"
+            - paragraph [ref=e53]: Chez Lesarts, nous sommes motivés par un grand souci de qualité, essentiel dans notre travail.
+    - region "Nos valeurs" [ref=e54]:
+      - generic [ref=e55]: 03 — Ce qui nous guide
+      - heading "Nos valeurs" [level=2] [ref=e57]
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: "01"
+          - heading "Authenticité" [level=3] [ref=e61]
+          - paragraph [ref=e62]: Chaque cadre est unique, pensé pour l'oeuvre qu'il accueille. Nous ne travaillons pas en série — chaque réalisation est le résultat d'un dialogue entre l'objet, l'espace et vos envies.
+        - generic [ref=e63]:
+          - generic [ref=e64]: "02"
+          - heading "Précision" [level=3] [ref=e65]
+          - paragraph [ref=e66]: Un travail d'orfèvre, où le détail fait la différence. Du choix de la baguette à la découpe du passe-partout, chaque millimètre est mesuré, chaque angle vérifié. La qualité ne se voit pas — elle se ressent.
+        - generic [ref=e67]:
+          - generic [ref=e68]: "03"
+          - heading "Conseil" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Nous vous accompagnons du choix de la baguette jusqu'à la pose. Notre rôle n'est pas seulement de fabriquer — c'est de vous guider pour que le résultat final dépasse vos attentes.
+    - region "A d r e s s e" [ref=e174]:
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - heading "A d r e s s e" [level=2] [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e178]: A
+              - generic [ref=e180]: d
+              - generic [ref=e182]: r
+              - generic [ref=e184]: e
+              - generic [ref=e186]: s
+              - generic [ref=e188]: s
+              - generic [ref=e190]: e
+          - generic [ref=e76]:
+            - generic [ref=e77]: 04 — Adresse
+            - paragraph [ref=e78]: Notre magasin est ouvert du mercredi au samedi, de 10h30 à 18h30. Le mardi, sur rendez-vous.
+            - generic [ref=e79]:
+              - text: Lesarts Production
+              - text: Rue du Bailli 43
+              - text: 1050 Ixelles, Bruxelles
+            - link "+32 2 646 54 69" [ref=e80] [cursor=pointer]:
+              - /url: tel:+3226465469
+              - generic [ref=e81]: +32 2 646 54 69
+        - img "Mur de cadres en bois dans l'atelier Lesarts" [ref=e85]
+        - list [ref=e87]:
+          - listitem [ref=e88]:
+            - heading "F o n d é e n 1 9 8 9" [level=3] [ref=e191]:
+              - generic [ref=e192]:
+                - generic [ref=e194]: F
+                - generic [ref=e196]: o
+                - generic [ref=e198]: "n"
+                - generic [ref=e200]: d
+                - generic [ref=e202]: é
+              - generic [ref=e203]:
+                - generic [ref=e205]: e
+                - generic [ref=e207]: "n"
+              - generic [ref=e208]:
+                - generic [ref=e210]: "1"
+                - generic [ref=e212]: "9"
+                - generic [ref=e214]: "8"
+                - generic [ref=e216]: "9"
+            - paragraph [ref=e90]: Depuis plus de trente ans, Lesarts cultive un savoir-faire transmis de main en main, au cœur d'Ixelles.
+          - listitem [ref=e91]:
+            - heading "U n a t e l i e r o u v e r t" [level=3] [ref=e217]:
+              - generic [ref=e218]:
+                - generic [ref=e220]: U
+                - generic [ref=e222]: "n"
+              - generic [ref=e223]:
+                - generic [ref=e225]: a
+                - generic [ref=e227]: t
+                - generic [ref=e229]: e
+                - generic [ref=e231]: l
+                - generic [ref=e233]: i
+                - generic [ref=e235]: e
+                - generic [ref=e237]: r
+              - generic [ref=e238]:
+                - generic [ref=e240]: o
+                - generic [ref=e242]: u
+                - generic [ref=e244]: v
+                - generic [ref=e246]: e
+                - generic [ref=e248]: r
+                - generic [ref=e250]: t
+            - paragraph [ref=e93]: Ici, le travail se fait à vue. Venez observer le geste des artisans, poser vos questions, choisir vos matériaux.
+          - listitem [ref=e94]:
+            - heading "G a l e r i e p e r m a n e n t e" [level=3] [ref=e251]:
+              - generic [ref=e252]:
+                - generic [ref=e254]: G
+                - generic [ref=e256]: a
+                - generic [ref=e258]: l
+                - generic [ref=e260]: e
+                - generic [ref=e262]: r
+                - generic [ref=e264]: i
+                - generic [ref=e266]: e
+              - generic [ref=e267]:
+                - generic [ref=e269]: p
+                - generic [ref=e271]: e
+                - generic [ref=e273]: r
+                - generic [ref=e275]: m
+                - generic [ref=e277]: a
+                - generic [ref=e279]: "n"
+                - generic [ref=e281]: e
+                - generic [ref=e283]: "n"
+                - generic [ref=e285]: t
+                - generic [ref=e287]: e
+            - paragraph [ref=e96]: Au-delà de l'encadrement, nous exposons des artistes d'horizons variés. L'atelier est aussi un lieu de découverte.
+        - img "Détail de l'atelier Lesarts" [ref=e98]
+        - img "Atelier encadrement sur mesure" [ref=e100]
+        - img "Baguettes et matériaux d'encadrement" [ref=e102]
+    - region "Venez nous rendre visite" [ref=e103]:
+      - generic [ref=e104]:
+        - heading "Venez nous rendre visite" [level=2] [ref=e105]
+        - link "Nous trouver" [ref=e106] [cursor=pointer]:
+          - /url: contact.html
+          - generic [ref=e107]: Nous trouver
+  - contentinfo [ref=e110]:
+    - generic [ref=e112]:
+      - link "Lesarts Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e114] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e115]: Lesarts
+        - paragraph [ref=e116]: Rue du Bailli 43
+        - paragraph [ref=e117]: 1050 Ixelles
+        - paragraph [ref=e118]: Bruxelles, Belgique
+      - generic [ref=e119]:
+        - link "lesartsprod.be" [ref=e120] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "+32 2 646 54 69" [ref=e121] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e122]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e123]: "Mar : sur rendez-vous"
+      - generic [ref=e124]:
+        - link "Instagram" [ref=e125] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e126] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e127]:
+        - link "Mentions légales" [ref=e128] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e129]: Lesarts © 2025

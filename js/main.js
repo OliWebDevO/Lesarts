@@ -18,8 +18,10 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 /* ============================================
    1. LENIS SMOOTH SCROLL
    ============================================ */
+let lenis = null; // shared instance, used for programmatic smooth scrolling
+
 function initSmoothScroll() {
-  const lenis = new Lenis({
+  lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
@@ -33,6 +35,18 @@ function initSmoothScroll() {
   gsap.ticker.lagSmoothing(0);
 
   return lenis;
+}
+
+/* Smooth-scroll to an element top (Lenis if available, native fallback) */
+function smoothScrollTo(target) {
+  const el = typeof target === 'string' ? document.querySelector(target) : target;
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY;
+  if (lenis && typeof lenis.scrollTo === 'function') {
+    lenis.scrollTo(y, { duration: 1.2 });
+  } else {
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
 }
 
 /* ============================================
@@ -239,11 +253,16 @@ function initHero() {
 
   setTimeout(() => {
     const vw = window.innerWidth;
+    const isMobile = vw < 768;
     const step1Width = heroStep1.scrollWidth;
     const totalTranslateX = step1Width - vw;
 
-    // Set outer height for scroll distance
-    heroOuter.style.height = `${vw + totalTranslateX}px`;
+    // Tail: extra scroll at the end where the last card holds in place, so the
+    // handoff to the next pinned section (gallery) isn't abrupt. Mobile only.
+    const tail = isMobile ? Math.round(window.innerHeight * 0.45) : 0;
+
+    // Set outer height for scroll distance (+ tail breathing room)
+    heroOuter.style.height = `${vw + totalTranslateX + tail}px`;
 
     // Cards start overlapped
     const cardWidth = vw * 0.5;
@@ -258,14 +277,17 @@ function initHero() {
         trigger: heroOuter,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 1,
+        scrub: isMobile ? 0.8 : 1,
         invalidateOnRefresh: true,
       },
     });
 
-    tl.to(heroStep1, { x: -totalTranslateX, ease: 'none' }, 0);
-    tl.to(heroCard2, { x: 0, ease: 'power1.out' }, 0);
-    tl.to(heroCard3, { x: 0, ease: 'power1.out' }, 0);
+    // Durations proportional to px so the scroll maps move:hold = translateX:tail
+    const moveDur = Math.max(1, totalTranslateX);
+    tl.to(heroStep1, { x: -totalTranslateX, ease: 'none', duration: moveDur }, 0);
+    tl.to(heroCard2, { x: 0, ease: 'power1.out', duration: moveDur }, 0);
+    tl.to(heroCard3, { x: 0, ease: 'power1.out', duration: moveDur }, 0);
+    if (tail > 0) tl.to({}, { duration: tail }); // hold the final frame before handoff
 
     // Recalculate on resize — ignore height-only changes (mobile browser chrome show/hide)
     let prevHeroWidth = window.innerWidth;
@@ -729,20 +751,49 @@ function initHorizontalGallery() {
 /* ============================================
    9. AGENCY / ATELIER SECTION
    ============================================ */
+/* Wrap an element's text into per-letter spans (words stay unbreakable) and
+   return the char nodes — shared by the masonry headings on both pages. */
+function splitIntoChars(el) {
+  const words = el.textContent.split(' ');
+  el.textContent = '';
+  words.forEach((word, wi) => {
+    const wordEl = document.createElement('span');
+    wordEl.className = 'char-reveal__word';
+    [...word].forEach((ch) => {
+      const wrap = document.createElement('span');
+      wrap.className = 'char-reveal__wrap';
+      const inner = document.createElement('span');
+      inner.className = 'char-reveal__char';
+      inner.textContent = ch;
+      wrap.appendChild(inner);
+      wordEl.appendChild(wrap);
+    });
+    el.appendChild(wordEl);
+    if (wi < words.length - 1) el.appendChild(document.createTextNode(' '));
+  });
+  return el.querySelectorAll('.char-reveal__char');
+}
+
 function initAgency() {
   const section = document.querySelector('.agency-section, .about-workshop');
   if (!section || prefersReduced) return;
 
-  gsap.from('.masonry-grid__heading', {
-    y: 80,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'power4.out',
-    scrollTrigger: {
-      trigger: section,
-      start: 'top 75%',
-    },
-  });
+  // Home "Atelier" heading — letter-by-letter reveal (same as "Adresse" /
+  // "Réalisations"). The about "Adresse" heading is handled in initAboutPage.
+  const homeHeading = document.querySelector('.masonry-grid--home .masonry-grid__heading');
+  if (homeHeading) {
+    gsap.fromTo(
+      splitIntoChars(homeHeading),
+      { yPercent: 120 },
+      {
+        yPercent: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        stagger: 0.04,
+        scrollTrigger: { trigger: section, start: 'top 75%' },
+      }
+    );
+  }
 
   gsap.from('.masonry-grid__header-right', {
     y: 40,
@@ -860,6 +911,34 @@ function initFooter() {
 }
 
 /* ============================================
+   LOGO THEME — light over dark sections
+   ============================================ */
+function initLogoTheme() {
+  const logo = document.querySelector('.logo');
+  const darkSections = document.querySelectorAll('[data-nav-dark]');
+  if (!logo || !darkSections.length) return;
+
+  // Vertical reference line: the logo's centre (top 2.4rem + ~half its height)
+  const refLine = 40;
+  let darkCount = 0;
+
+  const sync = () => logo.classList.toggle('logo--light', darkCount > 0);
+
+  darkSections.forEach((section) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: `top ${refLine}px`,
+      end: `bottom ${refLine}px`,
+      onToggle: (self) => {
+        darkCount += self.isActive ? 1 : -1;
+        darkCount = Math.max(0, darkCount);
+        sync();
+      },
+    });
+  });
+}
+
+/* ============================================
    INIT — Run everything
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -884,6 +963,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCta();
     initFooter();
     initAboutPage();
+    initAboutWelcome();
+    initLogoTheme();
 
     // Final refresh so all ScrollTrigger positions are correct
     ScrollTrigger.refresh();
@@ -895,7 +976,38 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================ */
 function initAboutPage() {
   if (!document.querySelector('.about-hero')) return;
+
+  /* "Défiler" button → smooth-scroll to the welcome section (green frame),
+     landing exactly at its start so the next scroll triggers the reveal.
+     Works regardless of reduced-motion. */
+  const scrollBtn = document.getElementById('about-scroll-btn');
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => smoothScrollTo('.about-welcome'));
+  }
+
   if (prefersReduced) return;
+
+  /* ---- Helper: wrap an element's text into per-letter spans (words stay unbreakable) ---- */
+  const splitChars = (el) => {
+    const words = el.textContent.split(' ');
+    el.textContent = '';
+    words.forEach((word, wi) => {
+      const wordEl = document.createElement('span');
+      wordEl.className = 'char-reveal__word';
+      [...word].forEach((ch) => {
+        const wrap = document.createElement('span');
+        wrap.className = 'char-reveal__wrap';
+        const inner = document.createElement('span');
+        inner.className = 'char-reveal__char';
+        inner.textContent = ch;
+        wrap.appendChild(inner);
+        wordEl.appendChild(wrap);
+      });
+      el.appendChild(wordEl);
+      if (wi < words.length - 1) el.appendChild(document.createTextNode(' '));
+    });
+    return el.querySelectorAll('.char-reveal__char');
+  };
 
   /* ---- 1. Hero entrance animations (page load) — timeline séquentielle ---- */
   const heroTitle   = document.querySelector('.about-hero__title');
@@ -906,6 +1018,15 @@ function initAboutPage() {
 
   // Placer l'image hors champ dès maintenant pour éviter un flash
   if (heroRight) gsap.set(heroRight, { xPercent: 80 });
+
+  // Split the green band texts and hide their letters until the image lands
+  const bandEls = [
+    document.querySelector('.about-hero__band-category'),
+    document.querySelector('.about-hero__band-name'),
+    document.querySelector('.about-hero__band-num'),
+  ].filter(Boolean);
+  const bandChars = bandEls.flatMap((el) => [...splitChars(el)]);
+  if (bandChars.length) gsap.set(bandChars, { yPercent: 120 });
 
   const heroTl = gsap.timeline();
 
@@ -921,6 +1042,16 @@ function initAboutPage() {
       { xPercent: 0, duration: 2.8, ease: 'power2.out' },
       '+=0.2'
     );
+  }
+
+  // Band text reveals letter by letter once the image slide has landed
+  if (bandChars.length) {
+    heroTl.to(bandChars, {
+      yPercent: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      stagger: 0.03,
+    }, '+=0.1');
   }
 
   /* ---- Parallax on hero image (scroll) ---- */
@@ -1109,4 +1240,132 @@ function initAboutPage() {
     });
   }
 
+  /* ---- Letter-by-letter title reveal (like "Réalisations"), with optional desc follow-up ---- */
+  const revealByChar = (title, trigger, desc) => {
+    const chars = splitChars(title);
+
+    // Hide the follow-up desc up front so it doesn't flash before its turn
+    if (desc) gsap.set(desc, { y: 40, opacity: 0 });
+
+    const tl = gsap.timeline({ scrollTrigger: { trigger, start: 'top 85%' } });
+
+    tl.fromTo(chars,
+      { yPercent: 120 },
+      { yPercent: 0, duration: 0.8, ease: 'power2.out', stagger: 0.04 }
+    );
+
+    // Desc appears in one shot, once the title finishes
+    if (desc) {
+      tl.to(desc, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, '>-0.1');
+    }
+  };
+
+  // "Adresse" heading (no desc follow-up — its text block animates separately)
+  const addressHeading = document.querySelector('.masonry-grid--about .masonry-grid__heading');
+  if (addressHeading) revealByChar(addressHeading, addressHeading.closest('.about-workshop'));
+
+  // The three fact titles, each followed by its description
+  document.querySelectorAll('.about-fact').forEach((fact) => {
+    const title = fact.querySelector('.about-fact__title');
+    const desc  = fact.querySelector('.about-fact__desc');
+    if (title) revealByChar(title, fact, desc);
+  });
+
+}
+
+/* ============================================
+   PAGE: À PROPOS — Section "Bienvenue"
+   Scroll-driven : un cadre photo centré grandit
+   jusqu'à remplir l'écran, puis le titre se révèle.
+   ============================================ */
+function initAboutWelcome() {
+  const section = document.querySelector('.about-welcome');
+  if (!section) return;
+
+  const img   = section.querySelector('.about-welcome__img');
+  const scrim = section.querySelector('.about-welcome__scrim');
+  const words = section.querySelectorAll('.about-welcome__word > span');
+
+  /* ---- Reduced-motion / fallback : photo plein écran + texte visible ---- */
+  if (prefersReduced) {
+    section.classList.add('is-static');
+    section.style.height = '100vh';
+    return;
+  }
+
+  // État initial : photo clippée à l'ouverture du cadre, mots masqués
+  gsap.set(section, { '--aw-reveal': 0 });
+  if (words.length) gsap.set(words, { yPercent: 110 });
+  if (scrim) gsap.set(scrim, { opacity: 0 });
+
+  function setup() {
+    // Nettoyer les ScrollTriggers de cette section
+    ScrollTrigger.getAll()
+      .filter((st) => st.vars.trigger === section)
+      .forEach((st) => st.kill());
+
+    const isMobile = window.innerWidth <= 768;
+
+    // Distance de scroll = hauteur du spacer pour le sticky. Plus courte sur
+    // mobile pour que le scrub reste léger et fluide au doigt.
+    const SCROLL_DISTANCE = Math.round(window.innerHeight * (isMobile ? 1.1 : 1.6));
+    section.style.setProperty('--about-welcome-height', `${SCROLL_DISTANCE + window.innerHeight}px`);
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        trigger: section,
+        start: 'top top',
+        end: 'bottom bottom',
+        // Scrub un peu plus serré sur mobile = réponse plus directe.
+        scrub: isMobile ? 0.6 : 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    // 1. L'image se révèle depuis l'ouverture du cadre jusqu'au plein écran.
+    //    Le cadre, lui, ne bouge jamais ; l'image grandit par-dessus.
+    tl.to(section, {
+      '--aw-reveal': 1,
+      ease: 'power1.inOut',
+      duration: 1,
+    }, 0)
+      // 1b. Cadrage : à l'état initial, cadré sur la personne (sur mobile le
+      //     cadre est portrait → on recentre aussi horizontalement sur elle),
+      //     puis on revient au cadrage complet en plein écran.
+      .fromTo(img,
+        { objectPosition: isMobile ? '57% 100%' : '50% 100%' },
+        { objectPosition: isMobile ? '57% 54%' : '50% 54%', ease: 'power1.inOut', duration: 1 },
+        0
+      )
+      // 2. Le scrim sombre apparaît pour la lisibilité du texte
+      .to(scrim, {
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power1.out',
+      }, 0.55);
+
+    // 3. Révélation des mots, séquentiellement, une fois plein écran
+    if (words.length) {
+      tl.to(words, {
+        yPercent: 0,
+        duration: 0.45,
+        ease: 'power3.out',
+        stagger: 0.12,
+      }, 0.72);
+    }
+
+    ScrollTrigger.refresh();
+  }
+
+  setTimeout(setup, 200);
+
+  // Recalcul sur resize ET changement d'orientation (mobile), avec debounce.
+  let resizeTimer;
+  const onResize = () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setup, 200);
+  };
+  window.addEventListener('resize', onResize);
+  window.addEventListener('orientationchange', onResize);
 }

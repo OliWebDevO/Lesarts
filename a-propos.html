@@ -124,7 +124,7 @@
     <!-- ============================================
          SECTION 1 — HERO À PROPOS
          ============================================ -->
-    <section class="about-hero" aria-labelledby="about-hero-title">
+    <section class="about-hero" aria-labelledby="about-hero-title" data-nav-dark>
 
       <!-- Left: texte -->
       <div class="about-hero__left">
@@ -138,15 +138,15 @@
           <p>Notre métier, ce n'est pas seulement encadrer, c'est aussi exposer de nombreux artistes. Nous proposons donc une exposition permanente riche d'artistes d'horizons et de techniques fort différents.</p>
         </div>
 
-        <div class="about-hero__scroll" aria-hidden="true">
-          <span class="about-hero__scroll-arrow">
+        <button class="about-hero__scroll" type="button" id="about-scroll-btn" aria-label="Défiler vers la section suivante">
+          <span class="about-hero__scroll-arrow" aria-hidden="true">
             <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <line x1="8" y1="0" x2="8" y2="20" stroke="currentColor" stroke-width="1"/>
               <polyline points="2,14 8,22 14,14" fill="none" stroke="currentColor" stroke-width="1"/>
             </svg>
           </span>
           <span class="about-hero__scroll-label">Défiler</span>
-        </div>
+        </button>
 
       </div>
 
@@ -171,6 +171,29 @@
         </div>
       </div>
 
+    </section>
+
+    <!-- ============================================
+         SECTION 1B — BIENVENUE (image expand to fullscreen)
+         ============================================ -->
+    <section class="about-welcome" aria-labelledby="about-welcome-heading">
+      <div class="about-welcome__sticky">
+        <!-- Cadre statique « caisse noire » (identique aux cartes Services) :
+             ne bouge jamais. L'image grandit par-dessus jusqu'au plein écran. -->
+        <div class="about-welcome__frame" aria-hidden="true"></div>
+        <img
+          src="images/encadrement/Cover4.webp"
+          alt="Portrait dans l'atelier Lesarts, encadré sur mesure"
+          class="about-welcome__img"
+          loading="lazy"
+        />
+        <span class="about-welcome__scrim" aria-hidden="true"></span>
+        <h2 class="about-welcome__title" id="about-welcome-heading">
+          <span class="about-welcome__word"><span>Bienvenue</span></span>
+          <span class="about-welcome__word"><span>chez</span></span>
+          <span class="about-welcome__word"><span>Lesarts</span></span>
+        </h2>
+      </div>
     </section>
 
     <!-- ============================================
@@ -213,7 +236,7 @@
     <!-- ============================================
          SECTION 3 — VALEURS
          ============================================ -->
-    <section class="about-values" aria-labelledby="about-values-heading">
+    <section class="about-values" aria-labelledby="about-values-heading" data-nav-dark>
 
       <span class="about-section-label about-section-label--light">03 — Ce qui nous guide</span>
 
@@ -330,7 +353,7 @@
     <!-- ============================================
          SECTION 6 — CTA
          ============================================ -->
-    <section class="cta-section" aria-labelledby="about-cta-title">
+    <section class="cta-section" aria-labelledby="about-cta-title" data-nav-dark>
       <div class="cta-container">
         <h2 class="cta-title" id="about-cta-title">
           Venez nous rendre visite
@@ -349,7 +372,7 @@
   <!-- ============================================
        FOOTER
        ============================================ -->
-  <footer class="footer">
+  <footer class="footer" data-nav-dark>
     <div class="footer-top">
       <div class="footer-info-grid">
         <div class="footer-info-col">
