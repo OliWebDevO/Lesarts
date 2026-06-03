@@ -109,19 +109,18 @@ const SITE_FOOTER_HTML = `
       <div class="footer-info-grid">
         <div class="footer-info-col">
           <a href="https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles" target="_blank" rel="noopener noreferrer" class="footer-address-link">
-            <p>Lesarts</p>
             <p>Rue du Bailli 43</p>
             <p>1050 Ixelles</p>
             <p>Bruxelles, Belgique</p>
           </a>
         </div>
         <div class="footer-info-col">
-          <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="footer-info-link">lesartsprod.be</a>
           <a href="tel:+3226465469" class="footer-info-link">+32 2 646 54 69</a>
           <span class="footer-info-link footer-info-static">Mer – Sam : 10h30 – 18h30</span>
           <span class="footer-info-link footer-info-static">Mar : sur rendez-vous</span>
         </div>
         <div class="footer-info-col">
+          <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer" class="footer-info-link">lesartsprod.be</a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Instagram</a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="footer-info-link">Facebook</a>
         </div>

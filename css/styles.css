@@ -419,7 +419,10 @@ button {
   position: sticky;
   top: 0;
   height: 100vh;
-  height: 100svh;
+  /* lvh = the LARGE (toolbar-hidden) viewport height — a FIXED value, so the
+     pinned hero never resizes mid-scroll (unlike dvh) AND never leaves a white
+     gap when iOS Safari hides its toolbar (unlike svh). */
+  height: 100lvh;
   width: 100%;
 }
 
@@ -1632,9 +1635,10 @@ button {
 }
 
 .footer-info-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: space-between;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .footer-info-col {
@@ -1838,7 +1842,7 @@ button {
 
   .footer { padding: 4rem 1.6rem 2.4rem; }
   .footer-top { padding-bottom: 3.2rem; }
-  .footer-info-grid { grid-template-columns: 1fr 1fr; gap: 2.4rem 1.6rem; }
+  .footer-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem 1.6rem; }
   .footer-info-col { gap: 0.4rem; }
   .footer-address-link p, .footer-info-link { font-size: 1.3rem; }
   .footer-copyright { font-size: 1.1rem; }
