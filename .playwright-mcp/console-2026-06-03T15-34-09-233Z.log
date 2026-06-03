@@ -1,0 +1,5 @@
+[     166ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/favicon.ico:0
+[     205ms] [WARNING] GSAP target .masonry-grid__value-item not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     205ms] [WARNING] GSAP target  not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     206ms] [WARNING] GSAP target .footer-big-letters not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9
+[     206ms] [WARNING] GSAP target  not found. https://gsap.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js:9

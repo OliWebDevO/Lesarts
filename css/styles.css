@@ -2305,23 +2305,23 @@ a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
    revealed outward to fullscreen via --aw-reveal. object-fit:cover means it
    always fills the screen — never any black letterbox bars. */
 .about-welcome__img {
+  /* The image is sized to the FRAME aperture at rest and grows to fullscreen as
+     --aw-reveal goes 0 → 1. Because the desktop aperture matches the photo ratio
+     (3:2), object-fit: cover shows the WHOLE photo at rest — identical framing on
+     every screen size (no viewport-aspect-dependent crop). It only re-crops as it
+     grows to cover the viewport at full reveal (no black bars). */
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: calc(var(--aw-y) * (1 - var(--aw-reveal)));
+  left: calc(var(--aw-x) * (1 - var(--aw-reveal)));
+  width: calc(var(--aw-w) + (100vw - var(--aw-w)) * var(--aw-reveal));
+  height: calc(var(--aw-h) + (100vh - var(--aw-h)) * var(--aw-reveal));
   object-fit: cover;
   object-position: 50% 56%;
   display: block;
   z-index: 1;
-  clip-path: inset(
-    calc(var(--aw-y) * (1 - var(--aw-reveal)))
-    calc(var(--aw-x) * (1 - var(--aw-reveal)))
-    calc(var(--aw-y) * (1 - var(--aw-reveal)))
-    calc(var(--aw-x) * (1 - var(--aw-reveal)))
-    /* Rounded corners only DURING the zoom — 0 at rest (crisp frame) and 0 at
-       full zoom (no bg at the corners). Parabola 4·r·(1−r) peaks at mid-reveal. */
-    round calc(0.8rem * 4 * var(--aw-reveal) * (1 - var(--aw-reveal)))
-  );
+  /* Rounded corners only DURING the zoom — 0 at rest (crisp frame) and 0 at full
+     zoom. Parabola 4·r·(1−r) peaks at mid-reveal. */
+  border-radius: calc(0.8rem * 4 * var(--aw-reveal) * (1 - var(--aw-reveal)));
 }
 
 /* Dark gradient scrim for text legibility once fullscreen (hidden at rest) */
