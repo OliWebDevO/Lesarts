@@ -1922,14 +1922,16 @@ button {
    Dark: rgb(45,18,5) · Mid: rgb(107,49,15) · Light: rgb(169,80,25)
    ---- */
 #exp-card-0 .expertise-card-image-wrap {
-  padding: 18px;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='w'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.35' numOctaves='4' seed='7'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='linear' slope='0.7' intercept='0.12'/><feFuncG type='linear' slope='0.37' intercept='0.04'/><feFuncB type='linear' slope='0.12' intercept='0.01'/></feComponentTransfer></filter><rect width='300' height='300' filter='url(%23w)'/></svg>");
+  padding: 20px;
+  /* Noyer — grain directionnel : fractalNoise très étiré horizontalement (longues
+     veines) + tables de couleurs non-monotones qui cassent le bruit en bandes
+     claires/foncées = veines de bois. Brun noyer profond. */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='w'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.5' numOctaves='5' seed='7' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='table' tableValues='0.15 0.37 0.19 0.45 0.24 0.39 0.17'/><feFuncG type='table' tableValues='0.07 0.19 0.10 0.24 0.12 0.20 0.08'/><feFuncB type='table' tableValues='0.03 0.10 0.05 0.12 0.06 0.10 0.04'/></feComponentTransfer></filter><rect width='280' height='280' filter='url(%23w)'/></svg>");
+  background-size: 280px 280px;
+  background-repeat: repeat;
   box-shadow:
-    inset 0 0 18px rgba(0, 0, 0, 0.55),
-    inset 0 0 0 1px rgba(20, 8, 0, 0.8),
-    0 12px 32px rgba(0, 0, 0, 0.45);
-  outline: 1px solid rgba(80, 35, 5, 0.4);
-  outline-offset: 2px;
+    inset 0 0 16px rgba(0, 0, 0, 0.38),
+    0 14px 34px rgba(0, 0, 0, 0.5);
 }
 
 /* ---- Card 02 : Laiton brossé — brushed brass ----
@@ -1939,17 +1941,15 @@ button {
    characteristic light-catch shimmer of brushed metal.
    ---- */
 #exp-card-1 .expertise-card-image-wrap {
-  padding: 10px;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='b'><feTurbulence type='turbulence' baseFrequency='0.0015 0.065' numOctaves='3' seed='2'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='linear' slope='0.45' intercept='0.52'/><feFuncG type='linear' slope='0.28' intercept='0.38'/><feFuncB type='linear' slope='0.05' intercept='0.08'/></feComponentTransfer></filter><rect width='400' height='400' filter='url(%23b)'/></svg>");
-  background-size: 400px 400px;
+  padding: 20px;
+  /* Chêne clair — même technique de grain directionnel, mais veines plus ouvertes
+     (échelle plus large), seed différent et gamme de brun miel plus claire :
+     une essence visiblement distincte du noyer. */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='340'><filter id='o'><feTurbulence type='fractalNoise' baseFrequency='0.016 0.34' numOctaves='5' seed='23' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='table' tableValues='0.40 0.62 0.46 0.69 0.50 0.63 0.44'/><feFuncG type='table' tableValues='0.26 0.44 0.31 0.50 0.34 0.45 0.29'/><feFuncB type='table' tableValues='0.12 0.24 0.15 0.28 0.17 0.25 0.13'/></feComponentTransfer></filter><rect width='340' height='340' filter='url(%23o)'/></svg>");
+  background-size: 340px 340px;
   box-shadow:
-    inset 0 2px 0 rgba(255, 240, 160, 0.75),
-    inset 0 -2px 0 rgba(60, 38, 0, 0.55),
-    inset 2px 0 0 rgba(200, 158, 55, 0.4),
-    inset -2px 0 0 rgba(80, 52, 0, 0.4),
-    0 8px 24px rgba(0, 0, 0, 0.3);
-  outline: 1px solid rgba(184, 145, 42, 0.55);
-  outline-offset: 3px;
+    inset 0 0 16px rgba(28, 14, 0, 0.3),
+    0 14px 34px rgba(0, 0, 0, 0.45);
 }
 
 /* ---- Card 03 : Caisse noire — matte black museum frame ----
@@ -1967,22 +1967,17 @@ button {
     0 14px 36px rgba(0, 0, 0, 0.6);
 }
 
-/* ---- Card 04 : Passe-partout blanc — white mat board ----
-   Fine fractalNoise at high frequency (0.9 × 0.6) creates
-   subtle paper grain. Linear slope maps to warm cream range:
-   rgb(232,224,212) → rgb(245,235,219). Inset box-shadow
-   simulates the 45° bevel cut of a real passe-partout.
-   ---- */
+/* ---- Card 04 : Noir mat — grain + biseau directionnel + ombre portée. */
 #exp-card-3 .expertise-card-image-wrap {
-  padding: 28px;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.9 0.6' numOctaves='3' seed='11'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='linear' slope='0.05' intercept='0.91'/><feFuncG type='linear' slope='0.04' intercept='0.88'/><feFuncB type='linear' slope='0.03' intercept='0.83'/></feComponentTransfer></filter><rect width='200' height='200' filter='url(%23p)'/></svg>");
-  background-size: 200px 200px;
+  padding: 20px;
+  background-color: #0e0c0a;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='5' seed='11'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='linear' slope='0.2' intercept='0.02'/><feFuncG type='linear' slope='0.2' intercept='0.02'/><feFuncB type='linear' slope='0.2' intercept='0.02'/></feComponentTransfer></filter><rect width='180' height='180' filter='url(%23p)'/></svg>");
+  background-size: 160px 160px;
   box-shadow:
-    inset 5px 5px 12px rgba(255, 255, 255, 0.6),
-    inset -5px -5px 12px rgba(0, 0, 0, 0.18),
-    0 4px 18px rgba(0, 0, 0, 0.18);
-  outline: 1px solid rgba(0, 0, 0, 0.1);
-  outline-offset: 2px;
+    inset 3px 3px 6px rgba(255, 255, 255, 0.10),
+    inset -4px -4px 9px rgba(0, 0, 0, 0.75),
+    inset 0 0 0 1px rgba(10, 8, 6, 0.9),
+    0 12px 34px rgba(0, 0, 0, 0.55);
 }
 
 /* ── Nav dots — identity colors, mapped by destination (overlay + hero nav) ── */
@@ -2015,6 +2010,10 @@ a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
 #exp-card-1 { --card-color: var(--pink);  z-index: 3; }
 #exp-card-2 { --card-color: var(--green); z-index: 2; }
 #exp-card-3 { --card-color: var(--beige); z-index: 1; }
+
+/* Page Encadrement : dégradé propre du blanc au bleu (pas d'orange) */
+#encadrement-types #exp-card-0 { --card-color: var(--white); }
+#encadrement-types #exp-card-3 { --card-color: var(--blue); }
 
 /* ── Footer static info ──────────────────────── */
 .footer-info-static { opacity: 0.5; cursor: default; }
@@ -2551,6 +2550,18 @@ a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
 .masonry-grid--about .masonry-grid__photo-side-2   { grid-column: 3; grid-row: 2; }
 .masonry-grid--about .masonry-grid__photo-side-3   { grid-column: 1; grid-row: 3 / 5; }
 .masonry-grid--about .masonry-grid__values         { grid-column: 2 / 4; grid-row: 3 / 5; padding: 3rem; }
+
+/* Mirror variant (Encadrement) — desktop only : colonnes inversées gauche↔droite
+   (image → texte au lieu de texte → image). Le responsable tablette/mobile reste
+   géré par les règles --about (donc non miroité, ce qui n'a pas d'impact empilé). */
+@media (min-width: 1080px) {
+  .masonry-grid--mirror .masonry-grid__header      { grid-column: 2 / 4; }
+  .masonry-grid--mirror .masonry-grid__photo-large { grid-column: 2 / 4; }
+  .masonry-grid--mirror .masonry-grid__photo-side-1{ grid-column: 1; }
+  .masonry-grid--mirror .masonry-grid__photo-side-2{ grid-column: 1; }
+  .masonry-grid--mirror .masonry-grid__photo-side-3{ grid-column: 3; }
+  .masonry-grid--mirror .masonry-grid__values      { grid-column: 1 / 3; }
+}
 
 .about-workshop__address {
   font-family: var(--font-neue);
