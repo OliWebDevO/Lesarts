@@ -1,0 +1,152 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: LESARTS
+      - generic [ref=e7]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e8] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e9]:
+        - generic [ref=e10]: LESARTS
+        - generic [ref=e11]: Prod.
+    - button "Ouvrir le menu" [ref=e12] [cursor=pointer]:
+      - generic [ref=e13]: Menu
+    - navigation:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e14]:
+    - region "Galerie" [ref=e15]:
+      - generic [ref=e16]:
+        - paragraph [ref=e17]: 03 — Galerie
+        - heading "Galerie" [level=1] [ref=e18]
+        - generic [ref=e19]:
+          - paragraph [ref=e20]: Au-delà de l'encadrement, Lesarts est aussi un lieu d'exposition. Nous accueillons tout au long de l'année des artistes d'horizons et de techniques fort différents.
+          - paragraph [ref=e21]: Venez découvrir notre exposition permanente et nos accrochages temporaires, au cœur d'Ixelles.
+        - button "Défiler vers la section suivante" [ref=e22] [cursor=pointer]:
+          - img [ref=e24]
+          - generic [ref=e26]: Défiler
+      - generic [ref=e27]:
+        - img "Échantillons de cadres décoratifs exposés chez Lesarts" [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e32]: Galerie
+          - generic [ref=e33]:
+            - generic [ref=e34]: Expositions
+            - generic [ref=e35]: "03"
+    - region "Galerie" [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - heading "Galerie" [level=2] [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]: Expositions
+            - paragraph [ref=e43]: Au-delà de l'encadrement, Lesarts est un lieu d'exposition. Tout au long de l'année, nous accueillons des artistes d'horizons et de techniques fort différents.
+            - link "S'inscrire aux vernissages" [ref=e44] [cursor=pointer]:
+              - /url: contact.html
+              - generic [ref=e45]: S'inscrire aux vernissages
+        - img "Accrochage d'œuvres dans la galerie Lesarts" [ref=e49]
+        - list [ref=e51]:
+          - listitem [ref=e52]:
+            - heading "Exposition permanente" [level=3] [ref=e53]
+            - paragraph [ref=e54]: "Une sélection d'œuvres visible toute l'année dans notre galerie de la rue du Bailli : peinture, gravure, photographie et sculpture."
+          - listitem [ref=e55]:
+            - heading "Expositions temporaires" [level=3] [ref=e56]
+            - paragraph [ref=e57]: Chaque mois, un nouvel accrochage met à l'honneur un artiste invité — l'occasion de découvrir un univers et d'échanger avec son auteur.
+        - img "Œuvres encadrées exposées Lesarts" [ref=e59]
+        - img "Détails d'œuvres et de cadres Lesarts" [ref=e61]
+        - img "Collection d'œuvres encadrées Lesarts" [ref=e63]
+    - generic [ref=e65]:
+      - img "Détail d'un encadrement à l'atelier Lesarts" [ref=e67]
+      - img "Échantillons de baguettes et matériaux Lesarts" [ref=e69]
+    - region "Vernissages" [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - heading "Vernissages" [level=2] [ref=e74]
+          - paragraph [ref=e76]: Des rendez-vous réguliers pour rencontrer les artistes et célébrer chaque nouvelle exposition.
+        - img "Mur d'œuvres encadrées à la galerie Lesarts" [ref=e78]
+        - list [ref=e80]:
+          - listitem [ref=e81]:
+            - heading "Michèle Baczynsky" [level=3] [ref=e82]
+            - paragraph [ref=e83]: "À l'affiche en ce moment : les linogravures de Michèle Baczynsky, un travail de la matière et du trait, tout en nuances."
+          - listitem [ref=e84]:
+            - heading "Techniques variées" [level=3] [ref=e85]
+            - paragraph [ref=e86]: Peinture, gravure, photographie, sculpture — la galerie fait dialoguer les médiums et les générations.
+          - listitem [ref=e87]:
+            - heading "Restez informé" [level=3] [ref=e88]
+            - paragraph [ref=e89]: Inscrivez-vous pour recevoir en avant-première les dates de nos prochaines expositions et invitations aux vernissages.
+            - link "S'inscrire" [ref=e90] [cursor=pointer]:
+              - /url: contact.html
+              - generic [ref=e91]: S'inscrire
+        - img "Visiteuse découvrant une œuvre à la galerie Lesarts" [ref=e95]
+        - img "Variété de cadres Lesarts" [ref=e97]
+        - img "Profils de moulures colorées Lesarts" [ref=e99]
+  - contentinfo [ref=e100]:
+    - generic [ref=e102]:
+      - link "Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e104] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e105]: Rue du Bailli 43
+        - paragraph [ref=e106]: 1050 Ixelles
+        - paragraph [ref=e107]: Bruxelles, Belgique
+      - generic [ref=e108]:
+        - link "+32 2 646 54 69" [ref=e109] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e110]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e111]: "Mar : sur rendez-vous"
+      - generic [ref=e112]:
+        - link "lesartsprod.be" [ref=e113] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=e114] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e115] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e116]:
+        - link "Mentions légales" [ref=e117] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e118]: Lesarts © 2025

@@ -1,0 +1,212 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: LESARTS
+      - generic [ref=e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e10]:
+        - generic [ref=e11]: LESARTS
+        - generic [ref=e12]: Prod.
+    - button "Ouvrir le menu" [ref=e13] [cursor=pointer]:
+      - generic [ref=e14]: Menu
+    - navigation:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e15]:
+    - region "Encadrement" [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: 02 — Encadrement
+        - heading "Encadrement" [level=1] [ref=e19]
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: "L'encadrement sur mesure, c'est notre cœur de métier. Baguettes, passe-partout, verre anti-reflet et protection UV : chaque détail est pensé pour préserver et sublimer votre œuvre."
+          - paragraph [ref=e22]: Du conseil à la pose, nous vous accompagnons pour trouver l'encadrement juste — celui qui dialogue avec l'objet et son environnement.
+        - button "Défiler vers la section suivante" [ref=e23] [cursor=pointer]:
+          - img [ref=e25]
+          - generic [ref=e27]: Défiler
+      - generic [ref=e28]:
+        - img "Artisan travaillant une baguette d'encadrement dans l'atelier Lesarts" [ref=e30]
+        - generic [ref=e31]:
+          - generic [ref=e33]: Encadrement
+          - generic [ref=e34]:
+            - generic [ref=e35]: Sur mesure
+            - generic [ref=e36]: "02"
+    - region "Types d'encadrement" [ref=e37]:
+      - generic [ref=e38]:
+        - heading "Sur mesure" [level=2]
+        - generic [ref=e39]:
+          - generic [ref=e42]:
+            - generic [ref=e43]:
+              - generic [ref=e44]: "01"
+              - heading "Moulures" [level=3] [ref=e45]
+              - generic [ref=e46]:
+                - generic [ref=e47]: / Plus de 2500 références
+                - generic [ref=e48]: / Bois & aluminium
+                - generic [ref=e49]: / Italie · Espagne
+                - generic [ref=e50]: / France · États-Unis
+                - generic [ref=e51]: / Nielsen · Eurolijsten
+                - generic [ref=e52]: / Sur mesure
+              - link "Découvrir" [ref=e53] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e54]: Découvrir
+                - img [ref=e56]
+            - img "Collection de moulures Lesarts" [ref=e61]
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: "02"
+              - heading "Passe-partout" [level=3] [ref=e67]
+              - generic [ref=e68]:
+                - generic [ref=e69]: / Sans acide
+                - generic [ref=e70]: / Conservation musée
+                - generic [ref=e71]: / Découpe sur mesure
+                - generic [ref=e72]: / Biseau 45°
+                - generic [ref=e73]: / Crescent · Canson
+                - generic [ref=e74]: / Teintes variées
+              - link "Découvrir" [ref=e75] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e76]: Découvrir
+                - img [ref=e78]
+            - img "Passe-partout et échantillons Lesarts" [ref=e83]
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - generic [ref=e88]: "03"
+              - heading "Verres" [level=3] [ref=e89]
+              - generic [ref=e90]:
+                - generic [ref=e91]: / Anti-reflet
+                - generic [ref=e92]: / Anti-UV
+                - generic [ref=e93]: / Spécial conservation
+                - generic [ref=e94]: / Verre normal
+                - generic [ref=e95]: / Tru Vue
+                - generic [ref=e96]: / Protection de l'œuvre
+              - link "Découvrir" [ref=e97] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e98]: Découvrir
+                - img [ref=e100]
+            - img "Verres et protection Lesarts" [ref=e105]
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - generic [ref=e110]: "04"
+              - heading "Restauration & finitions" [level=3] [ref=e111]
+              - generic [ref=e112]:
+                - generic [ref=e113]: / Encadrement plexiglas
+                - generic [ref=e114]: / Restauration tableaux
+                - generic [ref=e115]: / Œuvres sur papier
+                - generic [ref=e116]: / Cimaises Artiteq
+                - generic [ref=e117]: / Châssis & toile
+                - generic [ref=e118]: / Cadres photo & déco
+              - link "Découvrir" [ref=e119] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e120]: Découvrir
+                - img [ref=e122]
+            - img "Restauration et finitions à l'atelier Lesarts" [ref=e127]
+        - navigation "Navigation types d'encadrement" [ref=e128]:
+          - generic [ref=e129]:
+            - button "Moulures" [ref=e130] [cursor=pointer]:
+              - generic [ref=e131]: "01"
+              - generic [ref=e132]: Moulures
+            - button "Passe-partout" [ref=e133] [cursor=pointer]:
+              - generic [ref=e134]: "02"
+              - generic [ref=e135]: Passe-partout
+            - button "Verres" [ref=e136] [cursor=pointer]:
+              - generic [ref=e137]: "03"
+              - generic [ref=e138]: Verres
+            - button "Restauration & finitions" [ref=e139] [cursor=pointer]:
+              - generic [ref=e140]: "04"
+              - generic [ref=e141]: Restauration & finitions
+    - region "Notre métier" [ref=e143]:
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - heading "Notre métier" [level=2] [ref=e147]
+          - generic [ref=e148]:
+            - generic [ref=e149]: 05 — Encadrement
+            - paragraph [ref=e150]: Notre importante collection de moulures vous permet de trouver le cadre qui révèle votre œuvre. Chez Lesarts, nous sommes motivés par un grand souci de qualité, essentiel dans notre travail.
+            - link "Demander un devis" [ref=e151] [cursor=pointer]:
+              - /url: contact.html
+              - generic [ref=e152]: Demander un devis
+        - img "Mur de cadres en bois dans l'atelier Lesarts" [ref=e156]
+        - list [ref=e158]:
+          - listitem [ref=e159]:
+            - heading "2500 moulures" [level=3] [ref=e160]
+            - paragraph [ref=e161]: Plus de 2500 moulures en bois et en aluminium, importées d'Italie, d'Espagne, de France et des États-Unis.
+          - listitem [ref=e162]:
+            - heading "Conservation" [level=3] [ref=e163]
+            - paragraph [ref=e164]: Une gamme complète de passe-partout sans acide qui préserve durablement vos œuvres dans le temps.
+          - listitem [ref=e165]:
+            - heading "Verres spéciaux" [level=3] [ref=e166]
+            - paragraph [ref=e167]: Verres anti-reflet, anti-UV et spécial conservation — pour protéger sans jamais dénaturer.
+        - img "Coins de moulures en bois Lesarts" [ref=e169]
+        - img "Profils de baguettes colorées Lesarts" [ref=e171]
+        - img "Échantillons de cadres décoratifs Lesarts" [ref=e173]
+  - contentinfo [ref=e174]:
+    - generic [ref=e176]:
+      - link "Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e178] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e179]: Rue du Bailli 43
+        - paragraph [ref=e180]: 1050 Ixelles
+        - paragraph [ref=e181]: Bruxelles, Belgique
+      - generic [ref=e182]:
+        - link "+32 2 646 54 69" [ref=e183] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e184]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e185]: "Mar : sur rendez-vous"
+      - generic [ref=e186]:
+        - link "lesartsprod.be" [ref=e187] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=e188] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e189] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e190]:
+        - link "Mentions légales" [ref=e191] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e192]: Lesarts © 2025

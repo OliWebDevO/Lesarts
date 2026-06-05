@@ -1,0 +1,194 @@
+- generic [active] [ref=e1]:
+  - link "Aller au contenu principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: LESARTS
+      - generic [ref=e7]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=e8] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e9]:
+        - generic [ref=e10]: LESARTS
+        - generic [ref=e11]: Prod.
+    - button "Ouvrir le menu" [ref=e12] [cursor=pointer]:
+      - generic [ref=e13]: Menu
+    - navigation:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=e14]:
+    - region "FAQ" [ref=e15]:
+      - generic [ref=e16]:
+        - paragraph [ref=e17]: 04 — FAQ
+        - heading "FAQ" [level=1] [ref=e18]
+        - generic [ref=e19]:
+          - paragraph [ref=e20]: Délais, tarifs, types de cadres, conservation… Vous vous posez des questions sur l'encadrement ? Nous y répondons ici.
+          - paragraph [ref=e21]: "Et si vous ne trouvez pas votre réponse, passez nous voir à l'atelier ou contactez-nous : on se fera un plaisir de vous guider."
+        - button "Défiler vers la section suivante" [ref=e22] [cursor=pointer]:
+          - img [ref=e24]
+          - generic [ref=e26]: Défiler
+      - generic [ref=e27]:
+        - img "Mur de cadres en bois dans la boutique Lesarts" [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e32]: FAQ
+          - generic [ref=e33]:
+            - generic [ref=e34]: Questions
+            - generic [ref=e35]: "04"
+    - region "Questions fréquentes" [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Questions fréquentes" [level=2] [ref=e38]
+        - generic [ref=e39]:
+          - heading "L'encadrement" [level=3] [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - button "Proposez-vous de l'encadrement sur mesure ?" [ref=e43] [cursor=pointer]:
+                - generic [ref=e44]: Proposez-vous de l'encadrement sur mesure ?
+                - img [ref=e45]
+              - paragraph [ref=e47]: Oui. Chaque cadre est réalisé sur mesure, choisi parmi plus de 2500 moulures en bois et en aluminium importées d'Italie, d'Espagne, de France et des États-Unis.
+            - generic [ref=e48]:
+              - button "Quels types d'œuvres encadrez-vous ?" [ref=e49] [cursor=pointer]:
+                - generic [ref=e50]: Quels types d'œuvres encadrez-vous ?
+                - img [ref=e51]
+              - paragraph [ref=e53]: "Photos, posters, lithographies, toiles et œuvres d'art : nous encadrons tout type de support et vous guidons vers l'assemblage le plus adapté."
+            - generic [ref=e54]:
+              - button "Travaillez-vous le plexiglas ?" [ref=e55] [cursor=pointer]:
+                - generic [ref=e56]: Travaillez-vous le plexiglas ?
+                - img [ref=e57]
+              - paragraph [ref=e59]: Oui, nous réalisons aussi l'encadrement en plexiglas, ainsi que la pose de cimaises d'accrochage.
+        - generic [ref=e60]:
+          - heading "Conservation & qualité" [level=3] [ref=e61]
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - button "Mes œuvres sont-elles protégées dans le temps ?" [ref=e64] [cursor=pointer]:
+                - generic [ref=e65]: Mes œuvres sont-elles protégées dans le temps ?
+                - img [ref=e66]
+              - paragraph [ref=e68]: Oui. Nous utilisons des passe-partout sans acide permettant la conservation musée, et nous nous engageons sur la pérennité de nos encadrements.
+            - generic [ref=e69]:
+              - button "Quels verres proposez-vous ?" [ref=e70] [cursor=pointer]:
+                - generic [ref=e71]: Quels verres proposez-vous ?
+                - img [ref=e72]
+              - paragraph [ref=e74]: "Des verres normaux et spéciaux : anti-reflet, anti-UV et spécial conservation, pour protéger l'œuvre sans la dénaturer."
+            - generic [ref=e75]:
+              - button "Faites-vous de la restauration ?" [ref=e76] [cursor=pointer]:
+                - generic [ref=e77]: Faites-vous de la restauration ?
+                - img [ref=e78]
+              - paragraph [ref=e80]: Oui, nous proposons un service de restauration de tableaux et d'œuvres sur papier.
+        - generic [ref=e81]:
+          - heading "Devis & tarifs" [level=3] [ref=e82]
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - button "Comment obtenir un devis ?" [ref=e85] [cursor=pointer]:
+                - generic [ref=e86]: Comment obtenir un devis ?
+                - img [ref=e87]
+              - paragraph [ref=e89]: "Passez à l'atelier avec votre œuvre ou contactez-nous : nous établissons un devis sur mesure selon le format, la moulure et les finitions choisies."
+            - generic [ref=e90]:
+              - button "Vos tarifs sont-ils accessibles ?" [ref=e91] [cursor=pointer]:
+                - generic [ref=e92]: Vos tarifs sont-ils accessibles ?
+                - img [ref=e93]
+              - paragraph [ref=e95]: Nous proposons un vaste choix de cadres à de très bons prix, du cadre standard à l'encadrement sur mesure le plus soigné.
+            - generic [ref=e96]:
+              - button "Réalisez-vous aussi des châssis ?" [ref=e97] [cursor=pointer]:
+                - generic [ref=e98]: Réalisez-vous aussi des châssis ?
+                - img [ref=e99]
+              - paragraph [ref=e101]: "Oui : 5 modèles de châssis en bois et 10 qualités de toile coton-lin, préparées ou naturelles."
+        - generic [ref=e102]:
+          - heading "La galerie" [level=3] [ref=e103]
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - button "Lesarts est-il aussi une galerie ?" [ref=e106] [cursor=pointer]:
+                - generic [ref=e107]: Lesarts est-il aussi une galerie ?
+                - img [ref=e108]
+              - paragraph [ref=e110]: Oui. Au-delà de l'encadrement, nous présentons une exposition permanente ainsi que des expositions temporaires d'artistes d'horizons variés.
+            - generic [ref=e111]:
+              - button "Comment être informé des expositions ?" [ref=e112] [cursor=pointer]:
+                - generic [ref=e113]: Comment être informé des expositions ?
+                - img [ref=e114]
+              - paragraph [ref=e116]: Inscrivez-vous auprès de la galerie pour recevoir les dates de nos prochaines expositions et invitations aux vernissages.
+        - generic [ref=e117]:
+          - heading "Visite & contact" [level=3] [ref=e118]
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - button "Où se situe l'atelier ?" [ref=e121] [cursor=pointer]:
+                - generic [ref=e122]: Où se situe l'atelier ?
+                - img [ref=e123]
+              - paragraph [ref=e125]: Rue du Bailli 43, 1050 Ixelles, à Bruxelles.
+            - generic [ref=e126]:
+              - button "Quels sont vos horaires ?" [ref=e127] [cursor=pointer]:
+                - generic [ref=e128]: Quels sont vos horaires ?
+                - img [ref=e129]
+              - paragraph [ref=e131]: Du mercredi au samedi de 10h30 à 18h30, et le mardi sur rendez-vous.
+            - generic [ref=e132]:
+              - button "Comment vous joindre ?" [ref=e133] [cursor=pointer]:
+                - generic [ref=e134]: Comment vous joindre ?
+                - img [ref=e135]
+              - paragraph [ref=e137]: Par téléphone au +32 2 646 54 69, ou via lesartsprod.be.
+  - contentinfo [ref=e138]:
+    - generic [ref=e140]:
+      - link "Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique" [ref=e142] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=e143]: Rue du Bailli 43
+        - paragraph [ref=e144]: 1050 Ixelles
+        - paragraph [ref=e145]: Bruxelles, Belgique
+      - generic [ref=e146]:
+        - link "+32 2 646 54 69" [ref=e147] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=e148]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=e149]: "Mar : sur rendez-vous"
+      - generic [ref=e150]:
+        - link "lesartsprod.be" [ref=e151] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=e152] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=e153] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e154]:
+        - link "Mentions légales" [ref=e155] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e156]: Lesarts © 2025
