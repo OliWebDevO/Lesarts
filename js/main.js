@@ -1072,12 +1072,55 @@ document.addEventListener('DOMContentLoaded', () => {
     initFooter();
     initAboutPage();
     initAboutWelcome();
+    initFaq();
     initLogoTheme();
 
     // Final refresh so all ScrollTrigger positions are correct
     ScrollTrigger.refresh();
   }, 50);
 });
+
+/* ============================================
+   FAQ — accordéon (expand/collapse + reveal par catégorie)
+   ============================================ */
+function initFaq() {
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const btn = item.querySelector('.faq-item__button');
+    const answer = item.querySelector('.faq-item__answer');
+    if (!btn || !answer) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      answer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+      if (prefersReduced) {
+        answer.style.height = isOpen ? 'auto' : '0px';
+        return;
+      }
+      if (isOpen) {
+        gsap.set(answer, { height: 'auto' });
+        gsap.from(answer, { height: 0, duration: 0.42, ease: 'power2.inOut' });
+      } else {
+        gsap.to(answer, { height: 0, duration: 0.42, ease: 'power2.inOut' });
+      }
+    });
+  });
+
+  if (prefersReduced) return;
+  gsap.utils.toArray('.faq-category').forEach((cat) => {
+    gsap.from(cat, {
+      y: 40,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: cat, start: 'top 85%' },
+    });
+  });
+}
 
 /* ============================================
    PAGE: À PROPOS — Animations
@@ -1373,8 +1416,9 @@ function initAboutPage() {
   };
 
   // "Adresse" heading (no desc follow-up — its text block animates separately)
-  const addressHeading = document.querySelector('.masonry-grid--about .masonry-grid__heading');
-  if (addressHeading) revealByChar(addressHeading, addressHeading.closest('.about-workshop'));
+  document.querySelectorAll('.about-workshop .masonry-grid__heading').forEach((h) => {
+    revealByChar(h, h.closest('.about-workshop'));
+  });
 
   // The three fact titles, each followed by its description
   document.querySelectorAll('.about-fact').forEach((fact) => {

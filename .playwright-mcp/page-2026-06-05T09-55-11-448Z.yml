@@ -1,0 +1,183 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - generic [ref=e5]:
+        - link "O l i v e r V a n D r o o g e n b r o e c k" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: O
+          - generic [ref=e8]: l
+          - generic [ref=e9]: i
+          - generic [ref=e10]: v
+          - generic [ref=e11]: e
+          - generic [ref=e12]: r
+          - generic [ref=e14]: V
+          - generic [ref=e15]: a
+          - generic [ref=e16]: "n"
+          - generic [ref=e18]: D
+          - generic [ref=e19]: r
+          - generic [ref=e20]: o
+          - generic [ref=e21]: o
+          - generic [ref=e22]: g
+          - generic [ref=e23]: e
+          - generic [ref=e24]: "n"
+          - generic [ref=e25]: b
+          - generic [ref=e26]: r
+          - generic [ref=e27]: o
+          - generic [ref=e28]: e
+          - generic [ref=e29]: c
+          - generic [ref=e30]: k
+        - navigation [ref=e31]:
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - link "Work" [ref=e34] [cursor=pointer]:
+                - /url: "#work"
+                - text: Work
+            - listitem [ref=e35]:
+              - link "Services" [ref=e36] [cursor=pointer]:
+                - /url: "#services"
+                - text: Services
+            - listitem [ref=e37]:
+              - link "Products" [ref=e38] [cursor=pointer]:
+                - /url: "#products"
+                - text: Products
+            - listitem [ref=e39]:
+              - link "Steps" [ref=e40] [cursor=pointer]:
+                - /url: "#process"
+                - text: Steps
+            - listitem [ref=e41]:
+              - link "FAQ" [ref=e42] [cursor=pointer]:
+                - /url: "#faq"
+                - text: FAQ
+        - generic [ref=e43]:
+          - button "Switch to dark mode" [ref=e45] [cursor=pointer]:
+            - img [ref=e46]
+            - img
+          - generic [ref=e53]:
+            - button "EN" [ref=e54] [cursor=pointer]
+            - button "FR" [ref=e55] [cursor=pointer]
+          - button "Contact" [ref=e56] [cursor=pointer]:
+            - generic [ref=e58]: Contact
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - heading "W o r k" [level=2]:
+                - generic: W
+                - generic: o
+                - generic: r
+                - generic: k
+              - generic:
+                - link "Annick":
+                  - /url: /projects/annick
+                  - img "Annick"
+                - link "Fanal":
+                  - /url: /projects/fanal
+                  - img "Fanal"
+                - link "Le Noyer":
+                  - /url: /projects/lenoyer
+                  - img "Le Noyer"
+                - link "OVNI":
+                  - /url: /projects/ovni-compta
+                  - img "OVNI"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - textbox
+                  - generic:
+                    - generic: Name
+                    - textbox "Name"
+                  - generic:
+                    - generic: Subject
+                    - combobox "Subject":
+                      - option "Select a subject" [selected]
+                      - option "First contact"
+                      - option "Quote request"
+                      - option "Collaboration proposal"
+                      - option "Job offer"
+                      - option "Technical question"
+                      - option "Other"
+                  - generic:
+                    - generic: Message
+                    - textbox "Message"
+                  - button "Send arrow":
+                    - generic:
+                      - paragraph: Send
+                      - generic:
+                        - img "arrow"
+              - heading "C o n t a c t" [level=2]:
+                - generic: C
+                - generic: o
+                - generic: "n"
+                - generic: t
+                - generic: a
+                - generic: c
+                - generic: t
+      - generic [ref=e59]:
+        - img "background" [ref=e61]
+        - generic:
+          - img
+          - generic:
+            - img "Triangle 2"
+          - generic:
+            - img "Triangle 1"
+        - generic [ref=e64]:
+          - generic:
+            - heading "Shapping Ideas Ideas Concepts Concepts Designs Designs Projects Projects Creations Creations" [level=1]:
+              - text: Shapping
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Ideas"
+                    - generic: Ideas
+                  - generic:
+                    - img "Concepts"
+                    - generic: Concepts
+                  - generic:
+                    - img "Designs"
+                    - generic: Designs
+                  - generic:
+                    - img "Projects"
+                    - generic: Projects
+                  - generic:
+                    - img "Creations"
+                    - generic: Creations
+            - heading "into concrete solutions" [level=1]
+            - heading [level=1]
+          - paragraph: Based in Brussels, I turn your ideas into striking showcase websites, interactive web platforms or full-featured management apps, designed to simplify your day-to-day.
+          - link "See My Work arrow" [ref=e65] [cursor=pointer]:
+            - /url: "#work"
+            - generic [ref=e66]:
+              - paragraph [ref=e68]: See My Work
+              - img "arrow" [ref=e70]
+      - generic [ref=e77]:
+        - img
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - img "Triangle 1" [ref=e82]
+            - img "Triangle 1" [ref=e85]
+          - generic [ref=e86]:
+            - img "Triangle 2" [ref=e89]
+            - img "Triangle 2" [ref=e92]
+          - heading "L e t ' s b u i l d t o g e t h e r" [level=2] [ref=e93]:
+            - generic [ref=e95]: L
+            - generic [ref=e97]: e
+            - generic [ref=e99]: t
+            - generic [ref=e101]: "'"
+            - generic [ref=e103]: s
+            - generic [ref=e107]: b
+            - generic [ref=e109]: u
+            - generic [ref=e111]: i
+            - generic [ref=e113]: l
+            - generic [ref=e115]: d
+            - generic [ref=e119]: t
+            - generic [ref=e121]: o
+            - generic [ref=e123]: g
+            - generic [ref=e125]: e
+            - generic [ref=e127]: t
+            - generic [ref=e129]: h
+            - generic [ref=e131]: e
+            - generic [ref=e133]: r
+    - button "Scroll to top":
+      - img "Scroll to top"
+  - alert [ref=e137]

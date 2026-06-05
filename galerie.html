@@ -78,8 +78,140 @@
       </div>
     </section>
 
-    <!-- CONTENU (placeholder) -->
-    <section class="page-blank" aria-label="Contenu galerie"></section>
+    <!-- ============================================
+         GALERIE — masonry 1 : design À propos (expositions)
+         ============================================ -->
+    <section class="about-workshop galerie-flush-b" aria-labelledby="gal-heading">
+      <div class="masonry-grid masonry-grid--about">
+
+        <div class="masonry-grid__header">
+          <div class="masonry-grid__header-side">
+            <h2 class="masonry-grid__heading" id="gal-heading">Galerie</h2>
+          </div>
+          <div class="masonry-grid__header-right">
+            <span class="masonry-grid__label">Expositions</span>
+            <p class="masonry-grid__intro-desc">
+              Au-delà de l'encadrement, Lesarts est un lieu d'exposition. Tout au long de l'année,
+              nous accueillons des artistes d'horizons et de techniques fort différents.
+            </p>
+            <a href="contact.html" class="masonry-grid__btn">
+              <span class="masonry-grid__btn-label">S'inscrire aux vernissages</span>
+              <span class="masonry-grid__btn-dot"><span class="masonry-grid__btn-dot-inner"></span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-large">
+          <img src="images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-23-03-35-utc.webp" alt="Accrochage d'œuvres dans la galerie Lesarts" class="masonry-grid__photo masonry-grid__photo-main" loading="lazy" />
+        </div>
+
+        <div class="masonry-grid__values">
+          <ul class="masonry-grid__values-list">
+            <li class="about-fact">
+              <h3 class="about-fact__title">Exposition permanente</h3>
+              <p class="about-fact__desc">
+                Une sélection d'œuvres visible toute l'année dans notre galerie de la rue du Bailli :
+                peinture, gravure, photographie et sculpture.
+              </p>
+            </li>
+            <li class="about-fact">
+              <h3 class="about-fact__title">Expositions temporaires</h3>
+              <p class="about-fact__desc">
+                Chaque mois, un nouvel accrochage met à l'honneur un artiste invité — l'occasion de
+                découvrir un univers et d'échanger avec son auteur.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-side-1">
+          <img src="images/encadrement/variety-of-decorative-picture-frame-corner-samples-2026-03-18-04-20-27-utc.webp" alt="Œuvres encadrées exposées Lesarts" class="masonry-grid__photo masonry-grid__photo-small-1" loading="lazy" />
+        </div>
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-side-2">
+          <img src="images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="Détails d'œuvres et de cadres Lesarts" class="masonry-grid__photo masonry-grid__photo-small-2" loading="lazy" />
+        </div>
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-side-3">
+          <img src="images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="Collection d'œuvres encadrées Lesarts" class="masonry-grid__photo masonry-grid__photo-small-3" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pont d'images entre les deux masonry : petite + large sur la même ligne -->
+    <div class="galerie-bridge">
+      <div class="galerie-bridge__inner">
+        <div class="galerie-bridge__cell">
+          <img src="images/encadrement/framing-workshop-making-baguette-handmade-picture-2026-03-13-04-54-59-utc.webp" alt="Détail d'un encadrement à l'atelier Lesarts" loading="lazy" />
+        </div>
+        <div class="galerie-bridge__cell">
+          <img src="images/encadrement/framing-workshop-many-different-samples-baguette-2026-03-13-04-23-51-utc.webp" alt="Échantillons de baguettes et matériaux Lesarts" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         GALERIE — masonry 2 : design Encadrement (miroir) (artistes)
+         ============================================ -->
+    <section class="about-workshop galerie-flush-t" aria-labelledby="gal-artists-heading">
+      <div class="masonry-grid masonry-grid--about masonry-grid--mirror">
+
+        <div class="masonry-grid__header">
+          <div class="masonry-grid__header-side">
+            <h2 class="masonry-grid__heading" id="gal-artists-heading">Vernissages</h2>
+          </div>
+          <div class="masonry-grid__header-right">
+            <p class="masonry-grid__intro-desc">
+              Des rendez-vous réguliers pour rencontrer les artistes et célébrer chaque nouvelle exposition.
+            </p>
+          </div>
+        </div>
+
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-large">
+          <img src="images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-25-00-25-26-utc.webp" alt="Mur d'œuvres encadrées à la galerie Lesarts" class="masonry-grid__photo masonry-grid__photo-main" loading="lazy" />
+        </div>
+
+        <div class="masonry-grid__values">
+          <ul class="masonry-grid__values-list">
+            <li class="about-fact">
+              <h3 class="about-fact__title">Michèle Baczynsky</h3>
+              <p class="about-fact__desc">
+                À l'affiche en ce moment : les linogravures de Michèle Baczynsky, un travail de la
+                matière et du trait, tout en nuances.
+              </p>
+            </li>
+            <li class="about-fact">
+              <h3 class="about-fact__title">Techniques variées</h3>
+              <p class="about-fact__desc">
+                Peinture, gravure, photographie, sculpture — la galerie fait dialoguer les médiums
+                et les générations.
+              </p>
+            </li>
+            <li class="about-fact">
+              <h3 class="about-fact__title">Restez informé</h3>
+              <p class="about-fact__desc">
+                Inscrivez-vous pour recevoir en avant-première les dates de nos prochaines expositions
+                et invitations aux vernissages.
+              </p>
+              <a href="contact.html" class="masonry-grid__btn">
+                <span class="masonry-grid__btn-label">S'inscrire</span>
+                <span class="masonry-grid__btn-dot"><span class="masonry-grid__btn-dot-inner"></span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-side-1">
+          <img src="images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="Visiteuse découvrant une œuvre à la galerie Lesarts" class="masonry-grid__photo masonry-grid__photo-small-1" loading="lazy" />
+        </div>
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-side-2">
+          <img src="images/encadrement/colorful-wooden-picture-frame-corners-variety-2026-03-10-04-49-00-utc.webp" alt="Variété de cadres Lesarts" class="masonry-grid__photo masonry-grid__photo-small-2" loading="lazy" />
+        </div>
+        <div class="masonry-grid__photo-wrap masonry-grid__photo-side-3">
+          <img src="images/encadrement/colorful-angular-wooden-frame-edges-2026-03-10-03-08-28-utc.webp" alt="Profils de moulures colorées Lesarts" class="masonry-grid__photo masonry-grid__photo-small-3" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
