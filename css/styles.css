@@ -1565,7 +1565,8 @@ button {
 }
 
 .masonry-grid--home .masonry-grid__value-item {
-  gap: 4rem;
+  flex-direction: column;
+  gap: 2.4rem;
   padding: 8rem 0;
 }
 
@@ -1617,13 +1618,11 @@ button {
 }
 
 .masonry-grid__value-title {
-  font-family: var(--font-platt);
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
-  flex: 0 0 22rem;
-  padding-top: 0.4rem;
+  font-family: var(--font-neue);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 4.5vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .masonry-grid__value-desc {
@@ -1928,7 +1927,7 @@ button {
   .masonry-grid__photo-side-3 { grid-column: 1; grid-row: 5; aspect-ratio: 4 / 3; }
   .masonry-grid__values { grid-column: 1; grid-row: 6; padding-top: 2.4rem; }
   .masonry-grid__value-item { flex-direction: column; gap: 1.2rem; padding: 2rem 0; }
-  .masonry-grid__value-title { flex: none; font-size: 1rem; }
+  .masonry-grid__value-title { flex: none; font-size: clamp(3.4rem, 11vw, 4.8rem); }
   .masonry-grid__value-desc { font-size: 1.6rem; }
 
   .cta-section { padding: 7.2rem 1.6rem 4rem; }
