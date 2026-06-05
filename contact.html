@@ -78,8 +78,153 @@
       </div>
     </section>
 
-    <!-- CONTENU (placeholder) -->
-    <section class="page-blank" aria-label="Contenu contact"></section>
+    <!-- ============================================
+         COORDONNÉES — design « valeurs » d'À propos
+         ============================================ -->
+    <section class="about-values contact-coords" aria-labelledby="contact-coord-heading" data-nav-dark>
+
+      <span class="about-section-label about-section-label--light">01 — Nous trouver</span>
+
+      <hr class="about-values__rule" aria-hidden="true" />
+
+      <h2 class="visually-hidden" id="contact-coord-heading">Coordonnées</h2>
+
+      <div class="about-values__grid">
+
+        <div class="about-values__col">
+          <div class="contact-coords__head">
+            <a
+              class="contact-coords__icon"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Rue%20du%20Bailli%2043%2C%201050%20Ixelles%2C%20Bruxelles"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Voir l'adresse sur Google Maps"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21.5c4.5-4.2 7-7.6 7-11A7 7 0 0 0 5 10.5c0 3.4 2.5 6.8 7 11z" />
+                <circle cx="12" cy="10.3" r="2.6" />
+              </svg>
+            </a>
+            <h3 class="about-values__title">Adresse</h3>
+          </div>
+          <p class="about-values__desc">
+            Rue du Bailli 43<br />
+            1050 Ixelles<br />
+            Bruxelles, Belgique
+          </p>
+        </div>
+
+        <div class="about-values__col">
+          <div class="contact-coords__head">
+            <a class="contact-coords__icon" href="tel:+3226465469" aria-label="Appeler le +32 2 646 54 69">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6.5 3.5h3l1.5 4.2-2.1 1.4a11.5 11.5 0 0 0 4.6 4.6l1.4-2.1 4.2 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z" />
+              </svg>
+            </a>
+            <h3 class="about-values__title">Téléphone</h3>
+          </div>
+          <p class="about-values__desc">
+            <a href="tel:+3226465469">+32 2 646 54 69</a>
+          </p>
+        </div>
+
+        <div class="about-values__col">
+          <div class="contact-coords__head">
+            <a class="contact-coords__icon" href="mailto:info@lesartsprod.be" aria-label="Envoyer un e-mail à info@lesartsprod.be">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5.5" width="18" height="13" rx="2" />
+                <path d="M3.5 7l8.5 6 8.5-6" />
+              </svg>
+            </a>
+            <h3 class="about-values__title">E-mail</h3>
+          </div>
+          <p class="about-values__desc">
+            <a href="mailto:info@lesartsprod.be">info@lesartsprod.be</a><br />
+            <a href="https://www.lesartsprod.be" target="_blank" rel="noopener noreferrer">lesartsprod.be</a>
+          </p>
+        </div>
+
+        <div class="about-values__col">
+          <div class="contact-coords__head">
+            <span class="contact-coords__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7v5.2l3.4 2" />
+              </svg>
+            </span>
+            <h3 class="about-values__title">Horaires</h3>
+          </div>
+          <p class="about-values__desc">
+            Mer – Sam : 10h30 – 18h30<br />
+            Mar : sur rendez-vous<br />
+            Lun &amp; Dim : fermé
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================
+         CARTE — Google Maps
+         ============================================ -->
+    <section class="contact-map" aria-label="Localisation de l'atelier Lesarts">
+      <iframe
+        class="contact-map__frame"
+        src="https://maps.google.com/maps?q=Rue%20du%20Bailli%2043%2C%201050%20Ixelles%2C%20Bruxelles&z=16&output=embed"
+        title="Carte — Lesarts, Rue du Bailli 43, 1050 Ixelles"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <!-- ============================================
+         FORMULAIRE DE CONTACT
+         ============================================ -->
+    <section class="contact-form-section" aria-labelledby="contact-form-heading">
+      <div class="contact-form-wrap">
+        <span class="about-section-label">02 — Écrivez-nous</span>
+        <h2 class="contact-form__heading" id="contact-form-heading">Une question, un projet&nbsp;?</h2>
+
+        <form class="contact-form" novalidate>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-name">Nom</label>
+            <input class="contact-form__input" type="text" id="cf-name" name="name" autocomplete="name" required />
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-email">E-mail</label>
+            <input class="contact-form__input" type="email" id="cf-email" name="email" autocomplete="email" required />
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-subject">Sujet</label>
+            <select class="contact-form__select" id="cf-subject" name="subject" required>
+              <option value="" disabled selected>Sélectionnez un sujet</option>
+              <option>Demande de devis</option>
+              <option>Prise de contact</option>
+              <option>Proposition d'exposition</option>
+              <option>Restauration d'œuvre</option>
+              <option>Conseil en encadrement</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-message">Message</label>
+            <textarea class="contact-form__textarea" id="cf-message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button class="contact-form__submit" type="submit">
+            Envoyer
+            <span class="contact-form__submit-dot" aria-hidden="true"></span>
+          </button>
+
+          <p class="contact-form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
 
   </main>
 

@@ -1073,6 +1073,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initAboutPage();
     initAboutWelcome();
     initFaq();
+    initContactForm();
+    initContactIcons();
+    initContactMap();
     initLogoTheme();
 
     // Final refresh so all ScrollTrigger positions are correct
@@ -1120,6 +1123,74 @@ function initFaq() {
       scrollTrigger: { trigger: cat, start: 'top 85%' },
     });
   });
+}
+
+/* ============================================
+   CONTACT FORM — validation légère + confirmation (sans backend)
+   ============================================ */
+function initContactForm() {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+  const status = form.querySelector('.contact-form__status');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const name = (form.querySelector('[name="name"]') || {}).value || '';
+    if (status) {
+      status.textContent = `Merci ${name.trim()}, votre message a bien été envoyé. Nous vous répondrons rapidement.`;
+    }
+    form.reset();
+  });
+}
+
+/* ============================================
+   CONTACT — icônes « dessinées » (stroke-dashoffset) au scroll
+   ============================================ */
+function initContactIcons() {
+  const svgs = document.querySelectorAll('.contact-coords__icon svg');
+  if (!svgs.length) return;
+
+  const shapes = [];
+  svgs.forEach((svg) => {
+    svg.querySelectorAll('path, circle, rect, line, polyline, ellipse, polygon').forEach((s) => {
+      let len = 0;
+      try { len = s.getTotalLength(); } catch (e) { len = 0; }
+      if (!len) return;
+      s.style.strokeDasharray = len;
+      s.style.strokeDashoffset = prefersReduced ? 0 : len;
+      shapes.push(s);
+    });
+  });
+
+  if (prefersReduced || !shapes.length) return;
+  gsap.to(shapes, {
+    strokeDashoffset: 0,
+    duration: 1.2,
+    ease: 'power2.inOut',
+    stagger: 0.05,
+    scrollTrigger: { trigger: '.contact-coords', start: 'top 78%' },
+  });
+}
+
+/* ============================================
+   CONTACT — carte Google Maps : interaction au clic uniquement
+   (le scroll ne doit jamais être capturé par la carte)
+   ============================================ */
+function initContactMap() {
+  const map = document.querySelector('.contact-map');
+  if (!map) return;
+
+  // Au clic/tap on active l'interaction (drag, zoom, liens) ...
+  map.addEventListener('mousedown', () => map.classList.add('is-active'));
+  map.addEventListener('touchstart', () => map.classList.add('is-active'), { passive: true });
+
+  // ... et on la coupe dès que le curseur quitte la carte,
+  // pour que la molette/scroll reprenne la main sur la page.
+  map.addEventListener('mouseleave', () => map.classList.remove('is-active'));
 }
 
 /* ============================================
@@ -1292,16 +1363,25 @@ function initAboutPage() {
   }
 
   if (valueCols.length) {
-    gsap.from(valueCols, {
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      stagger: 0.18,
-      scrollTrigger: {
-        trigger: '.about-values__grid',
-        start: 'top 75%',
-      },
+    valueCols.forEach((col, i) => {
+      // Sur la page Contact, on fait le fondu sur les textes seulement,
+      // pas sur la colonne entière, pour ne pas faire fondre l'icône SVG
+      // (elle doit rester présente et uniquement se « dessiner »).
+      const isContact = col.closest('.contact-coords');
+      const targets = isContact
+        ? col.querySelectorAll('.about-values__num, .contact-coords__head .about-values__title, .about-values__desc')
+        : [col];
+      gsap.from(targets, {
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        delay: i * 0.18,
+        scrollTrigger: {
+          trigger: '.about-values__grid',
+          start: 'top 75%',
+        },
+      });
     });
   }
 
