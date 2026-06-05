@@ -10,10 +10,34 @@
    ============================================ */
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+/* iOS/Android : la barre d'URL du navigateur qui apparaît/disparaît change la
+   hauteur du viewport. Par défaut ScrollTrigger recalculerait tout à ce moment,
+   ce qui fait sauter les sections épinglées et laisse apparaître l'arrière-plan
+   (effet « trou »). On lui demande d'ignorer ces resize dus au chrome mobile. */
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 /* ============================================
    REDUCED MOTION CHECK
    ============================================ */
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Relance une fonction de mise en page UNIQUEMENT quand la LARGEUR du viewport
+   change. Les changements de hauteur seuls (barre d'URL mobile qui se masque au
+   scroll) sont ignorés : sinon on recalcule les hauteurs de section avec un
+   nouveau window.innerHeight et les sections épinglées sautent / laissent un
+   « trou ». Largeur identique = on ne touche à rien. */
+function onWidthResize(callback, delay = 150) {
+  let prevWidth = window.innerWidth;
+  let timer;
+  const handler = () => {
+    if (window.innerWidth === prevWidth) return; // hauteur seule → on ignore
+    prevWidth = window.innerWidth;
+    clearTimeout(timer);
+    timer = setTimeout(callback, delay);
+  };
+  window.addEventListener('resize', handler);
+  window.addEventListener('orientationchange', handler);
+}
 
 /* ============================================
    1. LENIS SMOOTH SCROLL
@@ -406,15 +430,8 @@ function initHero() {
     tl.to(heroCard3, { x: 0, ease: 'power1.out', duration: moveDur }, 0);
     if (tail > 0) tl.to({}, { duration: tail }); // hold the final frame before handoff
 
-    // Recalculate on resize — ignore height-only changes (mobile browser chrome show/hide)
-    let prevHeroWidth = window.innerWidth;
-    window.addEventListener('resize', () => {
-      const newWidth = window.innerWidth;
-      if (newWidth !== prevHeroWidth) {
-        prevHeroWidth = newWidth;
-        ScrollTrigger.refresh();
-      }
-    });
+    // Largeur uniquement — on ignore la barre d'URL mobile (changement de hauteur).
+    onWidthResize(() => ScrollTrigger.refresh());
   }, 100);
 }
 
@@ -642,11 +659,8 @@ function initProjectsGallery() {
 
   setTimeout(setup, 100);
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setup, 150);
-  });
+  // Largeur uniquement — on ignore la barre d'URL mobile (changement de hauteur).
+  onWidthResize(setup);
 }
 
 /* ============================================
@@ -817,11 +831,8 @@ function initExpertises() {
 
   setTimeout(setup, 200);
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setup, 150);
-  });
+  // Largeur uniquement — on ignore la barre d'URL mobile (changement de hauteur).
+  onWidthResize(setup);
 }
 
 /* ============================================
@@ -858,11 +869,8 @@ function initHorizontalGallery() {
 
   setTimeout(setup, 100);
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setup, 150);
-  });
+  // Largeur uniquement — on ignore la barre d'URL mobile (changement de hauteur).
+  onWidthResize(setup);
 }
 
 /* ============================================
@@ -1608,12 +1616,6 @@ function initAboutWelcome() {
 
   setTimeout(setup, 200);
 
-  // Recalcul sur resize ET changement d'orientation (mobile), avec debounce.
-  let resizeTimer;
-  const onResize = () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setup, 200);
-  };
-  window.addEventListener('resize', onResize);
-  window.addEventListener('orientationchange', onResize);
+  // Largeur / orientation uniquement — on ignore la barre d'URL mobile.
+  onWidthResize(setup, 200);
 }
