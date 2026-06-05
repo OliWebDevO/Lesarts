@@ -90,7 +90,22 @@ window.addEventListener('orientationchange', () => setTimeout(() => {
    ============================================ */
 let lenis = null; // shared instance, used for programmatic smooth scrolling
 
+/* Appareil tactile (mobile/tablette) ? */
+const IS_TOUCH = window.matchMedia('(pointer: coarse)').matches;
+
 function initSmoothScroll() {
+  if (IS_TOUCH) {
+    // Sur tactile, on N'UTILISE PAS Lenis. À la place, ScrollTrigger.normalizeScroll
+    // prend la main sur le scroll : il EMPÊCHE la barre d'URL mobile de
+    // s'afficher/se masquer pendant le scroll. C'est elle qui provoquait tous les
+    // soucis (le hero épinglé qui « descend », l'espace/rognage des sections selon
+    // le sens du scroll, les resize). Barre figée = viewport stable = plus de saut.
+    ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
+    // Le viewport est maintenant stable : on (re)mesure la hauteur réelle une fois.
+    setTimeout(() => { setAppHeight(); ScrollTrigger.refresh(); }, 300);
+    return;
+  }
+
   lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
