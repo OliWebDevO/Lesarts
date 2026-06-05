@@ -119,7 +119,7 @@ button {
   left: 0;
   width: 100%;
   height: 100vh;
-  height: 100lvh;
+  height: var(--app-height, 100lvh);
   background: var(--black);
   z-index: 9999;
   display: flex;
@@ -310,7 +310,7 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  height: 100lvh;
+  height: var(--app-height, 100lvh);
   background: var(--black);
   color: var(--white);
   z-index: 3;
@@ -516,7 +516,7 @@ button {
   /* lvh = the LARGE (toolbar-hidden) viewport height — a FIXED value, so the
      pinned hero never resizes mid-scroll (unlike dvh) AND never leaves a white
      gap when iOS Safari hides its toolbar (unlike svh). */
-  height: 100lvh;
+  height: var(--app-height, 100lvh);
   width: 100%;
 }
 
@@ -769,7 +769,7 @@ button {
   position: sticky;
   top: 0;
   height: 100vh;
-  height: 100lvh;
+  height: var(--app-height, 100lvh);
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -1009,7 +1009,7 @@ button {
   position: sticky;
   top: 0;
   height: 100vh;
-  height: 100lvh;
+  height: var(--app-height, 100lvh);
   width: 100%;
   overflow: hidden;
 }
@@ -1269,7 +1269,7 @@ button {
   position: sticky;
   top: 0;
   height: 100vh;
-  height: 100lvh;
+  height: var(--app-height, 100lvh);
   overflow: hidden;
 }
 
@@ -1809,7 +1809,7 @@ button {
 @media (min-width: 768px) and (max-width: 1079px) {
   .hero-left {
     width: 100vw;
-    min-height: 100lvh;
+    min-height: var(--app-height, 100lvh);
     padding: 9rem 2.4rem 2.4rem;
   }
   .project-card { width: 80vw; }
@@ -1850,7 +1850,7 @@ button {
 @media (max-width: 767px) {
   .hero-left {
     width: 100vw;
-    min-height: 100lvh;
+    min-height: var(--app-height, 100lvh);
     padding: 8rem 1.6rem 2rem;
     justify-content: flex-start;
     gap: 0;
@@ -1872,7 +1872,7 @@ button {
   .project-name { font-size: clamp(2rem, 6vw, 2.8rem); }
 
   .gallery-sticky { flex-direction: column; }
-  .gallery-left { width: 100%; height: 62lvh; flex-shrink: 0; }
+  .gallery-left { width: 100%; height: calc(var(--app-height, 100lvh) * 0.62); flex-shrink: 0; }
   .gallery-right {
     flex: 1; height: auto; padding: 2rem 1.6rem 2rem;
     align-items: flex-start; justify-content: flex-start; overflow-y: auto;
@@ -1964,7 +1964,7 @@ button {
   .hero-sticky { position: relative; height: auto; }
   .hero-overflow { overflow: visible; }
   .hero-step1 { flex-wrap: wrap; width: 100%; will-change: auto; }
-  .hero-left { width: 100%; min-height: 100vh; min-height: 100lvh; }
+  .hero-left { width: 100%; min-height: 100vh; min-height: var(--app-height, 100lvh); }
   .project-card { width: 100%; min-height: 50vh; will-change: auto; }
 
   .gallery-outer { height: auto !important; }
@@ -2163,7 +2163,7 @@ a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
 .about-hero {
   position: relative;
   min-height: 100vh;
-  min-height: 100lvh;
+  min-height: var(--app-height, 100lvh);
   background-color: var(--black);
   display: grid;
   grid-template-columns: 55% 45%;
@@ -3063,7 +3063,7 @@ a.contact-coords__icon:focus-visible {
   .about-hero {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
-    min-height: 100lvh;
+    min-height: var(--app-height, 100lvh);
   }
 
   .about-hero__left {

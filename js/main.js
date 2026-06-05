@@ -40,6 +40,42 @@ function onWidthResize(callback, delay = 150) {
 }
 
 /* ============================================
+   HAUTEUR PLEIN ÉCRAN FIABLE (--app-height)
+   ============================================
+   Problème iOS : selon la version de Safari, `100lvh`/`100vh` ne donnent pas
+   toujours la hauteur « barre masquée », et au chargement la barre du navigateur
+   rogne la vue → un vide apparaît quand elle se masque au scroll.
+   Solution : on mesure window.innerHeight en JS et on l'expose en CSS
+   (--app-height). Sur mobile (pointeur grossier) on VERROUILLE sur la plus
+   grande hauteur vue : dès que la barre se masque une fois, le design remplit
+   tout l'écran et n'est plus jamais rogné par la barre. Au chargement (barre
+   visible) c'est la petite hauteur — la barre peut donc recouvrir un peu le bas,
+   ce qui est accepté. Sur desktop on suit exactement la hauteur (équivaut à vh). */
+const APP_HEIGHT_LOCK = window.matchMedia('(pointer: coarse)').matches;
+let appHeightMax = 0;
+let appHeightReady = false; // true une fois la page initialisée (évite un refresh au load)
+function updateAppHeight() {
+  const h = window.innerHeight;
+  if (APP_HEIGHT_LOCK) {
+    if (h <= appHeightMax) return; // on ne redescend jamais (barre qui réapparaît)
+    appHeightMax = h;
+    document.documentElement.style.setProperty('--app-height', `${h}px`);
+    // La barre mobile vient de se masquer : la hauteur grandit UNE fois. On
+    // resynchronise alors les positions ScrollTrigger (sinon décalées), une
+    // seule fois et tout en haut de page → imperceptible.
+    if (appHeightReady && window.ScrollTrigger) ScrollTrigger.refresh();
+  } else {
+    document.documentElement.style.setProperty('--app-height', `${h}px`);
+  }
+}
+updateAppHeight();
+window.addEventListener('resize', updateAppHeight);
+window.addEventListener('orientationchange', () => {
+  appHeightMax = 0; // nouvelle orientation = nouvelles dimensions → on recalibre
+  setTimeout(updateAppHeight, 250);
+});
+
+/* ============================================
    1. LENIS SMOOTH SCROLL
    ============================================ */
 let lenis = null; // shared instance, used for programmatic smooth scrolling
@@ -1100,6 +1136,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Final refresh so all ScrollTrigger positions are correct
     ScrollTrigger.refresh();
+
+    // À partir d'ici, une croissance de --app-height (barre mobile masquée)
+    // déclenchera une resynchronisation ScrollTrigger (cf. updateAppHeight).
+    appHeightReady = true;
   }, 50);
 });
 
