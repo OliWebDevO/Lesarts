@@ -51,29 +51,39 @@ function onWidthResize(callback, delay = 150) {
    tout l'écran et n'est plus jamais rogné par la barre. Au chargement (barre
    visible) c'est la petite hauteur — la barre peut donc recouvrir un peu le bas,
    ce qui est accepté. Sur desktop on suit exactement la hauteur (équivaut à vh). */
-const APP_HEIGHT_LOCK = window.matchMedia('(pointer: coarse)').matches;
-let appHeightMax = 0;
-let appHeightReady = false; // true une fois la page initialisée (évite un refresh au load)
-function updateAppHeight() {
-  const h = window.innerHeight;
-  if (APP_HEIGHT_LOCK) {
-    if (h <= appHeightMax) return; // on ne redescend jamais (barre qui réapparaît)
-    appHeightMax = h;
-    document.documentElement.style.setProperty('--app-height', `${h}px`);
-    // La barre mobile vient de se masquer : la hauteur grandit UNE fois. On
-    // resynchronise alors les positions ScrollTrigger (sinon décalées), une
-    // seule fois et tout en haut de page → imperceptible.
-    if (appHeightReady && window.ScrollTrigger) ScrollTrigger.refresh();
-  } else {
-    document.documentElement.style.setProperty('--app-height', `${h}px`);
-  }
+/* On mesure une SEULE fois la plus grande hauteur de viewport disponible et on
+   la fige pour toute la session : ainsi la barre d'URL mobile qui se masque au
+   scroll ne provoque AUCUN resize (qui casserait les animations). On vise la
+   hauteur « barre masquée » via une sonde CSS `lvh` (le navigateur connaît cette
+   valeur) + clientHeight (viewport de mise en page) + innerHeight, et on garde
+   le max. La hauteur n'est recalculée que si la LARGEUR change (rotation /
+   redimensionnement fenêtre desktop), jamais sur un changement de hauteur seul. */
+function measureLargeViewport() {
+  let lvhPx = 0;
+  try {
+    const probe = document.createElement('div');
+    probe.style.cssText =
+      'position:absolute;top:0;left:0;width:1px;height:100lvh;visibility:hidden;pointer-events:none;';
+    document.documentElement.appendChild(probe);
+    lvhPx = probe.getBoundingClientRect().height;
+    probe.remove();
+  } catch (e) { lvhPx = 0; }
+  return Math.max(window.innerHeight, document.documentElement.clientHeight || 0, lvhPx || 0);
 }
-updateAppHeight();
-window.addEventListener('resize', updateAppHeight);
-window.addEventListener('orientationchange', () => {
-  appHeightMax = 0; // nouvelle orientation = nouvelles dimensions → on recalibre
-  setTimeout(updateAppHeight, 250);
+function setAppHeight() {
+  document.documentElement.style.setProperty('--app-height', `${measureLargeViewport()}px`);
+}
+setAppHeight();
+let appHeightWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+  if (window.innerWidth === appHeightWidth) return; // hauteur seule (barre mobile) → on ignore
+  appHeightWidth = window.innerWidth;
+  setAppHeight();
 });
+window.addEventListener('orientationchange', () => setTimeout(() => {
+  appHeightWidth = window.innerWidth;
+  setAppHeight();
+}, 250));
 
 /* ============================================
    1. LENIS SMOOTH SCROLL
@@ -1136,10 +1146,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Final refresh so all ScrollTrigger positions are correct
     ScrollTrigger.refresh();
-
-    // À partir d'ici, une croissance de --app-height (barre mobile masquée)
-    // déclenchera une resynchronisation ScrollTrigger (cf. updateAppHeight).
-    appHeightReady = true;
   }, 50);
 });
 
