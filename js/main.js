@@ -71,6 +71,7 @@ const SECONDARY_HEADER_HTML = `
 
     <nav class="nav-overlay" id="nav-overlay" aria-label="Navigation principale" aria-hidden="true">
       <div class="nav-content">
+        <div class="nav-main">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Accueil</span></a></li>
           <li class="nav-item"><a href="a-propos.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">À propos</span></a></li>
@@ -79,6 +80,17 @@ const SECONDARY_HEADER_HTML = `
           <li class="nav-item"><a href="faq.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">FAQ</span></a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Contact</span></a></li>
         </ul>
+
+        <aside class="nav-feature" aria-hidden="true">
+          <span class="nav-feature__word">LESARTS</span>
+          <div class="nav-feature__photos">
+            <div class="nav-feature__photo-wrap"><img src="images/encadrement/woman-choosing-frame-for-art-in-shop-2026-03-20-04-14-27-utc.webp" alt="" class="nav-feature__photo" /></div>
+            <div class="nav-feature__photo-wrap"><img src="images/encadrement/wooden-picture-frames-on-wall-in-a-store-backgrou-2026-03-24-21-35-00-utc.webp" alt="" class="nav-feature__photo" /></div>
+            <div class="nav-feature__photo-wrap"><img src="images/encadrement/colorful-array-of-picture-frame-corner-samples-2026-03-10-04-48-19-utc.webp" alt="" class="nav-feature__photo" /></div>
+            <div class="nav-feature__photo-wrap"><img src="images/encadrement/collection-of-modern-picture-frames-on-wooden-surf-2026-03-24-11-45-50-utc.webp" alt="" class="nav-feature__photo" /></div>
+          </div>
+        </aside>
+        </div>
 
         <div class="nav-info">
           <div class="nav-address">
