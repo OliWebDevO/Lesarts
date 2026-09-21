@@ -1,0 +1,235 @@
+- generic [ref=f46e1]:
+  - link "Aller au contenu principal" [ref=f46e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f46e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f46e10]:
+        - generic [ref=f46e11]: LESARTS
+        - generic [ref=f46e12]: Prod.
+    - button "Ouvrir le menu" [ref=f46e13] [cursor=pointer]:
+      - generic [ref=f46e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f46e15]:
+    - region "Suivi des commandes" [ref=f46e16]:
+      - generic [ref=f46e17]:
+        - generic [ref=f46e18]:
+          - generic [ref=f46e19]:
+            - paragraph [ref=f46e20]: Prototype — Interface atelier
+            - heading "Suivi des commandes" [level=1] [ref=f46e21]
+          - generic [ref=f46e22]:
+            - generic [ref=f46e23]:
+              - strong [ref=f46e24]: "1"
+              - generic [ref=f46e25]: À produire
+            - generic [ref=f46e26]:
+              - strong [ref=f46e27]: "1"
+              - generic [ref=f46e28]: En cours
+            - generic [ref=f46e29]:
+              - strong [ref=f46e30]: "1"
+              - generic [ref=f46e31]: Prêtes
+            - generic [ref=f46e32]:
+              - strong [ref=f46e33]: "0"
+              - generic [ref=f46e34]: Retirées
+        - generic [ref=f46e35]:
+          - group "Filtrer par statut" [ref=f46e36]:
+            - button "Toutes" [ref=f46e37] [cursor=pointer]
+            - button "À produire" [ref=f46e38] [cursor=pointer]
+            - button "En cours" [ref=f46e39] [cursor=pointer]
+            - button "Prêtes" [ref=f46e40] [cursor=pointer]
+            - button "Retirées" [ref=f46e41] [cursor=pointer]
+          - button "Ajouter une commande d'exemple" [ref=f46e42] [cursor=pointer]
+        - generic [ref=f46e43]:
+          - article [ref=f46e326]:
+            - button "Supprimer la commande LA-0001" [ref=f46e327] [cursor=pointer]
+            - generic [ref=f46e330]:
+              - generic [ref=f46e331]:
+                - generic [ref=f46e332]: LA-0001
+                - text: 20/09/2026
+              - generic [ref=f46e333]: À produire
+            - generic [ref=f46e334]:
+              - generic [ref=f46e335]:
+                - strong [ref=f46e336]: Camille Dubois
+                - link "camille@example.be" [ref=f46e337] [cursor=pointer]:
+                  - /url: mailto:camille@example.be
+              - generic [ref=f46e338]:
+                - generic [ref=f46e339]:
+                  - term [ref=f46e340]: Baguette
+                  - definition [ref=f46e341]: Chêne naturel
+                - generic [ref=f46e342]:
+                  - term [ref=f46e343]: Passe-partout
+                  - definition [ref=f46e344]: Ivoire
+                - generic [ref=f46e345]:
+                  - term [ref=f46e346]: Verre
+                  - definition [ref=f46e347]: Clair
+                - generic [ref=f46e348]:
+                  - term [ref=f46e349]: Format
+                  - definition [ref=f46e350]: 55 × 38 cm
+            - list [ref=f46e351]:
+              - listitem [ref=f46e352]:
+                - generic [ref=f46e354]: À produire
+              - listitem [ref=f46e355]:
+                - generic [ref=f46e357]: En cours à l'atelier
+              - listitem [ref=f46e358]:
+                - generic [ref=f46e360]: Prêt — en magasin
+              - listitem [ref=f46e361]:
+                - generic [ref=f46e363]: Retiré
+            - generic [ref=f46e364]:
+              - generic [ref=f46e365]: 85,02 €
+              - button "Démarrer la production" [ref=f46e366] [cursor=pointer]
+          - article [ref=f46e367]:
+            - button "Supprimer la commande LA-0002" [ref=f46e368] [cursor=pointer]
+            - generic [ref=f46e371]:
+              - generic [ref=f46e372]:
+                - generic [ref=f46e373]: LA-0002
+                - text: 19/09/2026
+              - generic [ref=f46e374]: En cours à l'atelier
+            - generic [ref=f46e375]:
+              - generic [ref=f46e376]:
+                - strong [ref=f46e377]: Thomas Verhoeven
+                - link "thomas@example.be" [ref=f46e378] [cursor=pointer]:
+                  - /url: mailto:thomas@example.be
+              - generic [ref=f46e379]:
+                - generic [ref=f46e380]:
+                  - term [ref=f46e381]: Baguette
+                  - definition [ref=f46e382]: Chêne naturel
+                - generic [ref=f46e383]:
+                  - term [ref=f46e384]: Passe-partout
+                  - definition [ref=f46e385]: Ivoire
+                - generic [ref=f46e386]:
+                  - term [ref=f46e387]: Verre
+                  - definition [ref=f46e388]: Clair
+                - generic [ref=f46e389]:
+                  - term [ref=f46e390]: Format
+                  - definition [ref=f46e391]: 55 × 38 cm
+            - list [ref=f46e392]:
+              - listitem [ref=f46e393]:
+                - generic [ref=f46e395]: À produire
+              - listitem [ref=f46e396]:
+                - generic [ref=f46e398]: En cours à l'atelier
+              - listitem [ref=f46e399]:
+                - generic [ref=f46e401]: Prêt — en magasin
+              - listitem [ref=f46e402]:
+                - generic [ref=f46e404]: Retiré
+            - generic [ref=f46e405]:
+              - generic [ref=f46e406]: 85,02 €
+              - button "Expédié au magasin" [ref=f46e407] [cursor=pointer]
+          - article [ref=f46e408]:
+            - button "Supprimer la commande LA-0003" [ref=f46e409] [cursor=pointer]
+            - generic [ref=f46e412]:
+              - generic [ref=f46e413]:
+                - generic [ref=f46e414]: LA-0003
+                - text: 18/09/2026
+              - generic [ref=f46e415]: Prêt — en magasin
+            - generic [ref=f46e416]:
+              - generic [ref=f46e417]:
+                - strong [ref=f46e418]: Sophie Janssens
+                - link "sophie@example.be" [ref=f46e419] [cursor=pointer]:
+                  - /url: mailto:sophie@example.be
+              - generic [ref=f46e420]:
+                - generic [ref=f46e421]:
+                  - term [ref=f46e422]: Baguette
+                  - definition [ref=f46e423]: Chêne naturel
+                - generic [ref=f46e424]:
+                  - term [ref=f46e425]: Passe-partout
+                  - definition [ref=f46e426]: Ivoire
+                - generic [ref=f46e427]:
+                  - term [ref=f46e428]: Verre
+                  - definition [ref=f46e429]: Clair
+                - generic [ref=f46e430]:
+                  - term [ref=f46e431]: Format
+                  - definition [ref=f46e432]: 55 × 38 cm
+            - list [ref=f46e433]:
+              - listitem [ref=f46e434]:
+                - generic [ref=f46e436]: À produire
+              - listitem [ref=f46e437]:
+                - generic [ref=f46e439]: En cours à l'atelier
+              - listitem [ref=f46e440]:
+                - generic [ref=f46e442]: Prêt — en magasin
+              - listitem [ref=f46e443]:
+                - generic [ref=f46e445]: Retiré
+            - generic [ref=f46e446]:
+              - generic [ref=f46e447]: 85,02 €
+              - button "Retiré par le client" [ref=f46e448] [cursor=pointer]
+        - paragraph [ref=f46e167]: Prototype — les commandes sont stockées localement dans ce navigateur. Dans la version finale, chaque changement de statut déclenchera l'envoi automatique d'un mail de suivi au client (Lot 06).
+    - dialog [ref=f46e193]:
+      - generic [ref=f46e194]:
+        - button "Fermer sans supprimer" [active] [ref=f46e195] [cursor=pointer]
+        - paragraph [ref=f46e198]: Suppression
+        - heading "Supprimer la commande ?" [level=2] [ref=f46e199]
+        - paragraph [ref=f46e200]:
+          - text: La commande
+          - strong [ref=f46e201]: LA-0002
+          - text: sera définitivement retirée du suivi. Cette action est irréversible.
+        - button "Oui, supprimer" [ref=f46e202] [cursor=pointer]
+  - contentinfo [ref=f46e168]:
+    - generic [ref=f46e170]:
+      - link [ref=f46e172] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f46e173]: Rue du Bailli 43
+        - paragraph [ref=f46e174]: 1050 Ixelles
+        - paragraph [ref=f46e175]: Bruxelles, Belgique
+      - generic [ref=f46e176]:
+        - link "+32 2 646 54 69" [ref=f46e177] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f46e178]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f46e179]: "Mar : sur rendez-vous"
+      - generic [ref=f46e180]:
+        - link "lesartsprod.be" [ref=f46e181] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f46e182] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f46e183] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f46e184]:
+        - link "Mentions légales" [ref=f46e185] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f46e186]: Lesarts © 2025

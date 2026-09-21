@@ -1,0 +1,184 @@
+- generic [active] [ref=f1e1]:
+  - link "Aller au contenu principal" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]: LESARTS
+      - generic [aria-hidden] [ref=f1e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f1e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f1e10]:
+        - generic [ref=f1e11]: LESARTS
+        - generic [ref=f1e12]: Prod.
+    - button "Ouvrir le menu" [ref=f1e13] [cursor=pointer]:
+      - generic [ref=f1e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f1e15]:
+    - region [ref=f1e16]:
+      - generic [ref=f1e17]:
+        - paragraph [ref=f1e18]: 05 — Contact
+        - heading "Contact" [level=1] [ref=f1e19]
+        - generic [ref=f1e20]:
+          - paragraph [ref=f1e21]: Notre atelier-boutique vous accueille rue du Bailli 43, à Ixelles, du mercredi au samedi de 10h30 à 18h30 — et le mardi sur rendez-vous.
+          - paragraph [ref=f1e22]: Une question, un projet d'encadrement ? Écrivez-nous ou passez nous voir, on adore en parler.
+        - button "Défiler vers la section suivante" [ref=f1e23] [cursor=pointer]:
+          - generic [ref=f1e27]: Défiler
+      - generic [ref=f1e28]:
+        - img "Cliente choisissant un cadre dans la boutique Lesarts" [ref=f1e30]
+        - generic [ref=f1e31]:
+          - generic [ref=f1e34]:
+            - generic [ref=f1e35]: C
+            - generic [ref=f1e37]: o
+            - generic [ref=f1e39]: "n"
+            - generic [ref=f1e41]: t
+            - generic [ref=f1e43]: a
+            - generic [ref=f1e45]: c
+            - generic [ref=f1e47]: t
+          - generic [ref=f1e49]:
+            - generic [ref=f1e50]:
+              - generic [ref=f1e51]:
+                - generic [ref=f1e52]: "N"
+                - generic [ref=f1e54]: o
+                - generic [ref=f1e56]: u
+                - generic [ref=f1e58]: s
+              - generic [ref=f1e60]:
+                - generic [ref=f1e61]: t
+                - generic [ref=f1e63]: r
+                - generic [ref=f1e65]: o
+                - generic [ref=f1e67]: u
+                - generic [ref=f1e69]: v
+                - generic [ref=f1e71]: e
+                - generic [ref=f1e73]: r
+            - generic [ref=f1e76]:
+              - generic [ref=f1e77]: "0"
+              - generic [ref=f1e79]: "5"
+    - region [ref=f1e81]:
+      - generic [ref=f1e82]: 01 — Nous trouver
+      - heading "Coordonnées" [level=2] [ref=f1e83]
+      - generic [ref=f1e84]:
+        - generic [ref=f1e85]:
+          - generic [ref=f1e86]:
+            - link "Voir l'adresse sur Google Maps" [ref=f1e87] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Rue%20du%20Bailli%2043%2C%201050%20Ixelles%2C%20Bruxelles
+            - heading "Adresse" [level=3] [ref=f1e91]
+          - paragraph [ref=f1e92]: Rue du Bailli 43 1050 Ixelles Bruxelles, Belgique
+        - generic [ref=f1e93]:
+          - generic [ref=f1e94]:
+            - link "Appeler le +32 2 646 54 69" [ref=f1e95] [cursor=pointer]:
+              - /url: tel:+3226465469
+            - heading "Téléphone" [level=3] [ref=f1e98]
+          - paragraph [ref=f1e99]:
+            - link "+32 2 646 54 69" [ref=f1e100] [cursor=pointer]:
+              - /url: tel:+3226465469
+        - generic [ref=f1e101]:
+          - generic [ref=f1e102]:
+            - link "Envoyer un e-mail à info@lesartsprod.be" [ref=f1e103] [cursor=pointer]:
+              - /url: mailto:info@lesartsprod.be
+            - heading "E-mail" [level=3] [ref=f1e107]
+          - paragraph [ref=f1e108]:
+            - link "info@lesartsprod.be" [ref=f1e109] [cursor=pointer]:
+              - /url: mailto:info@lesartsprod.be
+            - link "lesartsprod.be" [ref=f1e110] [cursor=pointer]:
+              - /url: https://www.lesartsprod.be
+        - generic [ref=f1e111]:
+          - heading "Horaires" [level=3] [ref=f1e117]
+          - paragraph [ref=f1e118]: "Mer – Sam : 10h30 – 18h30 Mar : sur rendez-vous Lun & Dim : fermé"
+    - region "Localisation de l'atelier Lesarts" [ref=f1e119]:
+      - iframe [ref=f1e120]
+    - region [ref=f1e121]:
+      - generic [ref=f1e122]:
+        - generic [ref=f1e123]: 02 — Écrivez-nous
+        - heading "Une question, un projet ?" [level=2] [ref=f1e124]
+        - generic [ref=f1e125]:
+          - generic [ref=f1e126]:
+            - generic [ref=f1e127]: Nom
+            - textbox "Nom" [ref=f1e128]
+          - generic [ref=f1e129]:
+            - generic [ref=f1e130]: E-mail
+            - textbox "E-mail" [ref=f1e131]
+          - generic [ref=f1e132]:
+            - generic [ref=f1e133]: Sujet
+            - combobox "Sujet" [ref=f1e134]:
+              - option "Sélectionnez un sujet" [disabled] [selected]
+              - option "Demande de devis"
+              - option "Prise de contact"
+              - option "Proposition d'exposition"
+              - option "Restauration d'œuvre"
+              - option "Conseil en encadrement"
+              - option "Autre"
+          - generic [ref=f1e135]:
+            - generic [ref=f1e136]: Message
+            - textbox "Message" [ref=f1e137]
+          - button "Envoyer" [ref=f1e138] [cursor=pointer]
+          - status [ref=f1e140]
+  - contentinfo [ref=f1e141]:
+    - generic [ref=f1e143]:
+      - link [ref=f1e145] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f1e146]: Rue du Bailli 43
+        - paragraph [ref=f1e147]: 1050 Ixelles
+        - paragraph [ref=f1e148]: Bruxelles, Belgique
+      - generic [ref=f1e149]:
+        - link "+32 2 646 54 69" [ref=f1e150] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f1e151]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f1e152]: "Mar : sur rendez-vous"
+      - generic [ref=f1e153]:
+        - link "lesartsprod.be" [ref=f1e154] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f1e155] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f1e156] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f1e157]:
+        - link "Mentions légales" [ref=f1e158] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f1e159]: Lesarts © 2025

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suivi des commandes – Lesarts | Prototype</title>
+  <meta name="description" content="Interface atelier Lesarts : suivi des commandes d'encadrement par statut." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="about-skip-link">Aller au contenu principal</a>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="loader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="loader-inner">
+      <span class="loader-text">LESARTS</span>
+      <div class="loader-progress">
+        <div class="loader-progress-fill" id="loader-fill"></div>
+      </div>
+      <span class="loader-pct" id="loader-pct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- HEADER (shared — injected from js/main.js) -->
+  <div data-include="header"></div>
+
+  <main id="main-content">
+
+    <section class="admin" aria-label="Suivi des commandes">
+      <div class="admin__inner">
+
+        <header class="admin__header">
+          <div>
+            <p class="admin__overline">Prototype — Interface atelier</p>
+            <h1 class="admin__title">Suivi des commandes</h1>
+          </div>
+          <div class="admin__stats">
+            <div class="admin__stat">
+              <strong id="stat-a-produire">0</strong>
+              <span>À produire</span>
+            </div>
+            <div class="admin__stat">
+              <strong id="stat-en-cours">0</strong>
+              <span>En cours</span>
+            </div>
+            <div class="admin__stat">
+              <strong id="stat-pret">0</strong>
+              <span>Prêtes</span>
+            </div>
+            <div class="admin__stat">
+              <strong id="stat-retire">0</strong>
+              <span>Retirées</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="admin__search">
+          <label class="admin__search-label" for="order-search">Rechercher une commande</label>
+          <div class="admin__search-field">
+            <span class="admin__search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="order-search" class="admin__search-input"
+                   placeholder="Nom, prénom, référence ou date (ex. 21/09)"
+                   autocomplete="off" />
+            <button type="button" class="admin__search-clear" id="search-clear" aria-label="Effacer la recherche" hidden>
+              <span aria-hidden="true">✕</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin__toolbar">
+          <div class="admin__filters" role="group" aria-label="Filtrer par statut">
+            <button type="button" class="admin__filter is-active" data-filter="tous">Toutes</button>
+            <button type="button" class="admin__filter" data-filter="a-produire">À produire</button>
+            <button type="button" class="admin__filter" data-filter="en-cours">En cours</button>
+            <button type="button" class="admin__filter" data-filter="pret">Prêtes</button>
+            <button type="button" class="admin__filter" data-filter="retire">Retirées</button>
+          </div>
+        </div>
+
+        <div class="admin__list" id="orders-list"></div>
+
+        <p class="admin__empty" id="empty-state" hidden>
+          Aucune commande pour le moment. Passez une commande depuis le
+          <a href="app.html">configurateur</a> pour la voir apparaître ici.
+        </p>
+
+        <p class="admin__note">
+          Prototype — les commandes sont stockées localement dans ce navigateur.
+          Dans la version finale, chaque changement de statut déclenchera l'envoi
+          automatique d'un mail de suivi au client (Lot 06).
+        </p>
+
+      </div>
+    </section>
+
+    <!-- BON D'ATELIER — rempli en JS, visible uniquement à l'impression -->
+    <div class="sheet" id="workshop-sheet" aria-hidden="true"></div>
+
+    <!-- CONFIRMATION DE SUPPRESSION -->
+    <dialog class="confirm" id="delete-modal" aria-labelledby="delete-title">
+      <div class="confirm__inner">
+        <button type="button" class="confirm__close" id="delete-cancel" aria-label="Fermer sans supprimer">
+          <span aria-hidden="true">✕</span>
+        </button>
+
+        <p class="confirm__eyebrow confirm__eyebrow--warn">Suppression</p>
+        <h2 class="confirm__title" id="delete-title">Supprimer la commande&nbsp;?</h2>
+        <p class="confirm__text">
+          La commande <strong id="delete-ref"></strong> sera définitivement retirée
+          du suivi. Cette action est irréversible.
+        </p>
+
+        <button type="button" class="confirm__danger" id="delete-confirm">Oui, supprimer</button>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- FOOTER (shared — injected from js/main.js) -->
+  <div data-include="footer"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/app-admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1722 @@
+/* ============================================
+   LESARTS — Configurateur d'encadrement (prototype)
+   Utilise les tokens de css/styles.css (:root)
+   ============================================ */
+
+:root {
+  /* Terracotta assombri : --terra (#BB6E44) ne donne que 3.87:1 sur blanc,
+     sous le seuil WCAG AA. Cette variante passe à 5.91:1 et sert partout où
+     la couleur porte du texte ou un montant. */
+  --terra-deep: #9C4F22;
+}
+
+/* Le configurateur tient exactement dans un écran : pas de scroll interne.
+   --app-height est mesuré en JS par main.js (fiable sur mobile, contrairement
+   à 100vh qui saute quand la barre d'URL se masque).
+   Le padding haut dégage le bouton MENU fixe du header. */
+.configurator {
+  height: var(--app-height, 100vh);
+  padding: clamp(8.5rem, 11vh, 11rem) 4rem clamp(1.2rem, 2.5vh, 3rem);
+  overflow: hidden;
+}
+
+/* L'en-tête occupe toute la largeur au-dessus des deux colonnes ; la ligne
+   des colonnes absorbe la hauteur restante (minmax(0,1fr)). */
+.configurator__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: clamp(1.6rem, 3vh, 2.8rem) 4rem;
+  max-width: 132rem;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  min-height: 0;
+}
+
+.config-head {
+  grid-column: 1 / -1;
+}
+
+.config-head__title {
+  font-family: var(--font-platt);
+  font-size: clamp(2.2rem, 3.4vh, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--black);
+}
+
+.config-head__desc {
+  margin-top: 0.6rem;
+  font-family: var(--font-neue);
+  font-size: clamp(1.3rem, 1.9vh, 1.5rem);
+  color: var(--grey);
+}
+
+@media (max-width: 1024px) {
+  /* En dessous de 1024px, les deux colonnes s'empilent : un écran unique
+     deviendrait illisible, on rend donc la hauteur au contenu. */
+  .configurator {
+    height: auto;
+    padding: 8rem 2rem 6rem;
+    overflow: visible;
+  }
+  .configurator__inner { grid-template-columns: 1fr; gap: 4rem; }
+}
+
+/* ---------- APERÇU ---------- */
+
+/* min-height:0 + overflow:hidden → la colonne se limite à la ligne de grille
+   au lieu de prendre la hauteur naturelle de son contenu. */
+.configurator__preview {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vh, 2rem);
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .configurator__preview { min-height: auto; }
+}
+
+/* flex:1 + min-height:0 → la scène occupe la hauteur restante sous le récap
+   sans jamais forcer la page à dépasser un écran. */
+.frame-stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 0.4rem;
+  box-shadow: 0 2rem 6rem -2rem rgba(22, 18, 14, 0.25);
+  padding: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .frame-stage {
+    flex: none;
+    aspect-ratio: 4 / 5;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+}
+
+/* Couches, de l'extérieur vers l'intérieur : baguette → passe-partout → œuvre.
+   La baguette est l'élément le plus externe : son padding EST son épaisseur,
+   et elle porte l'ombre du cadre. Le ratio vient des dimensions saisies
+   (aspect-ratio posé en JS). */
+.frame-border {
+  flex: 0 1 auto;
+  aspect-ratio: 55 / 38;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: min(2.2rem, 8%);
+  border-radius: 0.15rem;
+  box-shadow:
+    inset 0 0 0 1px rgba(22, 18, 14, 0.18),
+    0 0.8rem 2.4rem -0.4rem rgba(22, 18, 14, 0.35);
+  transition: background-color 0.35s var(--ease-out-quart), padding 0.35s var(--ease-out-quart);
+}
+
+/* Format plus large que la zone d'aperçu : c'est la largeur qui borne, et la
+   hauteur se déduit du ratio (classe posée en JS). */
+.frame-border.is-landscape {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+/* Le passe-partout est à l'intérieur de la baguette : un liseré interne
+   marque la feuillure, sans ombre portée puisqu'il est encastré.
+   La marge est proportionnelle au plus petit côté (min(w,h)) : en valeur fixe,
+   un format étroit verrait l'œuvre réduite à néant. */
+.frame-mat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: min(2.4rem, 9%);
+  box-shadow: inset 0 0 0 1px rgba(22, 18, 14, 0.12);
+  transition: background-color 0.35s var(--ease-out-quart), padding 0.35s var(--ease-out-quart);
+}
+
+/* Le liseré sombre simule le biseau de découpe et détache le passe-partout
+   de l'œuvre, y compris quand les deux sont dans des tons clairs proches. */
+.frame-glass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.1rem;
+  background: #EDE6D8;
+  box-shadow: inset 0 0 0 1px rgba(22, 18, 14, 0.22);
+}
+
+.frame-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  opacity: var(--glass-opacity, 0.05);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-out-quart);
+}
+
+.frame-artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame-stage__caption {
+  font-family: var(--font-neue);
+  font-size: 1.3rem;
+  color: var(--grey);
+  text-align: center;
+}
+
+/* ---------- PANNEAU DE CHOIX ---------- */
+
+.configurator__panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(0.4rem, 1.2vh, 2rem);
+  min-height: 0;
+  height: 100%;
+}
+
+.config-group__title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-platt);
+  font-size: clamp(1.4rem, 2.1vh, 1.9rem);
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: clamp(0.5rem, 1.2vh, 1.6rem);
+}
+
+.config-group__num {
+  font-family: var(--font-platt);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--terra);
+}
+
+/* 5 colonnes : chaque famille de matériaux tient sur une seule ligne, plutôt
+   que de laisser un 5e échantillon orphelin sur une deuxième ligne. */
+.config-swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.config-swatches--glass {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Au-dessus de 1024px la mise en page reste sur un écran : on garde 5 colonnes
+   pour que chaque famille tienne sur une ligne (sinon le CTA sort de l'écran
+   sur une tablette paysage). Le passage à 3 colonnes n'a lieu qu'en empilé. */
+@media (max-width: 1024px) {
+  .config-swatches,
+  .config-swatches--glass {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .config-swatches,
+  .config-swatches--glass {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.3rem, 0.7vh, 0.6rem);
+  padding: clamp(0.7rem, 1.2vh, 1rem);
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  background: var(--white);
+  cursor: pointer;
+  font-family: var(--font-neue);
+  text-align: left;
+  transition: border-color 0.2s var(--ease-out-quart), transform 0.2s var(--ease-out-quart);
+}
+
+.swatch:hover {
+  transform: translateY(-2px);
+}
+
+.swatch:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 2px;
+}
+
+/* Double signal (bordure + anneau) : une bordure 1px seule se repère mal
+   sur une grille dense, surtout en lumière d'atelier ou sur tablette. */
+.swatch.is-active {
+  border-color: var(--terra);
+  box-shadow: 0 0 0 2px var(--terra);
+}
+
+/* Hauteur fluide : sur un écran bas (laptop 13"), les échantillons se
+   compriment au lieu de pousser le contenu hors de l'écran. */
+.swatch__sample {
+  width: 100%;
+  height: clamp(2.2rem, 3.8vh, 4.4rem);
+  border-radius: 0.3rem;
+  display: block;
+}
+
+.swatch__sample--none {
+  background: var(--beige);
+  border: 1px dashed var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey);
+  font-size: 1.6rem;
+}
+
+.swatch__sample--glass {
+  background: linear-gradient(135deg, #E4EEF2 0%, #FFFFFF 60%, #E4EEF2 100%);
+  position: relative;
+  opacity: 1;
+}
+
+.swatch__sample--glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.3rem;
+  background: var(--white);
+  opacity: var(--glass-opacity, 0.05);
+}
+
+.swatch__label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.swatch__price {
+  font-size: 1.15rem;
+  color: var(--grey);
+}
+
+/* ---------- DIMENSIONS ---------- */
+
+.config-dims {
+  display: flex;
+  gap: 2rem;
+}
+
+.config-dims__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-neue);
+  font-size: 1.3rem;
+  color: var(--grey);
+}
+
+.config-dims__field input {
+  font-family: var(--font-platt);
+  font-size: 1.6rem;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--beige);
+  border-radius: 0.3rem;
+  padding: clamp(0.6rem, 1.2vh, 0.9rem) 1.2rem;
+  width: 12rem;
+}
+
+.config-dims__field input:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 1px;
+}
+
+/* ---------- CTA COMMANDER ---------- */
+
+.config-cta {
+  flex: none;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: clamp(1rem, 1.9vh, 1.4rem) 2.8rem;
+  border: none;
+  border-radius: 99rem;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-platt);
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease-out-quart), transform 0.25s var(--ease-out-quart);
+}
+
+.config-cta:hover {
+  background: var(--terra);
+  transform: translateY(-2px);
+}
+
+.config-cta:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+.config-cta__arrow {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* ---------- RÉCAPITULATIF ---------- */
+
+/* Le récap garde sa taille : c'est la scène du cadre (flex:1) qui absorbe
+   la hauteur restante, pas l'inverse. */
+.config-summary {
+  flex: none;
+  background: var(--white);
+  border-radius: 0.4rem;
+  padding: clamp(1.4rem, 2.6vh, 2.4rem) 2.6rem;
+}
+
+.config-summary__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-neue);
+  font-size: 1.4rem;
+  color: var(--grey);
+  padding: clamp(0.4rem, 0.9vh, 0.8rem) 0;
+  border-bottom: 1px solid var(--beige);
+}
+
+.config-summary__row strong {
+  font-weight: 500;
+  color: var(--black);
+}
+
+.config-summary__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-platt);
+  padding-top: clamp(0.8rem, 1.6vh, 1.6rem);
+  margin-top: 0.6rem;
+}
+
+.config-summary__total span {
+  font-size: 1.4rem;
+  color: var(--grey);
+  font-family: var(--font-neue);
+}
+
+.config-summary__total strong {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--terra);
+}
+
+.config-summary__note {
+  margin-top: clamp(0.8rem, 1.6vh, 1.6rem);
+  font-family: var(--font-neue);
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--grey);
+}
+
+/* Écran bas (portable 13") : la note de démonstration cède la place pour que
+   le bouton Commander reste entièrement visible. */
+@media (min-width: 1025px) and (max-height: 800px) {
+  .config-summary__note { display: none; }
+}
+
+/* ============================================
+   COMMANDE — second écran
+   ============================================ */
+
+/* Fond clair : l'outil est utilisé sur tablette au comptoir, où un écran
+   sombre renvoie les reflets de l'éclairage du magasin. */
+.order {
+  min-height: var(--app-height, 100vh);
+  padding: clamp(7rem, 11vh, 9rem) 4rem clamp(4rem, 8vh, 8rem);
+  background: var(--beige);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+}
+
+.order__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 110rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .order {
+    padding: 6rem 2rem;
+    min-height: auto;
+  }
+  .order__inner { grid-template-columns: 1fr; gap: 4rem; }
+}
+
+.order__title {
+  font-family: var(--font-platt);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2.4rem;
+}
+
+/* ---------- Récap commande ---------- */
+
+/* Le titre est hors de la carte : sinon le padding de celle-ci le décale
+   vers le bas et il ne s'aligne plus avec le titre du formulaire. */
+.order__col {
+  align-self: start;
+}
+
+.order__recap {
+  background: var(--white);
+  border-radius: 0.6rem;
+  padding: 3rem 3.2rem;
+}
+
+.order__list {
+  margin: 0;
+}
+
+.order__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--beige);
+  font-family: var(--font-neue);
+  font-size: 1.5rem;
+}
+
+.order__row dt {
+  color: var(--grey);
+}
+
+.order__row dd {
+  margin: 0;
+  color: var(--black);
+  font-weight: 500;
+  text-align: right;
+}
+
+.order__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 2rem;
+}
+
+.order__total span {
+  font-family: var(--font-neue);
+  font-size: 1.5rem;
+  color: var(--grey);
+}
+
+.order__total strong {
+  font-family: var(--font-platt);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--terra);
+}
+
+/* ---------- Formulaire ---------- */
+
+.order__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.order__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-family: var(--font-neue);
+  font-size: 1.3rem;
+  color: var(--grey);
+}
+
+/* Champs hauts et contrastés : saisie au doigt sur tablette, cible ≥ 44px. */
+.order__field input {
+  font-family: var(--font-neue);
+  font-size: 1.7rem;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid rgba(22, 18, 14, 0.2);
+  border-radius: 0.4rem;
+  padding: 1.4rem 1.6rem;
+  width: 100%;
+  min-height: 4.8rem;
+}
+
+.order__field input:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 1px;
+  border-color: var(--terra);
+}
+
+.order__field input:user-invalid {
+  border-color: var(--terra);
+}
+
+.order__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Action secondaire : sans fond, pour ne pas concurrencer l'envoi. */
+.order__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 4.8rem;
+  padding: 1.2rem 2rem;
+  border: 1px solid rgba(22, 18, 14, 0.25);
+  border-radius: 99rem;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-neue);
+  font-size: 1.45rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease-out-quart), color 0.25s var(--ease-out-quart);
+}
+
+.order__back:hover {
+  border-color: var(--terra);
+  color: var(--terra);
+}
+
+.order__back:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+.order__back-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.order__submit {
+  padding: 1.6rem 3.6rem;
+  min-height: 4.8rem;
+  border: none;
+  border-radius: 99rem;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-platt);
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease-out-quart), transform 0.25s var(--ease-out-quart);
+}
+
+.order__submit:hover {
+  background: var(--terra);
+  transform: translateY(-2px);
+}
+
+.order__submit:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+/* Message d'état lisible d'un coup d'œil au comptoir : vert en confirmation,
+   ambre en erreur de saisie — la couleur seule ne porte pas l'information,
+   le texte reste explicite. */
+.order__status:not(:empty) {
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.4rem;
+  background: #E7F0E8;
+  color: #2F5438;
+}
+
+.order__status[data-state="error"] {
+  background: #F7EAD9;
+  color: #8A4A12;
+}
+
+.order__status {
+  font-family: var(--font-neue);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.order__note {
+  font-family: var(--font-neue);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--grey);
+}
+
+/* ============================================
+   ADMIN — Suivi des commandes (prototype)
+   ============================================ */
+
+.admin {
+  padding: clamp(10rem, 14vh, 14rem) 4rem 10rem;
+  min-height: 100vh;
+}
+
+.admin__inner {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .admin { padding: 10rem 2rem 6rem; }
+}
+
+.admin__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(22, 18, 14, 0.12);
+  margin-bottom: 3rem;
+}
+
+.admin__overline {
+  font-family: var(--font-platt);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--terra);
+  margin-bottom: 1.2rem;
+}
+
+.admin__title {
+  font-family: var(--font-platt);
+  font-size: clamp(3.2rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.admin__stats {
+  display: flex;
+  gap: 3rem;
+}
+
+.admin__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.admin__stat strong {
+  font-family: var(--font-platt);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--black);
+  font-variant-numeric: tabular-nums;
+}
+
+.admin__stat span {
+  font-family: var(--font-neue);
+  font-size: 1.2rem;
+  color: var(--grey);
+}
+
+/* ---------- Barre d'outils ---------- */
+
+.admin__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.admin__filters {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.admin__filter {
+  padding: 0.8rem 1.6rem;
+  border: 1px solid rgba(22, 18, 14, 0.15);
+  border-radius: 99rem;
+  background: transparent;
+  color: var(--grey);
+  font-family: var(--font-neue);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out-quart), color 0.2s var(--ease-out-quart);
+}
+
+.admin__filter:hover { color: var(--black); }
+
+.admin__filter:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 2px;
+}
+
+.admin__filter.is-active {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+/* ---------- Liste des commandes ---------- */
+
+.admin__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+  gap: 2rem;
+}
+
+.admin__empty,
+.admin__note {
+  font-family: var(--font-neue);
+  font-size: 1.3rem;
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+.admin__empty { padding: 4rem 0; }
+
+.admin__empty a { color: var(--terra); text-decoration: underline; }
+
+.admin__note {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(22, 18, 14, 0.12);
+  font-size: 1.2rem;
+  max-width: 70ch;
+}
+
+/* ---------- Carte commande ---------- */
+
+.order-card {
+  position: relative;
+  background: var(--white);
+  border-radius: 0.6rem;
+  padding: 2.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.order-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.order-card__ref {
+  display: block;
+  font-family: var(--font-platt);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.order-card__date {
+  font-family: var(--font-neue);
+  font-size: 1.2rem;
+  color: var(--grey);
+}
+
+/* La couleur du badge encode le statut : repérable d'un coup d'œil à l'atelier. */
+.order-card__badge {
+  flex: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 99rem;
+  font-family: var(--font-neue);
+  font-size: 1.15rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.order-card__badge[data-status="a-produire"] { background: #F7EAD9; color: #9C5A1F; }
+.order-card__badge[data-status="en-cours"]   { background: #E4EEF2; color: #3E6274; }
+.order-card__badge[data-status="pret"]       { background: #E7F0E8; color: #3F6B4A; }
+.order-card__badge[data-status="retire"]     { background: rgba(22,18,14,0.08); color: var(--grey); }
+
+.order-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.order-card__client {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-family: var(--font-neue);
+  font-size: 1.4rem;
+}
+
+.order-card__client strong { color: var(--black); font-weight: 500; }
+.order-card__client a { color: var(--grey); font-size: 1.25rem; }
+.order-card__client a:hover { color: var(--terra); }
+
+.order-card__specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem 2rem;
+  margin: 0;
+}
+
+.order-card__specs div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.order-card__specs dt {
+  font-family: var(--font-neue);
+  font-size: 1.1rem;
+  color: var(--grey);
+}
+
+.order-card__specs dd {
+  margin: 0;
+  font-family: var(--font-neue);
+  font-size: 1.35rem;
+  color: var(--black);
+}
+
+/* ---------- Progression ---------- */
+
+.order-card__flow {
+  list-style: none;
+  margin: 0;
+  padding: 1.6rem 0 0;
+  border-top: 1px solid var(--beige);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.order-card__step {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-neue);
+  font-size: 1.25rem;
+  color: var(--grey);
+}
+
+.order-card__dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(22, 18, 14, 0.25);
+  flex: none;
+}
+
+.order-card__step.is-done { color: var(--black); }
+
+.order-card__step.is-done .order-card__dot {
+  background: var(--terra);
+  border-color: var(--terra);
+}
+
+/* ---------- Pied de carte ---------- */
+
+.order-card__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--beige);
+  flex-wrap: wrap;
+}
+
+.order-card__total {
+  font-family: var(--font-platt);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--terra);
+}
+
+.order-card__advance {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 99rem;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-neue);
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out-quart);
+}
+
+.order-card__advance:hover { background: var(--terra); }
+
+.order-card__advance:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+.order-card__done {
+  font-family: var(--font-neue);
+  font-size: 1.25rem;
+  color: var(--grey);
+}
+
+/* ============================================
+   CONFIRMATION DE COMMANDE — modale
+   ============================================ */
+
+/* <dialog> natif : showModal() fournit le piège du focus, la fermeture par
+   Échap et la mise en inertie de la page. La modale vit dans le top layer,
+   donc le body figé (position:fixed) pendant l'ouverture ne l'affecte pas. */
+/* margin:auto rétablit le centrage natif de <dialog> : le reset global du site
+   met margin:0 sur tous les éléments, ce qui collait la modale en haut à gauche. */
+.confirm {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  width: min(48rem, 90vw);
+  max-width: none;
+  max-height: 90vh;
+  margin: auto;
+  color: var(--black);
+}
+
+.confirm::backdrop {
+  background: rgba(22, 18, 14, 0.55);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out-quart);
+}
+
+.confirm[open]::backdrop {
+  opacity: 1;
+}
+
+/* Pas de liseré coloré en haut : le site n'utilise pas ce procédé. Les blocs
+   y sont des surfaces pleines aux angles doux (cf. .frame-stage, .order-card). */
+.confirm__inner {
+  position: relative;
+  background: var(--white);
+  border-radius: 0.6rem;
+  padding: 4rem 3.6rem;
+  opacity: 0;
+  transform: translateY(2.4rem);
+  transition:
+    opacity 0.4s var(--ease-out-quart),
+    transform 0.4s var(--ease-out-quart);
+}
+
+.confirm[open] .confirm__inner {
+  opacity: 1;
+  transform: none;
+}
+
+.confirm__eyebrow {
+  font-family: var(--font-neue);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.confirm__title {
+  font-family: var(--font-platt);
+  font-size: clamp(2.4rem, 4vh, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-top: 0.8rem;
+}
+
+.confirm__ref {
+  font-family: var(--font-neue);
+  font-size: 1.4rem;
+  color: var(--grey);
+  margin-top: 0.8rem;
+}
+
+.confirm__ref strong {
+  font-family: var(--font-platt);
+  color: var(--black);
+  font-weight: 600;
+}
+
+.confirm__list {
+  margin: 2.8rem 0 0;
+}
+
+.confirm__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(22, 18, 14, 0.12);
+  font-family: var(--font-neue);
+  font-size: 1.45rem;
+}
+
+.confirm__row dt {
+  color: var(--grey);
+}
+
+.confirm__row dd {
+  margin: 0;
+  color: var(--black);
+  font-weight: 500;
+  text-align: right;
+}
+
+.confirm__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 2rem;
+}
+
+.confirm__total span {
+  font-family: var(--font-neue);
+  font-size: 1.45rem;
+  color: var(--grey);
+}
+
+/* Terracotta assombri : --terra pur ne donne que 3.87:1 sur blanc, sous le
+   seuil AA de 4.5:1 — critique pour un montant lu en lumière de magasin. */
+.confirm__total strong {
+  font-family: var(--font-platt);
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--terra-deep);
+}
+
+/* Croix en haut à droite, avec le glyphe « ✕ » déjà employé ailleurs sur le
+   site. 4.4rem = cible tactile minimale : la zone cliquable déborde du glyphe. */
+.confirm__close {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--grey);
+  font-family: var(--font-neue);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s var(--ease-out-quart),
+    color 0.2s var(--ease-out-quart);
+}
+
+.confirm__close:hover {
+  background: var(--beige);
+  color: var(--black);
+}
+
+.confirm__close:focus-visible {
+  outline: 2px solid var(--terra-deep);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .confirm__inner { padding: 3rem 2.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confirm__inner,
+  .confirm::backdrop {
+    transition: none;
+  }
+  .confirm__inner {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Suppression d'une commande ---------- */
+
+/* Croix discrète : l'action destructive ne doit pas concurrencer le bouton
+   d'avancement de statut, qui est l'action principale de la carte. */
+.order-card__delete {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(22, 18, 14, 0.35);
+  font-family: var(--font-neue);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s var(--ease-out-quart),
+    color 0.2s var(--ease-out-quart);
+}
+
+.order-card__delete:hover {
+  background: #F7EAD9;
+  color: var(--terra-deep);
+}
+
+.order-card__delete:focus-visible {
+  outline: 2px solid var(--terra-deep);
+  outline-offset: 2px;
+}
+
+/* Réserve la place de la croix pour que le badge de statut ne passe pas dessous. */
+.order-card__head {
+  padding-right: 3.2rem;
+}
+
+.confirm__eyebrow--warn {
+  color: var(--terra-deep);
+}
+
+.confirm__text {
+  margin-top: 1.6rem;
+  font-family: var(--font-neue);
+  font-size: 1.45rem;
+  line-height: 1.55;
+  color: var(--grey);
+}
+
+.confirm__text strong {
+  font-family: var(--font-platt);
+  color: var(--black);
+  font-weight: 600;
+}
+
+.confirm__danger {
+  width: 100%;
+  min-height: 5.2rem;
+  margin-top: 2.8rem;
+  padding: 1.4rem 2rem;
+  border: 0;
+  border-radius: 10rem;
+  background: var(--terra-deep);
+  color: var(--white);
+  font-family: var(--font-platt);
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease-out-quart);
+}
+
+.confirm__danger:hover {
+  background: var(--black);
+}
+
+.confirm__danger:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+/* ---------- Actions de la modale de commande ---------- */
+
+.confirm__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.confirm__validate {
+  width: 100%;
+  min-height: 5.2rem;
+  padding: 1.4rem 2rem;
+  border: 0;
+  border-radius: 10rem;
+  background: var(--terra-deep);
+  color: var(--white);
+  font-family: var(--font-platt);
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease-out-quart);
+}
+
+.confirm__validate:hover { background: var(--black); }
+
+.confirm__validate:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+/* Action secondaire : contour seul, pour ne pas concurrencer la validation. */
+.confirm__edit {
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 1.2rem 2rem;
+  border: 1px solid rgba(22, 18, 14, 0.25);
+  border-radius: 10rem;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-neue);
+  font-size: 1.45rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease-out-quart), color 0.25s var(--ease-out-quart);
+}
+
+.confirm__edit:hover {
+  border-color: var(--terra-deep);
+  color: var(--terra-deep);
+}
+
+.confirm__edit:focus-visible {
+  outline: 2px solid var(--terra-deep);
+  outline-offset: 3px;
+}
+
+/* ---------- Toasts (Toastify) ---------- */
+
+/* Le thème par défaut de Toastify (dégradé bleu, coins à 2px) est étranger au
+   site : on reprend la forme des pilules du header — fond plein, très arrondi.
+   !important est nécessaire, la feuille CDN étant chargée après la nôtre. */
+.toastify.toast {
+  display: flex !important;
+  align-items: center;
+  gap: 1.6rem;
+  font-family: var(--font-platt) !important;
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+  padding: 1.6rem 2rem !important;
+  border-radius: 10rem !important;
+  box-shadow: 0 1.2rem 3.2rem -1rem rgba(22, 18, 14, 0.45) !important;
+  background-image: none !important;
+  background: var(--black) !important;
+  color: var(--beige) !important;
+  max-width: 38rem;
+
+  /* Toastify anime `transition: all`, ce qui inclut `top` : le toast
+     descendait depuis le haut de l'écran. On restreint la transition à
+     opacity/transform — la sortie (fondu piloté par Toastify) fonctionne
+     toujours, mais sans le glissement vertical parasite. */
+  transition:
+    opacity 0.4s var(--ease-out-quart),
+    transform 0.4s var(--ease-out-quart) !important;
+
+  /* Le header du site est fixe : on décale le toast pour qu'il ne passe pas
+     dessous (Toastify pose un `top` inline qu'il faut surcharger). Posé ici et
+     non sur .on, sinon le toast remonterait pendant le fondu de sortie. */
+  top: 10rem !important;
+}
+
+/* Glissement latéral court depuis la droite, dans le sens de la lecture. */
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(2rem) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Pastille de statut en tête du toast : le fond restant noir quelle que soit
+   la variante, c'est elle qui porte l'information. */
+.toastify.toast::before {
+  content: '';
+  flex: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.toastify.toast--success::before { background: #7FB98B; }
+.toastify.toast--error::before   { background: #E08A5B; }
+.toastify.toast--info::before    { background: var(--ochre); }
+
+/* La croix par défaut de Toastify est un « ✖ » gris à 40% d'opacité, sans
+   rapport avec le « ✕ » utilisé ailleurs sur le site. On la redessine en
+   pastille discrète, alignée sur le reste. */
+.toastify.toast .toast-close {
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: currentColor !important;
+  opacity: 1 !important;
+  font-family: var(--font-neue) !important;
+  font-size: 0 !important;
+  line-height: 1;
+  transition: background-color 0.2s var(--ease-out-quart);
+}
+
+/* Le glyphe par défaut est masqué (font-size:0) et remplacé par celui du site. */
+.toastify.toast .toast-close::before {
+  content: '✕';
+  font-size: 1.2rem;
+}
+
+.toastify.toast .toast-close:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
+}
+
+/* L'animation d'entrée est portée par .on, et non par .toast : sur l'élément
+   de base avec `both`, elle figerait l'opacité à 1 et empêcherait le fondu de
+   sortie, que Toastify déclenche en retirant la classe `on`. */
+.toastify.toast.on {
+  animation: toast-in 0.45s var(--ease-out-quart);
+}
+
+@media (max-width: 640px) {
+  .toastify.toast {
+    max-width: calc(100vw - 3.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toastify.toast.on { animation: none; }
+}
+
+/* ---------- Recherche de commandes ---------- */
+
+.admin__search {
+  margin-bottom: 2.4rem;
+}
+
+/* Étiquette masquée visuellement mais lue par les lecteurs d'écran : le
+   placeholder seul ne fait pas office de label accessible. */
+.admin__search-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.admin__search-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 52rem;
+}
+
+.admin__search-icon {
+  position: absolute;
+  left: 1.8rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--grey);
+  pointer-events: none;
+}
+
+.admin__search-input {
+  width: 100%;
+  min-height: 5.2rem;
+  padding: 1.4rem 5rem 1.4rem 4.6rem;
+  border: 1px solid rgba(22, 18, 14, 0.15);
+  border-radius: 10rem;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-neue);
+  font-size: 1.5rem;
+  transition: border-color 0.2s var(--ease-out-quart);
+}
+
+.admin__search-input::placeholder {
+  color: var(--grey);
+  opacity: 0.8;
+}
+
+.admin__search-input:focus-visible {
+  outline: none;
+  border-color: var(--terra-deep);
+  box-shadow: 0 0 0 2px var(--terra-deep);
+}
+
+/* La croix native des champs `search` varie selon les navigateurs : on la
+   masque au profit d'un bouton maîtrisé, cohérent avec le reste. */
+.admin__search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.admin__search-clear {
+  position: absolute;
+  right: 0.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--grey);
+  font-family: var(--font-neue);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s var(--ease-out-quart),
+    color 0.2s var(--ease-out-quart);
+}
+
+.admin__search-clear:hover {
+  background: var(--beige);
+  color: var(--black);
+}
+
+.admin__search-clear:focus-visible {
+  outline: 2px solid var(--terra-deep);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .admin__search-field { max-width: none; }
+}
+
+/* ---------- Bouton bon d'atelier ---------- */
+
+.order-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.order-card__print {
+  padding: 0.9rem 1.6rem;
+  border: 1px solid rgba(22, 18, 14, 0.25);
+  border-radius: 99rem;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-neue);
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out-quart), color 0.2s var(--ease-out-quart);
+}
+
+.order-card__print:hover {
+  border-color: var(--terra-deep);
+  color: var(--terra-deep);
+}
+
+.order-card__print:focus-visible {
+  outline: 2px solid var(--terra-deep);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   BON D'ATELIER — document imprimable
+   ============================================ */
+
+/* Hors impression, le bon n'existe pas visuellement : il sert uniquement de
+   gabarit rempli au moment du clic. */
+.sheet {
+  display: none;
+}
+
+@media print {
+  /* Seul le bon est imprimé : tout le reste de l'interface est masqué. */
+  body > *:not(main),
+  main > *:not(.sheet) {
+    display: none !important;
+  }
+
+  .sheet {
+    display: block;
+    padding: 0;
+    color: #000;
+    background: #fff;
+    font-family: var(--font-neue), sans-serif;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+
+  .sheet__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10mm;
+    padding-bottom: 5mm;
+    border-bottom: 1.5pt solid #000;
+  }
+
+  .sheet__brand {
+    font-family: var(--font-platt), sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .sheet__ref {
+    font-family: var(--font-platt), sans-serif;
+    font-size: 24pt;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 1mm;
+  }
+
+  .sheet__meta {
+    display: flex;
+    gap: 8mm;
+    text-align: right;
+  }
+
+  .sheet__meta dt {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #555;
+  }
+
+  .sheet__meta dd {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 600;
+  }
+
+  /* L'échéance est l'information que l'atelier cherche en premier. */
+  .sheet__due {
+    font-size: 13pt !important;
+    text-decoration: underline;
+  }
+
+  .sheet__block {
+    margin-top: 7mm;
+    /* Un bloc ne doit pas être coupé entre deux pages. */
+    break-inside: avoid;
+  }
+
+  .sheet__block h3 {
+    font-family: var(--font-platt), sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+    margin-bottom: 2mm;
+  }
+
+  .sheet__client { font-size: 13pt; font-weight: 600; }
+  .sheet__muted { color: #555; font-size: 10pt; }
+  .sheet__format { font-family: var(--font-platt), sans-serif; font-size: 18pt; font-weight: 700; }
+
+  .sheet__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2mm;
+  }
+
+  .sheet__table th {
+    text-align: left;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #555;
+    border-bottom: 1pt solid #000;
+    padding: 2mm 2mm 1.5mm 0;
+  }
+
+  .sheet__table td {
+    padding: 2.5mm 2mm 2.5mm 0;
+    border-bottom: 0.5pt solid #bbb;
+    font-size: 10.5pt;
+    /* Les cotes doivent s'aligner verticalement pour être comparées. */
+    font-variant-numeric: tabular-nums;
+  }
+
+  .sheet__table td:nth-child(2),
+  .sheet__table td:nth-child(3) {
+    font-weight: 700;
+    font-size: 12pt;
+  }
+
+  .sheet__note {
+    margin-top: 3mm;
+    font-size: 8.5pt;
+    color: #555;
+    font-style: italic;
+  }
+
+  .sheet__foot {
+    display: flex;
+    gap: 14mm;
+    margin-top: 12mm;
+    padding-top: 5mm;
+    border-top: 1pt solid #000;
+    break-inside: avoid;
+  }
+
+  .sheet__check {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .sheet__box {
+    display: inline-block;
+    width: 7mm;
+    height: 7mm;
+    border: 1pt solid #000;
+  }
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurateur d'encadrement – Lesarts | Prototype</title>
+  <meta name="description" content="Prototype du configurateur d'encadrement Lesarts : choisissez vos matériaux et visualisez le cadre en temps réel." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="about-skip-link">Aller au contenu principal</a>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="loader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="loader-inner">
+      <span class="loader-text">LESARTS</span>
+      <div class="loader-progress">
+        <div class="loader-progress-fill" id="loader-fill"></div>
+      </div>
+      <span class="loader-pct" id="loader-pct" aria-hidden="true">0%</span>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- HEADER (shared — injected from js/main.js) -->
+  <div data-include="header"></div>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content">
+
+    <!-- CONFIGURATEUR -->
+    <section class="configurator" aria-labelledby="page-hero-title">
+      <div class="configurator__inner">
+
+        <header class="config-head">
+          <h1 class="config-head__title" id="page-hero-title">Configurateur d'encadrement</h1>
+          <p class="config-head__desc">Choisissez vos matériaux, l'aperçu se met à jour en direct.</p>
+        </header>
+
+
+        <!-- APERÇU DU CADRE -->
+        <div class="configurator__preview">
+          <div class="frame-stage">
+            <div class="frame-border" id="frame-border">
+              <div class="frame-mat" id="frame-mat">
+                <div class="frame-glass" id="frame-glass">
+                  <img src="images/encadrement/abstract.webp" alt="Œuvre d'exemple dans le cadre" class="frame-artwork" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="config-summary">
+            <div class="config-summary__row">
+              <span>Baguette</span>
+              <strong id="summary-baguette">Chêne naturel</strong>
+            </div>
+            <div class="config-summary__row">
+              <span>Passe-partout</span>
+              <strong id="summary-passe-partout">Ivoire</strong>
+            </div>
+            <div class="config-summary__row">
+              <span>Verre</span>
+              <strong id="summary-verre">Clair</strong>
+            </div>
+            <div class="config-summary__row">
+              <span>Format</span>
+              <strong id="summary-format">55 × 38 cm</strong>
+            </div>
+            <div class="config-summary__total">
+              <span>Estimation</span>
+              <strong id="summary-total">— €</strong>
+            </div>
+            <p class="config-summary__note">Estimation indicative à titre de démonstration — le moteur de calcul final (Lot 05) intégrera la grille tarifaire réelle du catalogue.</p>
+          </div>
+        </div>
+
+        <!-- PANNEAU DE CHOIX -->
+        <div class="configurator__panel">
+
+          <div class="config-group" data-group="baguette">
+            <h2 class="config-group__title"><span class="config-group__num">01</span>Baguette</h2>
+            <div class="config-swatches" role="group" aria-label="Choix de la baguette">
+              <button type="button" class="swatch is-active" data-material="baguette" data-value="chene-naturel" data-color="#C9A876" data-price="42" aria-pressed="true">
+                <span class="swatch__sample" style="background:#C9A876"></span>
+                <span class="swatch__label">Chêne naturel</span>
+                <span class="swatch__price">42 €/ml</span>
+              </button>
+              <button type="button" class="swatch" data-material="baguette" data-value="noyer-fonce" data-color="#4A3324" data-price="48" aria-pressed="false">
+                <span class="swatch__sample" style="background:#4A3324"></span>
+                <span class="swatch__label">Noyer foncé</span>
+                <span class="swatch__price">48 €/ml</span>
+              </button>
+              <button type="button" class="swatch" data-material="baguette" data-value="noir-mat" data-color="#16120E" data-price="38" aria-pressed="false">
+                <span class="swatch__sample" style="background:#16120E"></span>
+                <span class="swatch__label">Noir mat</span>
+                <span class="swatch__price">38 €/ml</span>
+              </button>
+              <button type="button" class="swatch" data-material="baguette" data-value="or-vieilli" data-color="#C6A95E" data-price="65" aria-pressed="false">
+                <span class="swatch__sample" style="background:#C6A95E"></span>
+                <span class="swatch__label">Or vieilli</span>
+                <span class="swatch__price">65 €/ml</span>
+              </button>
+              <button type="button" class="swatch" data-material="baguette" data-value="blanc-craie" data-color="#F0EAE1" data-price="36" aria-pressed="false">
+                <span class="swatch__sample" style="background:#F0EAE1;border:1px solid #d8d0c2"></span>
+                <span class="swatch__label">Blanc craie</span>
+                <span class="swatch__price">36 €/ml</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="config-group" data-group="passe-partout">
+            <h2 class="config-group__title"><span class="config-group__num">02</span>Passe-partout</h2>
+            <div class="config-swatches" role="group" aria-label="Choix du passe-partout">
+              <button type="button" class="swatch is-active" data-material="passe-partout" data-value="ivoire" data-color="#F3EEE3" data-price="18" aria-pressed="true">
+                <span class="swatch__sample" style="background:#F3EEE3;border:1px solid #ddd4c2"></span>
+                <span class="swatch__label">Ivoire</span>
+                <span class="swatch__price">18 €/m²</span>
+              </button>
+              <button type="button" class="swatch" data-material="passe-partout" data-value="gris-perle" data-color="#B9B7B1" data-price="18" aria-pressed="false">
+                <span class="swatch__sample" style="background:#B9B7B1"></span>
+                <span class="swatch__label">Gris perle</span>
+                <span class="swatch__price">18 €/m²</span>
+              </button>
+              <button type="button" class="swatch" data-material="passe-partout" data-value="terracotta" data-color="#BB6E44" data-price="20" aria-pressed="false">
+                <span class="swatch__sample" style="background:#BB6E44"></span>
+                <span class="swatch__label">Terracotta</span>
+                <span class="swatch__price">20 €/m²</span>
+              </button>
+              <button type="button" class="swatch" data-material="passe-partout" data-value="vert-sauge" data-color="#697A6C" data-price="20" aria-pressed="false">
+                <span class="swatch__sample" style="background:#697A6C"></span>
+                <span class="swatch__label">Vert sauge</span>
+                <span class="swatch__price">20 €/m²</span>
+              </button>
+              <button type="button" class="swatch swatch--none" data-material="passe-partout" data-value="aucun" data-color="" data-price="0" aria-pressed="false">
+                <span class="swatch__sample swatch__sample--none">✕</span>
+                <span class="swatch__label">Aucun</span>
+                <span class="swatch__price">0 €</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="config-group" data-group="verre">
+            <h2 class="config-group__title"><span class="config-group__num">03</span>Verre</h2>
+            <div class="config-swatches config-swatches--glass" role="group" aria-label="Choix du verre">
+              <button type="button" class="swatch is-active" data-material="verre" data-value="clair" data-opacity="0.05" data-price="15" aria-pressed="true">
+                <span class="swatch__sample swatch__sample--glass" style="--glass-opacity:0.05"></span>
+                <span class="swatch__label">Clair</span>
+                <span class="swatch__price">15 €/m²</span>
+              </button>
+              <button type="button" class="swatch" data-material="verre" data-value="anti-reflet" data-opacity="0.02" data-price="35" aria-pressed="false">
+                <span class="swatch__sample swatch__sample--glass" style="--glass-opacity:0.02"></span>
+                <span class="swatch__label">Anti-reflet</span>
+                <span class="swatch__price">35 €/m²</span>
+              </button>
+              <button type="button" class="swatch" data-material="verre" data-value="musee" data-opacity="0.01" data-price="70" aria-pressed="false">
+                <span class="swatch__sample swatch__sample--glass" style="--glass-opacity:0.01"></span>
+                <span class="swatch__label">Musée (anti-UV)</span>
+                <span class="swatch__price">70 €/m²</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="config-group" data-group="dimensions">
+            <h2 class="config-group__title"><span class="config-group__num">04</span>Dimensions</h2>
+            <div class="config-dims">
+              <label class="config-dims__field">
+                <span>Largeur (cm)</span>
+                <input type="number" id="dim-width" value="55" min="10" max="150" />
+              </label>
+              <label class="config-dims__field">
+                <span>Hauteur (cm)</span>
+                <input type="number" id="dim-height" value="38" min="10" max="150" />
+              </label>
+            </div>
+          </div>
+
+          <button type="button" class="config-cta" id="order-cta">
+            <span>Commander</span>
+            <span class="config-cta__arrow" aria-hidden="true">↓</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMANDE — second écran -->
+    <section class="order" id="order-section" aria-label="Finaliser la commande">
+      <div class="order__inner">
+
+        <div class="order__col">
+          <h2 class="order__title">Votre encadrement</h2>
+          <div class="order__recap">
+            <dl class="order__list">
+              <div class="order__row">
+                <dt>Baguette</dt>
+                <dd id="order-baguette">Chêne naturel</dd>
+              </div>
+              <div class="order__row">
+                <dt>Passe-partout</dt>
+                <dd id="order-passe-partout">Ivoire</dd>
+              </div>
+              <div class="order__row">
+                <dt>Verre</dt>
+                <dd id="order-verre">Clair</dd>
+              </div>
+              <div class="order__row">
+                <dt>Format</dt>
+                <dd id="order-format">55 × 38 cm</dd>
+              </div>
+            </dl>
+            <div class="order__total">
+              <span>Estimation</span>
+              <strong id="order-total">— €</strong>
+            </div>
+          </div>
+        </div>
+
+        <form class="order__form" id="order-form" novalidate>
+          <h2 class="order__title">Vos coordonnées</h2>
+
+          <label class="order__field">
+            <span>Prénom</span>
+            <input type="text" id="client-firstname" name="firstname" autocomplete="given-name" required />
+          </label>
+
+          <label class="order__field">
+            <span>Nom</span>
+            <input type="text" id="client-lastname" name="lastname" autocomplete="family-name" required />
+          </label>
+
+          <label class="order__field">
+            <span>Email</span>
+            <input type="email" id="client-email" name="email" autocomplete="email" required />
+          </label>
+
+          <div class="order__actions">
+            <button type="submit" class="order__submit">Envoyer la commande</button>
+            <button type="button" class="order__back" id="order-back">
+              <span class="order__back-arrow" aria-hidden="true">↑</span>
+              <span>Modifier la commande</span>
+            </button>
+          </div>
+
+          <p class="order__status" id="order-status" role="status" aria-live="polite"></p>
+          <p class="order__note">Prototype — la commande est enregistrée localement dans ce navigateur pour la démonstration, et apparaît dans l'interface atelier.</p>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- CONFIRMATION DE COMMANDE -->
+    <dialog class="confirm" id="confirm-modal" aria-labelledby="confirm-title">
+      <div class="confirm__inner">
+        <button type="button" class="confirm__close" id="confirm-close" aria-label="Fermer">
+          <span aria-hidden="true">✕</span>
+        </button>
+
+        <p class="confirm__eyebrow">Récapitulatif</p>
+        <h2 class="confirm__title" id="confirm-title">Vérifiez la commande</h2>
+        <p class="confirm__ref">Client <strong id="confirm-client"></strong></p>
+
+        <dl class="confirm__list">
+          <div class="confirm__row">
+            <dt>Baguette</dt>
+            <dd id="confirm-baguette"></dd>
+          </div>
+          <div class="confirm__row">
+            <dt>Passe-partout</dt>
+            <dd id="confirm-passe-partout"></dd>
+          </div>
+          <div class="confirm__row">
+            <dt>Verre</dt>
+            <dd id="confirm-verre"></dd>
+          </div>
+          <div class="confirm__row">
+            <dt>Format</dt>
+            <dd id="confirm-format"></dd>
+          </div>
+        </dl>
+
+        <div class="confirm__total">
+          <span>Total</span>
+          <strong id="confirm-total"></strong>
+        </div>
+
+        <div class="confirm__actions">
+          <button type="button" class="confirm__validate" id="confirm-validate">Valider la commande</button>
+          <button type="button" class="confirm__edit" id="confirm-edit">Modifier la commande</button>
+        </div>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- FOOTER (shared — injected from js/main.js) -->
+  <div data-include="footer"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

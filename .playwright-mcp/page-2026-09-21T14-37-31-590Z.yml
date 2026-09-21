@@ -1,0 +1,154 @@
+- generic [active] [ref=f51e1]:
+  - link "Aller au contenu principal" [ref=f51e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=f51e3]:
+    - generic [ref=f51e4]:
+      - generic [ref=f51e5]: LESARTS
+      - generic [aria-hidden] [ref=f51e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f51e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f51e10]:
+        - generic [ref=f51e11]: LESARTS
+        - generic [ref=f51e12]: Prod.
+    - button "Ouvrir le menu" [ref=f51e13] [cursor=pointer]:
+      - generic [ref=f51e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f51e15]:
+    - region "Suivi des commandes" [ref=f51e16]:
+      - generic [ref=f51e17]:
+        - generic [ref=f51e18]:
+          - generic [ref=f51e19]:
+            - paragraph [ref=f51e20]: Prototype — Interface atelier
+            - heading "Suivi des commandes" [level=1] [ref=f51e21]
+          - generic [ref=f51e22]:
+            - generic [ref=f51e23]:
+              - strong [ref=f51e24]: "1"
+              - generic [ref=f51e25]: À produire
+            - generic [ref=f51e26]:
+              - strong [ref=f51e27]: "0"
+              - generic [ref=f51e28]: En cours
+            - generic [ref=f51e29]:
+              - strong [ref=f51e30]: "0"
+              - generic [ref=f51e31]: Prêtes
+            - generic [ref=f51e32]:
+              - strong [ref=f51e33]: "0"
+              - generic [ref=f51e34]: Retirées
+        - generic [ref=f51e35]:
+          - group "Filtrer par statut" [ref=f51e36]:
+            - button "Toutes" [ref=f51e37] [cursor=pointer]
+            - button "À produire" [ref=f51e38] [cursor=pointer]
+            - button "En cours" [ref=f51e39] [cursor=pointer]
+            - button "Prêtes" [ref=f51e40] [cursor=pointer]
+            - button "Retirées" [ref=f51e41] [cursor=pointer]
+          - button "Ajouter une commande d'exemple" [ref=f51e42] [cursor=pointer]
+        - article [ref=f51e44]:
+          - button "Supprimer la commande LA-0001" [ref=f51e45] [cursor=pointer]
+          - generic [ref=f51e48]:
+            - generic [ref=f51e49]:
+              - generic [ref=f51e50]: LA-0001
+              - text: 21/09/2026
+            - generic [ref=f51e51]: À produire
+          - generic [ref=f51e52]:
+            - generic [ref=f51e53]:
+              - strong [ref=f51e54]: Camille Dubois
+              - link "camille@example.be" [ref=f51e55] [cursor=pointer]:
+                - /url: mailto:camille@example.be
+            - generic [ref=f51e56]:
+              - generic [ref=f51e57]:
+                - term [ref=f51e58]: Baguette
+                - definition [ref=f51e59]: Or vieilli
+              - generic [ref=f51e60]:
+                - term [ref=f51e61]: Passe-partout
+                - definition [ref=f51e62]: Ivoire
+              - generic [ref=f51e63]:
+                - term [ref=f51e64]: Verre
+                - definition [ref=f51e65]: Clair
+              - generic [ref=f51e66]:
+                - term [ref=f51e67]: Format
+                - definition [ref=f51e68]: 55 × 38 cm
+          - list [ref=f51e69]:
+            - listitem [ref=f51e70]:
+              - generic [ref=f51e72]: À produire
+            - listitem [ref=f51e73]:
+              - generic [ref=f51e75]: En cours à l'atelier
+            - listitem [ref=f51e76]:
+              - generic [ref=f51e78]: Prêt — en magasin
+            - listitem [ref=f51e79]:
+              - generic [ref=f51e81]: Retiré
+          - generic [ref=f51e82]:
+            - generic [ref=f51e83]: 127,80 €
+            - button "Démarrer la production" [ref=f51e84] [cursor=pointer]
+        - paragraph [ref=f51e85]: Prototype — les commandes sont stockées localement dans ce navigateur. Dans la version finale, chaque changement de statut déclenchera l'envoi automatique d'un mail de suivi au client (Lot 06).
+  - contentinfo [ref=f51e86]:
+    - generic [ref=f51e88]:
+      - link [ref=f51e90] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f51e91]: Rue du Bailli 43
+        - paragraph [ref=f51e92]: 1050 Ixelles
+        - paragraph [ref=f51e93]: Bruxelles, Belgique
+      - generic [ref=f51e94]:
+        - link "+32 2 646 54 69" [ref=f51e95] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f51e96]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f51e97]: "Mar : sur rendez-vous"
+      - generic [ref=f51e98]:
+        - link "lesartsprod.be" [ref=f51e99] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f51e100] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f51e101] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f51e102]:
+        - link "Mentions légales" [ref=f51e103] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f51e104]: Lesarts © 2025

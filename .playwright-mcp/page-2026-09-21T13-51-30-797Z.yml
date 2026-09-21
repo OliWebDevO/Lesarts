@@ -1,0 +1,226 @@
+- generic [active] [ref=f19e1]:
+  - link "Aller au contenu principal" [ref=f19e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=f19e3]:
+    - generic [ref=f19e4]:
+      - generic [ref=f19e5]: LESARTS
+      - generic [aria-hidden] [ref=f19e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f19e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f19e10]:
+        - generic [ref=f19e11]: LESARTS
+        - generic [ref=f19e12]: Prod.
+    - button "Ouvrir le menu" [ref=f19e13] [cursor=pointer]:
+      - generic [ref=f19e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f19e15]:
+    - region "Suivi des commandes" [ref=f19e16]:
+      - generic [ref=f19e17]:
+        - generic [ref=f19e18]:
+          - generic [ref=f19e19]:
+            - paragraph [ref=f19e20]: Prototype — Interface atelier
+            - heading "Suivi des commandes" [level=1] [ref=f19e21]
+          - generic [ref=f19e22]:
+            - generic [ref=f19e23]:
+              - strong [ref=f19e24]: "1"
+              - generic [ref=f19e25]: À produire
+            - generic [ref=f19e26]:
+              - strong [ref=f19e27]: "1"
+              - generic [ref=f19e28]: En cours
+            - generic [ref=f19e29]:
+              - strong [ref=f19e30]: "1"
+              - generic [ref=f19e31]: Prêtes
+            - generic [ref=f19e32]:
+              - strong [ref=f19e33]: "0"
+              - generic [ref=f19e34]: Retirées
+        - generic [ref=f19e35]:
+          - group "Filtrer par statut" [ref=f19e36]:
+            - button "Toutes" [ref=f19e37] [cursor=pointer]
+            - button "À produire" [ref=f19e38] [cursor=pointer]
+            - button "En cours" [ref=f19e39] [cursor=pointer]
+            - button "Prêtes" [ref=f19e40] [cursor=pointer]
+            - button "Retirées" [ref=f19e41] [cursor=pointer]
+          - button "Ajouter une commande d'exemple" [ref=f19e42] [cursor=pointer]
+        - generic [ref=f19e43]:
+          - article [ref=f19e44]:
+            - generic [ref=f19e45]:
+              - generic [ref=f19e46]:
+                - generic [ref=f19e47]: LA-0001
+                - text: 20/09/2026
+              - generic [ref=f19e48]: À produire
+            - generic [ref=f19e49]:
+              - generic [ref=f19e50]:
+                - strong [ref=f19e51]: Marie Lefèvre
+                - link "marie.lefevre@example.be" [ref=f19e52] [cursor=pointer]:
+                  - /url: mailto:marie.lefevre@example.be
+              - generic [ref=f19e53]:
+                - generic [ref=f19e54]:
+                  - term [ref=f19e55]: Baguette
+                  - definition [ref=f19e56]: Chêne naturel
+                - generic [ref=f19e57]:
+                  - term [ref=f19e58]: Passe-partout
+                  - definition [ref=f19e59]: Ivoire
+                - generic [ref=f19e60]:
+                  - term [ref=f19e61]: Verre
+                  - definition [ref=f19e62]: Clair
+                - generic [ref=f19e63]:
+                  - term [ref=f19e64]: Format
+                  - definition [ref=f19e65]: 40 × 50 cm
+            - list [ref=f19e66]:
+              - listitem [ref=f19e67]:
+                - generic [ref=f19e69]: À produire
+              - listitem [ref=f19e70]:
+                - generic [ref=f19e72]: En cours à l'atelier
+              - listitem [ref=f19e73]:
+                - generic [ref=f19e75]: Prêt — en magasin
+              - listitem [ref=f19e76]:
+                - generic [ref=f19e78]: Retiré
+            - generic [ref=f19e79]:
+              - generic [ref=f19e80]: 82,20 €
+              - button "Démarrer la production" [ref=f19e81] [cursor=pointer]
+          - article [ref=f19e82]:
+            - generic [ref=f19e83]:
+              - generic [ref=f19e84]:
+                - generic [ref=f19e85]: LA-0002
+                - text: 19/09/2026
+              - generic [ref=f19e86]: En cours à l'atelier
+            - generic [ref=f19e87]:
+              - generic [ref=f19e88]:
+                - strong [ref=f19e89]: Thomas Verhoeven
+                - link "t.verhoeven@example.be" [ref=f19e90] [cursor=pointer]:
+                  - /url: mailto:t.verhoeven@example.be
+              - generic [ref=f19e91]:
+                - generic [ref=f19e92]:
+                  - term [ref=f19e93]: Baguette
+                  - definition [ref=f19e94]: Noyer foncé
+                - generic [ref=f19e95]:
+                  - term [ref=f19e96]: Passe-partout
+                  - definition [ref=f19e97]: Vert sauge
+                - generic [ref=f19e98]:
+                  - term [ref=f19e99]: Verre
+                  - definition [ref=f19e100]: Anti-reflet
+                - generic [ref=f19e101]:
+                  - term [ref=f19e102]: Format
+                  - definition [ref=f19e103]: 30 × 40 cm
+            - list [ref=f19e104]:
+              - listitem [ref=f19e105]:
+                - generic [ref=f19e107]: À produire
+              - listitem [ref=f19e108]:
+                - generic [ref=f19e110]: En cours à l'atelier
+              - listitem [ref=f19e111]:
+                - generic [ref=f19e113]: Prêt — en magasin
+              - listitem [ref=f19e114]:
+                - generic [ref=f19e116]: Retiré
+            - generic [ref=f19e117]:
+              - generic [ref=f19e118]: 71,60 €
+              - button "Expédié au magasin" [ref=f19e119] [cursor=pointer]
+          - article [ref=f19e120]:
+            - generic [ref=f19e121]:
+              - generic [ref=f19e122]:
+                - generic [ref=f19e123]: LA-0003
+                - text: 18/09/2026
+              - generic [ref=f19e124]: Prêt — en magasin
+            - generic [ref=f19e125]:
+              - generic [ref=f19e126]:
+                - strong [ref=f19e127]: Sophie Janssens
+                - link "sophie.j@example.be" [ref=f19e128] [cursor=pointer]:
+                  - /url: mailto:sophie.j@example.be
+              - generic [ref=f19e129]:
+                - generic [ref=f19e130]:
+                  - term [ref=f19e131]: Baguette
+                  - definition [ref=f19e132]: Or vieilli
+                - generic [ref=f19e133]:
+                  - term [ref=f19e134]: Passe-partout
+                  - definition [ref=f19e135]: Terracotta
+                - generic [ref=f19e136]:
+                  - term [ref=f19e137]: Verre
+                  - definition [ref=f19e138]: Musée (anti-UV)
+                - generic [ref=f19e139]:
+                  - term [ref=f19e140]: Format
+                  - definition [ref=f19e141]: 50 × 70 cm
+            - list [ref=f19e142]:
+              - listitem [ref=f19e143]:
+                - generic [ref=f19e145]: À produire
+              - listitem [ref=f19e146]:
+                - generic [ref=f19e148]: En cours à l'atelier
+              - listitem [ref=f19e149]:
+                - generic [ref=f19e151]: Prêt — en magasin
+              - listitem [ref=f19e152]:
+                - generic [ref=f19e154]: Retiré
+            - generic [ref=f19e155]:
+              - generic [ref=f19e156]: 189,40 €
+              - button "Retiré par le client" [ref=f19e157] [cursor=pointer]
+        - paragraph [ref=f19e158]: Prototype — les commandes sont stockées localement dans ce navigateur. Dans la version finale, chaque changement de statut déclenchera l'envoi automatique d'un mail de suivi au client (Lot 06).
+  - contentinfo [ref=f19e159]:
+    - generic [ref=f19e161]:
+      - link [ref=f19e163] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f19e164]: Rue du Bailli 43
+        - paragraph [ref=f19e165]: 1050 Ixelles
+        - paragraph [ref=f19e166]: Bruxelles, Belgique
+      - generic [ref=f19e167]:
+        - link "+32 2 646 54 69" [ref=f19e168] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f19e169]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f19e170]: "Mar : sur rendez-vous"
+      - generic [ref=f19e171]:
+        - link "lesartsprod.be" [ref=f19e172] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f19e173] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f19e174] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f19e175]:
+        - link "Mentions légales" [ref=f19e176] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f19e177]: Lesarts © 2025

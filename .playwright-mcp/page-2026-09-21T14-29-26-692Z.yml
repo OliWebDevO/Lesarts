@@ -1,0 +1,122 @@
+- generic [active] [ref=f45e1]:
+  - link "Aller au contenu principal" [ref=f45e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=f45e3]:
+    - generic [ref=f45e4]:
+      - generic [ref=f45e5]: LESARTS
+      - generic [aria-hidden] [ref=f45e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f45e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f45e10]:
+        - generic [ref=f45e11]: LESARTS
+        - generic [ref=f45e12]: Prod.
+    - button "Ouvrir le menu" [ref=f45e13] [cursor=pointer]:
+      - generic [ref=f45e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f45e15]:
+    - region "Suivi des commandes" [ref=f45e16]:
+      - generic [ref=f45e17]:
+        - generic [ref=f45e18]:
+          - generic [ref=f45e19]:
+            - paragraph [ref=f45e20]: Prototype — Interface atelier
+            - heading "Suivi des commandes" [level=1] [ref=f45e21]
+          - generic [ref=f45e22]:
+            - generic [ref=f45e23]:
+              - strong [ref=f45e24]: "0"
+              - generic [ref=f45e25]: À produire
+            - generic [ref=f45e26]:
+              - strong [ref=f45e27]: "0"
+              - generic [ref=f45e28]: En cours
+            - generic [ref=f45e29]:
+              - strong [ref=f45e30]: "0"
+              - generic [ref=f45e31]: Prêtes
+            - generic [ref=f45e32]:
+              - strong [ref=f45e33]: "0"
+              - generic [ref=f45e34]: Retirées
+        - generic [ref=f45e35]:
+          - group "Filtrer par statut" [ref=f45e36]:
+            - button "Toutes" [ref=f45e37] [cursor=pointer]
+            - button "À produire" [ref=f45e38] [cursor=pointer]
+            - button "En cours" [ref=f45e39] [cursor=pointer]
+            - button "Prêtes" [ref=f45e40] [cursor=pointer]
+            - button "Retirées" [ref=f45e41] [cursor=pointer]
+          - button "Ajouter une commande d'exemple" [ref=f45e42] [cursor=pointer]
+        - paragraph [ref=f45e43]:
+          - text: Aucune commande pour le moment. Passez une commande depuis le
+          - link "configurateur" [ref=f45e44] [cursor=pointer]:
+            - /url: app.html
+          - text: ", ou ajoutez une commande d'exemple."
+        - paragraph [ref=f45e45]: Prototype — les commandes sont stockées localement dans ce navigateur. Dans la version finale, chaque changement de statut déclenchera l'envoi automatique d'un mail de suivi au client (Lot 06).
+  - contentinfo [ref=f45e46]:
+    - generic [ref=f45e48]:
+      - link [ref=f45e50] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f45e51]: Rue du Bailli 43
+        - paragraph [ref=f45e52]: 1050 Ixelles
+        - paragraph [ref=f45e53]: Bruxelles, Belgique
+      - generic [ref=f45e54]:
+        - link "+32 2 646 54 69" [ref=f45e55] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f45e56]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f45e57]: "Mar : sur rendez-vous"
+      - generic [ref=f45e58]:
+        - link "lesartsprod.be" [ref=f45e59] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f45e60] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f45e61] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f45e62]:
+        - link "Mentions légales" [ref=f45e63] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f45e64]: Lesarts © 2025

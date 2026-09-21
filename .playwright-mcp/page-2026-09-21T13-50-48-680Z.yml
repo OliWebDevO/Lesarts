@@ -1,0 +1,149 @@
+- generic [active] [ref=f17e1]:
+  - link "Aller au contenu principal" [ref=f17e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f17e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f17e10]:
+        - generic [ref=f17e11]: LESARTS
+        - generic [ref=f17e12]: Prod.
+    - button "Ouvrir le menu" [ref=f17e13] [cursor=pointer]:
+      - generic [ref=f17e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f17e15]:
+    - region "Suivi des commandes" [ref=f17e16]:
+      - generic [ref=f17e17]:
+        - generic [ref=f17e18]:
+          - generic [ref=f17e19]:
+            - paragraph [ref=f17e20]: Prototype — Interface atelier
+            - heading "Suivi des commandes" [level=1] [ref=f17e21]
+          - generic [ref=f17e22]:
+            - generic [ref=f17e23]:
+              - strong [ref=f17e24]: "0"
+              - generic [ref=f17e25]: À produire
+            - generic [ref=f17e26]:
+              - strong [ref=f17e27]: "1"
+              - generic [ref=f17e28]: En cours
+            - generic [ref=f17e29]:
+              - strong [ref=f17e30]: "0"
+              - generic [ref=f17e31]: Prêtes
+            - generic [ref=f17e32]:
+              - strong [ref=f17e33]: "0"
+              - generic [ref=f17e34]: Retirées
+        - generic [ref=f17e35]:
+          - group "Filtrer par statut" [ref=f17e36]:
+            - button "Toutes" [ref=f17e37] [cursor=pointer]
+            - button "À produire" [ref=f17e38] [cursor=pointer]
+            - button "En cours" [ref=f17e39] [cursor=pointer]
+            - button "Prêtes" [ref=f17e40] [cursor=pointer]
+            - button "Retirées" [ref=f17e41] [cursor=pointer]
+          - button "Ajouter une commande d'exemple" [ref=f17e42] [cursor=pointer]
+        - article [ref=f17e108]:
+          - generic [ref=f17e109]:
+            - generic [ref=f17e110]:
+              - generic [ref=f17e111]: LA-0001
+              - text: 21/09/2026
+            - generic [ref=f17e112]: En cours à l'atelier
+          - generic [ref=f17e113]:
+            - generic [ref=f17e114]:
+              - strong [ref=f17e115]: Marie Lefèvre
+              - link "marie.lefevre@example.be" [ref=f17e116] [cursor=pointer]:
+                - /url: mailto:marie.lefevre@example.be
+            - generic [ref=f17e117]:
+              - generic [ref=f17e118]:
+                - term [ref=f17e119]: Baguette
+                - definition [ref=f17e120]: Chêne naturel
+              - generic [ref=f17e121]:
+                - term [ref=f17e122]: Passe-partout
+                - definition [ref=f17e123]: Ivoire
+              - generic [ref=f17e124]:
+                - term [ref=f17e125]: Verre
+                - definition [ref=f17e126]: Clair
+              - generic [ref=f17e127]:
+                - term [ref=f17e128]: Format
+                - definition [ref=f17e129]: 40 × 50 cm
+          - list [ref=f17e130]:
+            - listitem [ref=f17e131]:
+              - generic [ref=f17e133]: À produire
+            - listitem [ref=f17e134]:
+              - generic [ref=f17e136]: En cours à l'atelier
+            - listitem [ref=f17e137]:
+              - generic [ref=f17e139]: Prêt — en magasin
+            - listitem [ref=f17e140]:
+              - generic [ref=f17e142]: Retiré
+          - generic [ref=f17e143]:
+            - generic [ref=f17e144]: 82,20 €
+            - button "Expédié au magasin" [ref=f17e145] [cursor=pointer]
+        - paragraph [ref=f17e82]: Prototype — les commandes sont stockées localement dans ce navigateur. Dans la version finale, chaque changement de statut déclenchera l'envoi automatique d'un mail de suivi au client (Lot 06).
+  - contentinfo [ref=f17e83]:
+    - generic [ref=f17e85]:
+      - link [ref=f17e87] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f17e88]: Rue du Bailli 43
+        - paragraph [ref=f17e89]: 1050 Ixelles
+        - paragraph [ref=f17e90]: Bruxelles, Belgique
+      - generic [ref=f17e91]:
+        - link "+32 2 646 54 69" [ref=f17e92] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f17e93]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f17e94]: "Mar : sur rendez-vous"
+      - generic [ref=f17e95]:
+        - link "lesartsprod.be" [ref=f17e96] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f17e97] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f17e98] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f17e99]:
+        - link "Mentions légales" [ref=f17e100] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f17e101]: Lesarts © 2025

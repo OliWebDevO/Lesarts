@@ -1,0 +1,177 @@
+- generic [ref=f6e1]:
+  - link "Aller au contenu principal" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f6e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f6e10]:
+        - generic [ref=f6e11]: LESARTS
+        - generic [ref=f6e12]: Prod.
+    - button "Ouvrir le menu" [ref=f6e13] [cursor=pointer]:
+      - generic [ref=f6e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f6e15]:
+    - region [ref=f6e16]:
+      - generic [ref=f6e17]:
+        - paragraph [ref=f6e18]: Prototype — Outil de commande
+        - heading "Configurateur d'encadrement" [level=1] [ref=f6e19]
+        - paragraph [ref=f6e21]: "Choisissez une baguette, un passe-partout et un verre : l'aperçu du cadre se met à jour en temps réel. Version de démonstration — le catalogue final sera administrable par l'équipe Lesarts."
+    - region "Configurateur d'encadrement" [ref=f6e22]:
+      - generic [ref=f6e23]:
+        - paragraph [ref=f6e34]: Aperçu — les proportions sont indicatives
+        - generic [ref=f6e35]:
+          - generic [ref=f6e36]:
+            - heading "01 Baguette" [level=2] [ref=f6e37]:
+              - generic [ref=f6e38]: "01"
+              - text: Baguette
+            - group "Choix de la baguette" [ref=f6e39]:
+              - button "Chêne naturel 42 €/ml" [pressed] [ref=f6e40] [cursor=pointer]:
+                - generic [ref=f6e42]: Chêne naturel
+                - generic [ref=f6e43]: 42 €/ml
+              - button "Noyer foncé 48 €/ml" [ref=f6e44] [cursor=pointer]:
+                - generic [ref=f6e46]: Noyer foncé
+                - generic [ref=f6e47]: 48 €/ml
+              - button "Noir mat 38 €/ml" [ref=f6e48] [cursor=pointer]:
+                - generic [ref=f6e50]: Noir mat
+                - generic [ref=f6e51]: 38 €/ml
+              - button "Or vieilli 65 €/ml" [ref=f6e52] [cursor=pointer]:
+                - generic [ref=f6e54]: Or vieilli
+                - generic [ref=f6e55]: 65 €/ml
+              - button "Blanc craie 36 €/ml" [ref=f6e56] [cursor=pointer]:
+                - generic [ref=f6e58]: Blanc craie
+                - generic [ref=f6e59]: 36 €/ml
+          - generic [ref=f6e60]:
+            - heading "02 Passe-partout" [level=2] [ref=f6e61]:
+              - generic [ref=f6e62]: "02"
+              - text: Passe-partout
+            - group "Choix du passe-partout" [ref=f6e63]:
+              - button "Ivoire 18 €/m²" [ref=f6e64] [cursor=pointer]:
+                - generic [ref=f6e66]: Ivoire
+                - generic [ref=f6e67]: 18 €/m²
+              - button "Gris perle 18 €/m²" [ref=f6e68] [cursor=pointer]:
+                - generic [ref=f6e70]: Gris perle
+                - generic [ref=f6e71]: 18 €/m²
+              - button "Terracotta 20 €/m²" [active] [pressed] [ref=f6e72] [cursor=pointer]:
+                - generic [ref=f6e74]: Terracotta
+                - generic [ref=f6e75]: 20 €/m²
+              - button "Vert sauge 20 €/m²" [ref=f6e76] [cursor=pointer]:
+                - generic [ref=f6e78]: Vert sauge
+                - generic [ref=f6e79]: 20 €/m²
+              - button "✕ Aucun 0 €" [ref=f6e80] [cursor=pointer]:
+                - generic [ref=f6e81]: ✕
+                - generic [ref=f6e82]: Aucun
+                - generic [ref=f6e83]: 0 €
+          - generic [ref=f6e84]:
+            - heading "03 Verre" [level=2] [ref=f6e85]:
+              - generic [ref=f6e86]: "03"
+              - text: Verre
+            - group "Choix du verre" [ref=f6e87]:
+              - button "Clair 15 €/m²" [pressed] [ref=f6e88] [cursor=pointer]:
+                - generic [ref=f6e90]: Clair
+                - generic [ref=f6e91]: 15 €/m²
+              - button "Anti-reflet 35 €/m²" [ref=f6e92] [cursor=pointer]:
+                - generic [ref=f6e94]: Anti-reflet
+                - generic [ref=f6e95]: 35 €/m²
+              - button "Musée (anti-UV) 70 €/m²" [ref=f6e96] [cursor=pointer]:
+                - generic [ref=f6e98]: Musée (anti-UV)
+                - generic [ref=f6e99]: 70 €/m²
+          - generic [ref=f6e100]:
+            - heading "04 Dimensions" [level=2] [ref=f6e101]:
+              - generic [ref=f6e102]: "04"
+              - text: Dimensions
+            - generic [ref=f6e103]:
+              - generic [ref=f6e104]:
+                - generic [ref=f6e105]: Largeur (cm)
+                - spinbutton "Largeur (cm)" [ref=f6e106]: "40"
+              - generic [ref=f6e107]:
+                - generic [ref=f6e108]: Hauteur (cm)
+                - spinbutton "Hauteur (cm)" [ref=f6e109]: "50"
+          - generic [ref=f6e110]:
+            - generic [ref=f6e111]:
+              - generic [ref=f6e112]: Baguette
+              - strong [ref=f6e113]: Chêne naturel
+            - generic [ref=f6e114]:
+              - generic [ref=f6e115]: Passe-partout
+              - strong [ref=f6e116]: Terracotta
+            - generic [ref=f6e117]:
+              - generic [ref=f6e118]: Verre
+              - strong [ref=f6e119]: Clair
+            - generic [ref=f6e120]:
+              - generic [ref=f6e121]: Format
+              - strong [ref=f6e122]: 40 × 50 cm
+            - generic [ref=f6e123]:
+              - generic [ref=f6e124]: Estimation
+              - strong [ref=f6e125]: 82,60 €
+            - paragraph [ref=f6e126]: Estimation indicative à titre de démonstration — le moteur de calcul final (Lot 05) intégrera la grille tarifaire réelle du catalogue.
+  - contentinfo [ref=f6e127]:
+    - generic [ref=f6e129]:
+      - link [ref=f6e131] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f6e132]: Rue du Bailli 43
+        - paragraph [ref=f6e133]: 1050 Ixelles
+        - paragraph [ref=f6e134]: Bruxelles, Belgique
+      - generic [ref=f6e135]:
+        - link "+32 2 646 54 69" [ref=f6e136] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f6e137]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f6e138]: "Mar : sur rendez-vous"
+      - generic [ref=f6e139]:
+        - link "lesartsprod.be" [ref=f6e140] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f6e141] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f6e142] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f6e143]:
+        - link "Mentions légales" [ref=f6e144] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f6e145]: Lesarts © 2025
