@@ -678,8 +678,9 @@ button {
   object-fit: cover;
 }
 
-/* Card 01 — mirrored cover: shift visible area left so frame isn't at the border */
-#hero-card-1 .project-image {
+/* Encadrement (carte 03) — cover miroir : on decale la zone visible pour que
+   le cadre ne soit pas colle au bord. */
+#hero-card-3 .project-image {
   object-position: 30% center;
 }
 
@@ -730,11 +731,25 @@ button {
   justify-content: space-between;
 }
 
+/* Titre de tuile : lien a part entiere (voir index.html), mais il doit garder
+   l'apparence du texte. Seuls le survol et le focus le signalent. */
 .project-name {
   font-family: var(--font-neue);
   font-weight: 400;
   font-size: clamp(2.4rem, 2.5vw, 3.6rem);
   letter-spacing: -0.02em;
+  display: inline-block;
+  transition: opacity 0.25s var(--ease-out-quart);
+}
+
+a.project-name:hover {
+  opacity: 0.72;
+}
+
+a.project-name:focus-visible,
+a.project-image-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }
 
 .project-arrow {
@@ -2097,9 +2112,12 @@ a[href="contact.html"] .nav-dot,
 a[href="contact.html"] .hero-nav-dot    { background-color: var(--blue); }
 
 /* ── Project cards — background colors ──────── */
-#hero-card-1 { --card-bg: var(--terra); }
-#hero-card-2 { --card-bg: var(--green); }
-#hero-card-3 { --card-bg: var(--blue); }
+/* La couleur suit le THEME de la tuile, pas sa position : apres le
+   reordonnancement (Galerie · Evenements · Encadrement), Encadrement reste
+   terracotta, Galerie verte et Evenements bleu. */
+#hero-card-1 { --card-bg: var(--green); }  /* Galerie */
+#hero-card-2 { --card-bg: var(--blue); }   /* Evenements */
+#hero-card-3 { --card-bg: var(--terra); }  /* Encadrement */
 
 /* ── Expertise cards — color + stacking ─────── */
 #exp-card-0 { --card-color: var(--blue);  z-index: 4; }

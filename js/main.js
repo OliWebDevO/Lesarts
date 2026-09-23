@@ -399,6 +399,7 @@ function initHeader() {
 function initHero() {
   const heroOuter = document.getElementById('hero-outer');
   const heroStep1 = document.getElementById('hero-step1');
+  const heroCard1 = document.getElementById('hero-card-1');
   const heroCard2 = document.getElementById('hero-card-2');
   const heroCard3 = document.getElementById('hero-card-3');
   const heroTitle = document.getElementById('hero-title');
@@ -406,7 +407,7 @@ function initHero() {
   const heroNav = document.getElementById('hero-nav');
   const heroSocial = document.getElementById('hero-social');
 
-  if (!heroOuter || !heroStep1 || !heroCard2 || !heroCard3) return;
+  if (!heroOuter || !heroStep1 || !heroCard1 || !heroCard2 || !heroCard3) return;
 
   /* --- Entrance animations (page load) --- */
   if (!prefersReduced) {
@@ -466,13 +467,18 @@ function initHero() {
     // Set outer height for scroll distance (+ tail breathing room)
     heroOuter.style.height = `${vw + totalTranslateX + tail}px`;
 
-    // Cards start overlapped
+    /* Bande : [hero-left 50vw][01 Galerie][02 Evenements][03 Encadrement].
+       Au repos on ne veut voir que Encadrement, a cote du panneau de gauche.
+       Les cartes gardent leur ecart naturel d'un emplacement : pour les
+       SUPERPOSER il faut donc un decalage different pour chacune — Encadrement
+       remonte de 2 emplacements, Evenements de 1, Galerie ne bouge pas.
+       Au scroll chacune revient a 0 : Galerie est deja en place, Evenements se
+       degage ensuite, et Encadrement glisse en dernier vers la droite. */
     const cardWidth = vw * 0.5;
-    const card2InitialX = -cardWidth * 0.62;
-    const card3InitialX = -cardWidth * 1.74;
 
-    gsap.set(heroCard2, { x: card2InitialX });
-    gsap.set(heroCard3, { x: card3InitialX });
+    gsap.set(heroCard1, { x: 0 });
+    gsap.set(heroCard2, { x: -cardWidth });
+    gsap.set(heroCard3, { x: -cardWidth * 2 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -487,7 +493,10 @@ function initHero() {
     // Durations proportional to px so the scroll maps move:hold = translateX:tail
     const moveDur = Math.max(1, totalTranslateX);
     tl.to(heroStep1, { x: -totalTranslateX, ease: 'none', duration: moveDur }, 0);
-    tl.to(heroCard2, { x: 0, ease: 'power1.out', duration: moveDur }, 0);
+
+    /* Evenements se degage en premier (course plus courte), Encadrement suit :
+       c'est ce decalage qui fait apparaitre Galerie, puis Evenements. */
+    tl.to(heroCard2, { x: 0, ease: 'power1.out', duration: moveDur * 0.62 }, 0);
     tl.to(heroCard3, { x: 0, ease: 'power1.out', duration: moveDur }, 0);
     if (tail > 0) tl.to({}, { duration: tail }); // hold the final frame before handoff
 
