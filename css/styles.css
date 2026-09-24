@@ -1663,7 +1663,7 @@ main > .horiz-gallery:last-child {
 .about-fact__title {
   font-family: var(--font-neue);
   font-weight: 400;
-  font-size: clamp(4.2rem, 5.4vw, 7rem);
+  font-size: clamp(3.2rem, 4.5vw, 6rem); /* = .masonry-grid__value-title (accueil) */
   line-height: 1.06;
   letter-spacing: -0.02em;
 }
@@ -1685,6 +1685,23 @@ main > .horiz-gallery:last-child {
 .char-reveal__char {
   display: inline-block;
   will-change: transform;
+}
+
+/* Date d'événement : sous-titre avec icône calendrier */
+.about-fact__date {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: -0.8rem;
+  font-family: var(--font-neue);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: rgba(14, 14, 14, 0.7);
+}
+
+.about-fact__date-icon {
+  flex-shrink: 0;
 }
 
 .about-fact__desc {
@@ -3358,7 +3375,7 @@ a.contact-coords__icon:focus-visible {
 
   /* Fact titles must not overflow on small screens */
   .about-fact__title {
-    font-size: clamp(3.4rem, 9.5vw, 4.8rem);
+    font-size: clamp(3.4rem, 11vw, 4.8rem);
   }
 
   /* Let the À-propos CTA title wrap on mobile (no nowrap overflow) */

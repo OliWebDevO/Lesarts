@@ -1730,8 +1730,9 @@ function initAboutPage() {
   // The three fact titles, each followed by its description
   document.querySelectorAll('.about-fact').forEach((fact) => {
     const title = fact.querySelector('.about-fact__title');
-    const desc  = fact.querySelector('.about-fact__desc');
-    if (title) revealByChar(title, fact, desc);
+    // La date (si présente) apparaît avec la description, après le titre
+    const desc  = fact.querySelectorAll('.about-fact__date, .about-fact__desc');
+    if (title) revealByChar(title, fact, desc.length ? desc : null);
   });
 
 }
