@@ -1280,11 +1280,14 @@ a.project-image-link:focus-visible {
   background-color: var(--beige);
 }
 
+/* Dernière galerie de la page : respiration avant le footer */
+main > .horiz-gallery:last-child {
+  margin-bottom: 10rem;
+}
+
 .horiz-gallery-sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
-  height: var(--app-height, 100lvh);
   overflow: hidden;
 }
 
@@ -1293,8 +1296,7 @@ a.project-image-link:focus-visible {
   gap: 1.5rem;
   padding: 1.5rem max(3rem, calc((100% - 138rem) / 2));
   will-change: transform;
-  height: 100%;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .horiz-gallery-card {
@@ -2975,9 +2977,11 @@ a.contact-coords__icon:focus-visible {
 .masonry-grid--no-header .masonry-grid__photo-side-3 { grid-row: 2 / 4; }
 .masonry-grid--no-header .masonry-grid__values       { grid-row: 2 / 4; }
 
-/* Variante à une seule photo (photo-side-3 uniquement) : pleine hauteur */
-.masonry-grid--no-header.masonry-grid--single-photo .masonry-grid__photo-side-3 { grid-row: 1 / 4; }
-.masonry-grid--no-header.masonry-grid--single-photo .masonry-grid__values       { grid-row: 1 / 4; }
+/* Variante à une seule photo (photo-side-3 uniquement) : bloc entier réduit
+   à 2 lignes (au lieu de 3), même hauteur que les autres photo-side. */
+.masonry-grid--no-header.masonry-grid--single-photo { grid-template-rows: repeat(2, 50vh); }
+.masonry-grid--no-header.masonry-grid--single-photo .masonry-grid__photo-side-3 { grid-row: 1 / 3; }
+.masonry-grid--no-header.masonry-grid--single-photo .masonry-grid__values       { grid-row: 1 / 3; }
 
 /* ── Galerie : enchaînement organique des deux masonry via un pont d'images ── */
 .galerie-flush-b { padding-bottom: 1.5rem; }

@@ -911,6 +911,25 @@ function initExpertises() {
 /* Une page peut contenir plusieurs galeries horizontales (ex. galerie.html) :
    on pilote chaque .horiz-gallery par sa propre piste plutôt que par un id
    unique, sinon seule la première section fonctionne. */
+/* Éléments sous une galerie jusqu'à la galerie suivante ; pour la dernière,
+   on inclut aussi ce qui suit <main> (footer). */
+function getFollowers(outer) {
+  const list = [];
+  let el = outer.nextElementSibling;
+  while (el && !el.classList.contains('horiz-gallery')) {
+    list.push(el);
+    el = el.nextElementSibling;
+  }
+  if (!el) {
+    let next = outer.parentElement.nextElementSibling;
+    while (next) {
+      if (next.tagName !== 'SCRIPT') list.push(next);
+      next = next.nextElementSibling;
+    }
+  }
+  return list;
+}
+
 function initHorizontalGallery() {
   const sections = document.querySelectorAll('.horiz-gallery');
   if (!sections.length) return;
@@ -920,23 +939,37 @@ function initHorizontalGallery() {
     const track = outer.querySelector('.horiz-gallery-track');
     if (!track) return;
 
+    /* Le contenu qui suit la galerie est remonté de la distance de scroll
+       restante, pour rester collé sous la galerie pendant tout le défilement
+       horizontal au lieu de remonter en glissant une fois celui-ci terminé. */
+    const followers = getFollowers(outer);
+    let distance = 0;
+    const placeFollowers = (progress) =>
+      gsap.set(followers, { y: -distance * (1 - progress) });
+
+    // Positions des déclencheurs mesurées dans l'état « avant pin ».
+    ScrollTrigger.addEventListener('refreshInit', () => placeFollowers(0));
+
     function setup() {
       ScrollTrigger.getAll()
         .filter((st) => st.vars.trigger === outer)
         .forEach((st) => st.kill());
 
-      const scrollWidth = track.scrollWidth - window.innerWidth;
-      const sectionHeight = window.innerHeight + scrollWidth;
-      outer.style.setProperty('--horiz-section-height', `${sectionHeight}px`);
+      const stickyHeight = track.getBoundingClientRect().height;
+      distance = Math.max(0, track.scrollWidth - window.innerWidth);
+      outer.style.setProperty('--horiz-section-height', `${stickyHeight + distance}px`);
 
+      // La galerie reste collée pendant exactement `distance` pixels de scroll.
       ScrollTrigger.create({
         trigger: outer,
         start: 'top top',
-        end: 'bottom bottom',
+        end: () => `+=${distance}`,
         scrub: true,
         invalidateOnRefresh: true,
+        onRefresh: (self) => placeFollowers(self.progress),
         onUpdate: (self) => {
-          gsap.set(track, { x: -scrollWidth * self.progress });
+          gsap.set(track, { x: -distance * self.progress });
+          placeFollowers(self.progress);
         },
       });
     }
