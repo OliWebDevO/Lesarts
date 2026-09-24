@@ -134,6 +134,23 @@ function smoothScrollTo(target) {
   }
 }
 
+/* Défile jusqu'au titre d'une ancre (#expositions…), sous le header fixe.
+   Le décalage appliqué par les galeries horizontales est retiré pour viser
+   la position réelle du bloc. */
+const ANCHOR_OFFSET = 120;
+function scrollToAnchor(hash, immediate = false) {
+  const section = document.querySelector(hash);
+  if (!section) return;
+  const heading = section.querySelector('h2') || section;
+  const shift = gsap.getProperty(section, 'y') || 0;
+  const y = heading.getBoundingClientRect().top + window.scrollY - shift - ANCHOR_OFFSET;
+  if (lenis && typeof lenis.scrollTo === 'function') {
+    lenis.scrollTo(y, { immediate, duration: 1.2 });
+  } else {
+    window.scrollTo({ top: y, behavior: immediate ? 'auto' : 'smooth' });
+  }
+}
+
 /* ============================================
    SHARED LAYOUT — single source of truth
    ============================================
@@ -161,7 +178,15 @@ const SECONDARY_HEADER_HTML = `
           <li class="nav-item"><a href="index.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Accueil</span></a></li>
           <li class="nav-item"><a href="a-propos.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">À propos</span></a></li>
           <li class="nav-item"><a href="encadrement.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Encadrement</span></a></li>
-          <li class="nav-item"><a href="galerie.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Galerie</span></a></li>
+          <li class="nav-item nav-item--has-sub">
+            <a href="galerie.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Galerie</span></a>
+            <div class="nav-sub">
+              <ul class="nav-sub__list">
+                <li><a href="galerie.html#expositions" class="nav-sub__link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Expositions</span></a></li>
+                <li><a href="galerie.html#evenements" class="nav-sub__link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Événements</span></a></li>
+              </ul>
+            </div>
+          </li>
           <li class="nav-item"><a href="faq.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">FAQ</span></a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link" data-close-menu><span class="nav-dot"></span><span class="nav-label">Contact</span></a></li>
         </ul>
@@ -386,9 +411,17 @@ function initHeader() {
   burgerBtn.addEventListener('click', toggleMenu);
 
   // Close menu when a nav link is clicked
+  const currentFile = location.pathname.split('/').pop() || 'index.html';
   navOverlay.querySelectorAll('[data-close-menu]').forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
       if (menuOpen) toggleMenu();
+      // Ancre vers la page courante : défilement doux au lieu d'un saut
+      const [file, hash] = link.getAttribute('href').split('#');
+      if (hash && file === currentFile) {
+        e.preventDefault();
+        history.replaceState(null, '', `#${hash}`);
+        scrollToAnchor(`#${hash}`);
+      }
     });
   });
 }
@@ -1256,7 +1289,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // hauteurs de section peuvent encore bouger après les timeouts ci-dessus
   // (galeries horizontales, images qui finissent de charger…), ce qui
   // décale les positions de déclenchement des sections suivantes.
-  window.addEventListener('load', () => ScrollTrigger.refresh());
+  window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+    // Arrivée depuis une autre page avec une ancre (ex. galerie.html#evenements) :
+    // le saut natif du navigateur se fait avant que les hauteurs soient fixées.
+    if (location.hash) setTimeout(() => scrollToAnchor(location.hash, true), 300);
+  });
 });
 
 /* ============================================

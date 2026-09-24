@@ -333,6 +333,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  min-height: 0;
   gap: 6rem;
 }
 
@@ -363,6 +364,64 @@ button {
 
 .nav-link:hover {
   opacity: 0.6;
+}
+
+/* Sous-menu (Galerie → Expositions / Événements) : même style que le menu,
+   en plus petit. Au survol il s'ouvre dans le flux et écarte légèrement les
+   autres entrées. Aligné sur le texte du lien (pastille + gap). */
+.nav-sub {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.nav-sub__list {
+  min-height: 0;
+  overflow: hidden;
+  padding-left: 3.2rem;
+}
+
+.nav-sub__link {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 0.6rem 0;
+  font-family: var(--font-neue);
+  font-size: clamp(2rem, 2.4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.nav-sub__link:hover {
+  opacity: 0.6;
+}
+
+.nav-sub .nav-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--pink);
+}
+
+/* Sans survol possible (tactile), le sous-menu reste ouvert */
+@media (hover: hover) {
+  .nav-sub {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.5s var(--ease-out-quart), opacity 0.4s ease;
+  }
+
+  .nav-item--has-sub:hover .nav-sub,
+  .nav-item--has-sub:focus-within .nav-sub {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+.nav-sub__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }
 
 .nav-dot {
@@ -415,6 +474,9 @@ button {
 .nav-main {
   display: flex;
   flex: 1;
+  /* hauteur figée : l'ouverture du sous-menu ne doit déplacer que les liens,
+     pas le visuel LESARTS ni les infos du bas */
+  min-height: 0;
   gap: 4rem;
   align-items: stretch;
   /* côté d'un carré — partagé par les photos de droite ET l'image haute */
@@ -1964,6 +2026,7 @@ main > .horiz-gallery:last-child {
 
   .nav-overlay { padding: 8rem 1.6rem 2.4rem; }
   .nav-link { font-size: clamp(2rem, 8vw, 5.2rem); gap: 1.2rem; }
+  .nav-sub__list { padding-left: 2.4rem; }
   .nav-info { grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 3rem; }
   .nav-info a, .nav-info p { font-size: 1.3rem; }
 
