@@ -1266,26 +1266,39 @@ function initFaq() {
   const items = document.querySelectorAll('.faq-item');
   if (!items.length) return;
 
+  const setOpen = (item, isOpen) => {
+    const btn = item.querySelector('.faq-item__button');
+    const answer = item.querySelector('.faq-item__answer');
+    item.classList.toggle('is-open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    answer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+    if (prefersReduced) {
+      answer.style.height = isOpen ? 'auto' : '0px';
+      return;
+    }
+    if (isOpen) {
+      gsap.set(answer, { height: 'auto' });
+      gsap.from(answer, { height: 0, duration: 0.42, ease: 'power2.inOut' });
+    } else {
+      gsap.to(answer, { height: 0, duration: 0.42, ease: 'power2.inOut' });
+    }
+  };
+
   items.forEach((item) => {
     const btn = item.querySelector('.faq-item__button');
     const answer = item.querySelector('.faq-item__answer');
     if (!btn || !answer) return;
 
     btn.addEventListener('click', () => {
-      const isOpen = item.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      answer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-
-      if (prefersReduced) {
-        answer.style.height = isOpen ? 'auto' : '0px';
-        return;
+      const willOpen = !item.classList.contains('is-open');
+      // Une seule question ouverte à la fois
+      if (willOpen) {
+        items.forEach((other) => {
+          if (other !== item && other.classList.contains('is-open')) setOpen(other, false);
+        });
       }
-      if (isOpen) {
-        gsap.set(answer, { height: 'auto' });
-        gsap.from(answer, { height: 0, duration: 0.42, ease: 'power2.inOut' });
-      } else {
-        gsap.to(answer, { height: 0, duration: 0.42, ease: 'power2.inOut' });
-      }
+      setOpen(item, willOpen);
     });
   });
 
