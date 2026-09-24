@@ -930,6 +930,31 @@ function getFollowers(outer) {
   return list;
 }
 
+/* Éléments au-dessus d'une galerie, jusqu'à la galerie précédente. */
+function getLeaders(outer) {
+  const list = [];
+  let el = outer.previousElementSibling;
+  while (el && !el.classList.contains('horiz-gallery')) {
+    list.push(el);
+    el = el.previousElementSibling;
+  }
+  return list;
+}
+
+/* Un même bloc peut être à la fois sous une galerie et au-dessus de la
+   suivante : on additionne les décalages de chaque galerie. */
+const horizOffsets = new Map();
+function setHorizOffset(els, key, value) {
+  els.forEach((el) => {
+    if (!horizOffsets.has(el)) horizOffsets.set(el, new Map());
+    const byGallery = horizOffsets.get(el);
+    byGallery.set(key, value);
+    let total = 0;
+    byGallery.forEach((v) => { total += v; });
+    gsap.set(el, { y: total });
+  });
+}
+
 function initHorizontalGallery() {
   const sections = document.querySelectorAll('.horiz-gallery');
   if (!sections.length) return;
@@ -939,13 +964,15 @@ function initHorizontalGallery() {
     const track = outer.querySelector('.horiz-gallery-track');
     if (!track) return;
 
-    /* Le contenu qui suit la galerie est remonté de la distance de scroll
-       restante, pour rester collé sous la galerie pendant tout le défilement
-       horizontal au lieu de remonter en glissant une fois celui-ci terminé. */
+    /* Pendant le défilement horizontal, le contenu au-dessus et en dessous
+       suit la galerie : la page paraît figée, sans aucun glissement vertical. */
     const followers = getFollowers(outer);
+    const leaders = getLeaders(outer);
     let distance = 0;
-    const placeFollowers = (progress) =>
-      gsap.set(followers, { y: -distance * (1 - progress) });
+    const placeFollowers = (progress) => {
+      setHorizOffset(leaders, outer, distance * progress);
+      setHorizOffset(followers, outer, -distance * (1 - progress));
+    };
 
     // Positions des déclencheurs mesurées dans l'état « avant pin ».
     ScrollTrigger.addEventListener('refreshInit', () => placeFollowers(0));
@@ -956,13 +983,22 @@ function initHorizontalGallery() {
         .forEach((st) => st.kill());
 
       const stickyHeight = track.getBoundingClientRect().height;
-      distance = Math.max(0, track.scrollWidth - window.innerWidth);
+      // Fin du scroll : bord droit de la dernière carte aligné sur la marge
+      // droite de la page (window.innerWidth inclut la scrollbar, et
+      // scrollWidth ignore le padding droit d'un conteneur flex).
+      const lastCard = track.lastElementChild;
+      const padRight = parseFloat(getComputedStyle(track).paddingRight);
+      distance = Math.max(0, lastCard.offsetLeft + lastCard.offsetWidth + padRight - track.clientWidth);
       outer.style.setProperty('--horiz-section-height', `${stickyHeight + distance}px`);
+
+      // Galerie collée au centre vertical de l'écran.
+      const stickyTop = Math.max(0, (window.innerHeight - stickyHeight) / 2);
+      outer.style.setProperty('--horiz-sticky-top', `${stickyTop}px`);
 
       // La galerie reste collée pendant exactement `distance` pixels de scroll.
       ScrollTrigger.create({
         trigger: outer,
-        start: 'top top',
+        start: () => `top ${stickyTop}px`,
         end: () => `+=${distance}`,
         scrub: true,
         invalidateOnRefresh: true,

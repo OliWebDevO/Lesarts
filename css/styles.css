@@ -1277,7 +1277,6 @@ a.project-image-link:focus-visible {
 .horiz-gallery {
   position: relative;
   height: var(--horiz-section-height, 400vh);
-  background-color: var(--beige);
 }
 
 /* Dernière galerie de la page : respiration avant le footer */
@@ -1287,7 +1286,7 @@ main > .horiz-gallery:last-child {
 
 .horiz-gallery-sticky {
   position: sticky;
-  top: 0;
+  top: var(--horiz-sticky-top, 0);
   overflow: hidden;
 }
 
