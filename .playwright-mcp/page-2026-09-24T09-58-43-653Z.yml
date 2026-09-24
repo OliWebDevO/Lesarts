@@ -1,0 +1,231 @@
+- generic [active] [ref=f24e1]:
+  - link "Aller au contenu principal" [ref=f24e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=f24e3]:
+    - generic [ref=f24e4]:
+      - generic [ref=f24e5]: LESARTS
+      - generic [aria-hidden] [ref=f24e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f24e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f24e10]:
+        - generic [ref=f24e11]: LESARTS
+        - generic [ref=f24e12]: Prod.
+    - button "Ouvrir le menu" [ref=f24e13] [cursor=pointer]:
+      - generic [ref=f24e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f24e15]:
+    - region [ref=f24e16]:
+      - generic [ref=f24e17]:
+        - paragraph [ref=f24e18]: 03 — Galerie
+        - heading "Galerie" [level=1] [ref=f24e19]
+        - generic [ref=f24e20]:
+          - paragraph [ref=f24e21]: Au-delà de l'encadrement, Lesarts est aussi un lieu d'exposition. Nous accueillons tout au long de l'année des artistes d'horizons et de techniques fort différents.
+          - paragraph [ref=f24e22]: Venez découvrir notre exposition permanente et nos accrochages temporaires, au cœur d'Ixelles.
+        - button "Défiler vers la section suivante" [ref=f24e23] [cursor=pointer]:
+          - generic [ref=f24e27]: Défiler
+      - generic [ref=f24e28]:
+        - img "Échantillons de cadres décoratifs exposés chez Lesarts" [ref=f24e30]
+        - generic [ref=f24e31]:
+          - generic [ref=f24e32]: Galerie
+          - generic [ref=f24e34]:
+            - generic [ref=f24e35]: Expositions
+            - generic [ref=f24e36]: "03"
+    - region [ref=f24e37]:
+      - generic [ref=f24e38]:
+        - generic [ref=f24e39]:
+          - heading "Galerie" [level=2] [ref=f24e41]
+          - generic [ref=f24e42]:
+            - generic [ref=f24e43]: Expositions
+            - paragraph [ref=f24e44]: Au-delà de l'encadrement, Lesarts est un lieu d'exposition. Tout au long de l'année, nous accueillons des artistes d'horizons et de techniques fort différents.
+            - link "S'inscrire aux vernissages" [ref=f24e45] [cursor=pointer]:
+              - /url: contact.html
+        - img "Accrochage d'œuvres dans la galerie Lesarts" [ref=f24e50]
+        - list [ref=f24e52]:
+          - listitem [ref=f24e53]:
+            - heading "Michèle Baczynsky" [level=3] [ref=f24e54]
+            - paragraph [ref=f24e55]: "À l'affiche en ce moment : les linogravures de Michèle Baczynsky, un travail de la matière et du trait, tout en nuances."
+          - listitem [ref=f24e56]:
+            - heading "Julien Verhoeven" [level=3] [ref=f24e57]
+            - paragraph [ref=f24e58]: "Prochainement en galerie : les sculptures de Julien Verhoeven, entre bois brut et métal patiné — un dialogue de matières."
+        - img "Œuvres encadrées exposées Lesarts" [ref=f24e60]
+        - img "Détails d'œuvres et de cadres Lesarts" [ref=f24e62]
+        - img "Collection d'œuvres encadrées Lesarts" [ref=f24e64]
+    - region "Portfolio" [ref=f24e65]:
+      - generic [ref=f24e67]:
+        - link "Encadrement conservation musée Encadrement 2025 Conservation musée" [ref=f24e68] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement conservation musée" [ref=f24e70]
+          - generic [ref=f24e71]:
+            - generic [ref=f24e72]:
+              - generic [ref=f24e73]: Encadrement
+              - generic [ref=f24e74]: "2025"
+            - generic [ref=f24e75]: Conservation musée
+        - link "Exposition Michèle Baczynsky — linogravures Exposition 2025 Michèle Baczynsky" [ref=f24e80] [cursor=pointer]:
+          - /url: "#"
+          - img "Exposition Michèle Baczynsky — linogravures" [ref=f24e82]
+          - generic [ref=f24e83]:
+            - generic [ref=f24e84]:
+              - generic [ref=f24e85]: Exposition
+              - generic [ref=f24e86]: "2025"
+            - generic [ref=f24e87]: Michèle Baczynsky
+        - link "Galerie — exposition permanente Galerie 2024 Exposition permanente" [ref=f24e92] [cursor=pointer]:
+          - /url: "#"
+          - img "Galerie — exposition permanente" [ref=f24e94]
+          - generic [ref=f24e95]:
+            - generic [ref=f24e96]:
+              - generic [ref=f24e97]: Galerie
+              - generic [ref=f24e98]: "2024"
+            - generic [ref=f24e99]: Exposition permanente
+        - link "Encadrement plexiglas Encadrement 2024 Encadrement plexiglas" [ref=f24e104] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement plexiglas" [ref=f24e106]
+          - generic [ref=f24e107]:
+            - generic [ref=f24e108]:
+              - generic [ref=f24e109]: Encadrement
+              - generic [ref=f24e110]: "2024"
+            - generic [ref=f24e111]: Encadrement plexiglas
+    - region [ref=f24e116]:
+      - generic [ref=f24e117]:
+        - list [ref=f24e119]:
+          - listitem [ref=f24e120]:
+            - heading "Entrée libre" [level=3] [ref=f24e121]
+            - paragraph [ref=f24e122]: La galerie se visite librement aux heures d'ouverture de l'atelier, sans rendez-vous ni réservation.
+          - listitem [ref=f24e123]:
+            - heading "Techniques variées" [level=3] [ref=f24e124]
+            - paragraph [ref=f24e125]: Peinture, gravure, photographie, sculpture — la galerie fait dialoguer les médiums et les générations.
+          - listitem [ref=f24e126]:
+            - heading "Restez informé" [level=3] [ref=f24e127]
+            - paragraph [ref=f24e128]: Inscrivez-vous pour recevoir en avant-première les dates de nos prochaines expositions et invitations aux vernissages.
+            - link "S'inscrire" [ref=f24e129] [cursor=pointer]:
+              - /url: contact.html
+        - img "Profils de moulures colorées Lesarts" [ref=f24e134]
+    - generic [ref=f24e136]:
+      - img "Échantillons de baguettes Lesarts" [ref=f24e138]
+      - img "Variété de cadres Lesarts" [ref=f24e140]
+    - region [ref=f24e141]:
+      - generic [ref=f24e142]:
+        - generic [ref=f24e143]:
+          - heading "Événements" [level=2] [ref=f24e145]
+          - generic [ref=f24e146]:
+            - generic [ref=f24e147]: Agenda
+            - paragraph [ref=f24e148]: Vernissages, rencontres avec les artistes, ateliers découverte — la galerie s'anime tout au long de l'année.
+            - link "S'inscrire aux vernissages" [ref=f24e149] [cursor=pointer]:
+              - /url: contact.html
+        - img "Vernissage à la galerie Lesarts" [ref=f24e154]
+        - list [ref=f24e156]:
+          - listitem [ref=f24e157]:
+            - heading "Vernissage — 12 octobre" [level=3] [ref=f24e158]
+            - paragraph [ref=f24e159]: Rencontrez Michèle Baczynsky à l'occasion du vernissage de son exposition, autour d'un verre, dès 18h30.
+          - listitem [ref=f24e160]:
+            - heading "Atelier découverte — 9 novembre" [level=3] [ref=f24e161]
+            - paragraph [ref=f24e162]: Une matinée d'initiation à la linogravure, animée par Michèle Baczynsky, places limitées sur inscription.
+        - img "Échantillons présentés lors d'un événement Lesarts" [ref=f24e164]
+        - img "Visiteuse lors d'un vernissage Lesarts" [ref=f24e166]
+        - img "Ambiance d'un vernissage à la galerie Lesarts" [ref=f24e168]
+    - region "Portfolio" [ref=f24e169]:
+      - generic [ref=f24e171]:
+        - link "Encadrement conservation musée Encadrement 2025 Conservation musée" [ref=f24e172] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement conservation musée" [ref=f24e174]
+          - generic [ref=f24e175]:
+            - generic [ref=f24e176]:
+              - generic [ref=f24e177]: Encadrement
+              - generic [ref=f24e178]: "2025"
+            - generic [ref=f24e179]: Conservation musée
+        - link "Exposition Michèle Baczynsky — linogravures Exposition 2025 Michèle Baczynsky" [ref=f24e184] [cursor=pointer]:
+          - /url: "#"
+          - img "Exposition Michèle Baczynsky — linogravures" [ref=f24e186]
+          - generic [ref=f24e187]:
+            - generic [ref=f24e188]:
+              - generic [ref=f24e189]: Exposition
+              - generic [ref=f24e190]: "2025"
+            - generic [ref=f24e191]: Michèle Baczynsky
+        - link "Galerie — exposition permanente Galerie 2024 Exposition permanente" [ref=f24e196] [cursor=pointer]:
+          - /url: "#"
+          - img "Galerie — exposition permanente" [ref=f24e198]
+          - generic [ref=f24e199]:
+            - generic [ref=f24e200]:
+              - generic [ref=f24e201]: Galerie
+              - generic [ref=f24e202]: "2024"
+            - generic [ref=f24e203]: Exposition permanente
+        - link "Encadrement plexiglas Encadrement 2024 Encadrement plexiglas" [ref=f24e208] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement plexiglas" [ref=f24e210]
+          - generic [ref=f24e211]:
+            - generic [ref=f24e212]:
+              - generic [ref=f24e213]: Encadrement
+              - generic [ref=f24e214]: "2024"
+            - generic [ref=f24e215]: Encadrement plexiglas
+  - contentinfo [ref=f24e220]:
+    - generic [ref=f24e222]:
+      - link [ref=f24e224] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f24e225]: Rue du Bailli 43
+        - paragraph [ref=f24e226]: 1050 Ixelles
+        - paragraph [ref=f24e227]: Bruxelles, Belgique
+      - generic [ref=f24e228]:
+        - link "+32 2 646 54 69" [ref=f24e229] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f24e230]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f24e231]: "Mar : sur rendez-vous"
+      - generic [ref=f24e232]:
+        - link "lesartsprod.be" [ref=f24e233] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f24e234] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f24e235] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f24e236]:
+        - link "Mentions légales" [ref=f24e237] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f24e238]: Lesarts © 2025

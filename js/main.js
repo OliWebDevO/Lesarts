@@ -908,39 +908,50 @@ function initExpertises() {
 /* ============================================
    8. HORIZONTAL GALLERY
    ============================================ */
+/* Une page peut contenir plusieurs galeries horizontales (ex. galerie.html) :
+   on pilote chaque .horiz-gallery par sa propre piste plutôt que par un id
+   unique, sinon seule la première section fonctionne. */
 function initHorizontalGallery() {
-  const outer = document.getElementById('horiz-gallery');
-  const track = document.getElementById('horiz-gallery-track');
-
-  if (!outer || !track) return;
+  const sections = document.querySelectorAll('.horiz-gallery');
+  if (!sections.length) return;
   if (prefersReduced) return;
 
-  function setup() {
-    // Kill existing
-    ScrollTrigger.getAll()
-      .filter((st) => st.vars.trigger === outer)
-      .forEach((st) => st.kill());
+  sections.forEach((outer) => {
+    const track = outer.querySelector('.horiz-gallery-track');
+    if (!track) return;
 
-    const scrollWidth = track.scrollWidth - window.innerWidth;
-    const sectionHeight = window.innerHeight + scrollWidth;
-    outer.style.setProperty('--horiz-section-height', `${sectionHeight}px`);
+    function setup() {
+      ScrollTrigger.getAll()
+        .filter((st) => st.vars.trigger === outer)
+        .forEach((st) => st.kill());
 
-    ScrollTrigger.create({
-      trigger: outer,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        gsap.set(track, { x: -scrollWidth * self.progress });
-      },
-    });
-  }
+      const scrollWidth = track.scrollWidth - window.innerWidth;
+      const sectionHeight = window.innerHeight + scrollWidth;
+      outer.style.setProperty('--horiz-section-height', `${sectionHeight}px`);
 
-  setTimeout(setup, 100);
+      ScrollTrigger.create({
+        trigger: outer,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          gsap.set(track, { x: -scrollWidth * self.progress });
+        },
+      });
+    }
 
-  // Largeur uniquement — on ignore la barre d'URL mobile (changement de hauteur).
-  onWidthResize(setup);
+    setTimeout(setup, 100);
+
+    // Largeur uniquement — on ignore la barre d'URL mobile (changement de hauteur).
+    onWidthResize(setup);
+  });
+
+  /* Fixer --horiz-section-height change la hauteur du document : tout
+     ScrollTrigger positionné plus bas dans la page (ex. les titres du bloc
+     suivant) doit être recalculé, sinon son point de déclenchement reste
+     celui d'avant ce changement de hauteur et ne correspond plus à rien. */
+  setTimeout(() => ScrollTrigger.refresh(), 150);
 }
 
 /* ============================================
@@ -1171,6 +1182,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Final refresh so all ScrollTrigger positions are correct
     ScrollTrigger.refresh();
   }, 50);
+
+  // Un dernier refresh une fois TOUT chargé (images comprises) : les
+  // hauteurs de section peuvent encore bouger après les timeouts ci-dessus
+  // (galeries horizontales, images qui finissent de charger…), ce qui
+  // décale les positions de déclenchement des sections suivantes.
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 });
 
 /* ============================================

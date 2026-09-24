@@ -1,0 +1,404 @@
+- generic [active] [ref=f12e1]:
+  - link "Aller au contenu principal" [ref=f12e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - progressbar [ref=f12e3]:
+    - generic [ref=f12e4]:
+      - generic [ref=f12e5]: LESARTS
+      - generic [aria-hidden] [ref=f12e8]: 100%
+  - banner:
+    - link "Retour à l'accueil – Lesarts" [ref=f12e9] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f12e10]:
+        - generic [ref=f12e11]: LESARTS
+        - generic [ref=f12e12]: Prod.
+    - button "Ouvrir le menu" [ref=f12e13] [cursor=pointer]:
+      - generic [ref=f12e14]: Menu
+    - navigation [aria-hidden]:
+      - generic:
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: index.html
+                - generic: Accueil
+            - listitem:
+              - link:
+                - /url: a-propos.html
+                - generic: À propos
+            - listitem:
+              - link:
+                - /url: encadrement.html
+                - generic: Encadrement
+            - listitem:
+              - link:
+                - /url: galerie.html
+                - generic: Galerie
+            - listitem:
+              - link:
+                - /url: faq.html
+                - generic: FAQ
+            - listitem:
+              - link:
+                - /url: contact.html
+                - generic: Contact
+          - complementary [aria-hidden]:
+            - generic: LESARTS
+        - generic:
+          - generic:
+            - paragraph: Lesarts
+            - link:
+              - /url: https://www.lesartsprod.be
+              - text: lesartsprod.be
+          - generic:
+            - paragraph: Rue du Bailli 43
+            - paragraph: 1050 Ixelles
+            - paragraph: Bruxelles, Belgique
+          - generic:
+            - paragraph: Mer – Sam
+            - paragraph: 10h30 – 18h30
+          - generic:
+            - link:
+              - /url: "#"
+              - text: Instagram
+            - link:
+              - /url: "#"
+              - text: Facebook
+  - main [ref=f12e15]:
+    - region [ref=f12e16]:
+      - generic [ref=f12e17]:
+        - paragraph [ref=f12e18]: 03 — Galerie
+        - heading "Galerie" [level=1] [ref=f12e19]
+        - generic [ref=f12e20]:
+          - paragraph [ref=f12e21]: Au-delà de l'encadrement, Lesarts est aussi un lieu d'exposition. Nous accueillons tout au long de l'année des artistes d'horizons et de techniques fort différents.
+          - paragraph [ref=f12e22]: Venez découvrir notre exposition permanente et nos accrochages temporaires, au cœur d'Ixelles.
+        - button "Défiler vers la section suivante" [ref=f12e23] [cursor=pointer]:
+          - generic [ref=f12e27]: Défiler
+      - generic [ref=f12e28]:
+        - img "Échantillons de cadres décoratifs exposés chez Lesarts" [ref=f12e30]
+        - generic [ref=f12e31]:
+          - generic [ref=f12e34]:
+            - generic [ref=f12e35]: G
+            - generic [ref=f12e37]: a
+            - generic [ref=f12e39]: l
+            - generic [ref=f12e41]: e
+            - generic [ref=f12e43]: r
+            - generic [ref=f12e45]: i
+            - generic [ref=f12e47]: e
+          - generic [ref=f12e49]:
+            - generic [ref=f12e51]:
+              - generic [ref=f12e52]: E
+              - generic [ref=f12e54]: x
+              - generic [ref=f12e56]: p
+              - generic [ref=f12e58]: o
+              - generic [ref=f12e60]: s
+              - generic [ref=f12e62]: i
+              - generic [ref=f12e64]: t
+              - generic [ref=f12e66]: i
+              - generic [ref=f12e68]: o
+              - generic [ref=f12e70]: "n"
+              - generic [ref=f12e72]: s
+            - generic [ref=f12e75]:
+              - generic [ref=f12e76]: "0"
+              - generic [ref=f12e78]: "3"
+    - region [ref=f12e80]:
+      - generic [ref=f12e81]:
+        - generic [ref=f12e82]:
+          - heading "G a l e r i e" [level=2] [ref=f12e84]:
+            - generic [ref=f12e85]:
+              - generic [ref=f12e86]: G
+              - generic [ref=f12e88]: a
+              - generic [ref=f12e90]: l
+              - generic [ref=f12e92]: e
+              - generic [ref=f12e94]: r
+              - generic [ref=f12e96]: i
+              - generic [ref=f12e98]: e
+          - generic [ref=f12e100]:
+            - generic [ref=f12e101]: Expositions
+            - paragraph [ref=f12e102]: Au-delà de l'encadrement, Lesarts est un lieu d'exposition. Tout au long de l'année, nous accueillons des artistes d'horizons et de techniques fort différents.
+            - link "S'inscrire aux vernissages" [ref=f12e103] [cursor=pointer]:
+              - /url: contact.html
+        - img "Accrochage d'œuvres dans la galerie Lesarts" [ref=f12e108]
+        - list [ref=f12e110]:
+          - listitem [ref=f12e111]:
+            - heading "M i c h è l e B a c z y n s k y" [level=3] [ref=f12e112]:
+              - generic [ref=f12e113]:
+                - generic [ref=f12e114]: M
+                - generic [ref=f12e116]: i
+                - generic [ref=f12e118]: c
+                - generic [ref=f12e120]: h
+                - generic [ref=f12e122]: è
+                - generic [ref=f12e124]: l
+                - generic [ref=f12e126]: e
+              - generic [ref=f12e128]:
+                - generic [ref=f12e129]: B
+                - generic [ref=f12e131]: a
+                - generic [ref=f12e133]: c
+                - generic [ref=f12e135]: z
+                - generic [ref=f12e137]: "y"
+                - generic [ref=f12e139]: "n"
+                - generic [ref=f12e141]: s
+                - generic [ref=f12e143]: k
+                - generic [ref=f12e145]: "y"
+            - paragraph [ref=f12e147]: "À l'affiche en ce moment : les linogravures de Michèle Baczynsky, un travail de la matière et du trait, tout en nuances."
+          - listitem [ref=f12e148]:
+            - heading "J u l i e n V e r h o e v e n" [level=3] [ref=f12e149]:
+              - generic [ref=f12e150]:
+                - generic [ref=f12e151]: J
+                - generic [ref=f12e153]: u
+                - generic [ref=f12e155]: l
+                - generic [ref=f12e157]: i
+                - generic [ref=f12e159]: e
+                - generic [ref=f12e161]: "n"
+              - generic [ref=f12e163]:
+                - generic [ref=f12e164]: V
+                - generic [ref=f12e166]: e
+                - generic [ref=f12e168]: r
+                - generic [ref=f12e170]: h
+                - generic [ref=f12e172]: o
+                - generic [ref=f12e174]: e
+                - generic [ref=f12e176]: v
+                - generic [ref=f12e178]: e
+                - generic [ref=f12e180]: "n"
+            - paragraph [ref=f12e182]: "Prochainement en galerie : les sculptures de Julien Verhoeven, entre bois brut et métal patiné — un dialogue de matières."
+        - img "Œuvres encadrées exposées Lesarts" [ref=f12e184]
+        - img "Détails d'œuvres et de cadres Lesarts" [ref=f12e186]
+        - img "Collection d'œuvres encadrées Lesarts" [ref=f12e188]
+    - region "Portfolio" [ref=f12e189]:
+      - generic [ref=f12e191]:
+        - link "Encadrement conservation musée Encadrement 2025 Conservation musée" [ref=f12e192] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement conservation musée" [ref=f12e194]
+          - generic [ref=f12e195]:
+            - generic [ref=f12e196]:
+              - generic [ref=f12e197]: Encadrement
+              - generic [ref=f12e198]: "2025"
+            - generic [ref=f12e199]: Conservation musée
+        - link "Exposition Michèle Baczynsky — linogravures Exposition 2025 Michèle Baczynsky" [ref=f12e204] [cursor=pointer]:
+          - /url: "#"
+          - img "Exposition Michèle Baczynsky — linogravures" [ref=f12e206]
+          - generic [ref=f12e207]:
+            - generic [ref=f12e208]:
+              - generic [ref=f12e209]: Exposition
+              - generic [ref=f12e210]: "2025"
+            - generic [ref=f12e211]: Michèle Baczynsky
+        - link "Galerie — exposition permanente Galerie 2024 Exposition permanente" [ref=f12e216] [cursor=pointer]:
+          - /url: "#"
+          - img "Galerie — exposition permanente" [ref=f12e218]
+          - generic [ref=f12e219]:
+            - generic [ref=f12e220]:
+              - generic [ref=f12e221]: Galerie
+              - generic [ref=f12e222]: "2024"
+            - generic [ref=f12e223]: Exposition permanente
+        - link "Encadrement plexiglas Encadrement 2024 Encadrement plexiglas" [ref=f12e228] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement plexiglas" [ref=f12e230]
+          - generic [ref=f12e231]:
+            - generic [ref=f12e232]:
+              - generic [ref=f12e233]: Encadrement
+              - generic [ref=f12e234]: "2024"
+            - generic [ref=f12e235]: Encadrement plexiglas
+    - region [ref=f12e240]:
+      - generic [ref=f12e241]:
+        - list [ref=f12e243]:
+          - listitem [ref=f12e244]:
+            - heading "E n t r é e l i b r e" [level=3] [ref=f12e245]:
+              - generic [ref=f12e246]:
+                - generic [ref=f12e247]: E
+                - generic [ref=f12e249]: "n"
+                - generic [ref=f12e251]: t
+                - generic [ref=f12e253]: r
+                - generic [ref=f12e255]: é
+                - generic [ref=f12e257]: e
+              - generic [ref=f12e259]:
+                - generic [ref=f12e260]: l
+                - generic [ref=f12e262]: i
+                - generic [ref=f12e264]: b
+                - generic [ref=f12e266]: r
+                - generic [ref=f12e268]: e
+            - paragraph [ref=f12e270]: La galerie se visite librement aux heures d'ouverture de l'atelier, sans rendez-vous ni réservation.
+          - listitem [ref=f12e271]:
+            - heading "T e c h n i q u e s v a r i é e s" [level=3] [ref=f12e272]:
+              - generic [ref=f12e273]:
+                - generic [ref=f12e274]: T
+                - generic [ref=f12e276]: e
+                - generic [ref=f12e278]: c
+                - generic [ref=f12e280]: h
+                - generic [ref=f12e282]: "n"
+                - generic [ref=f12e284]: i
+                - generic [ref=f12e286]: q
+                - generic [ref=f12e288]: u
+                - generic [ref=f12e290]: e
+                - generic [ref=f12e292]: s
+              - generic [ref=f12e294]:
+                - generic [ref=f12e295]: v
+                - generic [ref=f12e297]: a
+                - generic [ref=f12e299]: r
+                - generic [ref=f12e301]: i
+                - generic [ref=f12e303]: é
+                - generic [ref=f12e305]: e
+                - generic [ref=f12e307]: s
+            - paragraph [ref=f12e309]: Peinture, gravure, photographie, sculpture — la galerie fait dialoguer les médiums et les générations.
+          - listitem [ref=f12e310]:
+            - heading "R e s t e z i n f o r m é" [level=3] [ref=f12e311]:
+              - generic [ref=f12e312]:
+                - generic [ref=f12e313]: R
+                - generic [ref=f12e315]: e
+                - generic [ref=f12e317]: s
+                - generic [ref=f12e319]: t
+                - generic [ref=f12e321]: e
+                - generic [ref=f12e323]: z
+              - generic [ref=f12e325]:
+                - generic [ref=f12e326]: i
+                - generic [ref=f12e328]: "n"
+                - generic [ref=f12e330]: f
+                - generic [ref=f12e332]: o
+                - generic [ref=f12e334]: r
+                - generic [ref=f12e336]: m
+                - generic [ref=f12e338]: é
+            - paragraph [ref=f12e340]: Inscrivez-vous pour recevoir en avant-première les dates de nos prochaines expositions et invitations aux vernissages.
+            - link "S'inscrire" [ref=f12e341] [cursor=pointer]:
+              - /url: contact.html
+        - img "Visiteuse découvrant une œuvre à la galerie Lesarts" [ref=f12e346]
+        - img "Variété de cadres Lesarts" [ref=f12e348]
+        - img "Profils de moulures colorées Lesarts" [ref=f12e350]
+    - region [ref=f12e351]:
+      - generic [ref=f12e352]:
+        - generic [ref=f12e353]:
+          - heading "É v é n e m e n t s" [level=2] [ref=f12e355]:
+            - generic [ref=f12e356]:
+              - generic [ref=f12e357]: É
+              - generic [ref=f12e359]: v
+              - generic [ref=f12e361]: é
+              - generic [ref=f12e363]: "n"
+              - generic [ref=f12e365]: e
+              - generic [ref=f12e367]: m
+              - generic [ref=f12e369]: e
+              - generic [ref=f12e371]: "n"
+              - generic [ref=f12e373]: t
+              - generic [ref=f12e375]: s
+          - generic [ref=f12e377]:
+            - generic [ref=f12e378]: Agenda
+            - paragraph [ref=f12e379]: Vernissages, rencontres avec les artistes, ateliers découverte — la galerie s'anime tout au long de l'année.
+            - link "S'inscrire aux vernissages" [ref=f12e380] [cursor=pointer]:
+              - /url: contact.html
+        - img "Vernissage à la galerie Lesarts" [ref=f12e385]
+        - list [ref=f12e387]:
+          - listitem [ref=f12e388]:
+            - heading "V e r n i s s a g e — 1 2 o c t o b r e" [level=3] [ref=f12e389]:
+              - generic [ref=f12e390]:
+                - generic [ref=f12e391]: V
+                - generic [ref=f12e393]: e
+                - generic [ref=f12e395]: r
+                - generic [ref=f12e397]: "n"
+                - generic [ref=f12e399]: i
+                - generic [ref=f12e401]: s
+                - generic [ref=f12e403]: s
+                - generic [ref=f12e405]: a
+                - generic [ref=f12e407]: g
+                - generic [ref=f12e409]: e
+              - generic [ref=f12e411]: —
+              - generic [ref=f12e414]:
+                - generic [ref=f12e415]: "1"
+                - generic [ref=f12e417]: "2"
+              - generic [ref=f12e419]:
+                - generic [ref=f12e420]: o
+                - generic [ref=f12e422]: c
+                - generic [ref=f12e424]: t
+                - generic [ref=f12e426]: o
+                - generic [ref=f12e428]: b
+                - generic [ref=f12e430]: r
+                - generic [ref=f12e432]: e
+            - paragraph [ref=f12e434]: Rencontrez Michèle Baczynsky à l'occasion du vernissage de son exposition, autour d'un verre, dès 18h30.
+          - listitem [ref=f12e435]:
+            - heading "A t e l i e r d é c o u v e r t e — 9 n o v e m b r e" [level=3] [ref=f12e436]:
+              - generic [ref=f12e437]:
+                - generic [ref=f12e438]: A
+                - generic [ref=f12e440]: t
+                - generic [ref=f12e442]: e
+                - generic [ref=f12e444]: l
+                - generic [ref=f12e446]: i
+                - generic [ref=f12e448]: e
+                - generic [ref=f12e450]: r
+              - generic [ref=f12e452]:
+                - generic [ref=f12e453]: d
+                - generic [ref=f12e455]: é
+                - generic [ref=f12e457]: c
+                - generic [ref=f12e459]: o
+                - generic [ref=f12e461]: u
+                - generic [ref=f12e463]: v
+                - generic [ref=f12e465]: e
+                - generic [ref=f12e467]: r
+                - generic [ref=f12e469]: t
+                - generic [ref=f12e471]: e
+              - generic [ref=f12e473]: —
+              - generic [ref=f12e476]: "9"
+              - generic [ref=f12e479]:
+                - generic [ref=f12e480]: "n"
+                - generic [ref=f12e482]: o
+                - generic [ref=f12e484]: v
+                - generic [ref=f12e486]: e
+                - generic [ref=f12e488]: m
+                - generic [ref=f12e490]: b
+                - generic [ref=f12e492]: r
+                - generic [ref=f12e494]: e
+            - paragraph [ref=f12e496]: Une matinée d'initiation à la linogravure, animée par Michèle Baczynsky, places limitées sur inscription.
+        - img "Échantillons présentés lors d'un événement Lesarts" [ref=f12e498]
+        - img "Visiteuse lors d'un vernissage Lesarts" [ref=f12e500]
+        - img "Ambiance d'un vernissage à la galerie Lesarts" [ref=f12e502]
+    - region "Portfolio" [ref=f12e503]:
+      - generic [ref=f12e505]:
+        - link "Encadrement conservation musée Encadrement 2025 Conservation musée" [ref=f12e506] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement conservation musée" [ref=f12e508]
+          - generic [ref=f12e509]:
+            - generic [ref=f12e510]:
+              - generic [ref=f12e511]: Encadrement
+              - generic [ref=f12e512]: "2025"
+            - generic [ref=f12e513]: Conservation musée
+        - link "Exposition Michèle Baczynsky — linogravures Exposition 2025 Michèle Baczynsky" [ref=f12e518] [cursor=pointer]:
+          - /url: "#"
+          - img "Exposition Michèle Baczynsky — linogravures" [ref=f12e520]
+          - generic [ref=f12e521]:
+            - generic [ref=f12e522]:
+              - generic [ref=f12e523]: Exposition
+              - generic [ref=f12e524]: "2025"
+            - generic [ref=f12e525]: Michèle Baczynsky
+        - link "Galerie — exposition permanente Galerie 2024 Exposition permanente" [ref=f12e530] [cursor=pointer]:
+          - /url: "#"
+          - img "Galerie — exposition permanente" [ref=f12e532]
+          - generic [ref=f12e533]:
+            - generic [ref=f12e534]:
+              - generic [ref=f12e535]: Galerie
+              - generic [ref=f12e536]: "2024"
+            - generic [ref=f12e537]: Exposition permanente
+        - link "Encadrement plexiglas Encadrement 2024 Encadrement plexiglas" [ref=f12e542] [cursor=pointer]:
+          - /url: "#"
+          - img "Encadrement plexiglas" [ref=f12e544]
+          - generic [ref=f12e545]:
+            - generic [ref=f12e546]:
+              - generic [ref=f12e547]: Encadrement
+              - generic [ref=f12e548]: "2024"
+            - generic [ref=f12e549]: Encadrement plexiglas
+  - contentinfo [ref=f12e554]:
+    - generic [ref=f12e556]:
+      - link [ref=f12e558] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=Rue+du+Bailli+43+1050+Ixelles+Bruxelles
+        - paragraph [ref=f12e559]: Rue du Bailli 43
+        - paragraph [ref=f12e560]: 1050 Ixelles
+        - paragraph [ref=f12e561]: Bruxelles, Belgique
+      - generic [ref=f12e562]:
+        - link "+32 2 646 54 69" [ref=f12e563] [cursor=pointer]:
+          - /url: tel:+3226465469
+        - generic [ref=f12e564]: "Mer – Sam : 10h30 – 18h30"
+        - generic [ref=f12e565]: "Mar : sur rendez-vous"
+      - generic [ref=f12e566]:
+        - link "lesartsprod.be" [ref=f12e567] [cursor=pointer]:
+          - /url: https://www.lesartsprod.be
+        - link "Instagram" [ref=f12e568] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f12e569] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f12e570]:
+        - link "Mentions légales" [ref=f12e571] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f12e572]: Lesarts © 2025
